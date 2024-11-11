@@ -11,7 +11,7 @@ my_nhl_league = League(league_id=my_league_id, year=curr_year, espn_s2=espn_s2_c
 curr_week = my_nhl_league.currentMatchupPeriod
 # print(f"This is the current week: {curr_week}")
 def printWeekMatchupResults(weekNum):
-    print(f"Week {weekNum} Winners: ")
+    print(f"\nWeek {weekNum} Winners: \n")
     curr_matchups = my_nhl_league.box_scores(weekNum)
     for matchup in curr_matchups:
         if (matchup.winner == "HOME"):
@@ -115,15 +115,13 @@ def getSeasonPointDifferential():
 # displaySeasonPointsFor()
 #     team_object_list.append(Team(team.team_name, team.roster, team_points, team.points_against, team.wins, team.losses))
 
-getSeasonPointsFor()
-getSeasonPointsAgainst()
-getSeasonPointDifferential()
 
 
 def displayAllFreeAgents():
     FREE_AGENCY_SIZE = 1500 # Some extra padding since actual num is 1404 players
     available_players = my_nhl_league.free_agents(curr_week, FREE_AGENCY_SIZE)
-
+    print(f"FREE AGENTS\n"
+          "----------------------------")
     for player in available_players:
         print(f"{player.name}({player.position}): {player.proTeam}")
 
@@ -140,3 +138,10 @@ def LeagueStandings():
     for i in range(len(standings)):
         print(f"{i+1}. {standings[i].team_name}\n"
               "------------------------------------")
+        
+def main():
+    LeagueStandings()
+    printSeasonMatchupResults()
+    displayAllFreeAgents()
+
+main()
