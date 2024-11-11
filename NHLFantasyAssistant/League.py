@@ -115,11 +115,17 @@ def getSeasonPointDifferential():
 # displaySeasonPointsFor()
 #     team_object_list.append(Team(team.team_name, team.roster, team_points, team.points_against, team.wins, team.losses))
 
+def initializeTeamObjects(team_points_for, team_points_against, team_points_diff):
+    team_object_dict = {}
+    for team_info in my_nhl_league.teams:
+        team = Team.Team(team_info.division_id, team_info.team_id, team_info.team_name, team_info.roster, team_points_for.get(team_info.team_name, 0), team_points_against.get(team_info.team_name, 0),team_points_diff.get(team_info.team_name, 0), team_info.wins, team_info.losses, team_info.stats)
+        team_object_dict [team_info.team_name] = team
 
+    return team_object_dict
 
 def displayAllFreeAgents():
     FREE_AGENCY_SIZE = 1500 # Some extra padding since actual num is 1404 players
-    available_players = my_nhl_league.free_agents(curr_week, FREE_AGENCY_SIZE)
+    available_players = my_nhl_league.free_agents(my_nhl_league.current_week, FREE_AGENCY_SIZE)
     print(f"FREE AGENTS\n"
           "----------------------------")
     for player in available_players:
@@ -131,17 +137,29 @@ def TeamDraftGrade():
      # then figure out grading score with remaining players
      print(draftPicks)
 
-def LeagueStandings():
+def LeagueStandings(team_object_list):
     standings = my_nhl_league.standings()
     print(f"League Standings\n"
           "------------------------------------")
     for i in range(len(standings)):
-        print(f"{i+1}. {standings[i].team_name}\n"
+        team_object = team_object_list[standings[i].team_name]
+        print(f"{i+1}. {team_object.displayTeamRecord()}\n"
               "------------------------------------")
         
+# def TeamRecord(team_object_dict):
+#     for team in my_nhl_league:
+#         team_object_dict[team.team_name].displayTeamRecord()
+
+def TeamRecord(team_object):
+    team_object.displayTeamRecord()
+        
 def main():
-    LeagueStandings()
-    printSeasonMatchupResults()
-    displayAllFreeAgents()
+    # printSeasonMatchupResults()
+    # displayAllFreeAgents()
+    seasonPointsFor = getSeasonPointsFor()
+    seasonPointsAgainst = getSeasonPointsAgainst()
+    seasonPointsDiff = getSeasonPointDifferential()
+    team_object_dict = initializeTeamObjects(seasonPointsFor, seasonPointsAgainst, seasonPointsDiff)
+    LeagueStandings(team_object_dict)
 
 main()
