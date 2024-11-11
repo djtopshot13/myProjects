@@ -1,5 +1,7 @@
 class Team:
-    def __init__(self, name, players, points_for, points_against, matchup_wins, matchup_losses):
+    def __init__(self, division_id, team_id, name, players, points_for, points_against, matchup_wins, matchup_losses):
+        self.division_id = division_id
+        self.team_id = team_id
         self.name = name
         self.players = players
         self.points_for = points_for
