@@ -1,0 +1,7 @@
+Action Items:
+
+    Get team_points_against 
+    Refactor team_points_for with the new method
+    Add any needed vars to TeamObjects 
+    Set up TeamObjects in League.py 
+    Figure out how to use free agency players

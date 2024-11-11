@@ -19,5 +19,5 @@ DisplaySorted[Stat]Teams(boolean dec_order, String stat_name):
         Print teams with team_name, stat_name, and stat_value based on dec_order 
 
 LeaguePowerRankingBoard()
-    Parameters:
+    Parameters: 
 
