@@ -32,11 +32,36 @@ def printWeekMatchupResults(weekNum):
 def printSeasonMatchupResults():
     for i in range(1, my_nhl_league.currentMatchupPeriod):
         printWeekMatchupResults(i)
+
+def _get_Season_Points():
+    _points_against = {team.team_name: 0 for team in my_nhl_league.teams}
+    _points_for = {team.team_name: 0 for team in my_nhl_league.teams}
+    _points_diff = {team.team_name: 0 for team in my_nhl_league.teams}
+
+    for i in range(1, my_nhl_league.currentMatchupPeriod):
+        curr_matchups = my_nhl_league.box_scores(i)
+
+        for matchup in curr_matchups:
+            _points_against[matchup.home_team.team_name] += matchup.away_score
+            _points_against[matchup.away_team.team_name] += matchup.home_score
+
+            _points_for[matchup.away_team.team_name] += matchup.away_score            
+            _points_for[matchup.home_team.team_name] += matchup.home_score
+        
+        _points_against = {team: round(score, 1) for team, score in _points_against.items()}
+        _points_for = {team: round(score, 1) for team, score in _points_for.items()}
+
+        for team in my_nhl_league.teams:
+            _points_diff[team.team_name] = round(_points_for[team.team_name] - _points_against[team.team_name], 1)
+
+        return _points_against, _points_for, _points_diff
+        
+            
             
 def _get_Season_Points_Against():
     points_against = {team.team_name: 0 for team in my_nhl_league.teams}  
     
-    for i in range(1, my_nhl_league.current_week + 1):
+    for i in range(1, my_nhl_league.currentMatchupPeriod + 1):
         curr_matchups = my_nhl_league.box_scores(i)
         
         # Loop through the matchups and add points against for each team
@@ -51,7 +76,7 @@ def _get_Season_Points_Against():
 def _get_Season_Points_For():
     points_for = {team.team_name: 0 for team in my_nhl_league.teams}
 
-    for i in range(1, my_nhl_league.current_week + 1):
+    for i in range(1, my_nhl_league.currentMatchupPeriod):
         curr_matchups = my_nhl_league.box_scores(i)
 
         for matchup in curr_matchups:
@@ -70,7 +95,11 @@ def _get_Season_Point_Differential(_points_for, _points_against):
 def initializeTeamObjects(team_points_for, team_points_against, team_points_diff, _draft_dict):
     team_object_dict = {}
     for team_info in my_nhl_league.teams:
-        team = Team.Team(team_info.division_id, team_info.team_id, team_info.team_name, team_info.roster, team_points_for.get(team_info.team_name, 0), team_points_against.get(team_info.team_name, 0),team_points_diff.get(team_info.team_name, 0), team_info.wins, team_info.losses, _draft_dict[team_info.team_name], team_info.stats)
+        team = Team.Team(team_info.division_id, team_info.team_id, team_info.team_name,
+                        team_info.roster, team_points_for.get(team_info.team_name, 0), 
+                        team_points_against.get(team_info.team_name, 0),team_points_diff.get(team_info.team_name, 0),
+                        team_info.wins, team_info.losses, _draft_dict[team_info.team_name], team_info.stats)
+        
         team_object_dict [team_info.team_name] = team
 
     return team_object_dict
@@ -129,11 +158,9 @@ def TeamRecord(team_object):
 def main():
     printSeasonMatchupResults()
     # displayAllFreeAgents()
-    _points_for = _get_Season_Points_For()
-    _points_against = _get_Season_Points_Against()
-    _points_diff = _get_Season_Point_Differential(_points_for, _points_against)
     _draft_dict = _get_Draft_Dict() 
-    team_object_dict = initializeTeamObjects(_points_for, _points_against, _points_diff, _draft_dict)
+    _points_against, _points_for, _points_diff = _get_Season_Points()
+    team_object_dict = initializeTeamObjects(_points_against, _points_for, _points_diff, _draft_dict)
     LeagueStandings(team_object_dict)  
     LeagueDraftResults(_draft_dict)
 
