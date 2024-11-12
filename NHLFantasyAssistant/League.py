@@ -8,8 +8,9 @@ espn_s2_cookie = "AEAVePfqAj5sDj5KBoDdTQ7y7U5IcQaWswzMsomuzV%2B7u46Q29tOY56LRtFJ
 
 my_nhl_league = League(league_id=my_league_id, year=curr_year, espn_s2=espn_s2_cookie, swid=SWID, fetch_league=True)
 
-curr_week = my_nhl_league.currentMatchupPeriod
-# print(f"This is the current week: {curr_week}")
+
+
+
 def printWeekMatchupResults(weekNum):
     print(f"\nWeek {weekNum} Winners: \n")
     curr_matchups = my_nhl_league.box_scores(weekNum)
@@ -29,21 +30,10 @@ def printWeekMatchupResults(weekNum):
 
 
 def printSeasonMatchupResults():
-    for i in range(1, curr_week):
+    for i in range(1, my_nhl_league.current_week):
         printWeekMatchupResults(i)
             
-# print("Full Season Matchup Scoreboard\n")
-# printSeasonMatchupResults()
-# print("\nWeek 3 Matchup Results\n")
-# printWeekMatchupResults(3)
-
-league_teams = my_nhl_league.teams
-team_data = []
-for i in range(1, len(league_teams) + 1):
-        team_data.append(my_nhl_league.get_team_data(i))
-
-
-def getSeasonPointsAgainst():
+def _get_Season_Points_Against():
     points_against = {team.team_name: 0 for team in my_nhl_league.teams}  
     
     for i in range(1, my_nhl_league.current_week + 1):
@@ -58,7 +48,7 @@ def getSeasonPointsAgainst():
     return points_against
 
 
-def getSeasonPointsFor():
+def _get_Season_Points_For():
     points_for = {team.team_name: 0 for team in my_nhl_league.teams}
 
     for i in range(1, my_nhl_league.current_week + 1):
@@ -71,49 +61,11 @@ def getSeasonPointsFor():
     points_for = {team: round(score, 1) for team, score in points_for.items()}
     return points_for
 
-def getSeasonPointDifferential():
+def _get_Season_Point_Differential(_points_for, _points_against):
     diff = {team.team_name: 0 for team in my_nhl_league.teams}
-    points_for = getSeasonPointsFor() 
-    points_against = getSeasonPointsAgainst()
-
     for team in my_nhl_league.teams:
-        diff[team.team_name] = round(points_for[team.team_name] - points_against[team.team_name], 1)
+        diff[team.team_name] = round(_points_for[team.team_name] - _points_against[team.team_name], 1)
     return diff
-
-# OG version got replaced and revamped
-
-# def getSeasonPointsFor():
-    
-#     team_point_list = []
-    
-#     for team in team_data:
-#         team_points = 0
-#         # print(team.team_name)
-#         # print(f"Div ID:  {team.division_id} Team ID:  {team.team_id}\n")
-        
-#         team_points += round(team.stats['BLK'] / 2, 1)
-#         team_points += round(team.stats['W'] * 4)
-#         team_points += round(team.stats['SV'] / 5, 1) 
-#         team_points -= round(team.stats['GA'] * 2) 
-#         team_points += round(team.stats['PPP'] / 2, 1)
-#         team_points += round(team.stats['SO'] * 3)
-#         team_points += round(team.stats['SHP'] / 2, 1)
-#         team_points += round(team.stats['OTL'])
-#         team_points += round(team.stats['G'] * 2)
-#         team_points += round(team.stats['A'])
-#         team_points += round(team.stats['SOG'] / 10, 1)
-#         team_points += round(team.stats['HIT'] / 10, 1)
-#         team_points = format("%.1f" % team_points)
-
-#         team_dict_points = {team.team_name : team_points}
-#         team_point_list.append(team_dict_points)
-        
-#     print(team_point_list)
-#     return team_point_list
-         
-
-# displaySeasonPointsFor()
-#     team_object_list.append(Team(team.team_name, team.roster, team_points, team.points_against, team.wins, team.losses))
 
 def initializeTeamObjects(team_points_for, team_points_against, team_points_diff):
     team_object_dict = {}
@@ -132,10 +84,9 @@ def displayAllFreeAgents():
         print(f"{player.name}({player.position}): {player.proTeam}")
 
 def TeamDraftGrade():
-     draftPicks = my_nhl_league.draft
-     # do something with draftPicks to maybe store drafted players by team in dictionaries
-     # then figure out grading score with remaining players
-     print(draftPicks)
+    return   
+    # do something with draftPicks to maybe store drafted players by team in dictionaries
+    # then figure out grading score with remaining players
 
 def LeagueStandings(team_object_list):
     standings = my_nhl_league.standings()
@@ -146,9 +97,31 @@ def LeagueStandings(team_object_list):
         print(f"{i+1}. {team_object.displayTeamRecord()}\n"
               "------------------------------------")
         
-# def TeamRecord(team_object_dict):
-#     for team in my_nhl_league:
-#         team_object_dict[team.team_name].displayTeamRecord()
+def _get_Draft_Dict():
+    draft_dict = {team.team_name: [] for team in my_nhl_league.teams}
+    for pick in my_nhl_league.draft:
+        draft_dict[pick.team.team_name].append(pick.playerName)
+    return draft_dict
+
+def LeagueDraftResults(draft_dict):
+    DRAFT_ROUNDS = 22
+    msg = ""
+    DRAFT_ORDER = ["Luuky Pooky", "Dallin's Daring Team", "Shortcake Miniture Schnauzers", "Live Laff Love", "Hockey", "Kings Shmings", "Dillon's Dubs", "Mind Goblinz"]
+    for i in range(DRAFT_ROUNDS):
+        if i % 2 == 0:
+            msg += f"Round {i + 1} Draft Results \n-------------------------\n"
+            for j in range(len(my_nhl_league.teams)):
+                msg += f"{draft_dict[DRAFT_ORDER[j]][i]} ({DRAFT_ORDER[j]}) \n"
+                if (j == 7):
+                    msg += "\n"
+        else:
+            msg += f"Round {i + 1} Draft Results \n-------------------------\n"
+            for k in range(len(my_nhl_league.teams) - 1, -1, -1):
+                msg += f"{draft_dict[DRAFT_ORDER[k]][i]} ({DRAFT_ORDER[k]}) \n"
+                if k == 0:
+                    msg += "\n"
+
+    print(msg)
 
 def TeamRecord(team_object):
     team_object.displayTeamRecord()
@@ -156,10 +129,15 @@ def TeamRecord(team_object):
 def main():
     # printSeasonMatchupResults()
     # displayAllFreeAgents()
-    seasonPointsFor = getSeasonPointsFor()
-    seasonPointsAgainst = getSeasonPointsAgainst()
-    seasonPointsDiff = getSeasonPointDifferential()
-    team_object_dict = initializeTeamObjects(seasonPointsFor, seasonPointsAgainst, seasonPointsDiff)
-    LeagueStandings(team_object_dict)
+    _points_for = _get_Season_Points_For()
+    _points_against = _get_Season_Points_Against()
+    _points_diff = _get_Season_Point_Differential(_points_for, _points_against)
+    team_object_dict = initializeTeamObjects(_points_for, _points_against, _points_diff)
+    LeagueStandings(team_object_dict)  
 
-main()
+
+draft_dict = _get_Draft_Dict() 
+LeagueDraftResults(draft_dict)
+
+
+# DraftChecks()
