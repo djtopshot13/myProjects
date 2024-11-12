@@ -30,7 +30,7 @@ def printWeekMatchupResults(weekNum):
 
 
 def printSeasonMatchupResults():
-    for i in range(1, my_nhl_league.current_week):
+    for i in range(1, my_nhl_league.currentMatchupPeriod):
         printWeekMatchupResults(i)
             
 def _get_Season_Points_Against():
@@ -67,10 +67,10 @@ def _get_Season_Point_Differential(_points_for, _points_against):
         diff[team.team_name] = round(_points_for[team.team_name] - _points_against[team.team_name], 1)
     return diff
 
-def initializeTeamObjects(team_points_for, team_points_against, team_points_diff):
+def initializeTeamObjects(team_points_for, team_points_against, team_points_diff, _draft_dict):
     team_object_dict = {}
     for team_info in my_nhl_league.teams:
-        team = Team.Team(team_info.division_id, team_info.team_id, team_info.team_name, team_info.roster, team_points_for.get(team_info.team_name, 0), team_points_against.get(team_info.team_name, 0),team_points_diff.get(team_info.team_name, 0), team_info.wins, team_info.losses, team_info.stats)
+        team = Team.Team(team_info.division_id, team_info.team_id, team_info.team_name, team_info.roster, team_points_for.get(team_info.team_name, 0), team_points_against.get(team_info.team_name, 0),team_points_diff.get(team_info.team_name, 0), team_info.wins, team_info.losses, _draft_dict[team_info.team_name], team_info.stats)
         team_object_dict [team_info.team_name] = team
 
     return team_object_dict
@@ -127,17 +127,16 @@ def TeamRecord(team_object):
     team_object.displayTeamRecord()
         
 def main():
-    # printSeasonMatchupResults()
+    printSeasonMatchupResults()
     # displayAllFreeAgents()
     _points_for = _get_Season_Points_For()
     _points_against = _get_Season_Points_Against()
     _points_diff = _get_Season_Point_Differential(_points_for, _points_against)
-    team_object_dict = initializeTeamObjects(_points_for, _points_against, _points_diff)
+    _draft_dict = _get_Draft_Dict() 
+    team_object_dict = initializeTeamObjects(_points_for, _points_against, _points_diff, _draft_dict)
     LeagueStandings(team_object_dict)  
+    LeagueDraftResults(_draft_dict)
+
+main()
 
 
-draft_dict = _get_Draft_Dict() 
-LeagueDraftResults(draft_dict)
-
-
-# DraftChecks()
