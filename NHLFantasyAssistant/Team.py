@@ -9,7 +9,7 @@ class Team:
         self.point_diff = point_diff
         self.matchup_wins = matchup_wins
         self.matchup_losses = matchup_losses
-        self.draft_dict = draft_list
+        self.draft_list = draft_list
         self.stats_dict = stats_dict
 
     def displayTeamRecord(self):
