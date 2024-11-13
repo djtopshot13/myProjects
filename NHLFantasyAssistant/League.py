@@ -8,11 +8,6 @@ espn_s2_cookie = "AEAVePfqAj5sDj5KBoDdTQ7y7U5IcQaWswzMsomuzV%2B7u46Q29tOY56LRtFJ
 
 my_nhl_league = ESPNLeague(league_id=my_league_id, year=curr_year, espn_s2=espn_s2_cookie, swid=SWID, fetch_league=True)
 
-
-
-
-
-
 def _get_Season_Points():
     _points_against = {team.team_name: 0 for team in my_nhl_league.teams}
     _points_for = {team.team_name: 0 for team in my_nhl_league.teams}
