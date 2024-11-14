@@ -11,7 +11,5 @@ class Player:
     
     def displayPlayerInfo(self):
         print(f"{self.name} ({self.team}) - {self.position}: {self.points} points")
-        # if (self.health_status != "healthy"):
-        #     print(f"{self.name} is {self.health_status}")
-        # if (self.rosterAvailability != "availaible"):
-        #     print(f"{self.name} is not available to be added")
+        
+    

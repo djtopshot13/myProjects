@@ -16,12 +16,16 @@ class Team:
         return f"{self.name} ({self.matchup_wins}, {self.matchup_losses})"
     
     def draftOrder(self):
-        msg = f"{self.name} Draft Order \n -------------------- \n"
+        msg = []
+        msg.join(f"{self.name} Draft Order \n -------------------- \n")
         pick_num = 0
         for draft in self.draft_list:
             pick_num += 1
-            msg += f"{pick_num}. {draft} \n"
-            msg += "--------------------"
+            msg.join(f"{pick_num}. {draft} \n")
+            msg.join("--------------------")
         return msg
+    
+    
+
     
     

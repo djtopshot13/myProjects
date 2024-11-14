@@ -67,8 +67,9 @@ def _get_Season_Points():
 #         diff[team.team_name] = round(_points_for[team.team_name] - _points_against[team.team_name], 1)
 #     return diff
 def _get_Box_Scores():
-    matchups = my_nhl_league.box_scores(1, my_nhl_league.currentMatchupPeriod)
-    print(matchups)
+    matchups = []
+    for i in range(21):
+        matchups.append(my_nhl_league.box_scores(i))
     return matchups
 
 def _get_Recent_Activity():
@@ -126,75 +127,79 @@ class League:
         self.curr_matchup_period = curr_matchup_period
         self.settings = settings
 
+    def LeagueDraftGrade(self):
+        return   
+        # do something with draftPicks to maybe store drafted players by team in dictionaries
+        # then figure out grading score with remaining players
+
+    def printWeekMatchupResults(self, weekNum):
+        matchups = self.matchups[weekNum] # get the matches of the week
+        print(f"\nWeek {weekNum + 1} Winners: \n")
+        for i in range(int(len(self.teams) / 2)): # Iterate over the number of matches per week
+            curr_matchup = matchups[i]
+            if (curr_matchup.winner == "HOME"):
+                    winning_team = curr_matchup.home_team.team_name
+                    winning_score = curr_matchup.home_score
+                    losing_team = curr_matchup.away_team.team_name
+                    losing_score = curr_matchup.away_score
+            else:
+                winning_team = curr_matchup.away_team.team_name
+                winning_score = curr_matchup.away_score  
+                losing_team = curr_matchup.home_team.team_name
+                losing_score = curr_matchup.home_score
+            score_deficit = round(winning_score - losing_score, 1)
+            print(f"{winning_team}({winning_score} pts) won against {losing_team}({losing_score} pts) by {score_deficit} pts \n")
+
+
+    def printSeasonMatchupResults(self):
+        for i in range(0, self.curr_matchup_period):
+            self.printWeekMatchupResults(i)
+
+    def LeagueStandings(self, teams):
+        print(f"League Standings\n"
+            "------------------------------------")
+        for i in range(len(self.standings)):
+            team = teams[self.standings[i].team_name]
+            print(f"{i+1}. {team.displayTeamRecord()}\n"
+                "------------------------------------")
+        print("\n")
+
+    def LeagueDraftResults(self, draft_dict):
+        DRAFT_ROUNDS = 22
+        msg = ""
+        DRAFT_ORDER = ["Luuky Pooky", "Dallin's Daring Team", "Shortcake Miniture Schnauzers", "Live Laff Love", "Hockey", "Kings Shmings", "Dillon's Dubs", "Mind Goblinz"]
+        for i in range(DRAFT_ROUNDS):
+            if i % 2 == 0:
+                msg += f"Round {i + 1} Draft Results \n-------------------------\n"
+                for j in range(len(self.teams)):
+                    msg += f"{draft_dict[DRAFT_ORDER[j]][i]} ({DRAFT_ORDER[j]}) \n"
+                    if (j == 7):
+                        msg += "\n"
+            else:
+                msg += f"Round {i + 1} Draft Results \n-------------------------\n"
+                for k in range(len(self.teams) - 1, -1, -1):
+                    msg += f"{draft_dict[DRAFT_ORDER[k]][i]} ({DRAFT_ORDER[k]}) \n"
+                    if k == 0:
+                        msg += "\n"
+
+        print(msg)
+
+    def LeagueRecord(self, team):
+        for team in self.teams:
+            team.displayTeamRecord()
+
+            
+
 new_league = League(_initialize_Team_Objects(_get_Season_Points()[0], _get_Season_Points()[1], _get_Season_Points()[2], _get_Draft_Dict()),
                     _get_Box_Scores(), _get_Draft_Dict(), _get_Available_Players(), _get_Recent_Activity(), _get_Player_Map(),
                       _get_League_Standings(), _get_Curr_Matchup_Period(), _get_League_Settings())
 
-def TeamDraftGrade():
-    return   
-    # do something with draftPicks to maybe store drafted players by team in dictionaries
-    # then figure out grading score with remaining players
-
-def printWeekMatchupResults(weekNum):
-    print(f"\nWeek {weekNum} Winners: \n")
-    curr_matchups = my_nhl_league.box_scores(weekNum)
-    for matchup in curr_matchups:
-        if (matchup.winner == "HOME"):
-                winning_team = matchup.home_team.team_name
-                winning_score = matchup.home_score
-                losing_team = matchup.away_team.team_name
-                losing_score = matchup.away_score
-        else:
-            winning_team = matchup.away_team.team_name
-            winning_score = matchup.away_score  
-            losing_team = matchup.home_team.team_name
-            losing_score = matchup.home_score
-        score_deficit = round(winning_score - losing_score, 1)
-        print(f"{winning_team}({winning_score} pts) won against {losing_team}({losing_score} pts) by {score_deficit} pts \n")
-
-
-def printSeasonMatchupResults():
-    for i in range(1, my_nhl_league.currentMatchupPeriod):
-        printWeekMatchupResults(i)
-
-def LeagueStandings(teams):
-    standings = my_nhl_league.standings()
-    print(f"League Standings\n"
-          "------------------------------------")
-    for i in range(len(standings)):
-        team = teams[standings[i].team_name]
-        print(f"{i+1}. {team.displayTeamRecord()}\n"
-              "------------------------------------")
-    print("\n")
-
-def LeagueDraftResults(draft_dict):
-    DRAFT_ROUNDS = 22
-    msg = ""
-    DRAFT_ORDER = ["Luuky Pooky", "Dallin's Daring Team", "Shortcake Miniture Schnauzers", "Live Laff Love", "Hockey", "Kings Shmings", "Dillon's Dubs", "Mind Goblinz"]
-    for i in range(DRAFT_ROUNDS):
-        if i % 2 == 0:
-            msg += f"Round {i + 1} Draft Results \n-------------------------\n"
-            for j in range(len(my_nhl_league.teams)):
-                msg += f"{draft_dict[DRAFT_ORDER[j]][i]} ({DRAFT_ORDER[j]}) \n"
-                if (j == 7):
-                    msg += "\n"
-        else:
-            msg += f"Round {i + 1} Draft Results \n-------------------------\n"
-            for k in range(len(my_nhl_league.teams) - 1, -1, -1):
-                msg += f"{draft_dict[DRAFT_ORDER[k]][i]} ({DRAFT_ORDER[k]}) \n"
-                if k == 0:
-                    msg += "\n"
-
-    print(msg)
-
-def TeamRecord(team):
-    team.displayTeamRecord()
-        
 def main():
-    printSeasonMatchupResults()
-    LeagueStandings(new_league.teams) 
-    LeagueDraftResults(new_league.draft)
+    new_league.printSeasonMatchupResults()
+    new_league.getMatchups()
+    new_league.LeagueStandings(new_league.teams) 
+    new_league.LeagueDraftResults(new_league.draft)
 
 main()
 
-
+    
