@@ -13,7 +13,7 @@ def _get_Season_Points():
     _points_for = {team.team_name: 0 for team in my_nhl_league.teams}
     _points_diff = {team.team_name: 0 for team in my_nhl_league.teams}
 
-    for i in range(1, my_nhl_league.currentMatchupPeriod):
+    for i in range(1, my_nhl_league.currentMatchupPeriod + 1):
         curr_matchups = my_nhl_league.box_scores(i)
 
         for matchup in curr_matchups:
@@ -22,12 +22,15 @@ def _get_Season_Points():
 
             _points_for[matchup.away_team.team_name] += matchup.away_score            
             _points_for[matchup.home_team.team_name] += matchup.home_score
+
+            _points_diff[matchup.home_team.team_name] += round(matchup.home_score - matchup.away_score, 1)
+            _points_diff[matchup.away_team.team_name] += round(matchup.away_score - matchup.home_score, 1)
         
+
+    for i in range(len(my_nhl_league.teams)):
         _points_against = {team: round(score, 1) for team, score in _points_against.items()}
         _points_for = {team: round(score, 1) for team, score in _points_for.items()}
-
-        for team in my_nhl_league.teams:
-            _points_diff[team.team_name] = round(_points_for[team.team_name] - _points_against[team.team_name], 1)
+        _points_diff = {team: round(score, 1) for team, score in _points_diff.items()}
 
         return _points_for, _points_against, _points_diff
         
@@ -65,7 +68,7 @@ def _initialize_Team_Objects(team_points_for, team_points_against, team_points_d
         del team_info.stats['16']
         team = Team.Team(team_info.division_id, team_info.team_id, team_info.team_name,
                         team_info.roster, team_points_for.get(team_info.team_name, 0), 
-                        team_points_against.get(team_info.team_name, 0),team_points_diff.get(team_info.team_name, 0),
+                        team_points_against.get(team_info.team_name, 0), team_points_diff.get(team_info.team_name, 0),
                         int(team_info.wins), int(team_info.losses), _draft_dict[team_info.team_name], team_info.stats)
         
         team_object_dict [team_info.team_name] = team
@@ -103,7 +106,7 @@ class League:
     def printWeekMatchupResults(self, weekNum):
         matchups = self.matchups[weekNum] # get the matches of the week
         print(f"\nWeek {weekNum + 1} Winners: \n")
-        for i in range(int(len(self.teams) / 2)): # Iterate over the number of matches per week
+        for i in range(len(self.teams) // 2): # Iterate over the number of matches per week
             curr_matchup = matchups[i]
             if (curr_matchup.home_score > curr_matchup.away_score):
                 winning_team = curr_matchup.home_team.team_name
@@ -168,11 +171,12 @@ class League:
 
         for team_name, team in self.teams.items():
             if stat_name == "points_for":
-                stat = team.points_for 
+                stat = team.points_for
                 stat_alias = "Points For"
                 end_of_phrase = stat_alias if stat != 1 else "Point For"
             elif stat_name == "points_against":
                 stat = team.points_against
+                reverseCheck = False
                 stat_alias = "Points Against"
                 end_of_phrase = stat_alias if stat != 1 else "Point Against"
             elif stat_name == "points_diff":
@@ -190,18 +194,47 @@ class League:
             else:
                 stat, stat_name, stat_alias, reverseCheck, end_of_phrase = team.getTeamStat(stat_name)
 
-            stats_list.append([stat, team_name])
+            stats_list.append([stat, team_name, end_of_phrase])
         
         stats_list.sort(reverse=reverseCheck)
-        team_rank = 0
-        print(f"Team {stat_alias} Ranking Report\n")
-        for stat in stats_list:
-            team_rank += 1
-            print(f"{team_rank}. {stat[1]}: {stat[0]} {end_of_phrase}\n--------------------------------")
-        print()
+        self.printTeamStatsChart(stats_list, stat_alias)
+        
     
         return stats_list
+    
+    def printTeamStatsChart(self, stats_list, stat_alias):
+        max_team_name_length = max(len(stat[1]) for stat in stats_list)
+        max_points_length = max(len(f"{stat[0]} {stat[2]}") for stat in stats_list)
+        total_length = max_points_length + max_team_name_length + 10
+            
+            
 
+        title = 'Team ' + stat_alias + ' Ranking Report'
+        print(f"{'='*total_length}")
+        print(f"{title}".center(total_length))
+        print(f"{'='*total_length}")
+
+        
+        team_rank = 0
+        
+        for stat in stats_list:
+            stat_print = f"{stat[0]} {stat[2]}"
+            team_rank += 1
+            team_name = stat[1]
+            print(f"{team_rank:2}. {team_name.ljust(max_team_name_length)}: {stat_print.rjust(max_points_length)}")
+            print(f"{'-'*total_length}")
+
+        print()
+
+    def printAllBestTeamStat(self):
+        teams = []
+        team_stats = ["points_for", "points_against", "points_diff", "matchup_wins", "matchup_losses"]
+        for team in new_league.teams.values():
+            teams.append(team)
+        for key in teams[0].stats_dict.keys():
+            team_stats.append(key)  
+        for stat in team_stats:
+            new_league.BestTeamStatSort(stat)
         
             
 
@@ -225,16 +258,11 @@ new_league = League(_initialize_Team_Objects(_points_for, _points_against, _poin
                 _league_standings, _curr_matchup_period, _league_settings)
 
 def main():
-    # new_league.printSeasonMatchupResults()
-    # new_league.LeagueStandings(new_league.teams) 
-    # new_league.LeagueDraftResults(new_league.draft)
+    new_league.printSeasonMatchupResults()
+    new_league.LeagueStandings(new_league.teams) 
+    new_league.LeagueDraftResults(new_league.draft)
+    new_league.printAllBestTeamStat()
     
-    team_stats = ["points_for", "points_against", "points_diff", "matchup_wins", "matchup_losses"]
-    # for team in new_league.teams.values():
-    #     for key in team.stats_dict.keys():
-    #         team_stats.append(key)  
-    for stat in team_stats:
-        new_league.BestTeamStatSort(stat)
 
 main()
 
