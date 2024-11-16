@@ -25,21 +25,6 @@ class Team:
             msg.join("--------------------")
         return msg
     
-    def getTeamPointsFor(self):
-        return self.points_for
-    
-    def getTeamPointsAgainst(self):
-        return self.points_against
-    
-    def getTeamPointsDiff(self):
-        return self.points_diff
-    
-    def getTeamWins(self):
-        return self.matchup_wins
-    
-    def getTeamLosses(self):
-        return self.matchup_losses
-    
     def getTeamStat(self, stat_name):
         if stat_name in self.stats_dict:
             stat_value = int(self.stats_dict[stat_name])

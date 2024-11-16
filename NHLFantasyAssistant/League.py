@@ -126,17 +126,18 @@ class League:
         for i in range(0, self.curr_matchup_period):
             self.printWeekMatchupResults(i)
 
-    def LeagueStandings(self, teams):
+    def LeagueStandings(self):
         print(f"League Standings\n"
             "------------------------------------")
         for i in range(len(self.standings)):
-            team = teams[self.standings[i].team_name]
+            team = new_league.teams[self.standings[i].team_name]
             print(f"{i+1}. {team.displayTeamRecord()}\n"
                 "------------------------------------")
         print("\n")
 
-    def LeagueDraftResults(self, draft_dict):
+    def LeagueDraftResults(self):
         DRAFT_ROUNDS = 22
+        draft_dict = new_league.draft
         msg = ""
         DRAFT_ORDER = ["Luuky Pooky", "Dallin's Daring Team", "Shortcake Miniture Schnauzers", "Live Laff Love", "Hockey", "Kings Shmings", "Dillon's Dubs", "Mind Goblinz"]
         for i in range(DRAFT_ROUNDS):
@@ -257,8 +258,11 @@ new_league = League(_initialize_Team_Objects(_points_for, _points_against, _poin
 
 def main():
     new_league.printSeasonMatchupResults()
-    new_league.LeagueStandings(new_league.teams) 
-    new_league.LeagueDraftResults(new_league.draft)
+    print()
+    new_league.LeagueStandings() 
+    print()
+    new_league.LeagueDraftResults()
+    print()
     new_league.printAllBestTeamStat()
     
 
