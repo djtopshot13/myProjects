@@ -97,7 +97,7 @@ class League:
         self.settings = settings
 
     def LeagueDraftGrade(self):
-        return   
+        return
         # do something with draftPicks to maybe store drafted players by team in dictionaries
         # then figure out grading score with remaining players
 
@@ -130,16 +130,17 @@ class League:
         print(f"League Standings\n"
             "------------------------------------")
         for i in range(len(self.standings)):
-            team = new_league.teams[self.standings[i].team_name]
+            team = self.teams[self.standings[i].team_name]
             print(f"{i+1}. {team.displayTeamRecord()}\n"
                 "------------------------------------")
         print("\n")
 
     def LeagueDraftResults(self):
         DRAFT_ROUNDS = 22
-        draft_dict = new_league.draft
+        draft_dict = self.draft
         msg = ""
-        DRAFT_ORDER = ["Luuky Pooky", "Dallin's Daring Team", "Shortcake Miniture Schnauzers", "Live Laff Love", "Hockey", "Kings Shmings", "Dillon's Dubs", "Mind Goblinz"]
+        DRAFT_ORDER = ["Luuky Pooky", "Dallin's Daring Team", "Shortcake Miniture Schnauzers",
+                    "Live Laff Love", "Hockey", "Kings Shmings", "Dillon's Dubs", "Mind Goblinz"]
         for i in range(DRAFT_ROUNDS):
             if i % 2 == 0:
                 msg += f"Round {i + 1} Draft Results \n-------------------------\n"
@@ -156,9 +157,11 @@ class League:
 
         print(msg)
 
-    def LeagueRecord(self, team):
-        for team in self.teams:
+    def LeagueRecord(self):
+        for team in self.teams.values():
+            self.titleFormat(team)
             team.displayTeamRecord()
+            print()
 
     # Debug the points for, points against, and point diff stuff. Also, something is wrong with pluralization of output on some as well.
 
@@ -228,42 +231,58 @@ class League:
     def printAllBestTeamStat(self):
         teams = []
         team_stats = ["points_for", "points_against", "points_diff", "matchup_wins", "matchup_losses"]
-        for team in new_league.teams.values():
+        for team in self.teams.values():
             teams.append(team)
         for key in teams[0].stats_dict.keys():
             team_stats.append(key)  
         for stat in team_stats:
-            new_league.BestTeamStatSort(stat)
+            self.BestTeamStatSort(stat)
+
+    def printTeamRosters(self):
+        for team in self.teams.values():
+            self.titleFormat(team)
+            team.displayRoster()
+            team.getPositionCount()
+            team.PositionAvgPoints()
+            print()
+
+    def titleFormat(self, team):
+        title_length = len(team.name) + 5
+        print(f"{team.name}".center(title_length))
+        print(f"{"="*title_length}")
         
             
 
 
-# Initialize all necessary variables to be passed into League constructor
-_season_points = _get_Season_Points()
-_points_for = _season_points[0]
-_points_against = _season_points[1]
-_points_diff = _season_points[2]
-_draft_dict = _get_Draft_Dict()
-_box_scores = _get_Box_Scores()
-_free_agents = _get_Available_Players()
-_recent_activity = _get_Recent_Activity()
-_player_map = _get_Player_Map()
-_league_standings = _get_League_Standings()
-_curr_matchup_period = _get_Curr_Matchup_Period()
-_league_settings =_get_League_Settings()
 
-new_league = League(_initialize_Team_Objects(_points_for, _points_against, _points_diff, _draft_dict),
-                _box_scores, _draft_dict, _free_agents, _recent_activity, _player_map,
-                _league_standings, _curr_matchup_period, _league_settings)
 
 def main():
-    new_league.printSeasonMatchupResults()
-    print()
-    new_league.LeagueStandings() 
-    print()
-    new_league.LeagueDraftResults()
-    print()
-    new_league.printAllBestTeamStat()
+    # Initialize all necessary variables to be passed into League constructor
+    _season_points = _get_Season_Points()
+    _points_for = _season_points[0]
+    _points_against = _season_points[1]
+    _points_diff = _season_points[2]
+    _draft_dict = _get_Draft_Dict()
+    _box_scores = _get_Box_Scores()
+    _free_agents = _get_Available_Players()
+    _recent_activity = _get_Recent_Activity()
+    _player_map = _get_Player_Map()
+    _league_standings = _get_League_Standings()
+    _curr_matchup_period = _get_Curr_Matchup_Period()
+    _league_settings =_get_League_Settings()
+
+    new_league = League(_initialize_Team_Objects(_points_for, _points_against, _points_diff, _draft_dict),
+                    _box_scores, _draft_dict, _free_agents, _recent_activity, _player_map,
+                    _league_standings, _curr_matchup_period, _league_settings)
+    
+    # new_league.printSeasonMatchupResults()
+    # print()
+    # new_league.LeagueStandings() 
+    # print()
+    # new_league.LeagueDraftResults()
+    # print()
+    # new_league.printAllBestTeamStat()
+    new_league.printTeamRosters()   
     
 
 main()

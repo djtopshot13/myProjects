@@ -11,6 +11,10 @@ class Team:
         self.matchup_losses = matchup_losses
         self.draft_list = draft_list
         self.stats_dict = stats_dict
+        self.__dCount = self.getPositionCount()[0]
+        self.__fCount = self.getPositionCount()[1]
+        self.__gcount = self.getPositionCount()[2]
+        
 
     def displayTeamRecord(self):
         return f"{self.name} ({self.matchup_wins}, {self.matchup_losses})"
@@ -66,3 +70,60 @@ class Team:
             
     
         return stat_alias, reversedCheck, end_of_phrase
+    
+    def displayRoster(self):
+        count = 0
+        for player in self.players:
+            count = count + 1
+            print(f"{count}. {player.name} ({player.eligibleSlots[0][0]})")
+
+            print("Testing Player Variables")
+            # print(player.acquisitionType) # returns ADD, DRAFT, or TRADE
+            # print(player.eligibleSlots) # returns [[Forward, Defense, Goalie,], [actual position of Forward], ['Util'] if F or D, ['Bench'], and [IR]
+            # print(player.injured) # returns True if IR or OUT, not if DTD
+            # print(player.injuryStatus) # returns ACTIVE if healthy, then returns DAY_TO_DAY, INJURY_RESERVE, or OUT
+            # print(player.lineupSlot) # returns value from eligibleSlots of where player is currently located
+            # print(player.playerId)
+            # print(player.proTeam)
+            # print(player.stats) # nested dictionaries that could be split. Inner Dictionaries: 'Total 2024' (prevYear), 'Total 2025' (currYear), 
+            # 'Last 7 2025' stats from previous 7 games, 'Last 15 2025' stats from previous 15 games, 'Projected 2024' (prevYearProj), 'Projected 2025' (currYearProj)
+
+    def getPositionCount(self):
+        dCount = 0
+        fCount = 0
+        gCount = 0
+        for player in self.players:
+            if player.eligibleSlots[0][0] == 'D':
+                dCount = dCount + 1
+            elif player.eligibleSlots[0][0] == 'F':
+                fCount = fCount + 1
+            else:
+                gCount = gCount + 1
+
+        print(f"Number of Players by Position:")
+        print(f"Forward: {fCount}\t Defense: {dCount}\t Goalie: {gCount}")
+        return dCount, fCount, gCount
+    
+    def PlayerFantasyPoints(self):
+        points = 0
+        for player in self.players:
+            points = points + player.stats['Total 2025']['total']['G'] * 2
+            
+    def PositionAvgPoints(self):
+        for player in self.players:
+            points = player.stats['P']
+            if player.eligibleSlots[0][0] == 'D':
+                dPoints = dPoints + points
+            elif player.eligibleSlots[0][0] == 'F':
+                fPoints = fPoints + points
+            else: 
+                gPoints = gPoints + points
+
+        avgDPoints = round(dPoints / self.__dCount, 1)
+        avgFPoints = round(fPoints / self.__fCount, 1)
+        avgGPoints = round(gPoints / self.__gcount, 1)
+
+        print(f"Avg Points by Position:")
+        print(f"Forward: {avgFPoints}\t Defense: {avgDPoints}, Goalie: {avgGPoints}")
+
+        return avgDPoints, avgFPoints, avgGPoints
