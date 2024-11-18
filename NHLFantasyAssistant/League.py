@@ -1,5 +1,5 @@
 from espn_api.hockey import League as ESPNLeague
-import Team
+from Team import Team
 
 my_league_id = 1705592891
 curr_year = 2025 
@@ -64,7 +64,7 @@ def _initialize_Team_Objects(team_points_for, team_points_against, team_points_d
     team_object_dict = {}
     for team_info in my_nhl_league.teams:
         del team_info.stats['16']
-        team = Team.Team(team_info.division_id, team_info.team_id, team_info.team_name,
+        team = Team(team_info.division_id, team_info.team_id, team_info.team_name,
                         team_info.roster, team_points_for.get(team_info.team_name, 0), 
                         team_points_against.get(team_info.team_name, 0), team_points_diff.get(team_info.team_name, 0),
                         int(team_info.wins), int(team_info.losses), _draft_dict[team_info.team_name], team_info.stats)

@@ -1,23 +1,25 @@
 class Player: 
     # ['acquisitionType', 'eligibleSlots', 'injured', 'injuryStatus', 'lineupSlot', 'name', 'playerId', 'position', 'proTeam', 'stats'] variables and methods currently connected to players
-    def __init__(self, name, team, proTeam, position, points, games_played,
-                health_status, roster_availability, prevYearProjDict, prevYearTotalDict, currYearProjDict,
-                currYearTotalDict, last7Dict, last15Dict):
+    def __init__(self, name, team, pro_team, position, points, games_played,
+                health_status, roster_availability, prev_year_proj, prev_year_total, curr_year_proj,
+                        curr_year_total, last_7_dict, last_15_dict, last_30_dict):
         self.name = name
         self.team = team
-        self.proTeam = proTeam
+        self.proTeam = pro_team
         self.position = position
         self.points = points
-        self.gamesPlayed = games_played
-        self.healthStatus = health_status
-        self.rosterAvailability = roster_availability
+        self.games_played = games_played
+        self.health_status = health_status
+        self.roster_availability = roster_availability
         self.avg_points = round(points / games_played, 1)
-        self.prevYearProjDict = prevYearProjDict
-        self.prevYearTotalDict = prevYearTotalDict
-        self.currYearProjDict = currYearProjDict
-        self.currYearTotalDict = currYearTotalDict
-        self.last7Dict = last7Dict
-        self.last15Dict = last15Dict
+        self.prev_year_proj = prev_year_proj
+        self.prev_year_total = prev_year_total
+        self.curr_year_proj = curr_year_proj
+        self.curr_year_total = curr_year_total
+        self.last_7_dict = last_7_dict
+        self.last_15_dict = last_15_dict
+        self.last_30_dict = last_30_dict
+
     
     def displayPlayerInfo(self):
         print(f"{self.name} ({self.team}) - {self.position}: {self.points} points")

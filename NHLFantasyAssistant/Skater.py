@@ -1,8 +1,17 @@
-import Player
+from Player import Player
 
 class Skater(Player):
-    def __init__(self, name, team, proTeam, position, points, games_played, avg_points, health_status, roster_availability, goals, assists, pp_points, sh_points, shots_on_goal, hits, blocked_shots):
-        super().__init__(name, team, proTeam, position, points, avg_points, games_played, health_status, roster_availability)
+    def __init__(self, name, team, pro_team, position, points, 
+                 avg_points, games_played, health_status, roster_availability, 
+                 prev_year_proj, prev_year_total, curr_year_proj,
+                curr_year_total, last_7_dict, last_15_dict, last_30_dict,
+                skater_position, goals, assists, pp_points, sh_points, shots_on_goal, hits, blocked_shots):
+        
+        super().__init__(name, team, pro_team, position, points, avg_points,
+                        games_played, health_status, roster_availability, 
+                        prev_year_proj, prev_year_total, curr_year_proj,
+                        curr_year_total, last_7_dict, last_15_dict, last_30_dict)
+        self.skater_position = skater_position
         self.goals = goals
         self.assists = assists
         self.pp_points = pp_points
