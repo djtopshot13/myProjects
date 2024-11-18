@@ -243,7 +243,6 @@ class League:
             self.titleFormat(team)
             team.displayRoster()
             team.getPositionCount()
-            team.PositionAvgPoints()
             print()
 
     def titleFormat(self, team):

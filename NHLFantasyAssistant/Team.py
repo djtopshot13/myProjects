@@ -11,9 +11,6 @@ class Team:
         self.matchup_losses = matchup_losses
         self.draft_list = draft_list
         self.stats_dict = stats_dict
-        self.__dCount = self.getPositionCount()[0]
-        self.__fCount = self.getPositionCount()[1]
-        self.__gcount = self.getPositionCount()[2]
         
 
     def displayTeamRecord(self):
@@ -77,7 +74,7 @@ class Team:
             count = count + 1
             print(f"{count}. {player.name} ({player.eligibleSlots[0][0]})")
 
-            print("Testing Player Variables")
+            # print("Testing Player Variables")
             # print(player.acquisitionType) # returns ADD, DRAFT, or TRADE
             # print(player.eligibleSlots) # returns [[Forward, Defense, Goalie,], [actual position of Forward], ['Util'] if F or D, ['Bench'], and [IR]
             # print(player.injured) # returns True if IR or OUT, not if DTD
@@ -102,16 +99,37 @@ class Team:
 
         print(f"Number of Players by Position:")
         print(f"Forward: {fCount}\t Defense: {dCount}\t Goalie: {gCount}")
+
+        self.PositionAvgPoints(dCount, fCount, gCount)
         return dCount, fCount, gCount
     
-    def PlayerFantasyPoints(self):
-        points = 0
-        for player in self.players:
-            points = points + player.stats['Total 2025']['total']['G'] * 2
+    def PlayerFantasyPoints(self, player):
+        points = goals_against = saves = wins = shutouts = overtime_losses = goals = assists = shots = hits = blocked_shots = pp_points = sh_points = 0
+        if player.eligibleSlots[0][0] == 'G':
+            goals_against = player.stats['Total 2025']['total']['GA'] * -2
+            saves = round(player.stats['Total 2025']['total']['SV'] / 5, 1)
+            shutouts = player.stats['Total 2025']['total']['SO'] * 3
+            wins = player.stats['Total 2025']['total']['W'] * 4
+            overtime_losses = player.stats['Total 2025']['total']['OTL']
+        else: 
+            goals = player.stats['Total 2025']['total']['G'] * 2
+            assists = player.stats['Total 2025']['total']['A']
+            shots = round(player.stats['Total 2025']['total']['SOG'] / 10, 1)
+            hits = round(player.stats['Total 2025']['total']['HIT'] / 10, 1)
+            blocked_shots = round(player.stats['Total 2025']['total']['BLK'] / 2, 1)
+            pp_points = round(player.stats['Total 2025']['total']['PPP'] / 2, 1)
+            sh_points = round(player.stats['Total 2025']['total']['SHP'] / 2, 1)
+        
+        points = goals_against + saves + shutouts + wins + overtime_losses + goals + assists + shots + hits + blocked_shots + pp_points + sh_points
+        return points
+
             
-    def PositionAvgPoints(self):
+    def PositionAvgPoints(self, dCount, fCount, gCount):
+        fPoints = 0
+        dPoints = 0
+        gPoints = 0
         for player in self.players:
-            points = player.stats['P']
+            points = self.PlayerFantasyPoints(player)
             if player.eligibleSlots[0][0] == 'D':
                 dPoints = dPoints + points
             elif player.eligibleSlots[0][0] == 'F':
@@ -119,9 +137,9 @@ class Team:
             else: 
                 gPoints = gPoints + points
 
-        avgDPoints = round(dPoints / self.__dCount, 1)
-        avgFPoints = round(fPoints / self.__fCount, 1)
-        avgGPoints = round(gPoints / self.__gcount, 1)
+        avgDPoints = round(dPoints / dCount, 1)
+        avgFPoints = round(fPoints / fCount, 1)
+        avgGPoints = round(gPoints / gCount, 1)
 
         print(f"Avg Points by Position:")
         print(f"Forward: {avgFPoints}\t Defense: {avgDPoints}, Goalie: {avgGPoints}")
