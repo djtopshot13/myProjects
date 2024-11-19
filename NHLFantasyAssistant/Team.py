@@ -1,6 +1,5 @@
 from Skater import Skater
 from Goalie import Goalie
-from Player import Player
 
 class Team:
     def __init__(self, division_id, team_id, name, players, points_for, points_against, points_diff, matchup_wins, matchup_losses, draft_list, stats_dict):
@@ -89,7 +88,6 @@ class Team:
 
             points = self.playerFantasyPointCalculator(player)
             games_played = curr_year_total.get('GP', 0)
-            avg_points = round(points.get('Total 2025', 0) / games_played , 1)
             health_status = player.injuryStatus
             roster_availability = False
 
@@ -125,6 +123,7 @@ class Team:
                         last_15_dict, last_30_dict, skater_position, goals, assists, pp_points, sh_points, shots_on_goal, hits, blocked_shots)
                 
             new_players.append(new_player)
+            print(dir(new_players))
             return new_players
                 
     def displayRoster(self):
@@ -169,19 +168,19 @@ class Team:
             print(player.stats)
             points = goals_against = saves = wins = shutouts = overtime_losses = goals = assists = shots = hits = blocked_shots = pp_points = sh_points = 0
             if player.eligibleSlots[0][0] == 'G':
-                goals_against = player.stats[header].get('total', {}).get('GA', 0) * -2
-                saves = round(player.stats[header].get('total', {}).get('SV', 0) / 5, 1)
-                shutouts = player.stats[header]('total', {}).get('SO', 0) * 3
-                wins = player.stats[header].get('total', {}).get('W', 0) * 4
-                overtime_losses = player.stats[header].get('total', {}).get('OTL', 0)
+                goals_against = player.stats.get(header, {}).get('total', {}).get('GA', 0) * -2
+                saves = round(player.stats.get(header, {}).get('total', {}).get('SV', 0) / 5, 1)
+                shutouts = player.stats.get(header, {})('total', {}).get('SO', 0) * 3
+                wins = player.stats.get(header, {}).get('total', {}).get('W', 0) * 4
+                overtime_losses = player.stats.get(header, {}).get('total', {}).get('OTL', 0)
             else: 
-                goals = player.stats[header].get('total', {}).get('G', 0) * 2
-                assists = player.stats[header].get('total', {}).get('A', 0)
-                shots = round(player.stats[header].get('total', {}).get('SOG', 0) / 10, 1)
-                hits = round(player.stats[header].get('total', {}).get('HIT', 0) / 10, 1)
-                blocked_shots = round(player.stats[header].get('total', 0).get('BLK', 0) / 2, 1)
-                pp_points = round(player.stats[header].get('total', {}).get('PPP', 0) / 2, 1)
-                sh_points = round(player.stats[header].get('total', {}).get('SHP', 0) / 2, 1)
+                goals = player.stats.get(header, {}).get('total', {}).get('G', 0) * 2
+                assists = player.stats.get(header, {}).get('total', {}).get('A', 0)
+                shots = round(player.stats.get(header, {}).get('total', {}).get('SOG', 0) / 10, 1)
+                hits = round(player.stats.get(header, {}).get('total', {}).get('HIT', 0) / 10, 1)
+                blocked_shots = round(player.stats.get(header, {}).get('total', 0).get('BLK', 0) / 2, 1)
+                pp_points = round(player.stats.get(header, {}).get('total', {}).get('PPP', 0) / 2, 1)
+                sh_points = round(player.stats.get(header, {}).get('total', {}).get('SHP', 0) / 2, 1)
             
             points = goals_against + saves + shutouts + wins + overtime_losses + goals + assists + shots + hits + blocked_shots + pp_points + sh_points
             points_dict[header] = points
@@ -205,12 +204,12 @@ class Team:
             else: 
                 gPoints = gPoints + points
 
-        avgDPoints = round(dPoints / dCount, 1)
-        avgFPoints = round(fPoints / fCount, 1)
-        avgGPoints = round(gPoints / gCount, 1)
+        avgDPoints = round(dPoints / dCount, 1) if dCount != 0  else 0
+        avgFPoints = round(fPoints / fCount, 1) if fCount != 0  else 0
+        avgGPoints = round(gPoints / gCount, 1) if gCount != 0  else 0
 
         print(f"Avg Points by Position:")
-        print(f"Forward: {avgFPoints}\t Defense: {avgDPoints}, Goalie: {avgGPoints}")
+        print(f"Forward: {avgFPoints}\t Defense: {avgDPoints}\t Goalie: {avgGPoints}")
 
         return avgDPoints, avgFPoints, avgGPoints
 
