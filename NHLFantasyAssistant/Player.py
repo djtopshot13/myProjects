@@ -5,13 +5,12 @@ class Player:
                         curr_year_total, last_7_dict, last_15_dict, last_30_dict):
         self.name = name
         self.team = team
-        self.proTeam = pro_team
+        self.pro_team = pro_team
         self.position = position
         self.points = points
         self.games_played = games_played
         self.health_status = health_status
         self.roster_availability = roster_availability
-        self.avg_points = round(points / games_played, 1)
         self.prev_year_proj = prev_year_proj
         self.prev_year_total = prev_year_total
         self.curr_year_proj = curr_year_proj
