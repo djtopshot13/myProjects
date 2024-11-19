@@ -101,12 +101,16 @@ class Team:
             
             if player.eligibleSlots[0][0] == 'G':
                 goals_against = curr_year_total.get('GA', 0)
+                average_goals_against = curr_year_total.get('GAA', 0)
                 shutouts = curr_year_total.get('SO', 0)
                 wins = curr_year_total.get('W', 0)
+                losses = curr_year_total.get('L', 0)
                 ot_losses = curr_year_total.get('OTL', 0)
-                new_player = Goalie(player.name, self.name, player.pro_team, 'G', curr_year_total.get('PTS', 0),
-                        games_played, health_status, roster_availability, prev_year_proj, prev_year_total, curr_year_proj,
-                        curr_year_total, last_7_dict, last_15_dict, last_30_dict, goals_against, shutouts, wins, ot_losses)
+                saves = curr_year_total.get('SV', 0)
+                save_percentage = curr_year_total.get('SV%', 0)
+                new_player = Goalie(player.name, self.name, player.proTeam, 'G', curr_year_total.get('PTS', 0), games_played, health_status, 
+                                    roster_availability, prev_year_proj, prev_year_total, curr_year_proj, curr_year_total, last_7_dict, last_15_dict,
+                                    last_30_dict, goals_against, average_goals_against, shutouts, wins, losses, ot_losses, saves, save_percentage)
             else:
                 forward_types = {'Center': 'C', 'Left Wing': 'LW', 'Right Wing': 'RW'}
                 skater_position = forward_types[player.eligibleSlots[1]] if player.eligibleSlots[0][0] == 'F' else player.eligibleSlots[0][0]
@@ -123,8 +127,63 @@ class Team:
                         last_15_dict, last_30_dict, skater_position, goals, assists, pp_points, sh_points, shots_on_goal, hits, blocked_shots)
                 
             new_players.append(new_player)
-            print(dir(new_players))
-            return new_players
+
+        return new_players
+    
+    def _construct_Available_Players(self):
+        new_players = []
+        for player in self.free_agents:
+            prev_year_proj = player.stats.get('Projected 2024', {}).get('total', {})
+            prev_year_total = player.stats.get('Total 2024', {}).get('total', {})
+            curr_year_proj = player.stats.get('Projected 2025', {}).get('total', {})
+            curr_year_total = player.stats.get('Total 2025', {}).get('total', {})
+            last_7_dict = player.stats.get('Last 7 2025', {}).get('total', {})
+            last_15_dict = player.stats.get('Last 15 2025', {}).get('total', {})
+            last_30_dict = player.stats.get('Last 30 2025', {}).get('total', {})
+
+            points = self.playerFantasyPointCalculator(player)
+            games_played = curr_year_total.get('GP', 0)
+            health_status = player.injuryStatus
+            roster_availability = False
+
+            prev_year_proj['PTS'] = points.get('Projected 2024', 0)
+            prev_year_total['PTS'] = points.get('Total 2024', 0)
+            curr_year_proj['PTS'] = points.get('Projected 2025', 0)
+            curr_year_total['PTS'] = points.get('Total 2025', 0)
+            last_7_dict['PTS'] = points.get('Last 7 2025', 0)
+            last_15_dict['PTS'] = points.get('Last 15 2025', 0)
+            last_30_dict['PTS'] = points.get('Last 30 2025', 0)
+            
+            if player.eligibleSlots[0][0] == 'G':
+                goals_against = curr_year_total.get('GA', 0)
+                average_goals_against = curr_year_total.get('GAA', 0)
+                shutouts = curr_year_total.get('SO', 0)
+                wins = curr_year_total.get('W', 0)
+                losses = curr_year_total.get('L', 0)
+                ot_losses = curr_year_total.get('OTL', 0)
+                saves = curr_year_total.get('SV', 0)
+                save_percentage = curr_year_total.get('SV%', 0)
+                new_player = Goalie(player.name, self.name, player.proTeam, 'G', curr_year_total.get('PTS', 0), games_played, health_status, 
+                                    roster_availability, prev_year_proj, prev_year_total, curr_year_proj, curr_year_total, last_7_dict, last_15_dict,
+                                    last_30_dict, goals_against, average_goals_against, shutouts, wins, losses, ot_losses, saves, save_percentage)
+            else:
+                forward_types = {'Center': 'C', 'Left Wing': 'LW', 'Right Wing': 'RW'}
+                skater_position = forward_types[player.eligibleSlots[1]] if player.eligibleSlots[0][0] == 'F' else player.eligibleSlots[0][0]
+                goals = curr_year_total.get('G', 0)
+                assists = curr_year_total.get('A', 0)
+                pp_points = curr_year_total.get('PPP', 0)
+                sh_points = curr_year_total.get('SHP', 0)
+                shots_on_goal = curr_year_total.get('SOG', 0)
+                hits = curr_year_total.get('HIT', 0)
+                blocked_shots = curr_year_total.get('BLK', 0)
+                
+                new_player = Skater(player.name, self.name, player.proTeam, player.eligibleSlots[0][0], curr_year_total.get('PTS', 0), games_played,
+                        health_status, roster_availability, prev_year_proj, prev_year_total, curr_year_proj,  curr_year_total, last_7_dict,
+                        last_15_dict, last_30_dict, skater_position, goals, assists, pp_points, sh_points, shots_on_goal, hits, blocked_shots)
+                
+            new_players.append(new_player)
+        return new_players
+
                 
     def displayRoster(self):
         count = 0
@@ -165,25 +224,28 @@ class Team:
         headings = ['Projected 2024', 'Total 2024', 'Total 2025', 'Projected 2025', 'Last 7 2025', 'Last 15 2025', 'Last 30 2025']
         points_dict = {}
         for header in headings:
-            print(player.stats)
-            points = goals_against = saves = wins = shutouts = overtime_losses = goals = assists = shots = hits = blocked_shots = pp_points = sh_points = 0
-            if player.eligibleSlots[0][0] == 'G':
-                goals_against = player.stats.get(header, {}).get('total', {}).get('GA', 0) * -2
-                saves = round(player.stats.get(header, {}).get('total', {}).get('SV', 0) / 5, 1)
-                shutouts = player.stats.get(header, {})('total', {}).get('SO', 0) * 3
-                wins = player.stats.get(header, {}).get('total', {}).get('W', 0) * 4
-                overtime_losses = player.stats.get(header, {}).get('total', {}).get('OTL', 0)
-            else: 
-                goals = player.stats.get(header, {}).get('total', {}).get('G', 0) * 2
-                assists = player.stats.get(header, {}).get('total', {}).get('A', 0)
-                shots = round(player.stats.get(header, {}).get('total', {}).get('SOG', 0) / 10, 1)
-                hits = round(player.stats.get(header, {}).get('total', {}).get('HIT', 0) / 10, 1)
-                blocked_shots = round(player.stats.get(header, {}).get('total', 0).get('BLK', 0) / 2, 1)
-                pp_points = round(player.stats.get(header, {}).get('total', {}).get('PPP', 0) / 2, 1)
-                sh_points = round(player.stats.get(header, {}).get('total', {}).get('SHP', 0) / 2, 1)
-            
-            points = goals_against + saves + shutouts + wins + overtime_losses + goals + assists + shots + hits + blocked_shots + pp_points + sh_points
-            points_dict[header] = points
+            if header in player.stats:
+                # print(player.stats)
+                points = goals_against = saves = wins = shutouts = overtime_losses = goals = assists = shots = hits = blocked_shots = pp_points = sh_points = 0
+                if player.eligibleSlots[0][0] == 'G':
+                    goals_against = player.stats[header].get('total', {}).get('GA', 0) * -2
+                    saves = round(player.stats[header].get('total', {}).get('SV', 0) / 5, 1)
+                    shutouts = player.stats[header].get('total', {}).get('SO', 0) * 3
+                    wins = player.stats[header].get('total', {}).get('W', 0) * 4
+                    overtime_losses = player.stats[header].get('total', {}).get('OTL', 0)
+                else: 
+                    goals = player.stats[header].get('total', {}).get('G', 0) * 2
+                    assists = player.stats[header].get('total', {}).get('A', 0)
+                    shots = round(player.stats[header].get('total', {}).get('SOG', 0) / 10, 1)
+                    hits = round(player.stats[header].get('total', {}).get('HIT', 0) / 10, 1)
+                    blocked_shots = round(player.stats[header].get('total', 0).get('BLK', 0) / 2, 1)
+                    pp_points = round(player.stats[header].get('total', {}).get('PPP', 0) / 2, 1)
+                    sh_points = round(player.stats[header].get('total', {}).get('SHP', 0) / 2, 1)
+                
+                points = goals_against + saves + shutouts + wins + overtime_losses + goals + assists + shots + hits + blocked_shots + pp_points + sh_points
+                points_dict[header] = round(points, 1)
+            else:
+                continue
             
         return points_dict
 
