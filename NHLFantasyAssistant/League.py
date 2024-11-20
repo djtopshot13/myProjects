@@ -243,13 +243,37 @@ class League:
         for team in self.teams.values():
             self.titleFormat(team)
             team.displayRoster()
-            # team.getPositionCount()
             print()
+
+
+    def printTeamByPoints(self):
+        for team in self.teams.values():
+            self.titleFormat(team)
+            team.displayAvgPointsSortedRoster()
+            print()
+            
+    def printTeamByAvgPoints(self):
+        for team in self.teams.values():
+            self.titleFormat(team)
+            team.displayAvgPointsSortedRoster()
+            print()        
 
     def titleFormat(self, team):
         title_length = len(team.name) + 5
         print(f"{team.name}".center(title_length))
         print(f"{"="*title_length}")
+
+    def printPlayersByAvgPoints(self):
+        rostered_players = []
+        for team in self.teams.values():
+            for player in team.new_players:
+                rostered_players.append(player)
+        sorted_rostered_players = sorted(rostered_players, key=lambda player: player.avg_points, reverse=True)
+
+        count = 0
+        for player in sorted_rostered_players:
+            count = count + 1
+            print(f"{count}. {player.name} ({player.position}): [{player.avg_points}] - ({player.team})")
         
             
 
@@ -282,7 +306,10 @@ def main():
     # new_league.LeagueDraftResults()
     # print()
     # new_league.printAllBestTeamStat()
-    new_league.printTeamRosters()   
+    # new_league.printTeamRosters()  
+    # new_league.printTeamByPoints()
+    # new_league.printTeamByAvgPoints() 
+    new_league.printPlayersByAvgPoints()
     
 
 main()

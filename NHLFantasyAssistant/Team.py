@@ -87,7 +87,6 @@ class Team:
             last_30_dict = player.stats.get('Last 30 2025', {}).get('total', {})
 
             points = self.playerFantasyPointCalculator(player)
-            games_played = curr_year_total.get('GP', 0)
             health_status = player.injuryStatus
             roster_availability = False
 
@@ -100,6 +99,7 @@ class Team:
             last_30_dict['PTS'] = points.get('Last 30 2025', 0)
             
             if player.eligibleSlots[0][0] == 'G':
+                games_played = curr_year_total.get('GS', 0)
                 goals_against = curr_year_total.get('GA', 0)
                 average_goals_against = curr_year_total.get('GAA', 0)
                 shutouts = curr_year_total.get('SO', 0)
@@ -112,6 +112,7 @@ class Team:
                                     roster_availability, prev_year_proj, prev_year_total, curr_year_proj, curr_year_total, last_7_dict, last_15_dict,
                                     last_30_dict, goals_against, average_goals_against, shutouts, wins, losses, ot_losses, saves, save_percentage)
             else:
+                games_played = curr_year_total.get('GP', 0)
                 forward_types = {'Center': 'C', 'Left Wing': 'LW', 'Right Wing': 'RW'}
                 skater_position = forward_types[player.eligibleSlots[1]] if player.eligibleSlots[0][0] == 'F' else player.eligibleSlots[0][0]
                 goals = curr_year_total.get('G', 0)
@@ -142,7 +143,6 @@ class Team:
             last_30_dict = player.stats.get('Last 30 2025', {}).get('total', {})
 
             points = self.playerFantasyPointCalculator(player)
-            games_played = curr_year_total.get('GP', 0)
             health_status = player.injuryStatus
             roster_availability = False
 
@@ -155,9 +155,10 @@ class Team:
             last_30_dict['PTS'] = points.get('Last 30 2025', 0)
             
             if player.eligibleSlots[0][0] == 'G':
+                games_played = curr_year_total.get('GS', 0)
                 goals_against = curr_year_total.get('GA', 0)
                 average_goals_against = curr_year_total.get('GAA', 0)
-                shutouts = curr_year_total.get('SO', 0)
+                shutouts = curr_year_total.get('SO', 0) 
                 wins = curr_year_total.get('W', 0)
                 losses = curr_year_total.get('L', 0)
                 ot_losses = curr_year_total.get('OTL', 0)
@@ -167,6 +168,7 @@ class Team:
                                     roster_availability, prev_year_proj, prev_year_total, curr_year_proj, curr_year_total, last_7_dict, last_15_dict,
                                     last_30_dict, goals_against, average_goals_against, shutouts, wins, losses, ot_losses, saves, save_percentage)
             else:
+                games_played = curr_year_total.get('GP', 0)
                 forward_types = {'Center': 'C', 'Left Wing': 'LW', 'Right Wing': 'RW'}
                 skater_position = forward_types[player.eligibleSlots[1]] if player.eligibleSlots[0][0] == 'F' else player.eligibleSlots[0][0]
                 goals = curr_year_total.get('G', 0)
@@ -189,7 +191,8 @@ class Team:
         count = 0
         for player in self.new_players:
             count = count + 1
-            print(f"{count}. {player.name} ({player.position})")
+            player_info = player.displayPlayerInfo()
+            print(f"{count}. {player_info}")
 
             # print("Testing Player Variables")
             # print(player.acquisitionType) # returns ADD, DRAFT, or TRADE
@@ -201,6 +204,24 @@ class Team:
             # print(player.proTeam)
             # print(player.stats) # nested dictionaries that could be split. Inner Dictionaries: 'Total 2024' (prevYear), 'Total 2025' (currYear), 
             # 'Last 7 2025' stats from previous 7 games, 'Last 15 2025' stats from previous 15 games, 'Projected 2024' (prevYearProj), 'Projected 2025' (currYearProj)
+
+    def displayAvgPointsSortedRoster(self):
+        sorted_players = sorted(self.new_players, key=lambda player: player.avg_points, reverse=True)
+        count = 0
+        for player in sorted_players:
+            count = count + 1
+            player_info = player.displayPlayerAveragePoints()
+            print(f"{count}. {player_info}")
+
+    def displayPointsSortedRoster(self):
+        sorted_players = sorted(self.new_players, key=lambda player: player.points, reverse=True)
+        count = 0
+        for player in sorted_players:
+            count = count + 1
+            player_info = player.displayPlayerInfo()
+            print(f"{count}. {player_info}")
+
+
 
     def getPositionCount(self):
         dCount = 0
