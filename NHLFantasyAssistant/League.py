@@ -233,8 +233,6 @@ def _get_Drafted_Players(rostered_players, free_agents):
         for pick in draft:
             for players in rostered_players.values():
                 for player in players:
-                    if pick.playerName == "Sebastian Aho" and player.position == "Defense":
-                        break
                     if pick.playerName == player.name:
                         player.team = pick.team.team_name
                         player.rosterAvailability = "Drafted"
@@ -242,8 +240,6 @@ def _get_Drafted_Players(rostered_players, free_agents):
                         draft_roster[player.team].append(player)
                     
             for player in free_agents:
-                if pick.playerName == "Sebastian Aho" and player.position == "Defense":
-                    break
                 if pick.playerName == player.name:
                     player.team = pick.team.team_name
                     player.rosterAvailability = "Drafted"
@@ -519,21 +515,21 @@ def main():
                     _box_scores, _draft_dict, _free_agents, _recent_activity, _player_map,
                     _league_standings, _curr_matchup_period, _league_settings)
     
-    # new_league.printSeasonMatchupResults()
-    # print()
-    # new_league.LeagueStandings() 
-    # print()
-    # new_league.LeagueDraftResults()
-    # print()
-    # new_league.printAllBestTeamStat()
-    # new_league.printTeamRosters()  
-    # print()
-    # new_league.printTeamByPoints()
-    # print()
-    # new_league.printTeamByAvgPoints() 
-    # print()
-    # new_league.printPlayersByAvgPoints()
-    # print()
+    new_league.printSeasonMatchupResults()
+    print()
+    new_league.LeagueStandings() 
+    print()
+    new_league.LeagueDraftResults()
+    print()
+    new_league.printAllBestTeamStat()
+    new_league.printTeamRosters()  
+    print()
+    new_league.printTeamByPoints()
+    print()
+    new_league.printTeamByAvgPoints() 
+    print()
+    new_league.printPlayersByAvgPoints()
+    print()
     new_league.printDraftedTeam()
     
 

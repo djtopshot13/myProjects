@@ -107,14 +107,19 @@ class Team:
             print(f"{count}. {player_info}")
 
     def displayDraftRoster(self):
-        # sorted_players = sorted(self.draft_list, key=lambda player: player.points, reverse=True)
+        sorted_players = sorted(self.draft_list, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
         count = 0
         for player in self.draft_list:
             count = count + 1
-            player_info = player.displayPlayerInfo()
-            print(f"{count}. {player_info}") if player in self.players else print(f"{count}. {player_info} --- No Longer on Roster")
+            player_info = player.displayDraftPlayerInfo()
+            
 
-
+            is_on_roster = any(player.name == rostered_player.name
+                               for rostered_player in self.players)
+            if is_on_roster:
+                print(f"{count}. {player_info}")
+            else:
+                print(f"{count}. {player_info} --- No Longer on Roster")
 
     def getPositionCount(self):
         dCount = 0
@@ -140,7 +145,7 @@ class Team:
         for header in headings:
             if header in player.stats:
                 points = goals_against = saves = wins = shutouts = overtime_losses = goals = assists = shots = hits = blocked_shots = pp_points = sh_points = 0
-                if player.eligibleSlots[0][0] == 'G':
+                if player.position == 'G':
                     goals_against = player.stats[header].get('total', {}).get('GA', 0) * -2
                     saves = round(player.stats[header].get('total', {}).get('SV', 0) / 5, 1)
                     shutouts = player.stats[header].get('total', {}).get('SO', 0) * 3
