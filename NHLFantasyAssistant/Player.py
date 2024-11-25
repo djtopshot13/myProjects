@@ -19,7 +19,7 @@ class Player:
         self.last_15_dict = last_15_dict
         self.last_30_dict = last_30_dict
         self.avg_points = round(points / games_played, 1) if games_played != 0 else 0
-
+        
     def displayPlayerInfo(self):
         return f"{self.name} ({self.position}): [{self.points}] points"
 

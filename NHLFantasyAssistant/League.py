@@ -272,10 +272,11 @@ def _initialize_Team_Objects(team_points_for, team_points_against, team_points_d
     return team_object_dict
 
 class League:
-    def __init__(self, teams, matchups, draft, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):
+    def __init__(self, teams, matchups, draft, rostered_players, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):
         self.teams = teams
         self.matchups = matchups
         self.draft = draft
+        self._rostered_players = rostered_players
         self.free_agents = free_agents
         self.recent_activity = recent_activity
         self.player_map = player_map
@@ -283,7 +284,9 @@ class League:
         self.curr_matchup_period = curr_matchup_period
         self.settings = settings
 
-        self._rostered_players = self._get_Rostered_Players()
+        self._all_players = self._get_All_Players()
+        self._undrafted_players = self._get_Undrafted_Players()
+        
 
     def _get_Rostered_Players(self):
         rostered_players = []
@@ -298,10 +301,76 @@ class League:
     #     return unrostered_players
     
     
-    
+    def _get_All_Players(self):
+        all_players = self.free_agents
+        for players in self._rostered_players.values():
+            for player in players:
+                all_players.append(player)
+        return all_players
 
+    def _get_Undrafted_Players(self):
+        all_players = self._all_players
+        for draft_team_list in self.draft.values():
+            for draft_player in draft_team_list:
+                if draft_player in all_players:
+                    all_players.remove(draft_player)
+        sorted_undrafted_players = sorted(all_players, key=lambda player: player.curr_year_proj.get('PTS', 0))
+        print(sorted_undrafted_players)
+        return sorted_undrafted_players
+    
     def LeagueDraftGrade(self):
-        return
+        undrafted_players = self._undrafted_players
+        forward_players = []
+        defense_players = []
+        goalie_players = []
+        max_d_count = 11
+        min_d_count = 5
+        max_g_count = 4
+        min_g_count = 2
+        max_f_count = 15
+        min_f_count = 9
+        total_count = 22
+
+        for player in undrafted_players:
+            if player.position == 'F':
+                forward_players.append(player)
+            elif player.position == 'D':
+                defense_players.append(player)
+            elif player.position == 'G':
+                goalie_players.append(player)
+        min_position_roster = []
+        min_position_roster.extend(forward_players[i] for i in range(min_f_count))
+        min_position_roster.extend(defense_players[i] for i in range(min_d_count))
+        min_position_roster.extend(goalie_players[i] for i in range(min_g_count))
+        f_count = min_f_count
+        d_count = min_d_count
+        g_count = min_g_count
+        full_roster = min_position_roster.copy()
+        
+        for player in undrafted_players:
+            if f_count + d_count + g_count == total_count:
+                break
+            if player in full_roster:
+                continue
+            else:
+                if player in forward_players and f_count < max_f_count:
+                    f_count += 1
+                    full_roster.append(player)
+                elif player in defense_players and d_count < max_d_count:
+                    d_count += 1
+                    full_roster.append(player)
+                elif player in goalie_players and g_count < max_g_count:
+                    g_count += 1 
+                    full_roster.append(player)
+                
+            
+        print(f"Forwards: {f_count}\t Defensemen: {d_count}\t Goalies: {g_count}")
+        for index, player in enumerate(full_roster, 1):
+            # print(player.curr_year_proj)
+            print(f"{index}. {player.name} - {player.position} [{player.curr_year_proj.get('PTS', 0)}]")
+
+        
+
         # do something with draftPicks to maybe store drafted players by team in dictionaries
         # then figure out grading score with remaining players
 
@@ -342,6 +411,7 @@ class League:
     def LeagueDraftResults(self):
         DRAFT_ROUNDS = 22
         draft_dict = self.draft
+        print(draft_dict)
         msg = ""
         DRAFT_ORDER = ["Luuky Pooky", "Dallin's Daring Team", "Shortcake Miniture Schnauzers",
                     "Live Laff Love", "Hockey", "Kings Shmings", "Dillon's Dubs", "Mind Goblinz"]
@@ -349,16 +419,16 @@ class League:
             if i % 2 == 0:
                 msg += f"Round {i + 1} Draft Results \n-------------------------\n"
                 for j in range(len(self.teams)):
-                    player = draft_dict[DRAFT_ORDER[j]][i]
                     team = DRAFT_ORDER[j]
+                    player = draft_dict[team][i]
                     msg += f"{player.name} ({team}) \n"
                     if (j == 7):
                         msg += "\n"
             else:
                 msg += f"Round {i + 1} Draft Results \n-------------------------\n"
                 for k in range(len(self.teams) - 1, -1, -1):
-                    player = draft_dict[DRAFT_ORDER[k]][i]
                     team = DRAFT_ORDER[k]
+                    player = draft_dict[team][i]
                     msg += f"{player.name} ({team}) \n"
                     if k == 0:
                         msg += "\n"
@@ -512,26 +582,26 @@ def main():
     _league_settings =_get_League_Settings()
 
     new_league = League(_initialize_Team_Objects(_points_for, _points_against, _points_diff, _draft_dict),
-                    _box_scores, _draft_dict, _free_agents, _recent_activity, _player_map,
+                    _box_scores, _draft_dict, _roster_players, _free_agents, _recent_activity, _player_map,
                     _league_standings, _curr_matchup_period, _league_settings)
     
-    new_league.printSeasonMatchupResults()
-    print()
-    new_league.LeagueStandings() 
-    print()
-    new_league.LeagueDraftResults()
-    print()
-    new_league.printAllBestTeamStat()
-    new_league.printTeamRosters()  
-    print()
-    new_league.printTeamByPoints()
-    print()
-    new_league.printTeamByAvgPoints() 
-    print()
-    new_league.printPlayersByAvgPoints()
-    print()
-    new_league.printDraftedTeam()
-    
+    # new_league.printSeasonMatchupResults()
+    # print()
+    # new_league.LeagueStandings() 
+    # print()
+    # new_league.LeagueDraftResults()
+    # print()
+    # new_league.printAllBestTeamStat()
+    # new_league.printTeamRosters()  
+    # print()
+    # new_league.printTeamByPoints()
+    # print()
+    # new_league.printTeamByAvgPoints() 
+    # print()
+    # new_league.printPlayersByAvgPoints()
+    # print()
+    # new_league.printDraftedTeam()
+    new_league.LeagueDraftGrade()
 
 main()
 
