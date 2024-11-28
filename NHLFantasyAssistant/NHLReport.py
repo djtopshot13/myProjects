@@ -1,6 +1,22 @@
-from League import League
+from MyLeague import MyLeague
+league_object = MyLeague.createLeague()
 
 def main():
-    return
-
+    league_object.printSeasonMatchupResults()
+    # print()
+    # new_league.LeagueStandings() 
+    # print()
+    # new_league.LeagueDraftResults()
+    # print()
+    # new_league.printAllBestTeamStat()
+    # new_league.printTeamRosters()  
+    # print()
+    # new_league.printTeamByPoints()
+    # print()
+    # new_league.printTeamByAvgPoints() 
+    # print()
+    # new_league.printPlayersByAvgPoints()
+    # print()
+    # new_league.printDraftedTeam()
+    new_league.LeagueDraftGrade()
 main()
