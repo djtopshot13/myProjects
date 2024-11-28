@@ -34,7 +34,7 @@ class MyLeague:
     # Check to make sure that only player objects are added
     def _get_All_Players(self):
         all_players = []
-        all_players.copy(self.free_agents)
+        all_players = self.free_agents.copy()
         for players in self._rostered_players.values(): # double check that this only returns player objects and no other object typ
             for player in players: # nested list by team value possibly to iterate over
                 all_players.append(player)
@@ -133,44 +133,65 @@ class MyLeague:
 
         # Maybe don't return dictionary and just print the grades with the associated differences 
 
+
+    # set up matchup results print method 
+    # prints winning team name, losing team name, and the point margin that was won by
     def printWeekMatchupResults(self, weekNum):
-        matchups = self.matchups[weekNum] # get the matches of the week
-        print(f"\nWeek {weekNum + 1} Winners: \n")
-        for i in range(len(self.teams) // 2): # Iterate over the number of matches per week
-            curr_matchup = matchups[i]
+        matchups = self.matchups[weekNum] # get the matches of the week using the weekNum parameter
+        print(f"\nWeek {weekNum + 1} Matchup Results: \n") # print header with which week is being represented
+        for i in range(len(self.teams) // 2): # Iterate over the number of matches per week which should be 4 in this 8 team league
+            curr_matchup = matchups[i] # use the week matchups and iterate from 0-3 to get all 4 matchups
+
+            # set if else case to determine winning team based on being home or away since that's how the matchup object is set up
+            # if home team wins 
             if (curr_matchup.home_score > curr_matchup.away_score):
+                # winning team and winning score -> home team name and home team score
+                # losing team and losing score -> away team name and away team score
                 winning_team = curr_matchup.home_team.team_name
                 winning_score = curr_matchup.home_score
                 losing_team = curr_matchup.away_team.team_name
                 losing_score = curr_matchup.away_score
-            
+
+            # else away team wins
             else:
+                # winning team and winning score -> away team name and away team score
+                # losing team and losing score -> home team name and home team score
                 winning_team = curr_matchup.away_team.team_name
                 winning_score = curr_matchup.away_score  
                 losing_team = curr_matchup.home_team.team_name
                 losing_score = curr_matchup.home_score
 
+            # set up point margin by getting the difference between winning and losing score rounded to 1 decimal place
             score_deficit = round(winning_score - losing_score, 1)
+            # print statement with winning team, winning score [win message] losing team and losing score with point margin
             print(f"{winning_team}({winning_score} pts) won against {losing_team}({losing_score} pts) by {score_deficit} pts \n")
 
-
+    # print each matchup result from the beginning of the season to the most recent completed matchup
     def printSeasonMatchupResults(self):
+        # Call printWeekMatchupResults in loop from beginning to most recent matchup period to show season results
         for i in range(0, self.curr_matchup_period):
             self.printWeekMatchupResults(i)
-
+    
+    # method to print in order of best win-loss percentage to worst win-loss percentage with team name and associated season record
     def LeagueStandings(self):
         print(f"League Standings\n"
             "------------------------------------")
-        for i in range(len(self.standings)):
-            team = self.teams[self.standings[i].team_name]
-            print(f"{i+1}. {team.displayTeamRecord()}\n"
+        # loop over standings
+        for index, standing in enumerate(self.standings):
+            # standings already has teams sorted in proper win-loss percentage
+            # set team object by getting team_name from standings
+            team = self.teams[standing.team_name]
+            # print the position in league followed by team method that prints team name and team season record
+            print(f"{index + 1}. {team.displayTeamRecord()}\n"
                 "------------------------------------")
         print("\n")
 
+    # This method should print the round number followed by the order of draft with player name and team name in snake fashion
     def LeagueDraftResults(self):
+        # initalize starter values like only 22 rounds of drafting for each team, draft_dict with all draft players, and msg string to add to throughout
         DRAFT_ROUNDS = 22
         draft_dict = self.draft
-        print(draft_dict)
+        # print(draft_dict)
         msg = ""
         DRAFT_ORDER = ["Luuky Pooky", "Dallin's Daring Team", "Shortcake Miniture Schnauzers",
                     "Live Laff Love", "Hockey", "Kings Shmings", "Dillon's Dubs", "Mind Goblinz"]
@@ -334,27 +355,27 @@ class MyLeague:
 
 
 
-def createLeague():
-    # Initialize all necessary variables to be passed into League constructor
-    _season_points = League._get_Season_Points()
-    _points_for = _season_points[0]
-    _points_against = _season_points[1]
-    _points_diff = _season_points[2]
-    _free_agents = League._construct_Players(League._get_Available_Players(), 'FA')
-    _roster_players = League._construct_Players(League._get_Rostered_Players(), "R")
-    _draft_dict = League._get_Drafted_Players(_roster_players, _free_agents)
-    _box_scores = League._get_Box_Scores()
-    _recent_activity = League._get_Recent_Activity()
-    _player_map = League._get_Player_Map()
-    _league_standings = League._get_League_Standings()
-    _curr_matchup_period = League._get_Curr_Matchup_Period()
-    _league_settings = League._get_League_Settings()
-    _team_objects = League._initialize_Team_Objects(_points_for, _points_against, _points_diff, _draft_dict)
+    def createLeague():
+        # Initialize all necessary variables to be passed into League constructor
+        _season_points = League._get_Season_Points()
+        _points_for = _season_points[0]
+        _points_against = _season_points[1]
+        _points_diff = _season_points[2]
+        _free_agents = League._construct_Players(League._get_Available_Players(), 'FA')
+        _roster_players = League._construct_Players(League._get_Rostered_Players(), "R")
+        _draft_dict = League._get_Drafted_Players(_roster_players, _free_agents)
+        _box_scores = League._get_Box_Scores()
+        _recent_activity = League._get_Recent_Activity()
+        _player_map = League._get_Player_Map()
+        _league_standings = League._get_League_Standings()
+        _curr_matchup_period = League._get_Curr_Matchup_Period()
+        _league_settings = League._get_League_Settings()
+        _team_objects = League._initialize_Team_Objects(_points_for, _points_against, _points_diff, _draft_dict)
 
-    new_league = MyLeague(_team_objects, _box_scores, _draft_dict, _roster_players, _free_agents,
-                         _recent_activity, _player_map, _league_standings, _curr_matchup_period, _league_settings)
-    
-    return new_league
+        new_league = MyLeague(_team_objects, _box_scores, _draft_dict, _roster_players, _free_agents,
+                            _recent_activity, _player_map, _league_standings, _curr_matchup_period, _league_settings)
+        
+        return new_league
     
     
 

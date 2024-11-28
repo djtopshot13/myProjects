@@ -186,7 +186,7 @@ def _get_Season_Points():
         _points_for = {team: round(score, 1) for team, score in _points_for.items()}
         _points_diff = {team: round(score, 1) for team, score in _points_diff.items()}
 
-        return _points_for, _points_against, _points_diff
+    return _points_for, _points_against, _points_diff
         
 def _get_Box_Scores():
     matchups = []
