@@ -175,114 +175,186 @@ class MyLeague:
     # method to print in order of best win-loss percentage to worst win-loss percentage with team name and associated season record
     def LeagueStandings(self):
         print(f"League Standings\n"
-            "------------------------------------")
+            "-----------------------------------------")
+        # sort standings properly by matchup wins, set up max wins and prevRank variable to get proper position with tied records
+        sorted_standings = sorted(self.standings, key=lambda standing: standing.wins, reverse=True)
+        max_wins = sorted_standings[1].wins
+        prevRank = 1
+
         # loop over standings
-        for index, standing in enumerate(self.standings):
-            # standings already has teams sorted in proper win-loss percentage
-            # set team object by getting team_name from standings
+        for index, standing in enumerate(sorted_standings):
+            # get next best team 
             team = self.teams[standing.team_name]
+            # check for tie and set rank equal to prevRank
+            if team.matchup_wins == max_wins:
+                rank = prevRank
+            # if not a tie, change max_wins
+            # rank = position in list
+            # prevRank = position in list for next iteration
+            else:
+                max_wins = team.matchup_wins
+                rank = index + 1
+                prevRank = rank
             # print the position in league followed by team method that prints team name and team season record
-            print(f"{index + 1}. {team.displayTeamRecord()}\n"
-                "------------------------------------")
+            print(f"{rank}. {team.displayTeamRecord()}\n"
+                "-----------------------------------------")
         print("\n")
 
     # This method should print the round number followed by the order of draft with player name and team name in snake fashion
     def LeagueDraftResults(self):
-        # initalize starter values like only 22 rounds of drafting for each team, draft_dict with all draft players, and msg string to add to throughout
+        # **IDEA maybe calculate draft number as a player variable for a drafted player len(teams) * round + (j + 1) or len(teams) * round - k + 8 to use in each inner loop
+
+        # initalize starter values like only 22 rounds of drafting for each team, draft_dict with all draft players
+        # msg string to add to throughout, and draft_order with the teams in correct order
         DRAFT_ROUNDS = 22
         draft_dict = self.draft
         # print(draft_dict)
         msg = ""
         DRAFT_ORDER = ["Luuky Pooky", "Dallin's Daring Team", "Shortcake Miniture Schnauzers",
                     "Live Laff Love", "Hockey", "Kings Shmings", "Dillon's Dubs", "Mind Goblinz"]
-        for i in range(DRAFT_ROUNDS):
-            if i % 2 == 0:
-                msg += f"Round {i + 1} Draft Results \n-------------------------\n"
+        
+        # outer loop to iterate over for each round from 0-21
+        for round in range(DRAFT_ROUNDS):
+            # if else to check if round num is even
+            if round % 2 == 0:
+                # add draft round header
+                msg += f"Round {round + 1} Draft Results \n-------------------------\n"
+                # inner for loop to go in normal draft order based on number of teams (from 0-7)
                 for j in range(len(self.teams)):
+                    # grab team name from draft_order
                     team = DRAFT_ORDER[j]
-                    player = draft_dict[team][i]
+                    # grab player from dictionary with team name as key and grab player from list with round number
+                    player = draft_dict[team][round]
+                    # add player name and team name to msg string
                     msg += f"{player.name} ({team}) \n"
+                    # add a new line at the end of the loop for next round results
                     if (j == 7):
                         msg += "\n"
+            # this logic happens if round number is not even
             else:
-                msg += f"Round {i + 1} Draft Results \n-------------------------\n"
+                # add draft round header
+                msg += f"Round {round + 1} Draft Results \n-------------------------\n"
+                # inner for loop to go in reverse order based on number of teams (7-0)
                 for k in range(len(self.teams) - 1, -1, -1):
+                    # get team name from draft_order
                     team = DRAFT_ORDER[k]
-                    player = draft_dict[team][i]
+                    # get player from dictionary with team name as key and get the player from list using round number
+                    player = draft_dict[team][round]
+                    # add player name and team name to string output
                     msg += f"{player.name} ({team}) \n"
+                    # add a new line at the end of the for loop for next round results
                     if k == 0:
                         msg += "\n"
 
+        # print string output after going through each round
         print(msg)
-    def LeagueRecord(self):
-        for team in self.teams.values():
-            self.titleFormat(team)
-            team.displayTeamRecord()
-            print()
+
+    # not sure if this is used 
+    # I think I was trying to format the team record results 
+    # and use this instead to print the standings
+    # Check on this another time 
+
+    # def LeagueRecord(self):
+    #     for team in self.teams.values():
+    #         self.titleFormat(team)
+    #         team.displayTeamRecord()
+    #         print()
 
 
+    # This method prints from best team to worst team in stat category
     def BestTeamStatSort(self, stat_name):
+        # initialize empty list for stat_list, set reverseCheck to true for sorting from biggest to lowest
+        # end of phrase is empty and stat alias too, will be used for print output checks
         stats_list = []
         reverseCheck = True
         end_of_phrase = ""
         stat_alias= ""
 
+        # for loop in teams dictionary
+        # check for existing stat variables 
+        # else go into stat dictionary within team object method
+        # stat alias is nicer output name for stat that differs from variable name
+        # end of phrase is usually the stat alias without the ending 's' for singular version
+        # will be changed for irregular singulars
         for team_name, team in self.teams.items():
+
+            # logic for points_for
             if stat_name == "points_for":
                 stat = team.points_for
                 stat_alias = "Points For"
                 end_of_phrase = stat_alias if stat != 1 else "Point For"
+
+            # logic for points_against
             elif stat_name == "points_against":
                 stat = team.points_against
+                # reverse is switched to False since we want lowest to highest for this category
                 reverseCheck = False
                 stat_alias = "Points Against"
                 end_of_phrase = stat_alias if stat != 1 else "Point Against"
+
+            # logic for points_diff
             elif stat_name == "points_diff":
                 stat = team.points_diff
                 stat_alias = "Point Differential"
+
+            # logic for matchup_wins
             elif stat_name ==  "matchup_wins":
                 stat = team.matchup_wins
                 stat_alias = "Matchup Wins"
                 end_of_phrase = stat_alias if stat != 1 else stat_alias[:-1]
+
+            # logic for matchup_losses
             elif stat_name == "matchup_losses":
                 stat = team.matchup_losses
                 reverseCheck = False
                 stat_alias = "Matchup Losses"
+                # subtract ending "es" instead of just the "s"
                 end_of_phrase = stat_alias if stat != 1 else stat_alias[:-2]
+
+            # logic for other more specific stats
             else:
+                # use helper team object function to return necessary values for stats_list
                 stat, stat_name, stat_alias, reverseCheck, end_of_phrase = team.getTeamStat(stat_name)
 
+            # append the stat, team_name and end_of phrase to be used for printing
             stats_list.append([stat, team_name, end_of_phrase])
-        
+
+        # sort the stats_list based on reverseCheck, most often True for highest to lowest, sometimes set to False by stat to go from lowest to highest
         stats_list.sort(reverse=reverseCheck)
+
+        # call print method that uses the stats_list and stat_alias to print proper ordering
         self.printTeamStatsChart(stats_list, stat_alias)
         
+        # not sure if I need to return the stats_list
+        # return stats_list 
     
-        return stats_list
-    
+    # prints the output of stats_list which is ordered from best team to worst team
     def printTeamStatsChart(self, stats_list, stat_alias):
+
+        # formatting string variables by finding max length of strings
         max_team_name_length = max(len(stat[1]) for stat in stats_list)
         max_points_length = max(len(f"{stat[0]} {stat[2]}") for stat in stats_list)
         total_length = max_points_length + max_team_name_length + 10
             
             
-
+        # print stat_title with formatting
         title = 'Team ' + stat_alias + ' Ranking Report'
         print(f"{'='*total_length}")
         print(f"{title}".center(total_length))
         print(f"{'='*total_length}")
 
-        
-        team_rank = 0
-        
-        for stat in stats_list:
-            stat_print = f"{stat[0]} {stat[2]}"
-            team_rank += 1
+        # for loop to go through stats list and print the stat val and stat end of phrase
+        for rank, stat in enumerate(stats_list):
+            stat_value = stat[0]
+            stat_end = stat[2]
+            stat_info = f"{stat_value} {stat_end}"
             team_name = stat[1]
-            print(f"{team_rank:2}. {team_name.ljust(max_team_name_length)}: {stat_print.rjust(max_points_length)}")
+
+            # print format with position, team name and stat info 
+            print(f"{rank:2}. {team_name.ljust(max_team_name_length)}: {stat_info.rjust(max_points_length)}")
             print(f"{'-'*total_length}")
 
-        print()
+        print() # new line after finishing method
 
     def printAllBestTeamStat(self):
         teams = []

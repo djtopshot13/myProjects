@@ -26,9 +26,11 @@ class Team:
             msg.join("--------------------")
         return msg
     
+    # Called by BestTeamStatSort in MyLeague.py
+    # Checks to make sure that stat is in the stat dictionary or else it raises an error
     def getTeamStat(self, stat_name):
         if stat_name in self.stats_dict:
-            stat_value = int(self.stats_dict[stat_name])
+            stat_value = self.stats_dict[stat_name]
             stat_alias, reversedCheck, end_of_phrase = self.getStatName(stat_name)
             return stat_value, stat_name, stat_alias, reversedCheck, end_of_phrase
         else:
@@ -83,7 +85,7 @@ class Team:
             # print(player.acquisitionType) # returns ADD, DRAFT, or TRADE
             # print(player.eligibleSlots) # returns [[Forward, Defense, Goalie,], [actual position of Forward], ['Util'] if F or D, ['Bench'], and [IR]
             # print(player.injured) # returns True if IR or OUT, not if DTD
-            # print(player.injuryStatus) # returns ACTIVE if healthy, then returns DAY_TO_DAY, INJURY_RESERVE, or OUT
+            # print(player.injuryStatus) # returns ACTIVE if healthy, then returns DAY_TO_DAY, INJURY_RESERVE, SUSPENDED, or OUT
             # print(player.lineupSlot) # returns value from eligibleSlots of where player is currently located
             # print(player.playerId)
             # print(player.proTeam)

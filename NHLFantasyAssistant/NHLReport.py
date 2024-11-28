@@ -2,9 +2,9 @@ from MyLeague import MyLeague
 league_object = MyLeague.createLeague()
 
 def main():
-    league_object.printSeasonMatchupResults()
-    # print()
-    # league_object.LeagueStandings() 
+    # league_object.printSeasonMatchupResults()
+    # # print()
+    league_object.LeagueStandings() 
     # print()
     # league_object.LeagueDraftResults()
     # print()
