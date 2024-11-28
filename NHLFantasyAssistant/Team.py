@@ -30,7 +30,7 @@ class Team:
     # Checks to make sure that stat is in the stat dictionary or else it raises an error
     def getTeamStat(self, stat_name):
         if stat_name in self.stats_dict:
-            stat_value = self.stats_dict[stat_name]
+            stat_value = int(self.stats_dict[stat_name])
             stat_alias, reversedCheck, end_of_phrase = self.getStatName(stat_name)
             return stat_value, stat_name, stat_alias, reversedCheck, end_of_phrase
         else:

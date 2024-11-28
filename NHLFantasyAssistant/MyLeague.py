@@ -212,6 +212,9 @@ class MyLeague:
         msg = ""
         DRAFT_ORDER = ["Luuky Pooky", "Dallin's Daring Team", "Shortcake Miniture Schnauzers",
                     "Live Laff Love", "Hockey", "Kings Shmings", "Dillon's Dubs", "Mind Goblinz"]
+        # when player was picked, sort of intuitive since it is just incremented throughout
+        # could be saved as a variable for a drafted player
+        draft_num = 0
         
         # outer loop to iterate over for each round from 0-21
         for round in range(DRAFT_ROUNDS):
@@ -221,12 +224,20 @@ class MyLeague:
                 msg += f"Round {round + 1} Draft Results \n-------------------------\n"
                 # inner for loop to go in normal draft order based on number of teams (from 0-7)
                 for j in range(len(self.teams)):
+                    draft_num += 1 
                     # grab team name from draft_order
                     team = DRAFT_ORDER[j]
                     # grab player from dictionary with team name as key and grab player from list with round number
                     player = draft_dict[team][round]
-                    # add player name and team name to msg string
-                    msg += f"{player.name} ({team}) \n"
+                    # add player name, team name, and draft num in position format to msg string
+                    if draft_num == 1:
+                        msg += f"{player.name} ({team}) - drafted {draft_num}st \n"
+                    elif draft_num == 2:
+                        msg += f"{player.name} ({team}) - drafted {draft_num}nd \n"
+                    elif draft_num == 3:
+                        msg += f"{player.name} ({team}) - drafted {draft_num}rd \n"
+                    else: 
+                        msg += f"{player.name} ({team}) - drafted {draft_num}th \n"
                     # add a new line at the end of the loop for next round results
                     if (j == 7):
                         msg += "\n"
@@ -236,12 +247,13 @@ class MyLeague:
                 msg += f"Round {round + 1} Draft Results \n-------------------------\n"
                 # inner for loop to go in reverse order based on number of teams (7-0)
                 for k in range(len(self.teams) - 1, -1, -1):
+                    draft_num += 1
                     # get team name from draft_order
                     team = DRAFT_ORDER[k]
                     # get player from dictionary with team name as key and get the player from list using round number
                     player = draft_dict[team][round]
-                    # add player name and team name to string output
-                    msg += f"{player.name} ({team}) \n"
+                    # add player name, team name and draft position to string output
+                    msg += f"{player.name} ({team}) - drafted {draft_num}th\n"
                     # add a new line at the end of the for loop for next round results
                     if k == 0:
                         msg += "\n"
@@ -344,11 +356,20 @@ class MyLeague:
         print(f"{'='*total_length}")
 
         # for loop to go through stats list and print the stat val and stat end of phrase
-        for rank, stat in enumerate(stats_list):
+        prevRank = 1
+        best_stat = stats_list[0][0]
+        for index, stat in enumerate(stats_list):
             stat_value = stat[0]
             stat_end = stat[2]
             stat_info = f"{stat_value} {stat_end}"
             team_name = stat[1]
+
+            if stat_value == best_stat:
+                rank = prevRank
+            else:
+                best_stat = stat_value
+                rank = index + 1
+                prevRank = rank
 
             # print format with position, team name and stat info 
             print(f"{rank:2}. {team_name.ljust(max_team_name_length)}: {stat_info.rjust(max_points_length)}")
