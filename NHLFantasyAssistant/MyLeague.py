@@ -355,17 +355,22 @@ class MyLeague:
         print(f"{title}".center(total_length))
         print(f"{'='*total_length}")
 
-        # for loop to go through stats list and print the stat val and stat end of phrase
+        # set up values to help with check for ties
         prevRank = 1
         best_stat = stats_list[0][0]
+        # for loop to go through stats list and print the stat val and stat end of phrase
         for index, stat in enumerate(stats_list):
             stat_value = stat[0]
             stat_end = stat[2]
             stat_info = f"{stat_value} {stat_end}"
             team_name = stat[1]
 
+            # check for tie and use prevRank values
             if stat_value == best_stat:
                 rank = prevRank
+            # if there isn't a tie, set best_stat to new stat_value
+            # set rank to position in list
+            # set prevRank equal to rank for the future ties
             else:
                 best_stat = stat_value
                 rank = index + 1
@@ -417,6 +422,8 @@ class MyLeague:
         print(f"{team.name}".center(title_length))
         print(f"{"="*title_length}")
 
+    # **I need to look over this and refactor it possibly
+    # **Biggest need is to check if undrafted_players are all constructed correctly
     def printPlayersByAvgPoints(self):
         players_to_remove = []
         for player_key, player in self._rostered_players.items():
@@ -432,6 +439,7 @@ class MyLeague:
         for index, player in enumerate(sorted_rostered_players):
             print(f"{index + 1}. {player.name} ({player.position}): [{player.avg_points} avg pts] - ({player.team})")
 
+    # ** This needs to be refactored as well 
     def printPlayersByPoints(self):
         for player in self._rostered_players:
             if not hasattr(player, 'points'):
