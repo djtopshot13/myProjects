@@ -17,7 +17,7 @@ class MyLeague:
         self._all_players = self._get_All_Players()
         self._undrafted_players = self._get_Undrafted_Players()
         
-
+    # I don't think I need this method any more since there's already one in the regular League file now
     # def _get_Rostered_Players(self):
     #     rostered_players = []
     #     for team in self.teams.values():
@@ -25,34 +25,43 @@ class MyLeague:
     #             rostered_players.append(player)
     #     return rostered_players
     
+    # I don't know if I need to refactor this and see if I can get the unrostered players since I get free agents in the other League as well.
     # def _get_Unrostered_Players(self):
     #     my_team = self.teams["Dillon's Dubs"]
     #     unrostered_players = _construct_Available_Players(_get_Available_Players())
     #     return unrostered_players
     
-    
+    # Check to make sure that only player objects are added
     def _get_All_Players(self):
-        all_players = self.free_agents
-        for players in self._rostered_players.values():
-            for player in players:
+        all_players = []
+        all_players.copy(self.free_agents)
+        for players in self._rostered_players.values(): # double check that this only returns player objects and no other object typ
+            for player in players: # nested list by team value possibly to iterate over
                 all_players.append(player)
-        return all_players
+        return all_players # Should return a list that includes players from the free_agents list anad from rostered_players
 
     def _get_Undrafted_Players(self):
-        all_players = self._all_players
+        all_players = self._all_players # Use all_players to iterate over and check both rostered and unrostered players for those that were drafted
         _free_agents = League._construct_Players(League._get_Available_Players(), 'FA')
-        _roster_players = League._construct_Players(League._get_Rostered_Players(), "R")
-        drafted_players = League._get_Drafted_Players(_roster_players, _free_agents)
-        undrafted_players = [player for player in all_players if player not in drafted_players.values() and type(player) == Player]
-        sorted_undrafted_players = sorted(undrafted_players, key=lambda player: player.curr_year_proj)
+        _roster_players = League._construct_Players(League._get_Rostered_Players(), 'R')
+        drafted_players = League._get_Drafted_Players(_roster_players, _free_agents) # Should return dictionary of drafted_players with team as key
+        undrafted_players = [player for player in all_players if player not in drafted_players.values() and type(player) == Player] # This doesn't work fully yet
+        # It should add a player that is within all_players, but not within drafted_players
+        sorted_undrafted_players = sorted(undrafted_players, key=lambda player: player.curr_year_proj, reverse=True) # Sort by projected values to get best expected players for draft grade
         # print(sorted_undrafted_players)
-        return sorted_undrafted_players 
+        return sorted_undrafted_players # return list of sorted_undrafted_players
     
     def LeagueDraftGrade(self):
+        # Calculate VORP (Value of Remaining/Undrafted Players) with the most projected points
+        # Compare the difference between each fantasy team's projected point total and the VORP projected points
+        # Grade each team accordingly, the larger positive difference, the better the grade
+
+        # initialize starter lists with undrafted_players and empty lists by player position
         undrafted_players = self._undrafted_players
         forward_players = []
         defense_players = []
         goalie_players = []
+        # set up min and max count by position along with total roster count at draft day
         max_d_count = 11
         min_d_count = 5
         max_g_count = 4
@@ -61,6 +70,7 @@ class MyLeague:
         min_f_count = 9
         total_count = 22
 
+        # go through all undrafted players and add players by position, should be in greatest to least order
         for player in undrafted_players:
             if player.position == 'F':
                 forward_players.append(player)
@@ -68,21 +78,33 @@ class MyLeague:
                 defense_players.append(player)
             elif player.position == 'G':
                 goalie_players.append(player)
+
+        # set up roster with the top players for the min count of each position
         min_position_roster = []
         min_position_roster.extend(forward_players[i] for i in range(min_f_count))
         min_position_roster.extend(defense_players[i] for i in range(min_d_count))
         min_position_roster.extend(goalie_players[i] for i in range(min_g_count))
+
+        # set count values to min count since those players are added to the VORP team (Value of Remaining Players)
         f_count = min_f_count
         d_count = min_d_count
         g_count = min_g_count
+
+        # set up full roster list by copying all the min roster values 
         full_roster = min_position_roster.copy()
         
+        # go through all player types for remaining 6 positions on roster
         for player in undrafted_players:
+            # finish when all position counts are equal to the total count
             if f_count + d_count + g_count == total_count:
                 break
+            # if the player has already been added skip over the loop logic that iteration
             if player in full_roster:
                 continue
+            # this should happen when there are still available spots and the player is not already in full_roster
             else:
+                # check what position the next highest scoring player is and that the position count doesn't exceed the max position count
+                # If the player and count pass, then increase position count by 1 and add the player to the list
                 if player in forward_players and f_count < max_f_count:
                     f_count += 1
                     full_roster.append(player)
@@ -93,16 +115,23 @@ class MyLeague:
                     g_count += 1 
                     full_roster.append(player)
                 
-            
+        # print statement that shows how many players of each position were added
+        # should be one unique VORP team to get max score unless players of same position have duplicate projected points   
         print(f"Forwards: {f_count}\t Defensemen: {d_count}\t Goalies: {g_count}")
-        for index, player in enumerate(full_roster, 1):
+        # set print statement up to print the position in the player roster with projected points for the current year, name, and position
+        # I might be able to sort it too if I wanted 
+        sorted_full_roster = sorted(full_roster, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
+        for index, player in enumerate(sorted_full_roster, 1):
             # print(player.curr_year_proj)
-            print(f"{index}. {player.name} - {player.position} [{player.curr_year_proj.get('PTS', 0)}]")
+            print(f"{index}. {player.name} - {player.position} [{player.curr_year_proj['PTS']}")
 
+        # Set up projected point for current year by team method in team file -> def teamProjectedPoints() -> return total projected points 
         
+        # set dictionary with team name as key and difference between team projected points and VORP projected points as values in the dictionary
 
-        # do something with draftPicks to maybe store drafted players by team in dictionaries
-        # then figure out grading score with remaining players
+        # Determine how to assess grade level once the differences are obtained and can be seen and compared
+
+        # Maybe don't return dictionary and just print the grades with the associated differences 
 
     def printWeekMatchupResults(self, weekNum):
         matchups = self.matchups[weekNum] # get the matches of the week
