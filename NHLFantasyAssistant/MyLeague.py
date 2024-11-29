@@ -2,10 +2,11 @@ import League
 import Player
 
 class MyLeague:
-    def __init__(self, teams, matchups, draft, rostered_players, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):
+    def __init__(self, teams, matchups, draft_dict, undrafted_dict, rostered_players, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):
         self.teams = teams
         self.matchups = matchups
-        self.draft = draft
+        self.draft_dict = draft_dict
+        self.undrafted_dict = undrafted_dict
         self._rostered_players = rostered_players
         self.free_agents = free_agents
         self.recent_activity = recent_activity
@@ -14,8 +15,7 @@ class MyLeague:
         self.curr_matchup_period = curr_matchup_period
         self.settings = settings
 
-        self._all_players = self._get_All_Players()
-        self._undrafted_players = self._get_Undrafted_Players()
+        # self._all_players = self._get_All_Players()
         
     # I don't think I need this method any more since there's already one in the regular League file now
     # def _get_Rostered_Players(self):
@@ -57,7 +57,7 @@ class MyLeague:
         # Grade each team accordingly, the larger positive difference, the better the grade
 
         # initialize starter lists with undrafted_players and empty lists by player position
-        undrafted_players = self._undrafted_players
+        undrafted_players = self.undrafted_dict
         forward_players = []
         defense_players = []
         goalie_players = []
@@ -123,7 +123,7 @@ class MyLeague:
         sorted_full_roster = sorted(full_roster, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
         for index, player in enumerate(sorted_full_roster, 1):
             # print(player.curr_year_proj)
-            print(f"{index}. {player.name} - {player.position} [{player.curr_year_proj['PTS']}")
+            print(f"{index}. {player.displayUndraftedPlayerInfo()}")
 
         # Set up projected point for current year by team method in team file -> def teamProjectedPoints() -> return total projected points 
         
@@ -207,7 +207,7 @@ class MyLeague:
         # initalize starter values like only 22 rounds of drafting for each team, draft_dict with all draft players
         # msg string to add to throughout, and draft_order with the teams in correct order
         DRAFT_ROUNDS = 22
-        draft_dict = self.draft
+        draft_dict = self.draft_dict
         # print(draft_dict)
         msg = ""
         DRAFT_ORDER = ["Luuky Pooky", "Dallin's Daring Team", "Shortcake Miniture Schnauzers",
@@ -464,7 +464,7 @@ class MyLeague:
         _points_diff = _season_points[2]
         _free_agents = League._construct_Players(League._get_Available_Players(), 'FA')
         _roster_players = League._construct_Players(League._get_Rostered_Players(), "R")
-        _draft_dict = League._get_Drafted_Players(_roster_players, _free_agents)
+        _draft_dict, _undrafted_dict = League._get_Drafted_Undrafted_Players(_roster_players, _free_agents)
         _box_scores = League._get_Box_Scores()
         _recent_activity = League._get_Recent_Activity()
         _player_map = League._get_Player_Map()
@@ -473,7 +473,7 @@ class MyLeague:
         _league_settings = League._get_League_Settings()
         _team_objects = League._initialize_Team_Objects(_points_for, _points_against, _points_diff, _draft_dict)
 
-        new_league = MyLeague(_team_objects, _box_scores, _draft_dict, _roster_players, _free_agents,
+        new_league = MyLeague(_team_objects, _box_scores, _draft_dict, _undrafted_dict, _roster_players, _free_agents,
                             _recent_activity, _player_map, _league_standings, _curr_matchup_period, _league_settings)
         
         return new_league

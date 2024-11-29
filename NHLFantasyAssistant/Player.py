@@ -27,4 +27,7 @@ class Player:
         return f"{self.name} ({self.position}): [{self.avg_points}] average points"
         
     def displayDraftPlayerInfo(self):
-        return f"{self.name} ({self.position}): [{self.curr_year_proj.get('PTS', 0)}] points"
+        return f"{self.name} ({self.position}): [{self.curr_year_proj.get('PTS', 0)}] projected points"
+    
+    def displayUndraftedPlayerInfo(self):
+        return f"{self.name} ({self.position}): [{self.curr_year_proj.get('PTS', 0)}] projected points"

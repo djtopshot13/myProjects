@@ -8,6 +8,7 @@ curr_year = 2025
 SWID = "73AF0A56-8B05-4B4C-8291-A431308556FD"
 espn_s2_cookie = "AEAVePfqAj5sDj5KBoDdTQ7y7U5IcQaWswzMsomuzV%2B7u46Q29tOY56LRtFJucWWRyOD5FDujuOHqSG1LLa7NFXOJpW3jop3hgfmFglevS90tpTgw8tNRQLzznnrevnaIc5FZ8xE6b71AeemRUYSMnU1nT85QOi28kPbUd%2FN1WV45DPhzlbMb0YnUyXGba5HNLt17B7qiJWTIA0OlsPU50RsJ0meAG0YtMyP%2BUUvdg6GoddBkRS7tmy52bZ7kijTQW5eyARkXXTTfI5ymUCrbCDCgd%2BsIcolYdmjEbpIjg7KmA%3D%3D"
 
+# Order of full stats 'Total 2024', 'Total 2025', 'Last 7 2025', 'Last 30 2025', 'Last 15 2025', 'Projected 2025', 'Projected 2024'
 
 my_nhl_league = ESPNLeague(league_id=my_league_id, year=curr_year, espn_s2=espn_s2_cookie, swid=SWID, fetch_league=True)
 def _construct_Players(players_list, player_type):
@@ -219,6 +220,9 @@ def _get_Curr_Matchup_Period():
 def _get_Available_Players():
     FREE_AGENCY_SIZE = 1500 # Some extra padding since actual num is 1404 players
     available_players = my_nhl_league.free_agents(my_nhl_league.current_week, FREE_AGENCY_SIZE)
+    for player in available_players:
+        print(player.name)
+        print(player.stats) 
     return available_players
 
 # def _get_Draft_Dict():
@@ -227,7 +231,10 @@ def _get_Available_Players():
 #         draft_dict[pick.team.team_name].append(pick.playerName)
 #     return draft_dict
 
-def _get_Drafted_Players(rostered_players, free_agents):
+def _get_Drafted_Undrafted_Players(rostered_players, free_agents):
+        undrafted_players = []
+        drafted_players = []
+
         draft_roster = {team.team_name: [] for team in my_nhl_league.teams}
         draft = my_nhl_league.draft
         for pick in draft:
@@ -238,6 +245,7 @@ def _get_Drafted_Players(rostered_players, free_agents):
                         player.rosterAvailability = "Drafted"
                         
                         draft_roster[player.team].append(player)
+                        drafted_players.append(player)
                     
             for player in free_agents:
                 if pick.playerName == player.name:
@@ -245,12 +253,24 @@ def _get_Drafted_Players(rostered_players, free_agents):
                     player.rosterAvailability = "Drafted"
                     
                     draft_roster[player.team].append(player)
-        return draft_roster
+                    drafted_players.append(player)
+
+        for players in rostered_players.values():
+            for player in players:
+                if player not in drafted_players:
+                    undrafted_players.append(player)
+
+        for player in free_agents:
+            if player not in drafted_players:
+                undrafted_players.append(player)
+                
+        return draft_roster, undrafted_players
 
 def _get_Rostered_Players():
     rostered_players = {team.team_name: [] for team in my_nhl_league.teams}
     for team in my_nhl_league.teams:
         for player in team.roster:
+            # print(player.stats)
             rostered_players[team.team_name].append(player)
 
     return rostered_players
