@@ -220,9 +220,6 @@ def _get_Curr_Matchup_Period():
 def _get_Available_Players():
     FREE_AGENCY_SIZE = 1500 # Some extra padding since actual num is 1404 players
     available_players = my_nhl_league.free_agents(my_nhl_league.current_week, FREE_AGENCY_SIZE)
-    for player in available_players:
-        print(player.name)
-        print(player.stats) 
     return available_players
 
 # def _get_Draft_Dict():
@@ -270,7 +267,6 @@ def _get_Rostered_Players():
     rostered_players = {team.team_name: [] for team in my_nhl_league.teams}
     for team in my_nhl_league.teams:
         for player in team.roster:
-            # print(player.stats)
             rostered_players[team.team_name].append(player)
 
     return rostered_players

@@ -1,5 +1,7 @@
 import League
 import Player
+import Skater
+import Goalie
 
 class MyLeague:
     def __init__(self, teams, matchups, draft_dict, undrafted_dict, rostered_players, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):
@@ -138,7 +140,7 @@ class MyLeague:
     # prints winning team name, losing team name, and the point margin that was won by
     def printWeekMatchupResults(self, weekNum):
         matchups = self.matchups[weekNum] # get the matches of the week using the weekNum parameter
-        print(f"\nWeek {weekNum + 1} Matchup Results: \n") # print header with which week is being represented
+        print(f"\nWeek {weekNum} Matchup Results: \n") # print header with which week is being represented
         for i in range(len(self.teams) // 2): # Iterate over the number of matches per week which should be 4 in this 8 team league
             curr_matchup = matchups[i] # use the week matchups and iterate from 0-3 to get all 4 matchups
 
@@ -169,7 +171,7 @@ class MyLeague:
     # print each matchup result from the beginning of the season to the most recent completed matchup
     def printSeasonMatchupResults(self):
         # Call printWeekMatchupResults in loop from beginning to most recent matchup period to show season results
-        for i in range(0, self.curr_matchup_period):
+        for i in range(1, self.curr_matchup_period):
             self.printWeekMatchupResults(i)
     
     # method to print in order of best win-loss percentage to worst win-loss percentage with team name and associated season record
@@ -230,11 +232,13 @@ class MyLeague:
                     # grab player from dictionary with team name as key and grab player from list with round number
                     player = draft_dict[team][round]
                     # add player name, team name, and draft num in position format to msg string
-                    if draft_num == 1:
+                    if int(str(draft_num)[len(str(draft_num))-2:]) > 10 and int(str(draft_num)[len(str(draft_num))-2:]) < 14:
+                        msg += f"{player.name} ({team}) - drafted {draft_num}th \n"
+                    elif str(draft_num)[len(str(draft_num))-1] == "1":
                         msg += f"{player.name} ({team}) - drafted {draft_num}st \n"
-                    elif draft_num == 2:
+                    elif str(draft_num)[len(str(draft_num))-1] == "2":
                         msg += f"{player.name} ({team}) - drafted {draft_num}nd \n"
-                    elif draft_num == 3:
+                    elif str(draft_num)[len(str(draft_num))-1] == "3":
                         msg += f"{player.name} ({team}) - drafted {draft_num}rd \n"
                     else: 
                         msg += f"{player.name} ({team}) - drafted {draft_num}th \n"
@@ -253,7 +257,16 @@ class MyLeague:
                     # get player from dictionary with team name as key and get the player from list using round number
                     player = draft_dict[team][round]
                     # add player name, team name and draft position to string output
-                    msg += f"{player.name} ({team}) - drafted {draft_num}th\n"
+                    if int(str(draft_num)[len(str(draft_num))-2:]) > 10 and int(str(draft_num)[len(str(draft_num))-2:]) < 14:
+                        msg += f"{player.name} ({team}) - drafted {draft_num}th \n"
+                    elif str(draft_num)[len(str(draft_num))-1] == "1":
+                        msg += f"{player.name} ({team}) - drafted {draft_num}st \n"
+                    elif str(draft_num)[len(str(draft_num))-1] == "2":
+                        msg += f"{player.name} ({team}) - drafted {draft_num}nd \n"
+                    elif str(draft_num)[len(str(draft_num))-1] == "3":
+                        msg += f"{player.name} ({team}) - drafted {draft_num}rd \n"
+                    else: 
+                        msg += f"{player.name} ({team}) - drafted {draft_num}th \n"
                     # add a new line at the end of the for loop for next round results
                     if k == 0:
                         msg += "\n"
@@ -424,31 +437,39 @@ class MyLeague:
 
     # **I need to look over this and refactor it possibly
     # **Biggest need is to check if undrafted_players are all constructed correctly
+    # Team lists with full rosters are being passed in somehow as well and are being removed with this code 
+    # Maybe try to refactor, so team list objects aren't included in the rostered_players variable
     def printPlayersByAvgPoints(self):
         players_to_remove = []
         for player_key, player in self._rostered_players.items():
-            if not hasattr(player, 'avg_points'):
-                print(f"Invalid player: {player}, Type: {type(player)}")
+            if type(player) != Skater or type(player) != Goalie:
                 players_to_remove.append(player_key)
 
         for player_key in players_to_remove:
             del self._rostered_players[player_key]
 
-        sorted_rostered_players = sorted(self._rostered_players, key=lambda player: player.avg_points, reverse=True)
+        sorted_rostered_players = sorted(self._rostered_players.values(), key=lambda player: player.avg_points, reverse=True)
 
         for index, player in enumerate(sorted_rostered_players):
             print(f"{index + 1}. {player.name} ({player.position}): [{player.avg_points} avg pts] - ({player.team})")
 
     # ** This needs to be refactored as well 
+    # Team lists with full rosters are being passed in somehow as well and are being removed with this code 
+    # Maybe try to refactor, so team list objects aren't included in the rostered_players variable
     def printPlayersByPoints(self):
-        for player in self._rostered_players:
-            if not hasattr(player, 'points'):
-                print(f"Invalid player: {player.name}, Type: {type(player)}")
+        players_to_remove = []
+        
+        for player_key, player in self._rostered_players.items():
+            if type(player) != Skater or type(player) != Goalie:
+                players_to_remove.append(player_key)
 
-        sorted_rostered_players = sorted(self._rostered_players, key=lambda player: player.points, reverse=True)
+        for player_key in players_to_remove:
+            del self._rostered_players[player_key]
+
+        sorted_rostered_players = sorted(self._rostered_players.values(), key=lambda player: player.points, reverse=True)
 
         for index, player in enumerate(sorted_rostered_players):
-            print(dir(player))
+            # print(dir(player))
             print(f"{index + 1}. {player.name} ({player.position}): [{player.points} pts] - ({player.team})")
         
             
