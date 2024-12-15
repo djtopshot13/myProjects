@@ -1,22 +1,30 @@
 class Matchup:
-    def __init__(self, curr_matchup_period, matchups, teams):
-        self.curr_matchup_period = curr_matchup_period
+    def __init__(self, curr_matchup_period, matchups, teams): # constructor method for Mathcup object to better reorganize more in depth statistics than espn
+        self.curr_matchup_period = curr_matchup_period # pass values from myLeague in to get the proper data to run the methods in Mathcup class
         self.matchups = matchups
         self.teams = teams
-        self.full_matchup_map, self.first_map, self.winning_teams, self.losing_teams, self.winning_scores, self.losing_scores, self.score_deficits = self.matchupGenerator()
-        self.team_record_map, self.highest_winning_scores, self.highest_winning_teams, self.lowest_winning_scores, self.lowest_winning_teams, self.highest_losing_scores, self.highest_losing_teams, self.lowest_losing_scores, self.lowest_losing_teams, self.largest_score_deficits, self.highest_deficit_teams, self.smallest_score_deficits, self.lowest_deficit_teams = self.weeklyStats(self.first_map)
 
+        # use Matchup methods to set up more instance variables for ease of coding
+        self.full_matchup_map, self.__first_map, self.winning_teams, self.losing_teams, self.winning_scores, self.losing_scores, self.score_deficits = self.matchupGenerator()
+        self.team_record_map, self.highest_winning_scores, self.highest_winning_teams, self.lowest_winning_scores, self.lowest_winning_teams, self.highest_losing_scores, self.highest_losing_teams, self.lowest_losing_scores, self.lowest_losing_teams, self.largest_score_deficits, self.highest_deficit_teams, self.smallest_score_deficits, self.lowest_deficit_teams = self.weeklyStats(self.__first_map)
+
+    # initializes full_matchup_map, team_record_map, winning_teams, losing_teams, winning_scores, losing_scores, and score_deficits
     def matchupGenerator(self):
-        full_matchup_map = {}
+        full_matchup_map = {} # this becomes a nested dictionary with keys of Week Number and Matchup Number, with a list of single-value dictionaries
+
+        # this becomes a dictionary with team names for keys and their wins and losses indexed by week number - 1 in a list
+        # there is also a dictionary called streak which has dictionaries by team name, these inner dicts contain lists with win/loss streak at that week num - 1
         team_record_map = {team: [] for team in self.teams}
-        winning_teams = [[] for _ in range(1, self.curr_matchup_period)]
-        winning_scores = [[] for _ in range(1, self.curr_matchup_period)]
-        losing_teams = [[] for _ in range(1, self.curr_matchup_period)]
-        losing_scores = [[] for _ in range(1, self.curr_matchup_period)]
-        score_deficits = [[] for _ in range(1, self.curr_matchup_period)]
+        
+        # These are all 2D arrays indexed by week num - 1 and matchup num - 1 respectively,
+        winning_teams = [[] for _ in range(1, self.curr_matchup_period)] # team names as values inside the list for winners of matchup
+        losing_teams = [[] for _ in range(1, self.curr_matchup_period)] # team names as values inside the list for losers of matchup
+        winning_scores = [[] for _ in range(1, self.curr_matchup_period)] # team scores as values inside the list for winners of matchup
+        losing_scores = [[] for _ in range(1, self.curr_matchup_period)] # team scores as values inside the list for losers of matchup
+        score_deficits = [[] for _ in range(1, self.curr_matchup_period)] # score difference between winning and losing team of mathcup as values inside the list
 
         
-        # Call printWeekMatchupResults in loop from beginning to most recent matchup period to show season results
+        
         for i in range(1, self.curr_matchup_period):
             key_val = 'Week ' + str(i)
             full_matchup_map[key_val] = {}
@@ -43,15 +51,31 @@ class Matchup:
         return full_matchup_map, team_record_map, winning_teams, losing_teams, winning_scores, losing_scores, score_deficits
     
     def weeklyStats(self, team_record_map):
-        team_record_map["streak"] = {team: "" for team in self.teams}
-        matchup_period = self.curr_matchup_period - 1 # account for current week being played and not finalized
+        team_record_map["streak"] = {team: [] for team in self.teams}
       
+        # for team in self.teams:
+        #     prev_val = 0
+        #     streak_count = 0  
+
+        #     for index in range(matchup_period - 1, -1, -1):
+        #         curr_val = team_record_map[team][index]
+        #         if prev_val == curr_val:
+        #             streak_count += 1
+
+        #         elif prev_val == 0:
+        #             prev_val = curr_val
+        #             streak_count += 1
+
+        #         else:
+        #             team_record_map['streak'][team].append(prev_val + str(streak_count))
+        #             break
+
         for team in self.teams:
             prev_val = 0
             streak_count = 0  
 
-            for index in range(matchup_period - 1, -1, -1):
-                curr_val = team_record_map[team][index]
+            for index in range(self.curr_matchup_period-1):
+                curr_val = team_record_map[index][team]
                 if prev_val == curr_val:
                     streak_count += 1
 
@@ -60,8 +84,14 @@ class Matchup:
                     streak_count += 1
 
                 else:
-                    team_record_map['streak'][team] = prev_val + str(streak_count)
-                    break
+                    streak_count = 0
+                    prev_val = curr_val
+                    streak_count += 1
+                    
+                    
+                team_record_map['streak'][team].append(prev_val + str(streak_count))
+
+                
 
         highest_winning_scores = []
         highest_winning_teams = []
@@ -269,3 +299,5 @@ class Matchup:
         print(f"{lowest_losing_team if lowest_losing_team[:-2] == highest_deficit_losing_team else highest_deficit_losing_team} took the loss in the blowout match of the week which was by {highest_deficit} pts\n")
 
         print(output)
+
+        print(self.team_record_map)
