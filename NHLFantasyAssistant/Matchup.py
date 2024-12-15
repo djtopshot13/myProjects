@@ -75,7 +75,7 @@ class Matchup:
             streak_count = 0  
 
             for index in range(self.curr_matchup_period-1):
-                curr_val = team_record_map[index][team]
+                curr_val = team_record_map[team][index]
                 if prev_val == curr_val:
                     streak_count += 1
 
@@ -247,7 +247,7 @@ class Matchup:
             losing_score = self.full_matchup_map[key_val][match_val][3]['losing_score']
             score_deficit = self.full_matchup_map[key_val][match_val][4]['score_deficit']
 
-            output += f"{winning_team} ({winning_score} pts) won against {losing_team} ({losing_score} pts) by {score_deficit} pts\n"
+            output += f"{winning_team}({self.team_record_map['streak'][winning_team][index-1]}) [{winning_score} pts] won against {losing_team}({self.team_record_map['streak'][losing_team][index-1]}) [{losing_score} pts] by {score_deficit} pts\n"
 
             if winning_team == self.highest_winning_teams[index-1]:
                 highest_winning_team = winning_team + "**"
@@ -299,5 +299,3 @@ class Matchup:
         print(f"{lowest_losing_team if lowest_losing_team[:-2] == highest_deficit_losing_team else highest_deficit_losing_team} took the loss in the blowout match of the week which was by {highest_deficit} pts\n")
 
         print(output)
-
-        print(self.team_record_map)
