@@ -191,7 +191,7 @@ class Matchup:
     def weeklyMatchupResults(self, index):
 
         key_val = "Week " + str(index)
-
+        output = ""
         title = f"{key_val} Matchup Results:"
         # print(f"{'='*total_length}")
         # print(f"{title}".center(total_length))
@@ -210,18 +210,19 @@ class Matchup:
         for i in range(len(self.teams) // 2):
             match_val = "Matchup " + str(i+1)
             subtitle = f"{match_val} Results:"
-            print(f'\n{subtitle}\n')
+            output += f'\n{subtitle}\n'
             winning_team = self.full_matchup_map[key_val][match_val][0]['winning_team']
             losing_team = self.full_matchup_map[key_val][match_val][1]['losing_team']
             winning_score = self.full_matchup_map[key_val][match_val][2]['winning_score']
             losing_score = self.full_matchup_map[key_val][match_val][3]['losing_score']
             score_deficit = self.full_matchup_map[key_val][match_val][4]['score_deficit']
 
-            print(f"{winning_team} ({winning_score} pts) won against {losing_team} ({losing_score} pts) by {score_deficit} pts")
+            output += f"{winning_team} ({winning_score} pts) won against {losing_team} ({losing_score} pts) by {score_deficit} pts\n"
 
             if winning_team == self.highest_winning_teams[index-1]:
                 highest_winning_team = winning_team + "**"
                 highest_winning_score = self.winning_scores[index-1]
+                highest_win_index = i
                 # print(f"{winning_team} had the highest score of the week with a score of {highest_winning_score} pts")
 
                 # print(f"{highest_winning_team if winning_team == highest_deficit_winning_team else highest_deficit_winning_team} got the win in the blowout match of the week which was by {highest_deficit} pts")
@@ -229,6 +230,7 @@ class Matchup:
             if winning_team == self.lowest_winning_teams[index-1]:
                 lowest_winning_team = winning_team + "++"
                 lowest_winning_score = self.winning_scores[index-1]
+                lowest_win_index = i
                 # print(f"{lowest_winning_team} had the lowest winning score of the week with a score of {lowest_winning_score} pts")
 
                 # print(f"{lowest_winning_team if winning_team == lowest_deficit_winning_team else lowest_deficit_winning_team} got the win in the tightest match of the week which was by {lowest_deficit} pts")
@@ -237,6 +239,7 @@ class Matchup:
             if losing_team == self.highest_losing_teams[index-1]:
                 highest_losing_team = losing_team + "--"
                 highest_losing_score = self.losing_scores[index-1]
+                highest_loss_index = i
                 # print(f"{highest_losing_team} had the highest score of the week with a score of {highest_losing_score} pts")
 
                 # print(f"{highest_losing_team if losing_team == lowest_deficit_losing_team else lowest_deficit_losing_team} took the loss in the tighest match of the week which was by {lowest_deficit} pts")
@@ -244,22 +247,25 @@ class Matchup:
             if losing_team == self.lowest_losing_teams[index-1]:
                 lowest_losing_team = losing_team + "~~"
                 lowest_losing_score = self.losing_scores[index-1]
+                lowest_loss_index = i
                 # print(f"{lowest_losing_team} had the lowest winning score of the week with a score of {lowest_losing_score} pts")
                 
                 # print(f"{lowest_losing_team if losing_team == highest_deficit_losing_team else highest_deficit_losing_team} took the loss in the blowout match of the week which was by {highest_deficit} pts")
         
-        print(f"{winning_team} had the highest score of the week with a score of {highest_winning_score} pts")
+        print(f"{highest_winning_team} had the highest score of the week with a score of {highest_winning_score[highest_win_index]} pts")
 
-        print(f"{highest_winning_team if winning_team == highest_deficit_winning_team else highest_deficit_winning_team} got the win in the blowout match of the week which was by {highest_deficit} pts") 
+        print(f"{highest_winning_team if highest_winning_team[:-2] == highest_deficit_winning_team else highest_deficit_winning_team} got the win in the blowout match of the week which was by {highest_deficit} pts\n") 
             
-        print(f"{lowest_winning_team} had the lowest winning score of the week with a score of {lowest_winning_score} pts")
+        print(f"{lowest_winning_team} had the lowest winning score of the week with a score of {lowest_winning_score[lowest_win_index]} pts")
 
-        print(f"{lowest_winning_team if winning_team == lowest_deficit_winning_team else lowest_deficit_winning_team} got the win in the tightest match of the week which was by {lowest_deficit} pts")
+        print(f"{lowest_winning_team if lowest_winning_team[:-2] == lowest_deficit_winning_team else lowest_deficit_winning_team} got the win in the tightest match of the week which was by {lowest_deficit} pts\n")
 
-        print(f"{highest_losing_team} had the highest score of the week with a score of {highest_losing_score} pts")
+        print(f"{highest_losing_team} had the highest losing score of the week with a score of {highest_losing_score[highest_loss_index]} pts")
 
-        print(f"{highest_losing_team if losing_team == lowest_deficit_losing_team else lowest_deficit_losing_team} took the loss in the tighest match of the week which was by {lowest_deficit} pts")
+        print(f"{highest_losing_team if highest_losing_team[:-2] == lowest_deficit_losing_team else lowest_deficit_losing_team} took the loss in the tighest match of the week which was by {lowest_deficit} pts\n")
 
-        print(f"{lowest_losing_team} had the lowest winning score of the week with a score of {lowest_losing_score} pts")
+        print(f"{lowest_losing_team} had the lowest score of the week with a score of {lowest_losing_score[lowest_loss_index]} pts")
                 
-        print(f"{lowest_losing_team if losing_team == highest_deficit_losing_team else highest_deficit_losing_team} took the loss in the blowout match of the week which was by {highest_deficit} pts")
+        print(f"{lowest_losing_team if lowest_losing_team[:-2] == highest_deficit_losing_team else highest_deficit_losing_team} took the loss in the blowout match of the week which was by {highest_deficit} pts\n")
+
+        print(output)
