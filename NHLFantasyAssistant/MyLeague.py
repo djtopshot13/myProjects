@@ -2,6 +2,7 @@ import League
 import Player
 import Skater
 import Goalie
+import Matchup
 
 class MyLeague:
     def __init__(self, teams, matchups, draft_dict, undrafted_dict, rostered_players, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):
@@ -16,6 +17,7 @@ class MyLeague:
         self.standings = standings
         self.curr_matchup_period = curr_matchup_period
         self.settings = settings
+        self.matchup = self._make_Matchup()
 
         # self._all_players = self._get_All_Players()
         
@@ -32,6 +34,9 @@ class MyLeague:
     #     my_team = self.teams["Dillon's Dubs"]
     #     unrostered_players = _construct_Available_Players(_get_Available_Players())
     #     return unrostered_players
+
+    def _make_Matchup(self):
+        return Matchup.Matchup(self.curr_matchup_period, self.matchups, self.teams)
     
     # Check to make sure that only player objects are added
     def _get_All_Players(self):
@@ -140,199 +145,145 @@ class MyLeague:
 
     # set up matchup results print method 
     # prints winning team name, losing team name, and the point margin that was won by
-    def printWeekMatchupResults(self, weekNum, winning_teams, winning_scores, losing_teams, losing_scores, score_deficits, full_matchup_map):
-        matchups = self.matchups[weekNum] # get the matches of the week using the weekNum parameter
-        print(f"\nWeek {weekNum} Matchup Results: \n") # print header with which week is being represented
+    # def printWeekMatchupResults(self, weekNum, winning_teams, winning_scores, losing_teams, losing_scores, score_deficits):
+    #     matchups = self.matchups[weekNum] # get the matches of the week using the weekNum parameter
+    #     # print(f"\nWeek {weekNum} Matchup Results: \n") # print header with which week is being represented
         
 
-        for i in range(len(self.teams) // 2): # Iterate over the number of matches per week which should be 4 in this 8 team league
-            curr_matchup = matchups[i] # use the week matchups and iterate from 0-3 to get all 4 matchups
-            # set if else case to determine winning team based on being home or away since that's how the matchup object is set up
-            # if home team wins
-            if (curr_matchup.home_score > curr_matchup.away_score):
-                # winning team and winning score -> home team name and home team score
-                # losing team and losing score -> away team name and away team score
-                winning_team = curr_matchup.home_team.team_name
-                winning_score = curr_matchup.home_score
-                losing_team = curr_matchup.away_team.team_name
-                losing_score = curr_matchup.away_score
+    #     for i in range(len(self.teams) // 2): # Iterate over the number of matches per week which should be 4 in this 8 team league
+    #         curr_matchup = matchups[i] # use the week matchups and iterate from 0-3 to get all 4 matchups
+    #         # set if else case to determine winning team based on being home or away since that's how the matchup object is set up
+    #         # if home team wins
+    #         if (curr_matchup.home_score > curr_matchup.away_score):
+    #             # winning team and winning score -> home team name and home team score
+    #             # losing team and losing score -> away team name and away team score
+    #             winning_team = curr_matchup.home_team.team_name
+    #             winning_score = curr_matchup.home_score
+    #             losing_team = curr_matchup.away_team.team_name
+    #             losing_score = curr_matchup.away_score
                 
 
-            # else away team wins
-            else:
-                # winning team and winning score -> away team name and away team score
-                # losing team and losing score -> home team name and home team score
-                winning_team = curr_matchup.away_team.team_name
-                winning_score = curr_matchup.away_score  
-                losing_team = curr_matchup.home_team.team_name
-                losing_score = curr_matchup.home_score
+    #         # else away team wins
+    #         else:
+    #             # winning team and winning score -> away team name and away team score
+    #             # losing team and losing score -> home team name and home team score
+    #             winning_team = curr_matchup.away_team.team_name
+    #             winning_score = curr_matchup.away_score  
+    #             losing_team = curr_matchup.home_team.team_name
+    #             losing_score = curr_matchup.home_score
 
-            # set up point margin by getting the difference between winning and losing score rounded to 1 decimal place
-            score_deficit = round(winning_score - losing_score, 1)
+    #         # set up point margin by getting the difference between winning and losing score rounded to 1 decimal place
+    #         score_deficit = round(winning_score - losing_score, 1)
 
-            winning_teams[weekNum-1].append(winning_team)
-            winning_scores[weekNum-1].append(winning_score)
-            losing_teams[weekNum-1].append(losing_team)
-            losing_scores[weekNum-1].append(losing_score)
-            score_deficits[weekNum-1].append(score_deficit)
-            # winning_list[keyVal][winning_team] = winning_score
-            # losing_list[keyVal][losing_team] = losing_score
-            # score_deficit_list[keyVal].append([])
-            # score_deficit_list[keyVal][i].append({'winning_team' : winning_team})
-            # score_deficit_list[keyVal][i].append({'losing_team': losing_team})
-            # score_deficit_list[keyVal][i].append({'score_deficit': score_deficit})
-    
-            # score_deficit_list[weekNum - 1].append({'winning_team' : winning_score})
-            # score_deficit_list[weekNum - 1].append({'losing_team': losing_score})
-            # score_deficit_list[weekNum - 1].append({'score_deficit': score_deficit})
+    #         winning_teams[weekNum-1].append(winning_team)
+    #         winning_scores[weekNum-1].append(winning_score)
+    #         losing_teams[weekNum-1].append(losing_team)
+    #         losing_scores[weekNum-1].append(losing_score)
+    #         score_deficits[weekNum-1].append(score_deficit)
 
             
             # print statement with winning team, winning score [win message] losing team and losing score with point margin
-            print(f"{winning_team}({winning_score} pts) won against {losing_team}({losing_score} pts) by {score_deficit} pts \n")
+            # print(f"{winning_team}({winning_score} pts) won against {losing_team}({losing_score} pts) by {score_deficit} pts \n")
 
         # **Use this for possibly creating a win/loss streak report and maximum/minimum score differentials by week
         # Rewrite the stats function to be used in the season matchup results by using return values from the weekly results to access the winning team and losing team info
         # self.weeklyMatchupStats(matchup_map)
         # return matchup_map
-        return winning_teams, winning_scores, losing_teams, losing_scores, score_deficits 
+        # return winning_teams, winning_scores, losing_teams, losing_scores, score_deficits 
         # winning_list, losing_list, score_deficit_list
 
     # Finding more unique stats from the week to maybe consolidate reporting on the matchups
-    def weeklyMatchupStats(self, team_record_map, full_matchup_map, winning_scores, losing_scores, score_deficits):
-        team_record_map["streak"] = {team: "" for team in self.teams}
+    # def weeklyMatchupStats(self, team_record_map, full_matchup_map, winning_scores, losing_scores, score_deficits):
+        # team_record_map["streak"] = {team: "" for team in self.teams}
 
-        matchup_period = self.curr_matchup_period - 1 # account for current week being played and not finalized
+        # matchup_period = self.curr_matchup_period - 1 # account for current week being played and not finalized
         
-        for team in self.teams:
-            prev_val = 0
-            streak_count = 0  
+        # for team in self.teams:
+        #     prev_val = 0
+        #     streak_count = 0  
 
-            for index in range(matchup_period - 1, -1, -1):
-                curr_val = team_record_map[team][index]
-                if prev_val == curr_val:
-                    streak_count += 1
+        #     for index in range(matchup_period - 1, -1, -1):
+        #         curr_val = team_record_map[team][index]
+        #         if prev_val == curr_val:
+        #             streak_count += 1
 
-                elif prev_val == 0:
-                    prev_val = curr_val
-                    streak_count += 1
+        #         elif prev_val == 0:
+        #             prev_val = curr_val
+        #             streak_count += 1
 
-                else:
-                    team_record_map['streak'][team] = prev_val + str(streak_count)
-                    break
+        #         else:
+        #             team_record_map['streak'][team] = prev_val + str(streak_count)
+        #             break
         
-        print()
-        print(team_record_map)
-        highest_winning_scores = [] # overall highest score of each week in list with index of weekNum - 1
-        lowest_winning_scores = [] # lowest scores yet winning by week with index of weekNum - 1
-        highest_losing_scores = [] # highest scores yet losing by week with index of weekNum - 1
-        lowest_losing_scores = [] # overall lowest score of each week in list with index of weekNum - 1
-        smallest_score_deficits = [] # smallest point deficit of each week in list with index of weekNum - 1
-        largest_score_deficits = [] # largest point deficit of each week in list with index of weekNum - 1
-        highest_winning_teams = []
-        highest_losing_teams = []
-        lowest_winning_teams = []
-        lowest_losing_teams = []
-        highest_deficit_winning_teams = []
-        highest_deficit_losing_teams = []
-        lowest_deficit_winning_teams = []
-        lowest_deficit_losing_teams = []
+        # print()
+        # print(team_record_map)
+        # highest_winning_scores = [] # overall highest score of each week in list with index of weekNum - 1
+        # lowest_winning_scores = [] # lowest scores yet winning by week with index of weekNum - 1
+        # highest_losing_scores = [] # highest scores yet losing by week with index of weekNum - 1
+        # lowest_losing_scores = [] # overall lowest score of each week in list with index of weekNum - 1
+        # smallest_score_deficits = [] # smallest point deficit of each week in list with index of weekNum - 1
+        # largest_score_deficits = [] # largest point deficit of each week in list with index of weekNum - 1
+        # highest_winning_teams = []
+        # highest_losing_teams = []
+        # lowest_winning_teams = []
+        # lowest_losing_teams = []
+        # highest_deficit_winning_teams = []
+        # highest_deficit_losing_teams = []
+        # lowest_deficit_winning_teams = []
+        # lowest_deficit_losing_teams = []
 
-        for index in range(1, self.curr_matchup_period):
-            matchup_idx = 0
-            key_val = 'Week ' + str(index)
+        # for index in range(1, self.curr_matchup_period):
+        #     matchup_idx = 0
+        #     key_val = 'Week ' + str(index)
 
-            highest_winning_scores.append(max(winning_scores[index-1]))
-            matchup_idx = winning_scores[index-1].index(highest_winning_scores[index-1]) + 1
-            match_val = 'Matchup ' + str(matchup_idx)
-            highest_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
+            # highest_winning_scores.append(max(winning_scores[index-1]))
+            # matchup_idx = winning_scores[index-1].index(highest_winning_scores[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # highest_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
 
-            # teams, winners = matchup_map['winning_scores'][index].items()
-            lowest_winning_scores.append(min(winning_scores[index-1]))
-            matchup_idx = winning_scores[index-1].index(lowest_winning_scores[index-1]) + 1
-            match_val = 'Matchup ' + str(matchup_idx)
-            lowest_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
+            # # teams, winners = matchup_map['winning_scores'][index].items()
+            # lowest_winning_scores.append(min(winning_scores[index-1]))
+            # matchup_idx = winning_scores[index-1].index(lowest_winning_scores[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # lowest_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
 
-            highest_losing_scores.append(max(losing_scores[index-1]))  
-            matchup_idx = losing_scores[index-1].index(highest_losing_scores[index-1]) + 1
-            match_val = 'Matchup ' + str(matchup_idx)
-            highest_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
+            # highest_losing_scores.append(max(losing_scores[index-1]))  
+            # matchup_idx = losing_scores[index-1].index(highest_losing_scores[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # highest_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
 
-            lowest_losing_scores.append(min(losing_scores[index-1]))  
-            matchup_idx = losing_scores[index-1].index(lowest_losing_scores[index-1]) + 1
-            match_val = 'Matchup ' + str(matchup_idx)
-            lowest_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
+            # lowest_losing_scores.append(min(losing_scores[index-1]))  
+            # matchup_idx = losing_scores[index-1].index(lowest_losing_scores[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # lowest_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
 
-            largest_score_deficits.append(max(score_deficits[index-1]))  
-            matchup_idx = score_deficits[index-1].index(largest_score_deficits[index-1]) + 1
-            match_val = 'Matchup ' + str(matchup_idx)
-            highest_deficit_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
-            highest_deficit_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
+            # largest_score_deficits.append(max(score_deficits[index-1]))  
+            # matchup_idx = score_deficits[index-1].index(largest_score_deficits[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # highest_deficit_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
+            # highest_deficit_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
 
-            smallest_score_deficits.append(min(score_deficits[index-1]))  
-            matchup_idx = score_deficits[index-1].index(smallest_score_deficits[index-1]) + 1
-            match_val = 'Matchup ' + str(matchup_idx)
-            lowest_deficit_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
-            lowest_deficit_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
+            # smallest_score_deficits.append(min(score_deficits[index-1]))  
+            # matchup_idx = score_deficits[index-1].index(smallest_score_deficits[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # lowest_deficit_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
+            # lowest_deficit_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
     
         
     
         # figure out how to get this to work later
         # teams, streaks = matchup_map['streak'].items()
         
-        return highest_winning_scores, lowest_winning_scores, highest_losing_scores, lowest_losing_scores, largest_score_deficits, smallest_score_deficits
+        # return highest_winning_scores, lowest_winning_scores, highest_losing_scores, lowest_losing_scores, largest_score_deficits, smallest_score_deficits
                 
 
 
     # print each matchup result from the beginning of the season to the most recent completed matchup
     def printSeasonMatchupResults(self):
-        full_matchup_map = {}
-        team_record_map = {team: [] for team in self.teams}
-        winning_teams = [[] for _ in range(1, self.curr_matchup_period)]
-        winning_scores = [[] for _ in range(1, self.curr_matchup_period)]
-        losing_teams = [[] for _ in range(1, self.curr_matchup_period)]
-        losing_scores = [[] for _ in range(1, self.curr_matchup_period)]
-        score_deficits = [[] for _ in range(1, self.curr_matchup_period)]
+        self.matchup.seasonMatchupResults()
 
-        
-        # Call printWeekMatchupResults in loop from beginning to most recent matchup period to show season results
-        for i in range(1, self.curr_matchup_period):
-            key_val = 'Week ' + str(i)
-            full_matchup_map[key_val] = {}
-            # winning_list[key_val] = {}
-            # losing_list[key_val] = {}
-            # score_deficit_list[key_val] = []
-            winning_teams, winning_scores, losing_teams, losing_scores, score_deficits = self.printWeekMatchupResults(i, winning_teams, winning_scores, losing_teams, losing_scores, score_deficits, full_matchup_map)
-            # winning_list, losing_list, score_deficit_list 
-
-            for j in range(len(self.teams) // 2):
-                match_val = 'Matchup ' + str(j+1)
-                full_matchup_map[key_val][match_val] = {}
-
-                winning_teams_map = {'winning_team': winning_teams[i-1][j]}
-                losing_teams_map = {'losing_team': losing_teams[i-1][j]}
-                winning_scores_map = {'winning_score': winning_scores[i-1][j]}
-                losing_scores_map = {'losing_score': losing_scores[i-1][j]}
-                score_deficits_map = {'score_deficit': score_deficits[i-1][j]}
-                
-                
-
-                team_record_map[winning_teams[i-1][j]].append('W')
-                team_record_map[losing_teams[i-1][j]].append('L')
-
-                full_matchup_map[key_val][match_val] = [winning_teams_map, losing_teams_map, winning_scores_map, losing_scores_map, score_deficits_map]
-        
-        print(team_record_map)
-
-
-        highest_winning_scores, lowest_winning_scores, highest_losing_scores, lowest_losing_scores, largest_score_deficits, smallest_score_deficits = self.weeklyMatchupStats(team_record_map, full_matchup_map, winning_scores, losing_scores, score_deficits)
-        # print(teams)
-        # print(streaks)
-        # print(highest_winning_scores)
-        # print(lowest_winning_scores)
-        # print(highest_losing_scores)
-        # print(lowest_losing_scores)
-        # print(largest_score_deficits)
-        # print(smallest_score_deficits)
+    def printWeeklyMatchupResults(self, index):
+        self.matchup.weeklyMatchupResults(index)
         
     
     # method to print in order of best win-loss percentage to worst win-loss percentage with team name and associated season record
