@@ -11,10 +11,9 @@ class Team:
         self.matchup_losses = matchup_losses
         self.draft_list = draft_list
         self.stats_dict = stats_dict
-        
 
-    def displayTeamRecord(self):
-        return f"{self.name} ({self.matchup_wins}, {self.matchup_losses})"
+    def displayTeamRecord(self, record_map):
+        return f"{self.name} [{self.matchup_wins}, {self.matchup_losses}]({record_map['streak'][self.name][self.matchup_wins + self.matchup_losses - 1]})"
     
     def draftOrder(self):
         msg = []
@@ -81,16 +80,6 @@ class Team:
                 player_info = player.displayPlayerInfo()
                 print(f"{count}. {player_info}")
 
-            # print("Testing Player Variables")
-            # print(player.acquisitionType) # returns ADD, DRAFT, or TRADE
-            # print(player.eligibleSlots) # returns [[Forward, Defense, Goalie,], [actual position of Forward], ['Util'] if F or D, ['Bench'], and [IR]
-            # print(player.injured) # returns True if IR or OUT, not if DTD
-            # print(player.injuryStatus) # returns ACTIVE if healthy, then returns DAY_TO_DAY, INJURY_RESERVE, SUSPENDED, or OUT
-            # print(player.lineupSlot) # returns value from eligibleSlots of where player is currently located
-            # print(player.playerId)
-            # print(player.proTeam)
-            # print(player.stats) # nested dictionaries that could be split. Inner Dictionaries: 'Total 2024' (prevYear), 'Total 2025' (currYear), 
-            # 'Last 7 2025' stats from previous 7 games, 'Last 15 2025' stats from previous 15 games, 'Projected 2024' (prevYearProj), 'Projected 2025' (currYearProj)
 
     def displayAvgPointsSortedRoster(self):
         sorted_players = sorted(self.players, key=lambda player: player.avg_points, reverse=True)

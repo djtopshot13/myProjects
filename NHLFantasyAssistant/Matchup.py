@@ -54,23 +54,6 @@ class Matchup:
     # takes in the self.__first_map as team_record_map for the first draft version that will be added to
     def weeklyStats(self, team_record_map):
         team_record_map["streak"] = {team: [] for team in self.teams} # initialize new dictionary 'streak' with key values of team names and empty lists as values
-      
-        # for team in self.teams:
-        #     prev_val = 0
-        #     streak_count = 0  
-
-        #     for index in range(matchup_period - 1, -1, -1):
-        #         curr_val = team_record_map[team][index]
-        #         if prev_val == curr_val:
-        #             streak_count += 1
-
-        #         elif prev_val == 0:
-        #             prev_val = curr_val
-        #             streak_count += 1
-
-        #         else:
-        #             team_record_map['streak'][team].append(prev_val + str(streak_count))
-        #             break
 
         # this nested for loop is what sets up the formation of the rest of the team_record_map
         # the value is the streak for each team in week order, so the proper streak is the last value.
@@ -115,18 +98,6 @@ class Matchup:
         # we iterate over the number of weeks since we're looking for standout stats from all 4 matchups, not just each matchup separately
         for index in range(1, self.curr_matchup_period):
             key_val = 'Week ' + str(index) # set up key_val for passing and using by self.full_matchup_map
-            # highest_winning_scores.append([])
-            # highest_winning_teams.append([])
-            # lowest_winning_scores.append([])
-            # lowest_winning_teams.append([])
-            # highest_losing_scores.append([])
-            # highest_losing_teams.append([])
-            # lowest_losing_scores.append([])
-            # lowest_losing_teams.append([])
-            # largest_score_deficits.append([])
-            # highest_deficit_teams.append([])
-            # smallest_score_deficits.append([])
-            # lowest_deficit_teams.append([])
 
             # set up the 6 different case callings of the helper function which consists of using the 3 different score_lists
             # winning, losing, and score_deficit are the 3, and then choosing either high or low stats for a total of 6 
@@ -161,12 +132,6 @@ class Matchup:
             smallest_score_deficits = scores.copy()
             lowest_deficit_teams = teams.copy()
 
-        # print(highest_winning_teams)
-        # print(highest_winning_scores)
-
-        # print(lowest_winning_teams)
-        # print(lowest_winning_scores)
-        
         # return the team_record_map and the 12 lists that come from the 6 helper function calls that each return 2 lists for 13 total values returned
         return team_record_map, highest_winning_scores, highest_winning_teams, lowest_winning_scores, lowest_winning_teams, highest_losing_scores, highest_losing_teams, lowest_losing_scores, lowest_losing_teams, largest_score_deficits, highest_deficit_teams, smallest_score_deficits, lowest_deficit_teams
 
@@ -281,59 +246,69 @@ class Matchup:
             losing_team_streak = self.team_record_map['streak'][losing_team][index-1] # get the losing_team streak using the team_record_map
 
             # this is the basic output for each matchup added to the output string
-            output += f"{winning_team}({winning_team_streak}) [{winning_score} pts] won against {losing_team}({losing_team_streak}) [{losing_score} pts] by {score_deficit} pts\n"
+            output += f"{winning_team} ({winning_team_streak}) [{winning_score} pts] won against {losing_team} ({losing_team_streak}) [{losing_score} pts] by {score_deficit} pts\n"
 
             # add extra symbols to display teams that had the highest and lowest individual scores for both winning and losing teams
             # ** for the highest winning score team, ++ for the lowest winning score team, -- for the highest losing score team, and ~~ for the lowest losing score team
 
             # here is the code for the highest winning score team
             if winning_team == self.highest_winning_teams[index-1]:
-                highest_winning_team = winning_team + "**" # update team name with suffix symbol 
-                highest_winning_score = self.winning_scores[index-1]
-                highest_win_index = i
-                # print(f"{winning_team} had the highest score of the week with a score of {highest_winning_score} pts")
+                highest_winning_team = winning_team + "**" # update team name with associated suffix symbol 
+                highest_winning_score = winning_score # grab winning score at same index
+                highest_winning_team_streak = winning_team_streak
 
-                # print(f"{highest_winning_team if winning_team == highest_deficit_winning_team else highest_deficit_winning_team} got the win in the blowout match of the week which was by {highest_deficit} pts")
 
+            # here is the code for the lowest winning score team
             if winning_team == self.lowest_winning_teams[index-1]:
-                lowest_winning_team = winning_team + "++"
-                lowest_winning_score = self.winning_scores[index-1]
-                lowest_win_index = i
-                # print(f"{lowest_winning_team} had the lowest winning score of the week with a score of {lowest_winning_score} pts")
-
-                # print(f"{lowest_winning_team if winning_team == lowest_deficit_winning_team else lowest_deficit_winning_team} got the win in the tightest match of the week which was by {lowest_deficit} pts")
-
-
-            if losing_team == self.highest_losing_teams[index-1]:
-                highest_losing_team = losing_team + "--"
-                highest_losing_score = self.losing_scores[index-1]
-                highest_loss_index = i
-                # print(f"{highest_losing_team} had the highest score of the week with a score of {highest_losing_score} pts")
-
-                # print(f"{highest_losing_team if losing_team == lowest_deficit_losing_team else lowest_deficit_losing_team} took the loss in the tighest match of the week which was by {lowest_deficit} pts")
-
-            if losing_team == self.lowest_losing_teams[index-1]:
-                lowest_losing_team = losing_team + "~~"
-                lowest_losing_score = self.losing_scores[index-1]
-                lowest_loss_index = i
-                # print(f"{lowest_losing_team} had the lowest winning score of the week with a score of {lowest_losing_score} pts")
-                
-                # print(f"{lowest_losing_team if losing_team == highest_deficit_losing_team else highest_deficit_losing_team} took the loss in the blowout match of the week which was by {highest_deficit} pts")
-        
-        print(f"{highest_winning_team}({winning_team_streak}) had the highest score of the week with a score of {highest_winning_score[highest_win_index]} pts")
-
-        print(f"{highest_winning_team({winning_team_streak}) if highest_winning_team[:-2] == highest_deficit_winning_team else highest_deficit_winning_team({highest_deficit_winning_team_streak})} got the win in the blowout match of the week which was by {highest_deficit} pts\n") 
+                lowest_winning_team = winning_team + "++" # update team name with associated suffix symbol 
+                lowest_winning_score = winning_score # grab winning score at same index
+                lowest_winning_team_streak = winning_team_streak
             
-        print(f"{lowest_winning_team}({winning_team_streak}) had the lowest winning score of the week with a score of {lowest_winning_score[lowest_win_index]} pts")
 
-        print(f"{lowest_winning_team({winning_team_streak}) if lowest_winning_team[:-2] == lowest_deficit_winning_team else lowest_deficit_winning_team({lowest_deficit_winning_team_streak})} got the win in the tightest match of the week which was by {lowest_deficit} pts\n")
 
-        print(f"{highest_losing_team}({losing_team_streak}) had the highest losing score of the week with a score of {highest_losing_score[highest_loss_index]} pts")
-
-        print(f"{highest_losing_team({losing_team_streak}) if highest_losing_team[:-2] == lowest_deficit_losing_team else lowest_deficit_losing_team({lowest_deficit_losing_team_streak})} took the loss in the tighest match of the week which was by {lowest_deficit} pts\n")
-
-        print(f"{lowest_losing_team}({losing_team_streak}) had the lowest score of the week with a score of {lowest_losing_score[lowest_loss_index]} pts")
+            # here is the code for the highest losing score team
+            if losing_team == self.highest_losing_teams[index-1]:
+                highest_losing_team = losing_team + "--" # update team name with associated suffix symbol 
+                highest_losing_score = losing_score # grab losing score at same index
+                highest_losing_team_streak = losing_team_streak
                 
-        print(f"{lowest_losing_team({losing_team_streak}) if lowest_losing_team[:-2] == highest_deficit_losing_team else highest_deficit_losing_team({highest_deficit_losing_team_streak})} took the loss in the blowout match of the week which was by {highest_deficit} pts\n")
+            # here is the code for the lowest losing score team
+            if losing_team == self.lowest_losing_teams[index-1]:
+                lowest_losing_team = losing_team + "~~" # update team name with associated suffix symbol 
+                lowest_losing_score = losing_score # grab losing score at same index
+                lowest_losing_team_streak = losing_team_streak
 
-        print(output)
+        # print statements I want to go right after the title as depth highlights of the week 
+        # there are 2 print statements for each depth stat of either highest or lowest and winning or losing
+        # The first print statement is individual score with team name, team streak and then the score using the saved index inside the conditional
+        # The second print statement is the team with either highest or lowest deficit
+        # high winning and low losing and high deficit checks, while low winning and high losing are low deficit checks
+        # if the previous team is also the deficit team then use that, otherwise use the edge case defined earlier and the deficit team itself 
+        print(f"{highest_winning_team} ({highest_winning_team_streak}) had the highest score of the week with a score of {highest_winning_score} pts")
+        high_winner_print = f"{highest_winning_team} ({highest_winning_team_streak})"
+        if highest_winning_team[:-2] != highest_deficit_winning_team: 
+            high_winner_print = f"{highest_deficit_winning_team} ({highest_deficit_winning_team_streak})"
+        print(f"{high_winner_print} got the win in the blowout match of the week which was by {highest_deficit} pts\n")
+
+        print(f"{lowest_winning_team} ({lowest_winning_team_streak}) had the lowest winning score of the week with a score of {lowest_winning_score} pts")
+        # print(f"{lowest_winning_team({winning_team_streak}) if lowest_winning_team[:-2] == lowest_deficit_winning_team else lowest_deficit_winning_team({lowest_deficit_winning_team_streak})} got the win in the tightest match of the week which was by {lowest_deficit} pts\n")
+        low_winner_print = f"{lowest_winning_team} ({lowest_winning_team_streak})"
+        if lowest_winning_team[:-2] != lowest_deficit_winning_team: 
+            low_winner_print = f"{lowest_deficit_winning_team} ({lowest_deficit_winning_team_streak})"
+        print(f"{low_winner_print} got the win in the tightest match of the week which was by {lowest_deficit} pts\n")
+
+        print(f"{highest_losing_team} ({highest_losing_team_streak}) had the highest losing score of the week with a score of {highest_losing_score} pts")
+        # print(f"{highest_losing_team({losing_team_streak}) if highest_losing_team[:-2] == lowest_deficit_losing_team else lowest_deficit_losing_team({lowest_deficit_losing_team_streak})} took the loss in the tighest match of the week which was by {lowest_deficit} pts\n")
+        high_loser_print = f"{highest_losing_team} ({highest_losing_team_streak})"
+        if highest_losing_team[:-2] != lowest_deficit_losing_team: 
+            high_loser_print = f"{lowest_deficit_losing_team} ({lowest_deficit_losing_team_streak})"
+        print(f"{high_loser_print} took the loss in the tightest match of the week which was by {lowest_deficit} pts\n")
+
+        print(f"{lowest_losing_team} ({lowest_losing_team_streak}) had the lowest score of the week with a score of {lowest_losing_score} pts")
+        # print(f"{lowest_losing_team({losing_team_streak}) if lowest_losing_team[:-2] == highest_deficit_losing_team else highest_deficit_losing_team({highest_deficit_losing_team_streak})} took the loss in the blowout match of the week which was by {highest_deficit} pts\n")
+        low_loser_print = f"{lowest_losing_team} ({lowest_losing_team_streak})"
+        if lowest_losing_team[:-2] != highest_deficit_losing_team: 
+            low_loser_print = f"{highest_deficit_losing_team} ({highest_deficit_losing_team_streak})"
+        print(f"{low_loser_print} took the loss in the blowout match of the week which was by {highest_deficit} pts\n")
+
+        print(output) # print this output string at the end with all the matchup information underneath the depth stat highlights

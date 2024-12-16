@@ -1,0 +1,183 @@
+
+    MyLeague.py
+    
+    #**I should make a new module for matchups and put the functions and data stats inside the class/object to make it easier to read the code
+    # and have the code encapsulated better than what it is currently
+
+    # set up matchup results print method 
+    # prints winning team name, losing team name, and the point margin that was won by
+    # def printWeekMatchupResults(self, weekNum, winning_teams, winning_scores, losing_teams, losing_scores, score_deficits):
+    #     matchups = self.matchups[weekNum] # get the matches of the week using the weekNum parameter
+    #     # print(f"\nWeek {weekNum} Matchup Results: \n") # print header with which week is being represented
+        
+
+    #     for i in range(len(self.teams) // 2): # Iterate over the number of matches per week which should be 4 in this 8 team league
+    #         curr_matchup = matchups[i] # use the week matchups and iterate from 0-3 to get all 4 matchups
+    #         # set if else case to determine winning team based on being home or away since that's how the matchup object is set up
+    #         # if home team wins
+    #         if (curr_matchup.home_score > curr_matchup.away_score):
+    #             # winning team and winning score -> home team name and home team score
+    #             # losing team and losing score -> away team name and away team score
+    #             winning_team = curr_matchup.home_team.team_name
+    #             winning_score = curr_matchup.home_score
+    #             losing_team = curr_matchup.away_team.team_name
+    #             losing_score = curr_matchup.away_score
+                
+
+    #         # else away team wins
+    #         else:
+    #             # winning team and winning score -> away team name and away team score
+    #             # losing team and losing score -> home team name and home team score
+    #             winning_team = curr_matchup.away_team.team_name
+    #             winning_score = curr_matchup.away_score  
+    #             losing_team = curr_matchup.home_team.team_name
+    #             losing_score = curr_matchup.home_score
+
+    #         # set up point margin by getting the difference between winning and losing score rounded to 1 decimal place
+    #         score_deficit = round(winning_score - losing_score, 1)
+
+    #         winning_teams[weekNum-1].append(winning_team)
+    #         winning_scores[weekNum-1].append(winning_score)
+    #         losing_teams[weekNum-1].append(losing_team)
+    #         losing_scores[weekNum-1].append(losing_score)
+    #         score_deficits[weekNum-1].append(score_deficit)
+
+            
+            # print statement with winning team, winning score [win message] losing team and losing score with point margin
+            # print(f"{winning_team}({winning_score} pts) won against {losing_team}({losing_score} pts) by {score_deficit} pts \n")
+
+        # **Use this for possibly creating a win/loss streak report and maximum/minimum score differentials by week
+        # Rewrite the stats function to be used in the season matchup results by using return values from the weekly results to access the winning team and losing team info
+        # self.weeklyMatchupStats(matchup_map)
+        # return matchup_map
+        # return winning_teams, winning_scores, losing_teams, losing_scores, score_deficits 
+        # winning_list, losing_list, score_deficit_list
+
+    # Finding more unique stats from the week to maybe consolidate reporting on the matchups
+    # def weeklyMatchupStats(self, team_record_map, full_matchup_map, winning_scores, losing_scores, score_deficits):
+        # team_record_map["streak"] = {team: "" for team in self.teams}
+
+        # matchup_period = self.curr_matchup_period - 1 # account for current week being played and not finalized
+        
+        # for team in self.teams:
+        #     prev_val = 0
+        #     streak_count = 0  
+
+        #     for index in range(matchup_period - 1, -1, -1):
+        #         curr_val = team_record_map[team][index]
+        #         if prev_val == curr_val:
+        #             streak_count += 1
+
+        #         elif prev_val == 0:
+        #             prev_val = curr_val
+        #             streak_count += 1
+
+        #         else:
+        #             team_record_map['streak'][team] = prev_val + str(streak_count)
+        #             break
+        
+        # print()
+        # print(team_record_map)
+        # highest_winning_scores = [] # overall highest score of each week in list with index of weekNum - 1
+        # lowest_winning_scores = [] # lowest scores yet winning by week with index of weekNum - 1
+        # highest_losing_scores = [] # highest scores yet losing by week with index of weekNum - 1
+        # lowest_losing_scores = [] # overall lowest score of each week in list with index of weekNum - 1
+        # smallest_score_deficits = [] # smallest point deficit of each week in list with index of weekNum - 1
+        # largest_score_deficits = [] # largest point deficit of each week in list with index of weekNum - 1
+        # highest_winning_teams = []
+        # highest_losing_teams = []
+        # lowest_winning_teams = []
+        # lowest_losing_teams = []
+        # highest_deficit_winning_teams = []
+        # highest_deficit_losing_teams = []
+        # lowest_deficit_winning_teams = []
+        # lowest_deficit_losing_teams = []
+
+        # for index in range(1, self.curr_matchup_period):
+        #     matchup_idx = 0
+        #     key_val = 'Week ' + str(index)
+
+            # highest_winning_scores.append(max(winning_scores[index-1]))
+            # matchup_idx = winning_scores[index-1].index(highest_winning_scores[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # highest_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
+
+            # # teams, winners = matchup_map['winning_scores'][index].items()
+            # lowest_winning_scores.append(min(winning_scores[index-1]))
+            # matchup_idx = winning_scores[index-1].index(lowest_winning_scores[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # lowest_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
+
+            # highest_losing_scores.append(max(losing_scores[index-1]))  
+            # matchup_idx = losing_scores[index-1].index(highest_losing_scores[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # highest_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
+
+            # lowest_losing_scores.append(min(losing_scores[index-1]))  
+            # matchup_idx = losing_scores[index-1].index(lowest_losing_scores[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # lowest_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
+
+            # largest_score_deficits.append(max(score_deficits[index-1]))  
+            # matchup_idx = score_deficits[index-1].index(largest_score_deficits[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # highest_deficit_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
+            # highest_deficit_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
+
+            # smallest_score_deficits.append(min(score_deficits[index-1]))  
+            # matchup_idx = score_deficits[index-1].index(smallest_score_deficits[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # lowest_deficit_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
+            # lowest_deficit_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
+    
+        
+    
+        # figure out how to get this to work later
+        # teams, streaks = matchup_map['streak'].items()
+        
+        # return highest_winning_scores, lowest_winning_scores, highest_losing_scores, lowest_losing_scores, largest_score_deficits, smallest_score_deficits
+                
+
+
+
+   # not sure if this is used 
+    # I think I was trying to format the team record results 
+    # and use this instead to print the standings
+    # Check on this another time 
+
+    # def LeagueRecord(self):
+    #     for team in self.teams.values():
+    #         self.titleFormat(team)
+    #         team.displayTeamRecord()
+    #         print()
+
+
+          # self._all_players = self._get_All_Players()
+        
+    # I don't think I need this method any more since there's already one in the regular League file now
+    # def _get_Rostered_Players(self):
+    #     rostered_players = []
+    #     for team in self.teams.values():
+    #         for player in team.players:
+    #             rostered_players.append(player)
+    #     return rostered_players
+    
+    # I don't know if I need to refactor this and see if I can get the unrostered players since I get free agents in the other League as well.
+    # def _get_Unrostered_Players(self):
+    #     my_team = self.teams["Dillon's Dubs"]
+    #     unrostered_players = _construct_Available_Players(_get_Available_Players())
+    #     return unrostered_players
+
+
+    Team.py
+
+    # print("Testing Player Variables")
+            # print(player.acquisitionType) # returns ADD, DRAFT, or TRADE
+            # print(player.eligibleSlots) # returns [[Forward, Defense, Goalie,], [actual position of Forward], ['Util'] if F or D, ['Bench'], and [IR]
+            # print(player.injured) # returns True if IR or OUT, not if DTD
+            # print(player.injuryStatus) # returns ACTIVE if healthy, then returns DAY_TO_DAY, INJURY_RESERVE, SUSPENDED, or OUT
+            # print(player.lineupSlot) # returns value from eligibleSlots of where player is currently located
+            # print(player.playerId)
+            # print(player.proTeam)
+            # print(player.stats) # nested dictionaries that could be split. Inner Dictionaries: 'Total 2024' (prevYear), 'Total 2025' (currYear), 
+            # 'Last 7 2025' stats from previous 7 games, 'Last 15 2025' stats from previous 15 games, 'Projected 2024' (prevYearProj), 'Projected 2025' (currYearProj)
