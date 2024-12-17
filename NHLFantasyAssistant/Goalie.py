@@ -21,5 +21,5 @@ class Goalie(Player):
         self.save_percentage = round(save_percentage * 100, 1)
         
 
-        self.avg_points = 0 if games_played == 0 else round(points / games_played, 1)
+        self.avg_points = 0 if self.games_played == 0 else round(points / games_played, 1)
 

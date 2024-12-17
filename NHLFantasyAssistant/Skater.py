@@ -24,4 +24,4 @@ class Skater(Player):
         self.hits = hits
         self.blocked_shots = blocked_shots
 
-        self.avg_points = 0 if games_played == 0 else round(points / games_played, 1)
+        self.avg_points = 0 if self.games_played == 0 else round(points / games_played, 1)

@@ -19,6 +19,6 @@ def main():
     league_object.printDraftedTeam()
     print()
     league_object.printPlayersByAvgPoints()
-    print()
-    league_object.LeagueDraftGrade()
+    # print()
+    # league_object.LeagueDraftGrade()
 main()
