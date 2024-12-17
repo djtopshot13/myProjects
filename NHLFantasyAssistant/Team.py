@@ -185,4 +185,14 @@ class Team:
         return avgDPoints, avgFPoints, avgGPoints
 
     
-      
+    def teamAvgProjectedPoints(self):
+        sum = 0
+        player_count = len(self.players)
+        for player in self.players:
+            projected_points = player.curr_year_proj.get('PTS', 0)
+            if projected_points == 0:
+                player_count -= 1
+            sum += projected_points
+        
+        avg_points = round(sum / player_count, 1)
+        return avg_points

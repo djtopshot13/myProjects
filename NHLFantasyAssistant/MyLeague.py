@@ -165,6 +165,48 @@ class MyLeague:
             # print(player.curr_year_proj)
             print(f"{index}. {player.displayUndraftedPlayerInfo()}")
 
+        
+        
+        avg_projected_points_dict = {team: 0 for team in self.teams}
+        avg_projected_points_dict['VORP'] = 0
+        for team in self.teams:
+            roster_count = 22
+            team_sum = 0
+            for i in range(roster_count):
+                player = self.draft_dict[team][i]
+                projected_points = player.curr_year_proj.get('PTS', 0)
+                if projected_points == 0:
+                    roster_count -= 1
+                team_sum += projected_points
+            avg_proj_points = round(team_sum / roster_count, 1)
+            avg_projected_points_dict[team] = avg_proj_points
+
+        roster_count = 22
+        vorp_sum = 0
+        for i in range(roster_count):
+            player = sorted_full_roster[i]
+            projected_points = player.curr_year_proj.get('PTS', 0)
+            if projected_points == 0:
+                roster_count -= 1
+                vorp_sum += projected_points
+            avg_proj_points = round(team_sum / roster_count, 1)
+            avg_projected_points_dict['VORP'] = avg_proj_points
+
+        power_rankings = []
+        team_rankings = []
+        power_rankings = list(avg_projected_points_dict.values())
+        power_rankings.sort(reverse=True)
+        for i in range(len(power_rankings)):
+            for key in avg_projected_points_dict.keys():
+                val = power_rankings[i]
+                if avg_projected_points_dict[key] == val:
+                    team_rankings.append({key: val})
+
+        print(avg_projected_points_dict)
+        print(power_rankings)
+        print(team_rankings)
+
+
         # Set up projected point for current year by team method in team file -> def teamProjectedPoints() -> return total projected points 
         
         # set dictionary with team name as key and difference between team projected points and VORP projected points as values in the dictionary
