@@ -25,3 +25,6 @@ class Skater(Player):
         self.blocked_shots = blocked_shots
 
         self.avg_points = 0 if self.games_played == 0 else round(points / games_played, 1)
+
+    def __repr__(self):
+        return f"Skater({self.name}[{self.team}])"

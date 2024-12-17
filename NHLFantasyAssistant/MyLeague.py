@@ -5,11 +5,12 @@ import Goalie
 import Matchup
 
 class MyLeague:
-    def __init__(self, teams, matchups, draft_dict, undrafted_dict, rostered_players, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):
+    def __init__(self, teams, matchups, draft_dict, rostered_players, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):
+        # self.free_agents = teams['Free Agents'].players
+        # del teams['Free Agents']
         self.teams = teams
         self.matchups = matchups
         self.draft_dict = draft_dict
-        self.undrafted_dict = undrafted_dict
         self._rostered_players = rostered_players
         self.free_agents = free_agents
         self.recent_activity = recent_activity
@@ -17,9 +18,10 @@ class MyLeague:
         self.standings = standings
         self.curr_matchup_period = curr_matchup_period
         self.settings = settings
+        self._all_players = self._get_All_Players()
+        self.undrafted_list = self._get_Undrafted_Players()
         self.matchup = self._make_Matchup()
         self.team_record_map = self.matchup.team_record_map
-
   
 
     def _make_Matchup(self):
@@ -35,14 +37,58 @@ class MyLeague:
         return all_players # Should return a list that includes players from the free_agents list anad from rostered_players
 
     def _get_Undrafted_Players(self):
-        all_players = self._all_players # Use all_players to iterate over and check both rostered and unrostered players for those that were drafted
-        _free_agents = League._construct_Players(League._get_Available_Players(), 'FA')
-        _roster_players = League._construct_Players(League._get_Rostered_Players(), 'R')
-        drafted_players = League._get_Drafted_Players(_roster_players, _free_agents) # Should return dictionary of drafted_players with team as key
-        undrafted_players = [player for player in all_players if player not in drafted_players.values() and type(player) == Player] # This doesn't work fully yet
+        all_players = self._all_players
+        # Use all_players to iterate over and check both rostered and unrostered players for those that were drafted
+        # _free_agents = self.free_agents
+        # _roster_players = self._rostered_players # Should return dictionary of drafted_players with team as key
+
+        # best_projected = sorted(self.free_agents, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
+        # for player in best_projected:
+        #     print(player.displayUndraftedPlayerInfo())
+        
+        draft_size = 22
+        full_draft_list = []
+        for team in self.teams:
+            for i in range(draft_size):
+                drafted_player = self.draft_dict[team][i]
+                # print(drafted_player.rosterAvailability)
+                full_draft_list.append(drafted_player)
+        
+        drafted_players = list(set(all_players) & set(full_draft_list))
+        undrafted_players = list(set(all_players) - set(drafted_players))
+        # undrafted_players = list(set(undrafted_players) - set(full_draft_list))
+        best_projected_undrafted = sorted(undrafted_players, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
+        # for player in best_projected_undrafted:
+        #     print(player.displayUndraftedPlayerInfo())
+
+        # for player in all_players: # This doesn't work fully yet
+        #     # print(type(player))
+        #     for draftee in full_draft_list:
+        #         if player.team == "":
+        #                 is_drafted = False
+        #         else:
+        #             continue
+
+        #     if not is_drafted:
+        #             print(f"This player is undrafted: {player.name}")
+        #             undrafted_players.append(player)
+        #             continue
+        #     else:
+        #         print(f"Check failed for player: {player.name}")
+                
+                
+                    
+
         # It should add a player that is within all_players, but not within drafted_players
-        sorted_undrafted_players = sorted(undrafted_players, key=lambda player: player.curr_year_proj, reverse=True) # Sort by projected values to get best expected players for draft grade
+        sorted_undrafted_players = sorted(undrafted_players, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True) # Sort by projected values to get best expected players for draft grade
         # print(sorted_undrafted_players)
+        # proj_dict_count = 0
+        # for player in sorted_undrafted_players:
+        #     if player.curr_year_proj.get('PTS', 0) != 0:
+        #         proj_dict_count += 1
+        #     player.displayUndraftedPlayerInfo()
+        # print(self.draft_dict)
+        # print(proj_dict_count)
         return sorted_undrafted_players # return list of sorted_undrafted_players
     
     def LeagueDraftGrade(self):
@@ -51,7 +97,7 @@ class MyLeague:
         # Grade each team accordingly, the larger positive difference, the better the grade
 
         # initialize starter lists with undrafted_players and empty lists by player position
-        undrafted_players = self.undrafted_dict
+        undrafted_players = self.undrafted_list
         forward_players = []
         defense_players = []
         goalie_players = []
@@ -433,9 +479,9 @@ class MyLeague:
         _points_for = _season_points[0]
         _points_against = _season_points[1]
         _points_diff = _season_points[2]
-        _free_agents = League._construct_Players(League._get_Available_Players(), 'FA')
+        _free_agents = League._get_Free_Agents()
         _roster_players = League._construct_Players(League._get_Rostered_Players(), "R")
-        _draft_dict, _undrafted_dict = League._get_Drafted_Undrafted_Players(_roster_players, _free_agents)
+        _draft_dict = League._get_Drafted_Players(_roster_players, _free_agents)
         _box_scores = League._get_Box_Scores()
         _recent_activity = League._get_Recent_Activity()
         _player_map = League._get_Player_Map()
@@ -444,7 +490,7 @@ class MyLeague:
         _league_settings = League._get_League_Settings()
         _team_objects = League._initialize_Team_Objects(_points_for, _points_against, _points_diff, _draft_dict)
 
-        new_league = MyLeague(_team_objects, _box_scores, _draft_dict, _undrafted_dict, _roster_players, _free_agents,
+        new_league = MyLeague(_team_objects, _box_scores, _draft_dict, _roster_players, _free_agents, 
                             _recent_activity, _player_map, _league_standings, _curr_matchup_period, _league_settings)
         
         return new_league

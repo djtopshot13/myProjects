@@ -80,13 +80,14 @@ def _construct_Players(players_list, player_type):
                 roster_availability = "Rostered"
 
         
-                prev_year_proj = player.stats.get('Projected 2024', {}).get('total', {})
+                
                 prev_year_total = player.stats.get('Total 2024', {}).get('total', {})
-                curr_year_proj = player.stats.get('Projected 2025', {}).get('total', {})
                 curr_year_total = player.stats.get('Total 2025', {}).get('total', {})
                 last_7_dict = player.stats.get('Last 7 2025', {}).get('total', {})
                 last_15_dict = player.stats.get('Last 15 2025', {}).get('total', {})
                 last_30_dict = player.stats.get('Last 30 2025', {}).get('total', {})
+                prev_year_proj = player.stats.get('Projected 2024', {}).get('total', {})
+                curr_year_proj = player.stats.get('Projected 2025', {}).get('total', {})
                             
 
                 points = playerFantasyPointCalculator(player)
@@ -136,7 +137,7 @@ def _construct_Players(players_list, player_type):
     return new_players
 
 def playerFantasyPointCalculator(player):
-        headings = ['Projected 2024', 'Total 2024', 'Total 2025', 'Projected 2025', 'Last 7 2025', 'Last 15 2025', 'Last 30 2025']
+        headings = ['Total 2024', 'Total 2025', 'Last 7 2025', 'Last 15 2025', 'Last 30 2025', 'Projected 2024', 'Projected 2025']
         points_dict = {}
         for header in headings:
             if header in player.stats:
@@ -228,9 +229,9 @@ def _get_Available_Players():
 #         draft_dict[pick.team.team_name].append(pick.playerName)
 #     return draft_dict
 
-def _get_Drafted_Undrafted_Players(rostered_players, free_agents):
-        undrafted_players = []
-        drafted_players = []
+def _get_Drafted_Players(rostered_players, free_agents):
+        # undrafted_players = []
+        # drafted_players = []
 
         draft_roster = {team.team_name: [] for team in my_nhl_league.teams}
         draft = my_nhl_league.draft
@@ -242,7 +243,7 @@ def _get_Drafted_Undrafted_Players(rostered_players, free_agents):
                         player.rosterAvailability = "Drafted"
                         
                         draft_roster[player.team].append(player)
-                        drafted_players.append(player)
+                        # drafted_players.append(player)
                     
             for player in free_agents:
                 if pick.playerName == player.name:
@@ -250,18 +251,18 @@ def _get_Drafted_Undrafted_Players(rostered_players, free_agents):
                     player.rosterAvailability = "Drafted"
                     
                     draft_roster[player.team].append(player)
-                    drafted_players.append(player)
+                    # drafted_players.append(player)
 
-        for players in rostered_players.values():
-            for player in players:
-                if player not in drafted_players:
-                    undrafted_players.append(player)
+        # for players in rostered_players.values():
+        #     for player in players:
+        #         if player not in drafted_players:
+        #             undrafted_players.append(player)
 
-        for player in free_agents:
-            if player not in drafted_players:
-                undrafted_players.append(player)
-                
-        return draft_roster, undrafted_players
+        # for player in free_agents:
+        #     if player not in drafted_players:
+        #         undrafted_players.append(player)
+        draft_roster["Dillon's Dubs"].pop(10) # get rid of duplicate Sebastian Aho skater object
+        return draft_roster
 
 def _get_Rostered_Players():
     rostered_players = {team.team_name: [] for team in my_nhl_league.teams}
@@ -271,6 +272,11 @@ def _get_Rostered_Players():
 
     return rostered_players
     
+
+def _get_Free_Agents():
+    _available_players = _construct_Players(_get_Available_Players(), "FA")
+    return _available_players
+
 _roster_players = _construct_Players(_get_Rostered_Players(), "R")
 
 def _initialize_Team_Objects(team_points_for, team_points_against, team_points_diff, _draft_dict):
@@ -278,11 +284,14 @@ def _initialize_Team_Objects(team_points_for, team_points_against, team_points_d
     for team_info in my_nhl_league.teams:
         team_info.stats['G&A'] = team_info.stats['16']
         del team_info.stats['16']
-        team = Team(team_info.division_id, team_info.team_id, team_info.team_name,
+        print(team_info.division_id)
+        team = Team(team_info.division_id + 1, team_info.team_id + 1, team_info.team_name,
                         _roster_players[team_info.team_name], team_points_for.get(team_info.team_name, 0), 
                         team_points_against.get(team_info.team_name, 0), team_points_diff.get(team_info.team_name, 0),
                         int(team_info.wins), int(team_info.losses), _draft_dict[team_info.team_name], team_info.stats)
         
         team_object_dict [team_info.team_name] = team
+
+    # team_object_dict ["Free Agents"] = Team(3, 10, 'Free Agents', _available_players, team_points_for.get('Free Agents', 0), team_points_against.get('Free Agents', 0), team_points_diff.get('Free Agents', 0), 0, 0, {}, {})
 
     return team_object_dict

@@ -2,7 +2,7 @@ class Player:
     # ['acquisitionType', 'eligibleSlots', 'injured', 'injuryStatus', 'lineupSlot', 'name', 'playerId', 'position', 'proTeam', 'stats'] variables and methods currently connected to players
     def __init__(self, name, team, pro_team, position, points, games_played,
                 health_status, roster_availability, prev_year_proj, prev_year_total, curr_year_proj,
-                        curr_year_total, last_7_dict, last_15_dict, last_30_dict):
+                curr_year_total, last_7_dict, last_15_dict, last_30_dict):
         self.name = name
         self.team = team
         self.pro_team = pro_team
