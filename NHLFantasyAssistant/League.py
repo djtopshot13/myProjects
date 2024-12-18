@@ -284,7 +284,6 @@ def _initialize_Team_Objects(team_points_for, team_points_against, team_points_d
     for team_info in my_nhl_league.teams:
         team_info.stats['G&A'] = team_info.stats['16']
         del team_info.stats['16']
-        print(team_info.division_id)
         team = Team(team_info.division_id + 1, team_info.team_id + 1, team_info.team_name,
                         _roster_players[team_info.team_name], team_points_for.get(team_info.team_name, 0), 
                         team_points_against.get(team_info.team_name, 0), team_points_diff.get(team_info.team_name, 0),

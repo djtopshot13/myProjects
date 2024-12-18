@@ -157,6 +157,7 @@ class MyLeague:
                 
         # print statement that shows how many players of each position were added
         # should be one unique VORP team to get max score unless players of same position have duplicate projected points   
+        print("VORP Roster after League Draft:\n")
         print(f"Forwards: {f_count}\t Defensemen: {d_count}\t Goalies: {g_count}")
         # set print statement up to print the position in the player roster with projected points for the current year, name, and position
         # I might be able to sort it too if I wanted 
@@ -164,6 +165,7 @@ class MyLeague:
         for index, player in enumerate(sorted_full_roster, 1):
             # print(player.curr_year_proj)
             print(f"{index}. {player.displayUndraftedPlayerInfo()}")
+        print()
 
         
         
@@ -193,19 +195,28 @@ class MyLeague:
             avg_projected_points_dict['VORP'] = avg_proj_points
 
         power_rankings = []
-        team_rankings = []
+        draft_rankings = []
         power_rankings = list(avg_projected_points_dict.values())
         power_rankings.sort(reverse=True)
         for i in range(len(power_rankings)):
             for key in avg_projected_points_dict.keys():
                 val = power_rankings[i]
                 if avg_projected_points_dict[key] == val:
-                    team_rankings.append({key: val})
+                    draft_rankings.append({key: val})
+        print("League Draft Grade Results:")
+        print("=======================================================")
+        for index, ranking in enumerate(draft_rankings):
+            team = list(ranking.keys())[0]
+            proj_points = list(ranking.values())[0]
+            if index == len(self.teams):
+                vorp_team = team
+                vorp_proj_points = proj_points
+                break
+            print(f"{index + 1}. {team} with {proj_points} average projected points")
+            print("=======================================================")
 
-        print(avg_projected_points_dict)
-        print(power_rankings)
-        print(team_rankings)
-
+        print()
+        print(f"{vorp_team} roster had {vorp_proj_points} average projected points")
 
         # Set up projected point for current year by team method in team file -> def teamProjectedPoints() -> return total projected points 
         
@@ -251,6 +262,40 @@ class MyLeague:
             print(f"{rank}. {team.displayTeamRecord(self.team_record_map)}\n"
                 "----------------------------------------------")
         print("\n")
+
+    def DivisionStandings(self, div_id):
+        print(f"Division {div_id} Standings\n"
+            "----------------------------------------------")
+        # sort standings properly by matchup wins, set up max wins and prevRank variable to get proper position with tied records
+        division_standings = []
+        sorted_standings = sorted(self.standings, key=lambda standing: standing.wins, reverse=True)
+        for standing in sorted_standings:
+            if standing.division_id == div_id - 1:
+                division_standings.append(standing)
+
+        max_wins = division_standings[0].wins
+        prevRank = 1
+
+        # loop over standings
+        for index, standing in enumerate(division_standings):
+            # get next best team 
+            team = self.teams[standing.team_name]
+            # check for tie and set rank equal to prevRank
+            if team.matchup_wins == max_wins:
+                rank = prevRank
+            # if not a tie, change max_wins
+            # rank = position in list
+            # prevRank = position in list for next iteration
+            else:
+                max_wins = team.matchup_wins
+                rank = index + 1
+                prevRank = rank
+            # print the position in league followed by team method that prints team name and team season record
+            print(f"{rank}. {team.displayTeamRecord(self.team_record_map)}\n"
+                "----------------------------------------------")
+        print("\n")
+
+
 
     # This method should print the round number followed by the order of draft with player name and team name in snake fashion
     def LeagueDraftResults(self):

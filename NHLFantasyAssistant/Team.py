@@ -158,9 +158,9 @@ class Team:
             
         return points_dict
 
-    def playerFantasyPoints(self, player):
-        points = player.points
-        return points
+    # def playerFantasyPoints(self, player):
+    #     points = player.points
+    #     return points
             
     def PositionAvgPoints(self, dCount, fCount, gCount):
         fPoints = 0
