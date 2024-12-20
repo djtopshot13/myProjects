@@ -168,6 +168,85 @@
     #     unrostered_players = _construct_Available_Players(_get_Available_Players())
     #     return unrostered_players
 
+    ## Streak Method Code
+
+     # first_degree = [player for player in first_degree if isinstance(player, tuple)]
+        # second_degree = [player for player in second_degree if isinstance(player, tuple)]
+        # third_degree = [player for player in third_degree if isinstance(player, tuple)]
+
+        # full_2nd = [
+        #     p2 for (p2, _) in just_2nd
+        #     if any(p2 == p1 for (p1, _) in just_1st)
+        # ]
+
+        # full_3rd = [
+        #     p3 for (p3, _) in just_3rd 
+        #     if any(p3 == p2 for (p2, _) in full_2nd) 
+        # ]
+
+        # full_3rd_full_2nd_consistent_1st = [
+        #     p3 for (p3, _) in just_3rd 
+        #     if any(p3 == p2 for (p2, _) in full_2nd) 
+        #     and any(p3 == p1 for (p1, _) in consistent_1st)
+        # ]
+
+        # games_played_7 = player.last_7_dict.get('GP', 0)
+        # points_7 = player.last_7_dict.get('PTS', 0)
+        # avg_points_7 = round(points_7 / games_played_7, 1) if games_played_7 != 0  else 0
+        # if avg_points_7 > avg_points_total:
+        #     avg_points_increase = avg_points_7 - avg_points_total
+        #     first_degree[index] = (player, avg_points_increase)
+        #     player_report[player][0].append("Full")
+        # elif avg_points_7 == avg_points_total:
+        #     consistent[0].append((first_degree.remove(player), avg_points_total))
+        #     player_report[player][0].append("Consistent")
+        # else:
+        #     cold_streak[0].append((first_degree.remove(player), avg_points_total - avg_points_7))
+        #     player_report[player][0].append("Cold")
+
+        # games_played_15 = player.last_15_dict.get('GP', 0)
+        # points_15 = player.last_15_dict.get('PTS', 0)
+        # avg_points_15 = round(points_15 / games_played_15, 1) if games_played_15 != 0  else 0
+        # if avg_points_15 > avg_points_total:
+        #     avg_points_increase = avg_points_15 - avg_points_total
+        #     second_degree[index] = (player, avg_points_increase)
+        #     player_report[player][1].append("Full")
+        # elif avg_points_15 == avg_points_total:
+        #     consistent[1].append((player, avg_points_total))
+        #     player_report[player][1].append("Consistent")
+        #     # remove_second_degree.append(player)
+        # else:
+        #     cold_streak[1].append((player, avg_points_total - avg_points_15))
+        #     player_report[player][1].append("Cold")
+        #     remove_second_degree.append(player)
+
+
+        # games_played_7 = player.last_7_dict.get('GP', 0)
+        # points_7 = player.last_7_dict.get('PTS', 0)
+        # avg_points_7 = round(points_7 / games_played_7, 1) if games_played_7 != 0  else 0
+        # if avg_points_7 > avg_points_total:
+        #     avg_points_increase = avg_points_7 - avg_points_total
+        #     first_degree[index] = (player, avg_points_increase)
+        #     player_report[player][0].append("Full")
+        # elif avg_points_7 == avg_points_total:
+        #     consistent[0].append((player, avg_points_total))
+        #     player_report[player][0].append("Consistent")
+        #     # remove_first_degree.append(player)
+        # else:
+        #     cold_streak[0].append((player, avg_points_total - avg_points_7))
+        #     player_report[player][0].append("Cold")
+        #     remove_first_degree.append(player)
+
+        # for player in roster:
+            # if player.last_7_dict.get('PTS', 0) != 0:
+                #     first_degree.append(player)
+                #     if player.last_15_dict.get('PTS', 0) != 0:
+                #         second_degree.append(player)
+                #         if player.last_30_dict.get('PTS', 0) != 0:
+                #             third_degree.append(player)
+        
+        # consistent, cold_streak = [[] for _ in range(3)], [[] for _ in range(3)]
+        # remove_first_degree, remove_second_degree, remove_third_degree = [], [], []
 
     Team.py
 

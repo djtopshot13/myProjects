@@ -592,7 +592,7 @@ class MyLeague:
             # team_list = []
             for index, team in enumerate(self.teams):
                 # team_list.append(team.name)
-                roster = players[team]
+                roster = players["Dillon's Dubs"].players
                 if hot:
                     if index == 0: 
                         print("Hot Streak Tracker for Rostered Players:\n")
@@ -621,147 +621,89 @@ class MyLeague:
                 
     def StreakTracker(self, hot, roster):
         first_degree, second_degree, third_degree = [], [], []
-        just_3rd, consistent_3rd, cold_3rd = [], [], []
-        just_2nd, consistent_2nd, cold_2nd = [], [], []
-        just_1st, consistent_1st, cold_1st = [], [], []
-        # consistent, cold_streak = [[] for _ in range(3)], [[] for _ in range(3)]
-        # remove_first_degree, remove_second_degree, remove_third_degree = [], [], []
-
-        for player in roster:
-            if player.last_7_dict.get('PTS', 0) != 0:
-                first_degree.append(player)
-                if player.last_15_dict.get('PTS', 0) != 0:
-                    second_degree.append(player)
-                    if player.last_30_dict.get('PTS', 0) != 0:
-                        third_degree.append(player)
-
+        hot_3rd, consistent_3rd, cold_3rd = [], [], []
+        hot_2nd, consistent_2nd, cold_2nd = [], [], []
+        hot_1st, consistent_1st, cold_1st = [], [], []
+        
+        roster_map = {}
         player_report = {player: [[] for _ in range(3)] for player in roster}
-
-        for player in third_degree:
-            avg_points_total = player.avg_points
-            games_played_30 = player.last_30_dict.get('GP', 0)
-            points_30 = player.last_30_dict.get('PTS', 0)
-            avg_points_30 = round(points_30 / games_played_30, 1) if games_played_30 != 0  else 0
-            if avg_points_30 > avg_points_total:
-                avg_points_increase = avg_points_30 - avg_points_total
-                just_3rd.append((player, avg_points_increase))
-                player_report[player][2].append("Full")
-            elif avg_points_30 == avg_points_total:
-                consistent_3rd.append((player, avg_points_total))
-                player_report[player][2].append("Consistent")
-                # remove_third_degree.append(player)
+        for player in roster:
+            if player.position == "G":
+                gp_key = "GS"
             else:
-                cold_3rd.append((player, avg_points_total - avg_points_30))
-                player_report[player][2].append("Cold")
-                # remove_third_degree.append(player)
-            
-            # games_played_15 = player.last_15_dict.get('GP', 0)
-            # points_15 = player.last_15_dict.get('PTS', 0)
-            # avg_points_15 = round(points_15 / games_played_15, 1) if games_played_15 != 0  else 0
-            # if avg_points_15 > avg_points_total:
-            #     avg_points_increase = avg_points_15 - avg_points_total
-            #     second_degree[index] = (player, avg_points_increase)
-            #     player_report[player][1].append("Full")
-            # elif avg_points_15 == avg_points_total:
-            #     consistent[1].append((player, avg_points_total))
-            #     player_report[player][1].append("Consistent")
-            #     # remove_second_degree.append(player)
-            # else:
-            #     cold_streak[1].append((player, avg_points_total - avg_points_15))
-            #     player_report[player][1].append("Cold")
-            #     remove_second_degree.append(player)
-
-
-            # games_played_7 = player.last_7_dict.get('GP', 0)
-            # points_7 = player.last_7_dict.get('PTS', 0)
-            # avg_points_7 = round(points_7 / games_played_7, 1) if games_played_7 != 0  else 0
-            # if avg_points_7 > avg_points_total:
-            #     avg_points_increase = avg_points_7 - avg_points_total
-            #     first_degree[index] = (player, avg_points_increase)
-            #     player_report[player][0].append("Full")
-            # elif avg_points_7 == avg_points_total:
-            #     consistent[0].append((player, avg_points_total))
-            #     player_report[player][0].append("Consistent")
-            #     # remove_first_degree.append(player)
-            # else:
-            #     cold_streak[0].append((player, avg_points_total - avg_points_7))
-            #     player_report[player][0].append("Cold")
-            #     remove_first_degree.append(player)
-
-            
-        for player in second_degree:
+                gp_key = "GP"
             avg_points_total = player.avg_points
-
-            games_played_15 = player.last_15_dict.get('GP', 0)
-            points_15 = player.last_15_dict.get('PTS', 0)
-            avg_points_15 = round(points_15 / games_played_15, 1) if games_played_15 != 0  else 0
-            if avg_points_15 > avg_points_total:
-                avg_points_increase = avg_points_15 - avg_points_total
-                just_2nd.append((player, avg_points_increase))
-                player_report[player][1].append("Full")
-            elif avg_points_15 == avg_points_total:
-                consistent_2nd.append((player, avg_points_total))
-                player_report[player][1].append("Consistent")
-            else:
-                cold_2nd.append((player, avg_points_total - avg_points_15))
-                player_report[player][1].append("Cold")
-
-                # games_played_7 = player.last_7_dict.get('GP', 0)
-                # points_7 = player.last_7_dict.get('PTS', 0)
-                # avg_points_7 = round(points_7 / games_played_7, 1) if games_played_7 != 0  else 0
-                # if avg_points_7 > avg_points_total:
-                #     avg_points_increase = avg_points_7 - avg_points_total
-                #     first_degree[index] = (player, avg_points_increase)
-                #     player_report[player][0].append("Full")
-                # elif avg_points_7 == avg_points_total:
-                #     consistent[0].append((first_degree.remove(player), avg_points_total))
-                #     player_report[player][0].append("Consistent")
-                # else:
-                #     cold_streak[0].append((first_degree.remove(player), avg_points_total - avg_points_7))
-                #     player_report[player][0].append("Cold")
-
-                
-
-        for player in first_degree:
-            avg_points_total = player.avg_points
-
-            games_played_7 = player.last_7_dict.get('GP', 0)
             points_7 = player.last_7_dict.get('PTS', 0)
-            avg_points_7 = round(points_7 / games_played_7, 1) if games_played_7 != 0  else 0
-            if avg_points_7 > avg_points_total:
-                avg_points_increase = avg_points_7 - avg_points_total
-                just_1st.append({player.name: (player, avg_points_increase)})
-                player_report[player][0].append("Full")
-            elif avg_points_7 == avg_points_total:
-                consistent_1st.append((player, avg_points_total))
-                player_report[player][0].append("Consistent")
-                # remove_first_degree.append(player)
+            games_played_7 = player.last_7_dict.get(gp_key, 0)
+            avg_points_7 = round(points_7 / games_played_7, 1) if games_played_7 != 0 else 0 
+            avg_difference_7 = round(avg_points_7 - avg_points_total, 1)
+            points_15 = player.last_15_dict.get('PTS', 0)
+            games_played_15 = player.last_15_dict.get(gp_key, 0)
+            avg_points_15 = round(points_15 / games_played_15, 1) if games_played_15 != 0  else 0
+            avg_difference_15 = round(avg_points_15 - avg_points_total, 1)
+            points_30 = player.last_30_dict.get('PTS', 0)
+            games_played_30 = player.last_30_dict.get(gp_key, 0)
+            avg_points_30 = round(points_30 / games_played_30, 1) if games_played_30 != 0  else 0
+            avg_difference_30 = round(avg_points_30 - avg_points_total, 1)
+            
+            
+            player_data = {
+                "last_7_days": {
+                    "points": points_7,
+                    "games_played": games_played_7,
+                    "avg_points": avg_points_7,
+                    "avg_difference": avg_difference_7
+                },
+                "last_15_days": {
+                    "points": points_15,
+                    "games_played": games_played_15,
+                    "avg_points": avg_points_15,
+                    "avg_difference": avg_difference_15
+                },
+                "last_30_days": {
+                    "points": points_30,
+                    "games_played": games_played_30,
+                    "avg_points": avg_points_30, 
+                    "avg_difference": avg_difference_30
+                }, 
+                "avg_points": avg_points_total
+            }
+            roster_map[player.name] = player_data
+
+
+            if games_played_30 > 0:
+                if avg_points_30 > avg_points_total:
+                    player_report[player][0].append("Hot")
+                elif avg_points_30 == avg_points_total:
+                    player_report[player][0].append("Consistent")
+                else:
+                    player_report[player][0].append("Cold")
+            else: 
+                player_report[player][0].append("_")
+
+            if games_played_15 > 0:
+                if avg_points_15 > avg_points_total:
+                    player_report[player][1].append("Hot")
+                elif avg_points_15 == avg_points_total:
+                    player_report[player][1].append("Consistent")
+                else:
+                    player_report[player][1].append("Cold")
             else:
-                cold_1st.append((player, avg_points_total - avg_points_7))
-                player_report[player][0].append("Cold")
-                # remove_first_degree.append(player)
+                player_report[player][1].append("_")
 
-        # first_degree = [player for player in first_degree if isinstance(player, tuple)]
-        # second_degree = [player for player in second_degree if isinstance(player, tuple)]
-        # third_degree = [player for player in third_degree if isinstance(player, tuple)]
+            if games_played_7 > 0:
+                if avg_points_7 > avg_points_total:
+                    player_report[player][2].append("Hot")
+                elif avg_points_7 == avg_points_total:
+                    player_report[player][2].append("Consistent")
+                else:
+                    player_report[player][2].append("Cold")
+            else:
+                player_report[player][2].append("_")
 
-        # full_2nd = [
-        #     p2 for (p2, _) in just_2nd
-        #     if any(p2 == p1 for (p1, _) in just_1st)
-        # ]
+        
 
-        # full_3rd = [
-        #     p3 for (p3, _) in just_3rd 
-        #     if any(p3 == p2 for (p2, _) in full_2nd) 
-        # ]
-
-        # full_3rd_full_2nd_consistent_1st = [
-        #     p3 for (p3, _) in just_3rd 
-        #     if any(p3 == p2 for (p2, _) in full_2nd) 
-        #     and any(p3 == p1 for (p1, _) in consistent_1st)
-        # ]
-
-        maps = [["Full"], ["Consistent"], ["Cold"], []] 
+        maps = [["Hot"], ["Consistent"], ["Cold"], ["_"]] 
         player_order = {}
         for player in roster:
             print(player.name)
@@ -778,14 +720,34 @@ class MyLeague:
                     priority = maps.index(status)
                     player_priority = player_priority + str(priority)
                 else:
-                    print("Status not found")
+                    print("Status not found\n")
                     break
 
             player_order[player.name] = player_priority
 
-        sorted_player_order = sorted(player_order.items(), key=lambda item: int(item[1]) if item[1] != '' else int(float("inf")))
+        sorted_player_order = sorted(player_order.items(), key=lambda item: int(item[1]) if item[1] != '_' else 3)
         print(sorted_player_order)
+        
+        first_code = "000"
+        code_map = [first_code]
+        full_streak_ordering = {}
+        player_list = []
+        for player in sorted_player_order:
+            player_name = player[0] 
+            code = player[1]
+            if code != first_code:
+                full_streak_ordering[first_code] = player_list
+                code_map.append(code)
+                first_code = code
+                player_list = []
+                print("Code Change")
+            player_list.append({player_name: roster_map[player_name]})
 
+        full_streak_ordering[first_code] = player_list
+        print(full_streak_ordering) # sort the sub lists by iterating through code_map as keys and sorting by avg_30, avg_15, avg_7 and finally avg_total
+        # use threshold to filter out players with an avg_total less than threshold for a scan of higher power players
+        print(code_map)
+            
         
 
         # maps key 
@@ -793,7 +755,7 @@ class MyLeague:
         # Consistent = 1
         # Cold = 2
         # Empty = 3
-        # I think this should work for the most part Full 3rd degree 000 full second degree 300
+        # I think this should work for the most part Full 3rd degree 000 full second degree X00 first full degree XX0
                 
             
             
