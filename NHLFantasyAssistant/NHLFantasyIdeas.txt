@@ -21,3 +21,5 @@ DisplaySorted[Stat]Teams(boolean dec_order, String stat_name):
 LeaguePowerRankingBoard()
     Parameters: 
 
+**** I need to create a constant file with constants like proTeam abbreviations for representing player objects (skater/goalie) and other functions too
+**** Create a filter method that sorts team rosters based on player data possibly. Like health status or avg_points or by position or pro_team
