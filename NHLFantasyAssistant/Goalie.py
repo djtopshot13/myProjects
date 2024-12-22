@@ -24,4 +24,4 @@ class Goalie(Player):
         self.avg_points = 0 if self.games_played == 0 else round(points / games_played, 1)
 
     def __repr__(self):
-        return f"Goalie({self.name}[{self.pro_team}] | {self.avg_points} avg pts)"
+        return f"Goalie({self.name}<{self.pro_team}>)"
