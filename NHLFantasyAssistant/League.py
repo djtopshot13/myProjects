@@ -40,7 +40,9 @@ def _construct_Players(players_list, player_type):
             last_30_dict['PTS'] = points.get('Last 30 2025', 0)
 
             if player.position[0] == 'G':
-                games_played = curr_year_total.get('GS', 0)
+                # print(player.stats)
+                games_started = curr_year_total.get('GS', 0)
+                games_played = curr_year_total.get('GP', 0)
                 goals_against = curr_year_total.get('GA', 0)
                 average_goals_against = curr_year_total.get('GAA', 0)
                 shutouts = curr_year_total.get('SO', 0) 
@@ -51,7 +53,7 @@ def _construct_Players(players_list, player_type):
                 save_percentage = curr_year_total.get('SV%', 0)
                 new_player = Goalie(player.name, team, player.proTeam, 'G', curr_year_total.get('PTS', 0), games_played, health_status, 
                                     roster_availability, prev_year_proj, prev_year_total, curr_year_proj, curr_year_total, last_7_dict, last_15_dict,
-                                    last_30_dict, goals_against, average_goals_against, shutouts, wins, losses, ot_losses, saves, save_percentage)
+                                    last_30_dict, games_started, goals_against, average_goals_against, shutouts, wins, losses, ot_losses, saves, save_percentage)
 
             else:
                 games_played = curr_year_total.get('GP', 0)
@@ -102,7 +104,9 @@ def _construct_Players(players_list, player_type):
                 last_30_dict['PTS'] = points.get('Last 30 2025', 0)
 
                 if player.position[0] == 'G':
-                    games_played = curr_year_total.get('GS', 0)
+                    # print(curr_year_total)
+                    games_played = curr_year_total.get('GP', 0)
+                    games_started = curr_year_total.get('GS', 0)
                     goals_against = curr_year_total.get('GA', 0)
                     average_goals_against = curr_year_total.get('GAA', 0)
                     shutouts = curr_year_total.get('SO', 0) 
@@ -113,7 +117,7 @@ def _construct_Players(players_list, player_type):
                     save_percentage = curr_year_total.get('SV%', 0)
                     new_player = Goalie(player.name, team, player.proTeam, 'G', curr_year_total.get('PTS', 0), games_played, health_status, 
                                         roster_availability, prev_year_proj, prev_year_total, curr_year_proj, curr_year_total, last_7_dict, last_15_dict,
-                                        last_30_dict, goals_against, average_goals_against, shutouts, wins, losses, ot_losses, saves, save_percentage)
+                                        last_30_dict, games_started, goals_against, average_goals_against, shutouts, wins, losses, ot_losses, saves, save_percentage)
 
                 else:
                     games_played = curr_year_total.get('GP', 0)
@@ -141,8 +145,13 @@ def playerFantasyPointCalculator(player):
         points_dict = {}
         for header in headings:
             if header in player.stats:
+                
                 points = goals_against = saves = wins = shutouts = overtime_losses = goals = assists = shots = hits = blocked_shots = pp_points = sh_points = 0
                 if player.eligibleSlots[0][0] == 'G':
+                    if player.stats[header].get('total', {}).keys():
+                        if '30' in player.stats[header]['total'].keys():
+                            player.stats[header]['total']['GP'] = player.stats[header]['total']['30']
+                            del player.stats[header]['total']['30']
                     goals_against = player.stats[header].get('total', {}).get('GA', 0) * -2
                     saves = round(player.stats[header].get('total', {}).get('SV', 0) / 5, 1)
                     shutouts = player.stats[header].get('total', {}).get('SO', 0) * 3

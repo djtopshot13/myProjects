@@ -31,3 +31,6 @@ class Player:
     
     def displayUndraftedPlayerInfo(self):
         return f"{self.name} ({self.position}): [{self.curr_year_proj.get('PTS', 0)}] projected points"
+    
+    def __repr__(self):
+        return f"Player({self.name}<{self.pro_team}>[{self.position}])"

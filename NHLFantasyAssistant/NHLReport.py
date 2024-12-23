@@ -26,8 +26,8 @@ def main():
     # print()
     # league_object.LeagueDraftGrade()
     
-    league_object.StreakReport(True, league_object.free_agents)
-    print()
+    # league_object.StreakReport(True, league_object.free_agents)
+    # print()
     league_object.StreakReport(True, league_object.teams)
     
     

@@ -4,13 +4,14 @@ class Goalie(Player):
     def __init__(self, name, team, pro_team, position, points, 
                 games_played, health_status, roster_availability, 
                 prev_year_proj, prev_year_total, curr_year_proj,
-                curr_year_total, last_7_dict, last_15_dict, last_30_dict,
+                curr_year_total, last_7_dict, last_15_dict, last_30_dict, games_started,
                 goals_against, average_goals_against, shutouts, wins, losses, ot_losses, saves, save_percentage):
         
         super().__init__(name, team, pro_team, position, points,
                         games_played, health_status, roster_availability, 
                         prev_year_proj, prev_year_total, curr_year_proj,
                         curr_year_total, last_7_dict, last_15_dict, last_30_dict)
+        self.games_started = games_started
         self.goals_against = goals_against
         self.average_goals_against = average_goals_against
         self.shutouts = shutouts
@@ -19,9 +20,9 @@ class Goalie(Player):
         self.ot_losses = ot_losses
         self.saves = saves
         self.save_percentage = round(save_percentage * 100, 1)
-        
 
+        self.starting_percentage = round(games_started / games_played, 1) if games_played != 0 else 0
         self.avg_points = 0 if self.games_played == 0 else round(points / games_played, 1)
 
     def __repr__(self):
-        return f"Goalie({self.name}<{self.pro_team}>)"
+        return super().__repr__()
