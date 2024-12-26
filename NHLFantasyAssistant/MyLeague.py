@@ -767,48 +767,61 @@ class MyLeague:
         # print(code_map)
         if "333" in code_map:
             code_map.remove("333")
-        print(code_map)
+        # print(code_map)
 
-        self.fullDepthStreakAnalysis(code_map, full_streak_ordering)
+        # self.fullDepthStreakAnalysis(code_map, full_streak_ordering)
+        full_hot_code = ["000"]
+        full_cons_code = ["111"]
+        full_cold_code = ["222"]
+        injured_or_lower_league = []
+        second_hot_code, second_cons_code, second_cold_code = [], [], []
+        first_hot_code, first_cons_code, first_cold_code = [], [], []
+        heating_up_code, cooling_down_code = [], []
+        warm_side_code, cold_side_code = [], []
 
-        full_hot_3rd, full_hot_2nd, full_hot_1st, full_cons_3rd, full_cons_2nd, full_cons_1st, full_cold_3rd, full_cold_2nd, full_cold_1st =  [], [], [], [], [], [], [], [], []
-        heating_up, cooling_down = [], []
-        # full_cold_3rd, full_cold_2nd, full_cold_1st, full_empty_2nd, full_empty_1st  = [], [], [], [], [] all empty are full 3rd degree and pointless
-        # for code in code_map: 
-        #     curr_code_streak = full_streak_ordering[code] 
-        #     # self.streakPrintFormat(curr_code_streak)
-        #     for player in curr_code_streak: 
-        #         if code == "000":
-        #             full_hot_3rd.append(player)
-        #         if code[-2:] == "00" and code[-3] != "0":
-        #             full_hot_2nd.append(player)
-        #         if code[-1] == "0" and code[-2] != "0" and code[-3] != "0":
-        #             full_hot_1st.append(player)
-        #         if code == "111":
-        #             full_cons_3rd.append(player)
-        #         if code[-2:] == "11" and code[-3] != "1":
-        #             full_cons_2nd.append(player)
-        #         if code[-1] == "1" and code[-2] != "1" and code[-3] != "1":
-        #             full_cons_1st.append(player)
-        #         if code == "222":
-        #             full_cold_3rd.append(player)
-        #         if code[-2:] == "22" and code[-3] != "2":
-        #             full_cold_2nd.append(player)
-        #         if code[-1] == "2" and code[-2] != "2" and code[-3] != "2":
-        #             full_cold_1st.append(player)
+        
+        for code in code_map: 
+            for i in range(3):
+                if code[i] == '3':
+                    injured_or_lower_league.append(code)
+            if code[-2:] == "00" and code[-3] != 0:
+                second_hot_code.append(code)
+            if code[-2:] == "11" and code[-3] != 1:
+                second_cons_code.append(code)
+            if code[-2:] == "22" and code[-3] != "2":
+                second_cold_code.append(code)
+            if code[-1] == "0" and code[-2] != "0" or code[-3] != "0":
+                first_hot_code.append(code)
+            if code[-1] == "1" and code[-2] != "1" or code[-3] != "1":
+                first_cons_code.append(code)
+            if code[-1] == "2" and code[-2] != "2" or code[-3] != "2":
+                first_cold_code.append(code)
+            if int(code[0]) > int(code[1]) and int(code[1]) > int(code[2]):
+                heating_up_code.append(code)
+            if int(code[0]) < int(code[1]) and int(code[1]) < int(code[2]):
+                cooling_down_code.append(code)
+            if code[0] == "0" or code[0] == "1":
+                if code[1] == "0" or code[1] == "1":
+                    if code[2] == "0" or code[2] == "1":
+                        warm_side_code.append(code)
+            if code[0] == "1" or code[0] == "2":
+                if code[1] == "1" or code[1] == "2":
+                    if code[2] == "1" or code[2] == "2":
+                        cold_side_code.append(code)
 
-        #         if int(code[2]) == int(code[1]) + 1 and int(code[1]) == int(code[0]) + 1:
-        #             heating_up.append(player)
-
-        #         if int(code[0]) == int(code[1]) + 1 and int(code[1]) == int(code[2]) + 1:
-        #             cooling_down.append(player)
+        print("Players on the Warm Side of the Game: \n")
+        self.fullDepthStreakAnalysis(warm_side_code, full_streak_ordering)
 
         # print("Players Heating Up: \n")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "210")
+        # self.fullDepthStreakAnalysis(heating_up_code, full_streak_ordering)
+
+        # print("Players on the Cold Side of the Game: \n")
+        # self.fullDepthStreakAnalysis(cold_side_code, full_streak_ordering)
 
         # print("Players Cooling Down: \n")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "012")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "123")
+        # self.fullDepthStreakAnalysis(cooling_down_code, full_streak_ordering)
+
+
 
         # print("Players with 3rd Degree Hot Streak: \n")
         # self.singleStreakAnalysis(code_map, full_streak_ordering, "000")
@@ -832,52 +845,7 @@ class MyLeague:
         # self.singleStreakAnalysis(code_map, full_streak_ordering, "320")
         # self.singleStreakAnalysis(code_map, full_streak_ordering, "330")
                 
-        # print("Full 3rd Degree Hot Streak:\n")
-        # self.printStreakPlayers(full_hot_3rd)
-        # print("Full 2nd Degree Hot Streak:\n")
-        # self.printStreakPlayers(full_hot_2nd)
-        # print("Full 1st Degree Hot Streak:\n")
-        # self.printStreakPlayers(full_hot_1st)
-        # print("Players Cooling Dwon:\n")
-        # self.printStreakPlayers(cooling_down)
-        # print("Players Heating Up:\n")
-        # self.printStreakPlayers(heating_up)
-
-        # full_hot_3rd = sorted(full_hot_3rd, key=lambda player: player.values()['avg_points'])
-       
-        # print("Full 2nd Degree Hot Streak:\n")
-        # print(full_hot_2nd)
-        # print()
-        # print("Full 1st Degree Hot Streak:\n")
-        # print(full_hot_1st)
-        # print("\n\n")
-
-        # print("Full 3rd Degree Conistent Streak:\n")
-        # print(full_cons_3rd)
-        # print()
-        # print("Full 2nd Degree Conistent Streak:\n")
-        # print(full_cons_2nd)
-        # print()
-        # print("Full 1st Degree Conistent Streak:\n")
-        # print(full_cons_1st)
-        # print("\n\n")
         
-        # print("Full 3rd Degree Cold Streak:\n")
-        # print(full_cons_3rd)
-        # print()
-        # print("Full 2nd Degree Cold Streak:\n")
-        # print(full_cons_2nd)
-        # print()
-        # print("Full 1st Degree Cold Streak:\n")
-        # print(full_cons_1st)
-        # print("\n\n")
-
-        # print("Players Trending Hot:\n")
-        # print(heating_up)
-        # print()
-        # print("Players Trending Cold:\n")
-        # print(cooling_down)
-        # print("\n\n")
 
     def singleStreakAnalysis(self, code_map, full_streak_ordering, code):
         if code not in code_map:
@@ -1029,59 +997,7 @@ class MyLeague:
 
         # first_degree is full already, full second degree is just the intersection of second and first, and then full third is intersection of third and 
 
-    def hotStreakFullReport(self, team, first_degree, second_degree, third_degree, full_second_degree, full_third_degree, consistent):
-        all_players = []
-        if team:
-            print(f"{team} Hot Streak Report:\n")
-
-        print("Full 3rd Degree Hot Streak:\n")
-        for player, increase_30 in full_third_degree:
-            player_15 = next((p for p, inc in full_second_degree if p == player), None)
-            player_7 = next((p for p, inc in first_degree if p == player), None)
-            if player_15 and player_7:
-                increase_15 = next(inc for p, inc in full_second_degree if p == player)
-                increase_7 = next(inc for p, inc in first_degree if p == player)
-                all_players.append(player)
-                print(f"{player.name} had {increase_30:.2f} points above average over 30 days, {increase_15:.2f} points above average over 15 days, and {increase_7:.2f} points above average over 7 days \n")
-
-        # self.hotStreakSingleReport(full_third_degree, all_players)
-        
-        print("Partial 3rd Degree Hot Streak:\n")
-        self.hotStreakSingleReport(third_degree, all_players)
-
-        print("Full Second Degree Hot Streak:\n")
-        for player, increase_15 in full_second_degree:
-            if player not in all_players:
-                player_7 = next((p for p, inc in first_degree if p == player), None)
-                if player_7:
-                    increase_7 = next(inc for p, inc in first_degree if p == player)
-                    all_players.append(player)
-                    print(f"{player.name} had {increase_15:.2f} points above average over 15 days, and {increase_7:.2f} points above average over 7 days \n")
-
-        # self.hotStreakSingleReport(full_second_degree, all_players)
-
-        print("Partial 2nd Degree Hot Streak:\n")
-        self.hotStreakSingleReport(second_degree, all_players)
-
-        print("Full First Degree Hot Streak:\n")
-        for player, increase_7 in first_degree:
-            if player not in all_players:
-                all_players.append(player)
-                print(f"{player.name} had {increase_7:.2f} points above average over 7 days \n")
-
-        title = ["1st Level Room Temp Players", "2nd Level Room Temp Players List", "3rd Level Room Temp Players List"]
-        for i in range(2, -1, -1):
-            print(f"{title[i]}:\n")
-            self.hotStreakSingleReport(consistent[i], all_players)
-        
-    def hotStreakSingleReport(self, streak_list, all_players):
-        for index, player in enumerate(streak_list):
-            player_obj = player[0]
-            avg_points_increase = player[1]
-            if player_obj in all_players:
-                continue
-            all_players.append(player_obj)
-            print(f"{index+1}. {player_obj.name} with {avg_points_increase}\n")
+    # 
 
     def createLeague():
         # Initialize all necessary variables to be passed into League constructor
