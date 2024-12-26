@@ -14,8 +14,8 @@ def main():
     # print()
     # league_object.printAllBestTeamStat()
     # print()
-    # league_object.printTeamRosters()  
-    # print()
+    league_object.printTeamRosters()  
+    print()
     # league_object.printTeamByPoints()
     # print()
     # league_object.printTeamByAvgPoints() 
@@ -24,10 +24,10 @@ def main():
     # print()
     # league_object.printPlayersByAvgPoints()
     # print()
-    # league_object.LeagueDraftGrade()
+    league_object.LeagueDraftGrade()
     
-    league_object.StreakReport(True, league_object.free_agents)
-    print()
+    # league_object.StreakReport(True, league_object.free_agents)
+    # print()
     # league_object.StreakReport(True, league_object.teams)
     
     

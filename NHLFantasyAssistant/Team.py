@@ -98,7 +98,7 @@ class Team:
             print(f"{count}. {player_info}")
 
     def displayDraftRoster(self):
-        sorted_players = sorted(self.draft_list, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
+        # sorted_players = sorted(self.draft_list, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
         count = 0
         for player in self.draft_list:
             count = count + 1
@@ -189,6 +189,9 @@ class Team:
         sum = 0
         player_count = len(self.players)
         for player in self.players:
+            if player_count == 23:
+                if player.health_status != "ACTIVE":
+                    continue
             projected_points = player.curr_year_proj.get('PTS', 0)
             if projected_points == 0:
                 player_count -= 1

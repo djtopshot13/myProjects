@@ -102,13 +102,13 @@ class MyLeague:
         defense_players = []
         goalie_players = []
         # set up min and max count by position along with total roster count at draft day
-        max_d_count = 11
-        min_d_count = 5
-        max_g_count = 4
-        min_g_count = 2
-        max_f_count = 15
-        min_f_count = 9
-        total_count = 22
+        MAX_D_COUNT = 11
+        MIN_D_COUNT= 5
+        MAX_G_COUNT = 4
+        MIN_G_COUNT = 2
+        MAX_F_COUNT = 15
+        MIN_F_COUNT = 9
+        TOTAL_PLAYER_COUNT = 22
 
         # go through all undrafted players and add players by position, should be in greatest to least order
         for player in undrafted_players:
@@ -120,23 +120,22 @@ class MyLeague:
                 goalie_players.append(player)
 
         # set up roster with the top players for the min count of each position
-        min_position_roster = []
-        min_position_roster.extend(forward_players[i] for i in range(min_f_count))
-        min_position_roster.extend(defense_players[i] for i in range(min_d_count))
-        min_position_roster.extend(goalie_players[i] for i in range(min_g_count))
+        full_roster = []
+        full_roster.extend(forward_players[i] for i in range(MIN_F_COUNT))
+        full_roster.extend(defense_players[i] for i in range(MIN_D_COUNT))
+        full_roster.extend(goalie_players[i] for i in range(MIN_G_COUNT))
 
         # set count values to min count since those players are added to the VORP team (Value of Remaining Players)
-        f_count = min_f_count
-        d_count = min_d_count
-        g_count = min_g_count
+        f_count = MIN_F_COUNT
+        d_count = MIN_D_COUNT
+        g_count = MIN_G_COUNT
 
-        # set up full roster list by copying all the min roster values 
-        full_roster = min_position_roster.copy()
+
         
         # go through all player types for remaining 6 positions on roster
         for player in undrafted_players:
             # finish when all position counts are equal to the total count
-            if f_count + d_count + g_count == total_count:
+            if f_count + d_count + g_count == TOTAL_PLAYER_COUNT:
                 break
             # if the player has already been added skip over the loop logic that iteration
             if player in full_roster:
@@ -145,13 +144,13 @@ class MyLeague:
             else:
                 # check what position the next highest scoring player is and that the position count doesn't exceed the max position count
                 # If the player and count pass, then increase position count by 1 and add the player to the list
-                if player in forward_players and f_count < max_f_count:
+                if player in forward_players and f_count < MAX_F_COUNT:
                     f_count += 1
                     full_roster.append(player)
-                elif player in defense_players and d_count < max_d_count:
+                elif player in defense_players and d_count < MAX_D_COUNT:
                     d_count += 1
                     full_roster.append(player)
-                elif player in goalie_players and g_count < max_g_count:
+                elif player in goalie_players and g_count < MAX_G_COUNT:
                     g_count += 1 
                     full_roster.append(player)
                 
@@ -169,8 +168,8 @@ class MyLeague:
 
         
         
-        avg_projected_points_dict = {team: 0 for team in self.teams}
-        avg_projected_points_dict['VORP'] = 0
+        avg_proj_points_dict = {team: 0 for team in self.teams}
+        avg_proj_points_dict['VORP'] = 0
         for team in self.teams:
             roster_count = 22
             team_sum = 0
@@ -181,7 +180,7 @@ class MyLeague:
                     roster_count -= 1
                 team_sum += projected_points
             avg_proj_points = round(team_sum / roster_count, 1)
-            avg_projected_points_dict[team] = avg_proj_points
+            avg_proj_points_dict[team] = avg_proj_points
 
         roster_count = 22
         vorp_sum = 0
@@ -192,16 +191,16 @@ class MyLeague:
                 roster_count -= 1
                 vorp_sum += projected_points
             avg_proj_points = round(team_sum / roster_count, 1)
-            avg_projected_points_dict['VORP'] = avg_proj_points
+            avg_proj_points_dict['VORP'] = avg_proj_points
 
         power_rankings = []
         draft_rankings = []
-        power_rankings = list(avg_projected_points_dict.values())
+        power_rankings = list(avg_proj_points_dict.values())
         power_rankings.sort(reverse=True)
         for i in range(len(power_rankings)):
-            for key in avg_projected_points_dict.keys():
+            for key in avg_proj_points_dict.keys():
                 val = power_rankings[i]
-                if avg_projected_points_dict[key] == val:
+                if avg_proj_points_dict[key] == val:
                     draft_rankings.append({key: val})
         print("League Draft Grade Results:")
         print("=======================================================")
@@ -228,6 +227,9 @@ class MyLeague:
 
 
     # print each matchup result from the beginning of the season to the most recent completed matchup
+
+    # def LeaguePowerRankings(self):
+
     def printSeasonMatchupResults(self):
         self.matchup.seasonMatchupResults()
 
@@ -592,7 +594,7 @@ class MyLeague:
 
         else:
             # team_list = []
-            for index, team in enumerate(self.teams):
+            for team in self.teams:
                 # team_list.append(team.name)
                 roster = players[team].players
                 if hot:
