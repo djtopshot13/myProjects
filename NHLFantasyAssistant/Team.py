@@ -205,12 +205,11 @@ class Team:
         sum = 0
         player_count = len(self.players)
         for player in self.players:
-            print(player.health_status)
             if player_count == 23:
                 if player.health_status == "INJURY_RESERVE" or player.health_status == "OUT":
                     player_count -= 1
                     continue
-            proj_points = player.avg_points * 82
+            proj_points = player.avg_points * 75
             if proj_points == 0:
                 player_count -= 1
             sum += proj_points

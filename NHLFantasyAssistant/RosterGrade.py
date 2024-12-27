@@ -132,9 +132,9 @@ class RosterGrade:
             if draft_bool:
                 proj_points = player.curr_year_proj.get('PTS', 0)
             else:
-                proj_points = player.avg_points * 82
+                proj_points = player.avg_points * 75
             if proj_points == 0:
-                roster_count -= 1
+                vorp_roster_count -= 1
             vorp_sum += proj_points
             avg_proj_points = round(vorp_sum / vorp_roster_count, 1)
             avg_points_dict['VORP'] = avg_proj_points
@@ -161,19 +161,21 @@ class RosterGrade:
         else:
             print("League Current Power Ranking Results:")
             print("============================================================")
-        for index, ranking in enumerate(power_rankings):
+        ranking_count = 0
+        for ranking in power_rankings:
+            ranking_count += 1
             team = list(ranking.keys())[0]
             proj_points = list(ranking.values())[0]
             if team == "VORP":
                 vorp_team = team
                 vorp_proj_points = proj_points
-                index -= 1
+                ranking_count -= 1
                 continue
             if draft_bool:
-                print(f"{index + 1}. {team} with {proj_points} average projected points")
+                print(f"{ranking_count}. {team} with {proj_points} average projected points")
                 print("============================================================")
             else: 
-                print(f"{index + 1}. {team} with {proj_points} average points")
+                print(f"{ranking_count}. {team} with {proj_points} average points")
                 print("============================================================")
 
         print()
