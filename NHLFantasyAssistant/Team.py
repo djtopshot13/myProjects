@@ -100,7 +100,8 @@ class Team:
     def displayDraftRoster(self):
         # sorted_players = sorted(self.draft_list, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
         count = 0
-        for player in self.draft_list:
+        sorted_draft_list = sorted(self.draft_list, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
+        for player in sorted_draft_list:
             count = count + 1
             player_info = player.displayDraftPlayerInfo()
             
@@ -185,17 +186,34 @@ class Team:
         return avgDPoints, avgFPoints, avgGPoints
 
     
-    def teamAvgProjectedPoints(self):
+    def avgProjectedPoints(self):
         sum = 0
-        player_count = len(self.players)
-        for player in self.players:
-            if player_count == 23:
-                if player.health_status != "ACTIVE":
-                    continue
+        player_count = len(self.draft_list)
+        for player in self.draft_list:
+            # if player_count == 23:
+            #     if player.health_status != "ACTIVE":
+            #         continue
             projected_points = player.curr_year_proj.get('PTS', 0)
             if projected_points == 0:
                 player_count -= 1
             sum += projected_points
+        
+        avg_points = round(sum / player_count, 1)
+        return avg_points
+    
+    def avgTotalPoints(self):
+        sum = 0
+        player_count = len(self.players)
+        for player in self.players:
+            print(player.health_status)
+            if player_count == 23:
+                if player.health_status == "INJURY_RESERVE" or player.health_status == "OUT":
+                    player_count -= 1
+                    continue
+            proj_points = player.avg_points * 82
+            if proj_points == 0:
+                player_count -= 1
+            sum += proj_points
         
         avg_points = round(sum / player_count, 1)
         return avg_points

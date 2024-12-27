@@ -1,9 +1,14 @@
 class RosterGrade:
-    def __init__(self, free_agents, undrafted_players):
+    def __init__(self, teams, draft_dict, free_agents, undrafted_players):
+        self.teams = teams
+        self.draft_dict = draft_dict
         self.free_agents = free_agents
         self.undrafted_players = undrafted_players
         self.draft_VORP, self.draft_VORP_pos_count = self.createVORPTeam(undrafted_players)
         self.curr_VORP, self.curr_VORP_pos_count = self.createVORPTeam(free_agents)
+        
+        self.avg_proj_points_dict = self.projectionVORP(True, self.projectionTeams(True))
+        self.avg_total_points_dict = self.projectionVORP(False, self.projectionTeams(False))
 
     def createVORPTeam(self, player_list):
         forward_players, defense_players, goalie_players = [], [], []
@@ -65,3 +70,114 @@ class RosterGrade:
         else:
             print("This is an error in Roster Grade that shouldn't be reached!\n")
         return sorted_full_roster, pos_count
+    
+    def displayDraftVORP(self):
+        print("VORP Roster after League Draft:\n")
+        print(f"Forwards: {self.draft_VORP_pos_count[0]}\t Defensemen: {self.draft_VORP_pos_count[1]}\t Goalies: {self.draft_VORP_pos_count[2]}\n")
+        for index, player in enumerate(self.draft_VORP):
+            print(f"{index+1}. {player.displayUndraftedPlayerInfo()}")
+        print()
+
+    def projectionTeams(self, draft_bool):
+        avg_points_dict = {team: 0 for team in self.teams}
+        avg_points_dict['VORP'] = 0
+        for team in self.teams:
+            # if draft_bool:
+            #     team_roster = team.draft_list
+            # else:
+            #     team_roster = team.players
+            # roster_count = len(team_roster)
+            # team_sum = 0
+            # if roster_count == 23:
+            #     if player.health_status != "ACTIVE":
+            #         continue
+            # for i in range(roster_count):
+            #     player = team_roster[i]
+            #     if draft_bool:
+            #         points = player.curr_year_proj.get('PTS', 0)
+            #     else:
+            #         points = player.curr_year_total.get('PTS', 0)
+            #     if points == 0:
+            #         # print(f"There is a player [{player.name}] with 0 projected points")
+            #         roster_count -= 1
+            #     team_sum += points
+            # avg_points = round(team_sum / roster_count, 1)
+            if draft_bool:
+                avg_points_dict[team] = self.teams[team].avgProjectedPoints()
+            else:
+                avg_points_dict[team] = self.teams[team].avgTotalPoints()
+        
+        return avg_points_dict
+        # vorp_roster_count = 22
+        # vorp_roster = self.draft_VORP if draft_bool else self.curr_VORP
+        # vorp_sum = 0
+        # for i in range(vorp_roster_count):
+        #     player = vorp_roster[i]
+        #     if draft_bool:
+        #         points = player.curr_year_proj.get('PTS', 0)
+        #     else:
+        #         points = player.curr_year_total.get('PTS', 0)
+        #     if points == 0:
+        #         roster_count -= 1
+        #     vorp_sum += points
+        #     avg_points = round(vorp_sum / vorp_roster_count, 1)
+        #     avg_points_dict['VORP'] = avg_points
+
+    def projectionVORP(self, draft_bool, avg_points_dict):
+        vorp_roster_count = 22
+        vorp_roster = self.draft_VORP if draft_bool else self.curr_VORP
+        vorp_sum = 0
+        for i in range(vorp_roster_count):
+            player = vorp_roster[i]
+            if draft_bool:
+                proj_points = player.curr_year_proj.get('PTS', 0)
+            else:
+                proj_points = player.avg_points * 82
+            if proj_points == 0:
+                roster_count -= 1
+            vorp_sum += proj_points
+            avg_proj_points = round(vorp_sum / vorp_roster_count, 1)
+            avg_points_dict['VORP'] = avg_proj_points
+
+        return avg_points_dict
+
+    def powerRankingReport(self, draft_bool):
+        sorted_points_list, power_rankings = [], []
+        if draft_bool:
+            points_dict = self.avg_proj_points_dict
+        else:
+            points_dict = self.avg_total_points_dict
+        
+        sorted_points_list = list(points_dict.values())
+        sorted_points_list.sort(reverse=True)
+        for i in range(len(sorted_points_list)):
+            for key in points_dict.keys():
+                val = sorted_points_list[i]
+                if points_dict[key] == val:
+                    power_rankings.append({key: val})
+        if draft_bool:
+            print("League Draft Power Ranking Results:")
+            print("============================================================")
+        else:
+            print("League Current Power Ranking Results:")
+            print("============================================================")
+        for index, ranking in enumerate(power_rankings):
+            team = list(ranking.keys())[0]
+            proj_points = list(ranking.values())[0]
+            if team == "VORP":
+                vorp_team = team
+                vorp_proj_points = proj_points
+                index -= 1
+                continue
+            if draft_bool:
+                print(f"{index + 1}. {team} with {proj_points} average projected points")
+                print("============================================================")
+            else: 
+                print(f"{index + 1}. {team} with {proj_points} average points")
+                print("============================================================")
+
+        print()
+        if draft_bool:
+            print(f"{vorp_team} roster had {vorp_proj_points} average projected points")
+        else:
+            print(f"{vorp_team} roster has {vorp_proj_points} average points")
