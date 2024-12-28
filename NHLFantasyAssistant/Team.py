@@ -206,7 +206,7 @@ class Team:
         player_count = len(self.players)
         for player in self.players:
             if player_count == 23:
-                if player.health_status == "INJURY_RESERVE" or player.health_status == "OUT":
+                if player.health_status == "INJURY_RESERVE":
                     player_count -= 1
                     continue
             proj_points = player.avg_points * 75

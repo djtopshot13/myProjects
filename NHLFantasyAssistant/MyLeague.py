@@ -6,8 +6,6 @@ import RosterGrade
 
 class MyLeague:
     def __init__(self, teams, matchups, draft_dict, rostered_players, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):
-        # self.free_agents = teams['Free Agents'].players
-        # del teams['Free Agents']
         self.teams = teams
         self.matchups = matchups
         self.draft_dict = draft_dict

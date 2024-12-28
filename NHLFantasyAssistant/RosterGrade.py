@@ -82,46 +82,12 @@ class RosterGrade:
         avg_points_dict = {team: 0 for team in self.teams}
         avg_points_dict['VORP'] = 0
         for team in self.teams:
-            # if draft_bool:
-            #     team_roster = team.draft_list
-            # else:
-            #     team_roster = team.players
-            # roster_count = len(team_roster)
-            # team_sum = 0
-            # if roster_count == 23:
-            #     if player.health_status != "ACTIVE":
-            #         continue
-            # for i in range(roster_count):
-            #     player = team_roster[i]
-            #     if draft_bool:
-            #         points = player.curr_year_proj.get('PTS', 0)
-            #     else:
-            #         points = player.curr_year_total.get('PTS', 0)
-            #     if points == 0:
-            #         # print(f"There is a player [{player.name}] with 0 projected points")
-            #         roster_count -= 1
-            #     team_sum += points
-            # avg_points = round(team_sum / roster_count, 1)
             if draft_bool:
                 avg_points_dict[team] = self.teams[team].avgProjectedPoints()
             else:
                 avg_points_dict[team] = self.teams[team].avgTotalPoints()
-        
         return avg_points_dict
-        # vorp_roster_count = 22
-        # vorp_roster = self.draft_VORP if draft_bool else self.curr_VORP
-        # vorp_sum = 0
-        # for i in range(vorp_roster_count):
-        #     player = vorp_roster[i]
-        #     if draft_bool:
-        #         points = player.curr_year_proj.get('PTS', 0)
-        #     else:
-        #         points = player.curr_year_total.get('PTS', 0)
-        #     if points == 0:
-        #         roster_count -= 1
-        #     vorp_sum += points
-        #     avg_points = round(vorp_sum / vorp_roster_count, 1)
-        #     avg_points_dict['VORP'] = avg_points
+        
 
     def projectionVORP(self, draft_bool, avg_points_dict):
         vorp_roster_count = 22
