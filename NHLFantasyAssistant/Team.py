@@ -12,6 +12,9 @@ class Team:
         self.draft_list = draft_list
         self.stats_dict = stats_dict
 
+    def __repr__(self):
+        return f"Team({self.name})"
+
     def displayTeamRecord(self, record_map):
         return f"{self.name} [{self.matchup_wins}, {self.matchup_losses}]({record_map['streak'][self.name][self.matchup_wins + self.matchup_losses - 1]})"
     

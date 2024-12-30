@@ -411,6 +411,123 @@
         # #     else:
         # #         print(f"Check failed for player: {player.name}")
 
+        player_code = ""
+            # hot_val = "0"
+            # cons_val = "1"
+            # cold_val = "2"
+            # empty_val = "3"
+
+            # if games_played_30 > 0:
+            #     if avg_points_30 > avg_points_total:
+            #         # player_report[player][0].append("Hot")
+            #         player_code += hot_val
+            #         roster_map[player]["last_30_days"]["streak"] = "Hot"
+            #     elif avg_points_30 == avg_points_total:
+            #         # player_report[player][0].append("Consistent")
+            #         player_code += cons_val
+            #         roster_map[player]["last_30_days"]["streak"] = "Consistent"
+            #     else:
+            #         # player_report[player][0].append("Cold")
+            #         player_code += cold_val
+            #         roster_map[player]["last_30_days"]["streak"] = "Cold"
+            # else: 
+            #     # player_report[player][0].append("_")
+            #     player_code += empty_val
+            #     roster_map[player]["last_30_days"]["streak"] = "Empty"
+
+            # if games_played_15 > 0:
+            #     if avg_points_15 > avg_points_total:
+            #         # player_report[player][1].append("Hot")
+            #         player_code += hot_val
+            #         roster_map[player]["last_15_days"]["streak"] = "Hot"
+            #     elif avg_points_15 == avg_points_total:
+            #         # player_report[player][1].append("Consistent")
+            #         player_code += cons_val
+            #         roster_map[player]["last_15_days"]["streak"] = "Consistent"
+            #     else:
+            #         # player_report[player][1].append("Cold")
+            #         player_code += cold_val
+            #         roster_map[player]["last_15_days"]["streak"] = "Cold"
+            # else:
+            #     # player_report[player][1].append("_")
+            #     player_code += empty_val
+            #     roster_map[player]["last_15_days"]["streak"] = "Empty"
+
+            # if games_played_7 > 0:
+            #     if avg_points_7 > avg_points_total:
+            #         # player_report[player][2].append("Hot")
+            #         player_code += hot_val
+            #         roster_map[player]["last_7_days"]["streak"] = "Hot"
+            #     elif avg_points_7 == avg_points_total:
+            #         # player_report[player][2].append("Consistent")
+            #         roster_map[player]["last_7_days"]["streak"] = "Consistent"
+            #     else:
+            #         # player_report[player][2].append("Cold")
+            #         player_code += cold_val
+            #         roster_map[player]["last_7_days"]["streak"] = "Cold"
+            # else:
+            #     # player_report[player][2].append("_")
+            #     player_code += empty_val
+            #     roster_map[player]["last_7_days"]["streak"] = "Empty"
+            # roster_map[player]["code"] = player_code
+
+            # code_map = {team: []}
+        # player_report = {player: [[] for _ in range(3)] for player in roster}
+        for player in roster:
+            # avg_points_total = player.avg_points
+            # points_7 = player.last_7_dict.get('PTS', 0)
+            # games_played_7 = player.last_7_dict.get('GP', 0)
+            # avg_points_7 = round(points_7 / games_played_7, 1) if games_played_7 != 0 else 0 
+            # avg_difference_7 = round(avg_points_7 - avg_points_total, 1)
+            # points_15 = player.last_15_dict.get('PTS', 0)
+            # games_played_15 = player.last_15_dict.get('GP', 0)
+            # avg_points_15 = round(points_15 / games_played_15, 1) if games_played_15 != 0  else 0
+            # avg_difference_15 = round(avg_points_15 - avg_points_total, 1)
+            # points_30 = player.last_30_dict.get('PTS', 0)
+            # games_played_30 = player.last_30_dict.get('GP', 0)
+            # avg_points_30 = round(points_30 / games_played_30, 1) if games_played_30 != 0  else 0
+            # avg_difference_30 = round(avg_points_30 - avg_points_total, 1)
+
+            # player_data = {
+            #     "last_30_days": {
+            #         "points": points_30,
+            #         "games_played": games_played_30,
+            #         "avg_points": avg_points_30, 
+            #         "avg_difference": avg_difference_30
+            #     }, 
+            #     "last_15_days": {
+            #         "points": points_15,
+            #         "games_played": games_played_15,
+            #         "avg_points": avg_points_15,
+            #         "avg_difference": avg_difference_15
+            #     },
+            #     "last_7_days": {
+            #         "points": points_7,
+            #         "games_played": games_played_7,
+            #         "avg_points": avg_points_7,
+            #         "avg_difference": avg_difference_7
+            #     },
+            #     "avg_points": avg_points_total
+            # }
+            if is_free_agent:
+                roster_map["free_agents"][player] = player_data
+            else:
+                roster_map[player.team][player] = player_data
+
+            player_code, roster_map = self.generatePlayerCodeStreak(player, roster_map)
+
+            if player_code != code_map:
+                code_map.append(player_code)
+
+        code_map.sort(key=lambda code: int(code))
+        full_roster_streak_ordering = {"free_agents": {}}
+        full_roster_streak_ordering = {team: {} for team in self.teams}
+        # for code in code_map:
+        #     for player in roster_map:
+        #         if player[1]["code"] == code:
+                    
+        # return roster_map, code_map
+
     LeagueDraftGrade
       #     # Calculate VORP (Value of Remaining/Undrafted Players) with the most projected points
     #     # Compare the difference between each fantasy team's projected point total and the VORP projected points

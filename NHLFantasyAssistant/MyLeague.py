@@ -20,6 +20,7 @@ class MyLeague:
         self.undrafted_list = self._get_Undrafted_Players()
         self.matchup = self._make_Matchup()
         self.roster_grader = self._make_Roster_Grader()
+        self.streak_tracker = self._make_Streak_Tracker
         self.team_record_map = self.matchup.team_record_map
     
     def _make_Roster_Grader(self):
@@ -794,21 +795,21 @@ class MyLeague:
             print(f"{index + 1}. {player_obj}:\n\n")
             if streak_30 == "Consistent":
                 print(f"Last 30 Days: {streak_30} Streak maintaining {avg_points} avg points\n")
-            elif streak_30 == "N/A":
+            elif streak_30 == "Empty":
                 print(f"Last 30 Days: Not enough data to generate any analysis\n")
             else:
                 print(f"Last 30 Days: {streak_30} Streak with change of {point_sign_30}{point_diff_30} from {avg_points} avg points\n")
 
             if streak_15 == "Consistent":
                 print(f"Last 15 Days: {streak_15} Streak maintaining {avg_points} avg points\n")
-            elif streak_15 == "N/A":
+            elif streak_15 == "Empty":
                 print(f"Last 15 Days: Not enough data to generate any analysis\n")
             else:
                 print(f"Last 15 Days: {streak_15} Streak with change of {point_sign_15}{point_diff_15} from {avg_points} avg points\n")
 
             if streak_7 == "Consistent":
                 print(f"Last 7 Days: {streak_7} Streak maintaining {avg_points} avg points\n\n")
-            elif streak_7 == "N/A":
+            elif streak_7 == "Empty":
                 print(f"Last 7 Days: Not enough data to generate any analysis\n\n")
             else:
                 print(f"Last 7 Days: {streak_7} Streak with change of {point_sign_7}{point_diff_7} from {avg_points} avg points\n\n")
