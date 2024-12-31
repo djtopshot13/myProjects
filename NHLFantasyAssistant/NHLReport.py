@@ -24,13 +24,13 @@ def main():
     # print()
     # league_object.printPlayersByAvgPoints()
     # print()
-    league_object.LeagueDraftPowerRankings()
-    print()
-    league_object.LeagueCurrPowerRankings()
-    
-    # league_object.StreakReport(True, league_object.free_agents)
+    # league_object.leagueDraftPowerRankings()
     # print()
-    # league_object.StreakReport(True, league_object.teams)
+    # league_object.leagueCurrPowerRankings()
+    
+    league_object.streakReport()
+    # print()
+    # league_object.streakReport(True, league_object.teams)
     
     
 main()

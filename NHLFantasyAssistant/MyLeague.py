@@ -3,6 +3,7 @@ import Skater
 import Goalie
 import Matchup
 import RosterGrade
+import StreakTracker
 
 class MyLeague:
     def __init__(self, teams, matchups, draft_dict, rostered_players, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):
@@ -20,7 +21,7 @@ class MyLeague:
         self.undrafted_list = self._get_Undrafted_Players()
         self.matchup = self._make_Matchup()
         self.roster_grader = self._make_Roster_Grader()
-        self.streak_tracker = self._make_Streak_Tracker
+        self.streak_tracker = self._make_Streak_Tracker()
         self.team_record_map = self.matchup.team_record_map
     
     def _make_Roster_Grader(self):
@@ -29,6 +30,10 @@ class MyLeague:
 
     def _make_Matchup(self):
         return Matchup.Matchup(self.curr_matchup_period, self.matchups, self.teams)
+    
+    def _make_Streak_Tracker(self):
+        return StreakTracker.StreakTracker(self.free_agents, self.teams)
+    
     
     # Check to make sure that only player objects are added
     def _get_All_Players(self):
@@ -68,10 +73,10 @@ class MyLeague:
         
         return sorted_undrafted_players # return list of sorted_undrafted_players
     
-    def LeagueDraftPowerRankings(self):
+    def leagueDraftPowerRankings(self):
         self.roster_grader.powerRankingReport(True)
 
-    def LeagueCurrPowerRankings(self):
+    def leagueCurrPowerRankings(self):
         self.roster_grader.powerRankingReport(False)
 
         # Set up projected point for current year by team method in team file -> def teamProjectedPoints() -> return total projected points 
@@ -413,424 +418,8 @@ class MyLeague:
             print(f"{index + 1}. {player.name} ({player.position}): [{player.points} pts] - ({player.team})")
         
             
-    def StreakReport(self, hot, players):
-        # def sort_players_by_degree(degree_list):
-        #     # Sort players by point increase in descending order
-        #     return sorted(degree_list, key=lambda player: player[1], reverse=True)
-        
-        if players == self.free_agents:
-            roster = players
-            if hot:
-                print(f"Hot Streak Tracker for Free Agents:\n")
-                self.StreakTracker(hot, roster)
-                # first_degree, second_degree, third_degree, consistent = self.StreakTracker(hot, roster)
-                # full_second_degree = [(player, increase) for player, increase in first_degree 
-                #                   if any(player == p2[0] for p2 in second_degree)]
-                # full_third_degree = [(player, increase) for player, increase in full_second_degree 
-                #                   if any(player == p3[0] for p3 in third_degree)]
-                # sorted_first_degree = sort_players_by_degree(first_degree)
-                # sorted_second_degree = sort_players_by_degree(second_degree)
-                # sorted_third_degree = sort_players_by_degree(third_degree)
-                # sorted_full_second_degree = sort_players_by_degree(full_second_degree)
-                # sorted_full_third_degree = sort_players_by_degree(full_third_degree)
-                # sorted_consistent = []
-                # sorted_consistent.append(sort_players_by_degree(consistent[0]))
-                # sorted_consistent.append(sort_players_by_degree(consistent[1]))
-                # sorted_consistent.append(sort_players_by_degree(consistent[2]))
-                # self.hotStreakFullReport('', sorted_first_degree, sorted_second_degree, sorted_third_degree, sorted_full_second_degree, sorted_full_third_degree, sorted_consistent)
-            else:
-                print(f"Cold Streak Tracker for Free Agents:\n")
-                self.StreakTracker(hot, roster)
-                # cold_streak = self.StreakTracker(hot, roster)
-                # sorted_cold_streak = sort_players_by_degree(cold_streak)
-                # self.coldStreakFullReport('', cold_streak)
-
-                        
-
-        else:
-            # team_list = []
-            for team in self.teams:
-                # team_list.append(team.name)
-                roster = players[team].players
-                if hot:
-                    print(f"Hot Streak Tracker for {team} Roster:\n")
-                    self.StreakTracker(hot, roster)
-                    # first_degree, second_degree, third_degree, consistent = self.StreakTracker(hot, roster)
-                    # full_second_degree = [(player, increase) for player, increase in first_degree 
-                    #               if any(player == p2[0] for p2 in second_degree)]
-                    # full_third_degree = [(player, increase) for player, increase in full_second_degree 
-                    #               if any(player == p3[0] for p3 in third_degree)]
-                    # sorted_first_degree = sort_players_by_degree(first_degree)
-                    # sorted_second_degree = sort_players_by_degree(second_degree)
-                    # sorted_third_degree = sort_players_by_degree(third_degree)
-                    # sorted_full_second_degree = sort_players_by_degree(full_second_degree)
-                    # sorted_full_third_degree = sort_players_by_degree(full_third_degree)
-                    # sorted_consistent = []
-                    # sorted_consistent.append(sort_players_by_degree(consistent[0]))
-                    # sorted_consistent.append(sort_players_by_degree(consistent[1]))
-                    # sorted_consistent.append(sort_players_by_degree(consistent[2]))
-                    # self.hotStreakFullReport(team, sorted_first_degree, sorted_second_degree, sorted_third_degree, sorted_full_second_degree, sorted_full_third_degree, sorted_consistent)
-                else:
-                    print(f"Cold Streak Tracker for {team} Roster:\n")
-                    self.StreakTracker(hot, roster)
-                    # cold_streak = self.StreakTracker(hot, roster)
-                    # sorted_cold_streak = sort_players_by_degree(cold_streak)
-                    # self.coldStreakFullReport('', cold_streak)
-    
-                
-    def StreakTracker(self, hot, roster):
-        # first_degree, second_degree, third_degree = [], [], []
-        # hot_3rd, consistent_3rd, cold_3rd = [], [], []
-        # hot_2nd, consistent_2nd, cold_2nd = [], [], []
-        # hot_1st, consistent_1st, cold_1st = [], [], []
-        
-        roster_map = {}
-        player_report = {player: [[] for _ in range(3)] for player in roster}
-        for player in roster:
-            # if player.position == "G":
-            #     gp_key = "GS"
-            # else:
-            #     gp_key = "GP"
-            avg_points_total = player.avg_points
-            points_7 = player.last_7_dict.get('PTS', 0)
-            games_played_7 = player.last_7_dict.get('GP', 0)
-            avg_points_7 = round(points_7 / games_played_7, 1) if games_played_7 != 0 else 0 
-            avg_difference_7 = round(avg_points_7 - avg_points_total, 1)
-            points_15 = player.last_15_dict.get('PTS', 0)
-            games_played_15 = player.last_15_dict.get('GP', 0)
-            avg_points_15 = round(points_15 / games_played_15, 1) if games_played_15 != 0  else 0
-            avg_difference_15 = round(avg_points_15 - avg_points_total, 1)
-            points_30 = player.last_30_dict.get('PTS', 0)
-            games_played_30 = player.last_30_dict.get('GP', 0)
-            avg_points_30 = round(points_30 / games_played_30, 1) if games_played_30 != 0  else 0
-            avg_difference_30 = round(avg_points_30 - avg_points_total, 1)
-            # if player.position == "G":
-            #     print(games_played_30)
-            #     print(games_played_15)
-            #     print(games_played_7)
-            
-            
-            player_data = {
-                "last_30_days": {
-                    "points": points_30,
-                    "games_played": games_played_30,
-                    "avg_points": avg_points_30, 
-                    "avg_difference": avg_difference_30
-                }, 
-                "last_15_days": {
-                    "points": points_15,
-                    "games_played": games_played_15,
-                    "avg_points": avg_points_15,
-                    "avg_difference": avg_difference_15
-                },
-                "last_7_days": {
-                    "points": points_7,
-                    "games_played": games_played_7,
-                    "avg_points": avg_points_7,
-                    "avg_difference": avg_difference_7
-                },
-                "avg_points": avg_points_total
-            }
-            roster_map[player] = player_data
-
-
-            if games_played_30 > 0:
-                if avg_points_30 > avg_points_total:
-                    player_report[player][0].append("Hot")
-                    roster_map[player]["last_30_days"]["streak"] = "Hot"
-                elif avg_points_30 == avg_points_total:
-                    player_report[player][0].append("Consistent")
-                    roster_map[player]["last_30_days"]["streak"] = "Consistent"
-                else:
-                    player_report[player][0].append("Cold")
-                    roster_map[player]["last_30_days"]["streak"] = "Cold"
-            else: 
-                player_report[player][0].append("_")
-                roster_map[player]["last_30_days"]["streak"] = "N/A"
-
-            if games_played_15 > 0:
-                if avg_points_15 > avg_points_total:
-                    player_report[player][1].append("Hot")
-                    roster_map[player]["last_15_days"]["streak"] = "Hot"
-                elif avg_points_15 == avg_points_total:
-                    player_report[player][1].append("Consistent")
-                    roster_map[player]["last_15_days"]["streak"] = "Consistent"
-                else:
-                    player_report[player][1].append("Cold")
-                    roster_map[player]["last_15_days"]["streak"] = "Cold"
-            else:
-                player_report[player][1].append("_")
-                roster_map[player]["last_15_days"]["streak"] = "N/A"
-
-            if games_played_7 > 0:
-                if avg_points_7 > avg_points_total:
-                    player_report[player][2].append("Hot")
-                    roster_map[player]["last_7_days"]["streak"] = "Hot"
-                elif avg_points_7 == avg_points_total:
-                    player_report[player][2].append("Consistent")
-                    roster_map[player]["last_7_days"]["streak"] = "Consistent"
-                else:
-                    player_report[player][2].append("Cold")
-                    roster_map[player]["last_7_days"]["streak"] = "Cold"
-            else:
-                player_report[player][2].append("_")
-                roster_map[player]["last_7_days"]["streak"] = "N/A"
-
-        
-
-        maps = [["Hot"], ["Consistent"], ["Cold"], ["_"]] 
-        player_order = {}
-        for player in roster:
-            # print(player.name)
-            # print()
-            player_priority = ""
-            player_mapping = player_report[player]
-            # print(player_mapping)
-            # print()
-            for map_idx in range(3):
-                status = player_mapping[map_idx]
-                # print(status)
-                # print()
-                if status in maps:
-                    priority = maps.index(status)
-                    player_priority = player_priority + str(priority)
-                else:
-                    # print("Status not found\n")
-                    break
-
-            player_order[player] = player_priority
-
-        sorted_player_order = sorted(player_order.items(), key=lambda item: int(item[1]) if item[1] != '_' else 3)
-        # print(sorted_player_order)
-        
-        first_code = "000"
-        code_map = [first_code]
-        full_streak_ordering = {}
-        player_list = []
-        for player in sorted_player_order:
-            player_name = player[0] 
-            code = player[1]
-            if code != first_code:
-                full_streak_ordering[first_code] = player_list
-                code_map.append(code)
-                first_code = code
-                player_list = []
-                # print("Code Change")
-            player_list.append({player_name: roster_map[player_name]})
-
-        full_streak_ordering[first_code] = player_list
-        # print(full_streak_ordering) # sort the sub lists by iterating through code_map as keys and sorting by avg_30, avg_15, avg_7 and finally avg_total
-        # use threshold to filter out players with an avg_total less than threshold for a scan of higher power players
-        # print(code_map)
-        if "333" in code_map:
-            code_map.remove("333")
-        # print(code_map)
-
-        # self.fullDepthStreakAnalysis(code_map, full_streak_ordering)
-        full_hot_code = ["000"]
-        full_cons_code = ["111"]
-        full_cold_code = ["222"]
-        injured_or_lower_league = []
-        second_hot_code, second_cons_code, second_cold_code = [], [], []
-        first_hot_code, first_cons_code, first_cold_code = [], [], []
-        heating_up_code, cooling_down_code = [], []
-        warm_side_code, cold_side_code = [], []
-
-        
-        for code in code_map: 
-            for i in range(3):
-                if code[i] == '3':
-                    injured_or_lower_league.append(code)
-            if code[-2:] == "00" and code[-3] != 0:
-                second_hot_code.append(code)
-            if code[-2:] == "11" and code[-3] != 1:
-                second_cons_code.append(code)
-            if code[-2:] == "22" and code[-3] != "2":
-                second_cold_code.append(code)
-            if code[-1] == "0" and code[-2] != "0" or code[-3] != "0":
-                first_hot_code.append(code)
-            if code[-1] == "1" and code[-2] != "1" or code[-3] != "1":
-                first_cons_code.append(code)
-            if code[-1] == "2" and code[-2] != "2" or code[-3] != "2":
-                first_cold_code.append(code)
-            if int(code[0]) > int(code[1]) and int(code[1]) > int(code[2]):
-                heating_up_code.append(code)
-            if int(code[0]) < int(code[1]) and int(code[1]) < int(code[2]):
-                cooling_down_code.append(code)
-            if code[0] == "0" or code[0] == "1":
-                if code[1] == "0" or code[1] == "1":
-                    if code[2] == "0" or code[2] == "1":
-                        warm_side_code.append(code)
-            if code[0] == "1" or code[0] == "2":
-                if code[1] == "1" or code[1] == "2":
-                    if code[2] == "1" or code[2] == "2":
-                        cold_side_code.append(code)
-
-        print("Players on the Warm Side of the Game: \n")
-        self.fullDepthStreakAnalysis(warm_side_code, full_streak_ordering)
-
-        # print("Players Heating Up: \n")
-        # self.fullDepthStreakAnalysis(heating_up_code, full_streak_ordering)
-
-        # print("Players on the Cold Side of the Game: \n")
-        # self.fullDepthStreakAnalysis(cold_side_code, full_streak_ordering)
-
-        # print("Players Cooling Down: \n")
-        # self.fullDepthStreakAnalysis(cooling_down_code, full_streak_ordering)
-
-
-
-        # print("Players with 3rd Degree Hot Streak: \n")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "000")
-
-        # print("Players with 2nd Degree Hot Streak:\n")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "100")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "200")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "300")
-
-        # print("Players with 1st Degree Hot Streak:\n")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "010")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "020")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "030")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "110")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "120")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "130")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "210")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "220")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "230")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "310")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "320")
-        # self.singleStreakAnalysis(code_map, full_streak_ordering, "330")
-                
-        
-
-    def singleStreakAnalysis(self, code_map, full_streak_ordering, code):
-        if code not in code_map:
-            print(f"Invalid Code \"{code}\": Please try another code\n")
-        else:
-            streak_list = full_streak_ordering[code]
-            code_key = self.codeDecipher(code)
-            streak_list_size = len(streak_list)
-            if streak_list_size != 1:
-                print(f"{streak_list_size} Players with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
-            else:
-                print(f"{streak_list_size} Player with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
-            self.printStreakPlayers(streak_list)
-
-    def fullDepthStreakAnalysis(self, code_map, full_streak_ordering):
-        for code in code_map: 
-            self.singleStreakAnalysis(code_map, full_streak_ordering, code)
-
-    def printStreakPlayers(self, full_streak_list):
-        player_list, forward_list, defense_list, goalie_list = [], [], [], []
-        for player in full_streak_list:
-            player_object = list(player.keys())[0]
-            if player_object.position == "F":
-                forward_list.append(player)
-            elif player_object.position == "D":
-                defense_list.append(player)
-            else:
-                goalie_list.append(player)
-            player_list.append(player)
-
-        forward_list.sort(key=lambda player: list(player.keys())[0].avg_points, reverse=True)
-        defense_list.sort(key=lambda player: list(player.keys())[0].avg_points, reverse=True)
-        goalie_list.sort(key=lambda player: list(player.keys())[0].avg_points, reverse=True)
-        player_list.sort(key=lambda player: list(player.keys())[0].avg_points, reverse=True)
-        
-        player_size = len(player_list)
-        forward_size = len(forward_list)
-        defense_size = len(defense_list)
-        goalie_size = len(goalie_list)
-
-        if player_size == 1:
-            print(f"Player:\n\n")
-            self.streakPrintFormat(player_list)
-        else:
-            print(f"All Players:\n\n")
-        # print(f"{player_list}\n")
-            self.streakPrintFormat(player_list)
-
-            if forward_size != 1:
-                print(f"{forward_size} Forwards:\n\n")
-            else:
-                print(f"{forward_size} Forward:\n\n")
-            # print(f"{skater_list}\n")   
-            self.streakPrintFormat(forward_list)
-            if defense_size != 1:
-                print(f"{len(defense_list)} Defensemen:\n\n")
-            else:
-                print(f"{len(defense_list)} Defenseman:\n\n")
-            # print(f"{skater_list}\n")   
-            self.streakPrintFormat(defense_list)
-            if goalie_size != 1:
-                print(f"{len(goalie_list)} Goalies:\n\n")
-            else:
-                print(f"{len(goalie_list)} Goalie:\n\n")
-            # print(f"{goalie_list}\n\n")
-            self.streakPrintFormat(goalie_list)
-        
-    def streakPrintFormat(self, player_list):
-        goalie_list, forward_list, defense_list  = [], [], []
-        for index, player in enumerate(player_list):
-            player_obj = list(player.keys())[0]
-            player_dict = player_list[index][player_obj]
-            avg_points = player_dict["avg_points"]
-            streak_30 = player_dict["last_30_days"]["streak"]
-            streak_15 = player_dict["last_15_days"]["streak"]
-            streak_7 = player_dict["last_7_days"]["streak"]
-            point_diff_30 = player_dict["last_30_days"]["avg_difference"]
-            point_diff_15 = player_dict["last_15_days"]["avg_difference"]
-            point_diff_7 = player_dict["last_7_days"]["avg_difference"]
-            point_sign_30 = "+" if point_diff_30 > 0 else ""
-            point_sign_15 = "+" if point_diff_15 > 0 else ""
-            point_sign_7 = "+" if point_diff_7 > 0 else ""
-            if player_obj.position == "G":
-                goalie_list.append(player)
-            elif player_obj.position == "F":
-                forward_list.append(player)
-            else:
-                defense_list.append(player)
-            
-            print(f"{index + 1}. {player_obj}:\n\n")
-            if streak_30 == "Consistent":
-                print(f"Last 30 Days: {streak_30} Streak maintaining {avg_points} avg points\n")
-            elif streak_30 == "Empty":
-                print(f"Last 30 Days: Not enough data to generate any analysis\n")
-            else:
-                print(f"Last 30 Days: {streak_30} Streak with change of {point_sign_30}{point_diff_30} from {avg_points} avg points\n")
-
-            if streak_15 == "Consistent":
-                print(f"Last 15 Days: {streak_15} Streak maintaining {avg_points} avg points\n")
-            elif streak_15 == "Empty":
-                print(f"Last 15 Days: Not enough data to generate any analysis\n")
-            else:
-                print(f"Last 15 Days: {streak_15} Streak with change of {point_sign_15}{point_diff_15} from {avg_points} avg points\n")
-
-            if streak_7 == "Consistent":
-                print(f"Last 7 Days: {streak_7} Streak maintaining {avg_points} avg points\n\n")
-            elif streak_7 == "Empty":
-                print(f"Last 7 Days: Not enough data to generate any analysis\n\n")
-            else:
-                print(f"Last 7 Days: {streak_7} Streak with change of {point_sign_7}{point_diff_7} from {avg_points} avg points\n\n")
-
-
-        # print(full_hot_3rd)
-        # print()
-        
-    def codeDecipher(self, code):
-        code_key = []
-        for idx in range(3):
-            digit = code[idx]
-            if digit == "0":
-                code_key.append("Hot")
-            elif digit == "1":
-                code_key.append("Consistent")
-            elif digit == "2":
-                code_key.append("Cold")
-            else:
-                code_key.append("Empty")
-        return code_key
+    def streakReport(self, position="all", streak_type="all"):
+        self.streak_tracker.streakReport(position, streak_type)
 
 
         # maps key 
