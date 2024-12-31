@@ -28,7 +28,7 @@ def main():
     # print()
     # league_object.leagueCurrPowerRankings()
     
-    league_object.streakReport()
+    league_object.streakReport(position="forward")
     # print()
     # league_object.streakReport(True, league_object.teams)
     

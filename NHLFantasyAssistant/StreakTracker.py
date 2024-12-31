@@ -3,13 +3,76 @@ class StreakTracker:
         self.free_agents = free_agents
         self.teams = teams
         self.full_roster_map, self.full_code_map = self.streakRosterCodeMap()
-        self.free_agent_roster_map = self.full_roster_map["free_agents"]
-        self.free_agent_code_map = self.full_code_map["free_agents"]
-        self.team_roster_map = self.full_code_map
-        del self.team_roster_map["free_agents"]
-        self.team_code_map = self.full_code_map
-        del self.team_code_map["free_agents"]
+        # print(self.full_roster_map)
+        # print(self.full_code_map)
+        self.free_agent_roster_map = self.full_roster_map["free_agents"].copy()
+        self.free_agent_code_map = self.full_code_map["free_agents"].copy()
+        self.team_roster_map = self.full_roster_map.copy()
+        del self.team_roster_map['free_agents']
+        self.team_code_map = self.full_code_map.copy()
+        del self.team_code_map['free_agents']
         self.full_streak_ordering = self.sortStreakOrder()
+        # print(self.full_streak_ordering)
+        print(self.teams)
+
+    def streakRosterCodeMap(self):
+        roster_map, code_map = self.freeAgentRosterMap()
+        roster_map, code_map = self.teamRosterMap(roster_map, code_map)
+        return roster_map, code_map
+
+    def freeAgentRosterMap(self):
+        roster_map = {"free_agents": []}
+        code_map = {"free_agents": []}
+        roster = self.free_agents
+        for player in roster:
+            player_data = self.getPlayerData(player)
+            player_data, player_code = self.generatePlayerCodeStreak(player_data)
+            if player_code == "333":
+                continue
+            roster_map["free_agents"].append({player: player_data})
+            if player_code not in code_map["free_agents"]:
+                code_map["free_agents"].append(player_code)
+
+        roster_map["free_agents"].sort(key=lambda player: list(player.keys())[0].avg_points, reverse=True)
+        code_map["free_agents"].sort(key=lambda code: int(code))
+        return roster_map, code_map
+
+    def teamRosterMap(self, roster_map, code_map):
+        for team in list(self.teams.values()):
+            code_map[team] = []
+            roster_map[team] = []
+            roster = team.players
+            for player in roster:
+                player_data = self.getPlayerData(player)
+                player_data, player_code = self.generatePlayerCodeStreak(player_data)
+                if player_code == "333":
+                    continue
+                roster_map[team].append({player: player_data})
+                if player_code not in code_map[team]:
+                    code_map[team].append(player_code)
+            roster_map[team].sort(key=lambda player: list(player.keys())[0].avg_points, reverse=True)
+            code_map[team].sort(key=lambda code: int(code))
+        return roster_map, code_map
+
+    def sortStreakOrder(self):
+        full_streak_ordering = {}
+        key_vals = ["free_agents"]
+        for team in list(self.teams.values()):
+            key_vals.append(team)
+
+        for key in key_vals:
+            full_streak_ordering[key] = {}
+            for code in self.full_code_map[key]:
+                if code not in full_streak_ordering[key]:
+                    full_streak_ordering[key][code] = []
+
+                for player in self.full_roster_map[key]:
+                    if player[list(player.keys())[0]]["code"] == code:
+                        full_streak_ordering[key][code].append(player)
+                    else: 
+                        continue
+        return full_streak_ordering
+
 
     def skaterStreakReport(self):
         self.streakReport(position="skater")
@@ -22,11 +85,12 @@ class StreakTracker:
 
     def streakReport(self, position="all", streak_type="all"):
         team_keys = ["free_agents"]
-        team_keys.append(team for team in self.teams)
+        for team in list(self.teams.values()):
+            team_keys.append(team)
         team_key_index = {"free_agents": 1}
-        for team in self.teams:
+        for team in list(self.teams.values()):
             for i in range(len(self.teams)):
-                team_key_index[team: i+2]
+                team_key_index[team] = i + 2
         position_keys = ["all", "skater", "forward", "defenseman", "goalie"]
         code_filter = ["all", "hot", "consistent", "cold", "warm", "cool", "heating_up", "cooling_down", "injured_or_minor_league"]
         
@@ -34,47 +98,58 @@ class StreakTracker:
             print(f"{streak_type} Streak Report\n\n")
         print("Full Streak Report\n\n")
         for key in team_keys:
-            count = 0
+            if key != "free_agents":
+                print(f"{key} Streaks:\n\n")
+            else: 
+                print("Free Agent Streaks:\n\n")
             code_map = self.full_code_map[key]
             if streak_type != "all" and streak_type in code_filter:
                 code_map = self.filterCodeMap(code_map, streak_type)
             for code in code_map:
                 code_key = self.codeDecipher(code)
-                count += 1
                 if key == "free_agents":
-                    if count != team_key_index[key]:
+                    if code not in self.full_streak_ordering[key]:
                         print(f"No Free Agents with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak")
                     else:
-                        players = self.full_roster_map["free_agents"][code]
+                        players = self.full_streak_ordering["free_agents"][code]
                         if position in position_keys:
                             if position != "all" and position in position_keys:
                                 players = self.playerPositionFilter(players, position)
-                        self.streakFreeAgentReport(players, code_key, key)
+                        self.streakFreeAgentReport(players, code_key)
                 else:
-                    if count != team_key_index[key]:
+                    if code not in self.full_streak_ordering[key]:
                         print(f"No players from {key} with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak")
                     else:
-                        players = self.full_roster_map[key][code]
+                        players = self.full_streak_ordering[key][code]
                         if position in position_keys:
                             if position != "all" and position in position_keys:
                                 players = self.playerPositionFilter(players, position)
                         self.streakTeamReport(players, code_key, key)
 
     def streakFreeAgentReport(self, players, code_key):
-        player_size = len(players)
+        if players != []:
+            player_size = len(players)
+        else: 
+            player_size = 0
 
-        print("Free Agent Streaks:\n\n")
-        if player_size != 1:
+        # print("Free Agent Streaks:\n\n")
+        if player_size == 0:
+            print(f"No Player Data for {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
+        elif player_size != 1:
             print(f"{player_size} Players with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
         else:
             print(f"{player_size} Player with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
         self.printRosterStreak(players)
 
     def streakTeamReport(self, players, code_key, key):
-        player_size = len(players)
+        if players != []:
+            player_size = len(players)
+        else: 
+            player_size = 0
 
-        print(f"{key} Streaks:\n\n")
-        if player_size != 1:
+        if player_size == 0:
+            print(f"No Player Data for {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
+        elif player_size != 1:
             print(f"{player_size} Players with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
         else:
             print(f"{player_size} Player with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
@@ -88,23 +163,15 @@ class StreakTracker:
             if position == "skater":
                 if player_object.position != "G":
                     position_players.append(player)
-                else:
-                    continue
             elif position == "forward":
                 if player_object.position == "F":
                     position_players.append(player)
-                else: 
-                    continue
             elif position == "defenseman":
                 if player_object.position == "D":
                     position_players.append(player)
-                else:
-                    continue
             elif position == "goalie":
                 if player_object.position == "G":
                     position_players.append(player)
-                else: 
-                    continue
             else:
                 print("Error something went wrong here somehow in filtering by player position!")
 
@@ -148,7 +215,7 @@ class StreakTracker:
         forward_count, defensemen_count, goalie_count = 0, 0, 0
         forward_list, defensemen_list, goalie_list = [], [], []
         for player in player_list:
-            player_obj = list(player.keys()[0])
+            player_obj = list(player.keys())[0]
             if player_obj.position == "F":
                 forward_count += 1
                 forward_list.append(player)
@@ -176,7 +243,7 @@ class StreakTracker:
 
         if goalie_count == 0:
            print("No Goalie Data\n\n")
-        if goalie_count != 1:
+        elif goalie_count != 1:
             print(f"{goalie_count} Goalies:\n\n")
         else:
             print(f"{goalie_count} Goalie:\n\n")
@@ -217,48 +284,6 @@ class StreakTracker:
                 print(f"Last 7 Days: Not enough data to generate any analysis\n\n")
             else:
                 print(f"Last 7 Days: {streak_7} Streak with change of {point_sign_7}{point_diff_7} from {avg_points} avg points\n\n")
-
-
-    def streakRosterCodeMap(self):
-        roster_map, code_map = self.freeAgentRosterMap()
-        roster_map, code_map = self.teamRosterMap(roster_map, code_map)
-        return roster_map, code_map
-
-    def freeAgentRosterMap(self):
-        roster_map = {"free_agents": []}
-        code_map = {"free_agents": []}
-        roster = self.free_agents
-        for player in roster:
-            player_data = self.getPlayerData(player)
-            player_data, player_code = self.generatePlayerCodeStreak(player_data)
-            if player_code == "333":
-                continue
-            roster_map["free_agents"].append({player: player_data})
-            if player_code not in code_map["free_agents"]:
-                code_map["free_agents"].append(player_code)
-
-        roster_map["free_agents"].sort(key=lambda player: player.avg_points, reverse=True)
-        code_map["free_agents"].sort(key=lambda code: int(code))
-        return roster_map, code_map
-
-    def teamRosterMap(self, roster_map, code_map):
-        for team in self.teams:
-            code_map[team: []]
-            roster_map[team: []]
-            roster = self.teams[team]
-            for player in roster:
-                player_data = self.getPlayerData(player)
-                player_data, player_code = self.generatePlayerCodeStreak(player_data)
-                if player_code == "333":
-                    continue
-                roster_map[team].append({player: player_data})
-                if player_code not in code_map[team]:
-                    code_map[team].append(player_code)
-            roster_map[team].sort(key=lambda player: player.avg_points, reverse=True)
-            code_map[team].sort(key=lambda code: int(code))
-
-        return roster_map, code_map
-
 
     def getPlayerData(self, player):
         avg_points_total = player.avg_points
@@ -321,22 +346,6 @@ class StreakTracker:
         player_data["code"] = player_code 
     
         return player_data, player_code
-    
-    def sortStreakOrder(self):
-        full_streak_ordering = {}
-        key_vals = ["free_agents"]
-        for team in self.teams:
-            key_vals.append(team)
-
-        for key in key_vals:
-            for code in self.full_code_map[key]:
-                full_streak_ordering[key][code] = []
-                for player in self.full_roster_map[key]:
-                    if player[1]["code"] == code:
-                        full_streak_ordering[key][code].append(player)
-                    else: 
-                        continue
-        return full_streak_ordering
     
     def codeDecipher(self, code):
         code_key = []
