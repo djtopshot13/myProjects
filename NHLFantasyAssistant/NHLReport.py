@@ -24,13 +24,15 @@ def main():
     # print()
     # league_object.printPlayersByAvgPoints()
     # print()
-    # league_object.leagueDraftPowerRankings()
+    # league_object.LeagueDraftPowerRankings()
     # print()
-    # league_object.leagueCurrPowerRankings()
+    # league_object.LeagueCurrPowerRankings()
     
-    league_object.streakReport(position="forward")
+    league_object.streakReport(team="free_agents", streak_type="warm", min_threshold=1.4)
+    print()
+    league_object.streakReport(team="free_agents", streak_type="warm")
     # print()
-    # league_object.streakReport(True, league_object.teams)
+    # league_object.streakReport(team="Shortcake Miniture Schnauzers", streak_type=["cool", "injured_or_minor_league"], min_threshold=1.4)
     
     
 main()
