@@ -1,11 +1,15 @@
+from Constants import Constants
+
 class Player: 
     # ['acquisitionType', 'eligibleSlots', 'injured', 'injuryStatus', 'lineupSlot', 'name', 'playerId', 'position', 'proTeam', 'stats'] variables and methods currently connected to players
     def __init__(self, name, team, pro_team, position, points, games_played,
                 health_status, roster_availability, prev_year_proj, prev_year_total, curr_year_proj,
                 curr_year_total, last_7_dict, last_15_dict, last_30_dict):
+        const_obj = Constants()
         self.name = name
         self.team = team
-        self.pro_team = pro_team
+        self.pro_team = pro_team if pro_team != "Montréal Canadiens" else "Montreal Canadiens"
+        self.pro_team_abbrev = const_obj.pro_team_abbrev[self.pro_team]
         self.position = position
         self.points = points
         self.games_played = games_played
@@ -33,4 +37,4 @@ class Player:
         return f"{self.name} ({self.position}): [{self.curr_year_proj.get('PTS', 0)}] projected points"
     
     def __repr__(self):
-        return f"Player({self.name}<{self.pro_team}>[{self.position}])"
+        return f"Player({self.name}<{self.pro_team_abbrev}>[{self.position}])"

@@ -3,6 +3,9 @@ class Matchup:
         self.curr_matchup_period = curr_matchup_period # pass values from myLeague in to get the proper data to run the methods in Mathcup class
         self.matchups = matchups
         self.teams = teams
+        self.team_names = list(teams.keys())
+        self.best_stat_dict = {"**": float("-inf"), "++": float("inf"), "--": float("-inf"), "~~": float("inf")}
+        self.team_scores = {team: [] for _ in range(self.curr_matchup_period) for team in self.team_names}
 
         # use Matchup methods to set up more instance variables for ease of coding
         self.full_matchup_map, self.__first_map, self.winning_teams, self.losing_teams, self.winning_scores, self.losing_scores, self.score_deficits = self.matchupGenerator()
@@ -205,6 +208,16 @@ class Matchup:
     def seasonMatchupResults(self):
         for i in range(1, self.curr_matchup_period): # iterate over all completed matchups
             self.weeklyMatchupResults(i) # pass in the index for the week number, and call the weekly matchup function
+
+        season_highest_winning_team = list(self.best_stat_dict["**"].keys())[0]
+        season_highest_winning_score = list(self.best_stat_dict["**"].values())[0]
+        season_lowest_winning_team = list(self.best_stat_dict["++"].keys())[0]
+        season_lowest_winning_score = list(self.best_stat_dict["++"].values())[0]
+        season_highest_losing_team = list(self.best_stat_dict["--"].keys())[0]
+        season_highest_losing_score = list(self.best_stat_dict["--"].values())[0]
+        season_lowest_losing_team = list(self.best_stat_dict["~~"].keys())[0]
+        season_lowest_losing_score = list(self.best_stat_dict["~~"].values())[0]
+
     
     # this method is pretty much finalized in the functionality, it might need help getting formatted for better readability
     # prints desired output and is a void type return
@@ -253,6 +266,8 @@ class Matchup:
 
             # here is the code for the highest winning score team
             if winning_team == self.highest_winning_teams[index-1]:
+                if winning_score > list(self.best_stat_dict["**"].values())[0]:
+                    self.best_stat_dict["**"] = {winning_team: winning_score} # tuple of week and matchup number for mapping to correct team for display purposes
                 highest_winning_team = winning_team + "**" # update team name with associated suffix symbol 
                 highest_winning_score = winning_score # grab winning score at same index
                 highest_winning_team_streak = winning_team_streak
@@ -260,6 +275,8 @@ class Matchup:
 
             # here is the code for the lowest winning score team
             if winning_team == self.lowest_winning_teams[index-1]:
+                if winning_score < list(self.best_stat_dict["++"].values())[0]:
+                    self.best_stat_dict["++"] = {winning_team: winning_score}
                 lowest_winning_team = winning_team + "++" # update team name with associated suffix symbol 
                 lowest_winning_score = winning_score # grab winning score at same index
                 lowest_winning_team_streak = winning_team_streak
@@ -268,12 +285,16 @@ class Matchup:
 
             # here is the code for the highest losing score team
             if losing_team == self.highest_losing_teams[index-1]:
+                if losing_score > list(self.best_stat_dict["--"].values())[0]:
+                    self.best_stat_dict["--"] = {losing_team: losing_score}
                 highest_losing_team = losing_team + "--" # update team name with associated suffix symbol 
                 highest_losing_score = losing_score # grab losing score at same index
                 highest_losing_team_streak = losing_team_streak
                 
             # here is the code for the lowest losing score team
             if losing_team == self.lowest_losing_teams[index-1]:
+                if losing_score < list(self.best_stat_dict["~~"].values())[0]:
+                    self.best_stat_dict["~~"] = {losing_team: losing_score}
                 lowest_losing_team = losing_team + "~~" # update team name with associated suffix symbol 
                 lowest_losing_score = losing_score # grab losing score at same index
                 lowest_losing_team_streak = losing_team_streak
