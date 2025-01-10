@@ -23,6 +23,9 @@ class Player:
         self.last_15_dict = last_15_dict
         self.last_30_dict = last_30_dict
         self.avg_points = round(points / games_played, 1) if games_played != 0 else 0
+    
+    def __repr__(self):
+        return f"Player({self.name}<{self.pro_team_abbrev}>[{self.position}])"
         
     def displayPlayerInfo(self):
         return f"{self.name} ({self.position}): [{self.points}] points"
@@ -36,5 +39,4 @@ class Player:
     def displayUndraftedPlayerInfo(self):
         return f"{self.name} ({self.position}): [{self.curr_year_proj.get('PTS', 0)}] projected points"
     
-    def __repr__(self):
-        return f"Player({self.name}<{self.pro_team_abbrev}>[{self.position}])"
+    

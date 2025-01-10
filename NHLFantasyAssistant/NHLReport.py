@@ -2,8 +2,8 @@ from MyLeague import MyLeague
 league_object = MyLeague.createLeague()
 
 def main():
-    # league_object.printSeasonMatchupResults()
-    # print()
+    league_object.printSeasonMatchupResults()
+    print()
     # league_object.LeagueStandings() 
     # print()
     # league_object.DivisionStandings(1)
@@ -24,13 +24,13 @@ def main():
     # print()
     # league_object.printPlayersByAvgPoints()
     # print()
-    # league_object.LeagueDraftPowerRankings()
+    # league_object.leagueDraftPowerRankings()
     # print()
-    # league_object.LeagueCurrPowerRankings()
+    # league_object.leagueCurrPowerRankings()
     
-    league_object.streakReport(team="free_agents", streak_type="warm", min_threshold=1.5)
-    print()
-    league_object.streakReport(team="Dillon's Dubs", min_threshold=1.5)
+    # league_object.streakReport(team="free_agents", streak_type="warm", min_threshold=1.5)
+    # print()
+    # league_object.streakReport(team="Dillon's Dubs", min_threshold=1.5)
     # print()
     # league_object.streakReport(team="Shortcake Miniture Schnauzers", streak_type=["cool", "injured_or_minor_league"], min_threshold=1.4)
     

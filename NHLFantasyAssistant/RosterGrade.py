@@ -128,6 +128,7 @@ class RosterGrade:
             print("League Current Power Ranking Results:")
             print("============================================================")
         ranking_count = 0
+        ## **Fix duplicate teams in curr_power_ranking method being printed and keep position same if tied
         for ranking in power_rankings:
             ranking_count += 1
             team = list(ranking.keys())[0]

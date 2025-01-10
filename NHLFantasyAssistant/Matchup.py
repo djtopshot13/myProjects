@@ -4,7 +4,7 @@ class Matchup:
         self.matchups = matchups
         self.teams = teams
         self.team_names = list(teams.keys())
-        self.best_stat_dict = {"**": float("-inf"), "++": float("inf"), "--": float("-inf"), "~~": float("inf")}
+        self.best_stat_dict = {"**": {"": float("-inf")}, "++": {"": float("inf")}, "--": {"": float("-inf")}, "~~": {"": float("inf")}, "HSD": {"score_deficit": float("-inf")}, "LSD": {"score_deficit": float("inf")}}
         self.team_scores = {team: [] for _ in range(self.curr_matchup_period) for team in self.team_names}
 
         # use Matchup methods to set up more instance variables for ease of coding
@@ -209,14 +209,27 @@ class Matchup:
         for i in range(1, self.curr_matchup_period): # iterate over all completed matchups
             self.weeklyMatchupResults(i) # pass in the index for the week number, and call the weekly matchup function
 
+        
         season_highest_winning_team = list(self.best_stat_dict["**"].keys())[0]
-        season_highest_winning_score = list(self.best_stat_dict["**"].values())[0]
+        season_highest_winning_score, highest_winning_week = list(self.best_stat_dict["**"].values())[:2]
         season_lowest_winning_team = list(self.best_stat_dict["++"].keys())[0]
-        season_lowest_winning_score = list(self.best_stat_dict["++"].values())[0]
+        season_lowest_winning_score, lowest_winning_week = list(self.best_stat_dict["++"].values())[:2]
         season_highest_losing_team = list(self.best_stat_dict["--"].keys())[0]
-        season_highest_losing_score = list(self.best_stat_dict["--"].values())[0]
-        season_lowest_losing_team = list(self.best_stat_dict["~~"].keys())[0]
-        season_lowest_losing_score = list(self.best_stat_dict["~~"].values())[0]
+        season_highest_losing_score, highest_losing_week = list(self.best_stat_dict["--"].values())[:2]
+        season_lowest_losing_team  = list(self.best_stat_dict["~~"].keys())[0]
+        season_lowest_losing_score, lowest_losing_week = list(self.best_stat_dict["~~"].values())[:2]
+        season_highest_deficit_winning_team, season_highest_deficit_losing_team  = list(self.best_stat_dict["HSD"].keys())[1:3]
+        season_highest_deficit, season_highest_deficit_winning_score, season_highest_deficit_losing_score, highest_deficit_week = list(self.best_stat_dict["HSD"].values())
+        season_lowest_deficit_winning_team, season_lowest_deficit_losing_team  = list(self.best_stat_dict["LSD"].keys())[1:3]
+        season_lowest_deficit, season_lowest_deficit_winning_score, season_lowest_deficit_losing_score, lowest_deficit_week = list(self.best_stat_dict["LSD"].values())
+
+        print(f"\n\nSeason Highlights:\n\n")
+        print(f"In {highest_deficit_week}, {season_highest_deficit_winning_team} [{season_highest_deficit_winning_score} pts] had the largest score deficit win in the league with {season_highest_deficit} pts against {season_highest_deficit_losing_team} [{season_highest_deficit_losing_score}]\n\n")
+        print(f"In {lowest_deficit_week}, {season_lowest_deficit_winning_team} [{season_lowest_deficit_winning_score} pts] had the smallest score deficit win in the league with {season_lowest_deficit} pts against {season_lowest_deficit_losing_team} [{season_lowest_deficit_losing_score}]\n\n")
+        print(f"In {highest_winning_week}, {season_highest_winning_team} had the highest score in the league of {season_highest_winning_score} pts\n\n")
+        print(f"In {lowest_winning_week}, {season_lowest_winning_team} had the lowest winning score in the league of {season_lowest_winning_score} pts\n\n")
+        print(f"In {highest_losing_week}, {season_highest_losing_team} had the highest losing score in the league of {season_highest_losing_score} pts\n\n")
+        print(f"In {lowest_losing_week}, {season_lowest_losing_team} had the lowest score in the league of {season_lowest_losing_score} pts\n\n")
 
     
     # this method is pretty much finalized in the functionality, it might need help getting formatted for better readability
@@ -267,7 +280,10 @@ class Matchup:
             # here is the code for the highest winning score team
             if winning_team == self.highest_winning_teams[index-1]:
                 if winning_score > list(self.best_stat_dict["**"].values())[0]:
-                    self.best_stat_dict["**"] = {winning_team: winning_score} # tuple of week and matchup number for mapping to correct team for display purposes
+                    self.best_stat_dict["**"] = {
+                        winning_team: winning_score,
+                        "Week": key_val
+                        } # tuple of week and matchup number for mapping to correct team for display purposes
                 highest_winning_team = winning_team + "**" # update team name with associated suffix symbol 
                 highest_winning_score = winning_score # grab winning score at same index
                 highest_winning_team_streak = winning_team_streak
@@ -276,7 +292,10 @@ class Matchup:
             # here is the code for the lowest winning score team
             if winning_team == self.lowest_winning_teams[index-1]:
                 if winning_score < list(self.best_stat_dict["++"].values())[0]:
-                    self.best_stat_dict["++"] = {winning_team: winning_score}
+                    self.best_stat_dict["++"] = {
+                        winning_team: winning_score,
+                        "Week": key_val
+                        }
                 lowest_winning_team = winning_team + "++" # update team name with associated suffix symbol 
                 lowest_winning_score = winning_score # grab winning score at same index
                 lowest_winning_team_streak = winning_team_streak
@@ -286,7 +305,10 @@ class Matchup:
             # here is the code for the highest losing score team
             if losing_team == self.highest_losing_teams[index-1]:
                 if losing_score > list(self.best_stat_dict["--"].values())[0]:
-                    self.best_stat_dict["--"] = {losing_team: losing_score}
+                    self.best_stat_dict["--"] = {
+                        losing_team: losing_score,
+                        "Week": key_val
+                        }
                 highest_losing_team = losing_team + "--" # update team name with associated suffix symbol 
                 highest_losing_score = losing_score # grab losing score at same index
                 highest_losing_team_streak = losing_team_streak
@@ -294,11 +316,31 @@ class Matchup:
             # here is the code for the lowest losing score team
             if losing_team == self.lowest_losing_teams[index-1]:
                 if losing_score < list(self.best_stat_dict["~~"].values())[0]:
-                    self.best_stat_dict["~~"] = {losing_team: losing_score}
+                    self.best_stat_dict["~~"] = {
+                        losing_team: losing_score,
+                        "Week": key_val
+                        }
                 lowest_losing_team = losing_team + "~~" # update team name with associated suffix symbol 
                 lowest_losing_score = losing_score # grab losing score at same index
                 lowest_losing_team_streak = losing_team_streak
 
+            if winning_team == highest_deficit_winning_team:
+                if highest_deficit > list(self.best_stat_dict["HSD"].values())[0]:
+                    self.best_stat_dict["HSD"] = {
+                        "score_deficit": highest_deficit,
+                        winning_team: winning_score, 
+                        losing_team: losing_score,
+                        "Week": key_val,
+                    }
+
+            if winning_team == lowest_deficit_winning_team:
+                if lowest_deficit < list(self.best_stat_dict["LSD"].values())[0]:
+                    self.best_stat_dict["LSD"] = {
+                        "score_deficit": lowest_deficit,
+                        winning_team: winning_score, 
+                        losing_team: losing_score,
+                        "Week": key_val,
+                    }
         # print statements I want to go right after the title as depth highlights of the week 
         # there are 2 print statements for each depth stat of either highest or lowest and winning or losing
         # The first print statement is individual score with team name, team streak and then the score using the saved index inside the conditional
