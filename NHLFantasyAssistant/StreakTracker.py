@@ -1,7 +1,10 @@
+from Constants import Constants
+
 class StreakTracker:
     # set up for streaktracker object with initialization being defined
     # use free_agent list and teams dictionary to create the StreakTracker
     def __init__(self, free_agents, teams):
+        self.constants = Constants()
         self.free_agents = free_agents # take free_agents list as is
         self.teams_dict = teams
         self.teams_keys = list(self.teams_dict.keys()) # save team name keys for filtering
@@ -130,50 +133,97 @@ class StreakTracker:
     # def goalieStreakReport(self):
     #     self.streakReport(position="goalie")
 
-    # *** Idea: add team filter as well which is equivalent to grabbing keys from full_streak_ordering
-    def streakReport(self, team="all", position="all", streak_type="all", min_threshold=float("-inf"), max_threshold=float("inf")):
+    def teamFilter(self, team):
         team_keys = []
+        if type(team) == list:
+            for element in team:
+                if element == "free_agents":
+                    team_keys.append(element)
+                elif element in self.teams_keys:
+                    team_keys.append(self.teams_dict[element])
+                else:
+                    print("Invalid team element entered in function call\n\n")
+                    return
+        elif team == "free_agents":
+            team_keys.append(team) 
+        elif team in self.teams_keys:
+            team_keys.append(self.teams_dict[team])
+        else:
+            print("Invalid team entered in function call\n\n")
+            return
+    
+        return team_keys
+    
+    def streakTypeFilter(self, streak_type, code_map, key):
+        if type(streak_type) == list:
+            for streak in streak_type:
+                if streak in self.constants.code_filter:
+                    code_map.update(self.filterCodeMap(key, streak))
+                else:
+                    print("Invalid streak type element entered in function call\n\n")
+                    return
+            code_map = sorted(code_map, key=lambda code: int(code))
+        elif streak_type in self.constants.code_filter:
+            code_map.update(self.filterCodeMap(key, streak_type))
+            code_map = sorted(code_map, key=lambda code: int(code))
+        else: 
+            print("Invalid streak type entered in function call\n\n")
+            return
+        
+        return code_map
+    
+    def positionFilter(self, players, position, code_key, min_threshold, max_threshold, pro_team_keys):
+        if type(position) == list:
+            for element in position:
+                if element in self.constants.position_keys:
+                    filtered_players = self.playerPositionFilter(players, element)
+                    self.streakRosterReport(filtered_players, code_key, min_threshold, max_threshold, pro_team_keys)
+                else: 
+                    print("Invalid position element entered in function call\n\n")
+
+        elif position in self.constants.position_keys:
+            filtered_players = self.playerPositionFilter(players, position)
+            # if filtered_players:
+            #     print("Got something in here\n")
+            # else: 
+            #     print("Maybe check on playerPositionFilter method??\n")
+            self.streakRosterReport(filtered_players, code_key, min_threshold, max_threshold, pro_team_keys)
+        else:
+            print("Invalid position entered in function call\n\n")
+
+    def proTeamFilter(self, pro_team):
+        pro_team_keys = []
+        if type(pro_team) == list:
+            for element in pro_team:
+                if element in self.constants.pro_team_abbrev:
+                    pro_team_keys.append(element)
+                else:
+                    print("Invalid pro team element entered in function call\n\n")
+                    return
+        elif pro_team in self.constants.pro_team_abbrev:
+            pro_team_keys.append(pro_team) 
+        else:
+            print("Invalid pro team entered in function call\n\n")
+            return
+    
+        return pro_team_keys
+
+
+    # *** Idea: add team filter as well which is equivalent to grabbing keys from full_streak_ordering
+    def streakReport(self, team, position, streak_type, min_threshold, max_threshold, pro_team):
+        
         # team_key_index = {"free_agents": 1}
         # for index, team in enumerate(self.teams):
         #     team_key_index[team] = index + 2
         if team != "all":
-            if team == "free_agents":
-                team_keys.append(team) 
-            elif team in self.teams_keys:
-                team_keys.append(self.teams_dict[team])
-            elif type(team) == list:
-                for element in team:
-                    if element == "free_agents":
-                        team_keys.append(element)
-                    elif element in self.teams_keys:
-                        team_keys.append(self.teams_dict[element])
-                    else:
-                        print("Invalid team element entered in function call\n\n")
-                        return
-            else:
-                print("Invalid team entered in function call\n\n")
-                return 
+            team_keys = self.teamFilter(team) 
         else:
             team_keys = list(self.full_streak_ordering.keys())
 
-        position_keys = ["all", "skater", "forward", "defenseman", "goalie"]
-        code_filter = ["all", "hot", "consistent", "cold", "warm", "cool", "heating_up", "cooling_down", "injured_or_minor_league"]
+        # position_keys = ["all", "skater", "forward", "defenseman", "goalie"]
+        # code_filter = ["all", "hot", "consistent", "cold", "warm", "cool", "heating_up", "cooling_down", "injured_or_minor_league"]
         
-        if streak_type != "all":
-            if streak_type in code_filter:
-                print(f"{streak_type} Streak Report\n\n")
-            elif type(streak_type) == list:
-                for streak in streak_type:
-                    if streak in code_filter:
-                        print(f"{streak} Streak Report\n\n")
-                    else:
-                        print("Invalid streak type element entered in function call\n\n")
-                        return
-            else: 
-                print("Invalid streak type entered in function call\n\n")
-                return
-        else:
-            print("Full Streak Report\n\n")
+        
         for key in team_keys:
             if key != "free_agents":
                 print(f"{key} Streaks:\n\n")
@@ -181,22 +231,26 @@ class StreakTracker:
                 print("Free Agent Streaks:\n\n")
             code_map = set()
             if streak_type != "all":
-                if streak_type in code_filter:
-                    code_map.update(self.filterCodeMap(key, streak_type))
-                    code_map = sorted(code_map, key=lambda code: int(code))
+                if streak_type in self.constants.code_filter:
+                    print(f"{streak_type} Streak Report\n\n")
                 elif type(streak_type) == list:
                     for streak in streak_type:
-                        if streak in code_filter:
-                            code_map.update(self.filterCodeMap(key, streak))
+                        if streak in self.constants.code_filter:
+                            print(f"{streak} Streak Report\n\n")
                         else:
                             print("Invalid streak type element entered in function call\n\n")
                             return
-                    code_map = sorted(code_map, key=lambda code: int(code))
                 else: 
                     print("Invalid streak type entered in function call\n\n")
                     return
+            else:
+                print("Full Streak Report\n\n")
+
+            if streak_type != "all":
+                code_map = self.streakTypeFilter(streak_type, code_map, key)
             else: 
                 code_map = self.full_code_map[key]
+
             if code_map == []:
                 print("Empty Code Map: No players in desired streak type generated")
             else:
@@ -210,18 +264,15 @@ class StreakTracker:
                             print(f"No Free Agents with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak")
                     else:
                         players = self.full_streak_ordering[key][code]
+                        if pro_team != "all":
+                            pro_team_keys = self.proTeamFilter(pro_team)
+                        else:
+                            pro_team_keys = self.constants.pro_team_abbrev_vals
+                            
                         if position != "all":
-                            if position in position_keys:
-                                players = self.playerPositionFilter(players, position)
-                                self.streakRosterReport(players, code_key)
-                            elif type(position) == list:
-                                for element in position:
-                                    players = self.playerPositionFilter(players, element)
-                                    self.streakRosterReport(players, code_key, min_threshold, max_threshold)
-                            else:
-                                print("Invalid position entered in function call")
+                            self.positionFilter(players, position, code_key, min_threshold, max_threshold, pro_team_keys)
                         else:      
-                            self.streakRosterReport(players, code_key, min_threshold, max_threshold)
+                            self.streakRosterReport(players, code_key, min_threshold, max_threshold, pro_team_keys)
                 
                     # if code not in self.full_streak_ordering[key]:
                     #     print(f"No players from {key} with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak")
@@ -247,12 +298,13 @@ class StreakTracker:
     #         print(f"{player_size} Player with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
     #     self.printRosterStreak(players)
 
-    def streakRosterReport(self, players, code_key, min_threshold=float("-inf"), max_threshold=float("inf")):
+    def streakRosterReport(self, players, code_key, min_threshold, max_threshold, pro_team_keys):
         filtered_players = []
+        # print(pro_team_keys)
         if players != []:
             for player in players:
                 player_obj = list(player.keys())[0]
-                if player_obj.avg_points >= min_threshold and player_obj.avg_points <= max_threshold:
+                if player_obj.avg_points >= min_threshold and player_obj.avg_points <= max_threshold and player_obj.pro_team_abbrev in pro_team_keys:
                     filtered_players.append(player)
             
             player_size = len(filtered_players)
@@ -263,9 +315,10 @@ class StreakTracker:
             print(f"No Player Data for {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
         elif player_size != 1:
             print(f"{player_size} Players with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
+            self.printRosterStreak(filtered_players)
         else:
             print(f"{player_size} Player with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
-        self.printRosterStreak(filtered_players)
+            self.printRosterStreak(filtered_players)
 
 
     def playerPositionFilter(self, players, position):
@@ -273,7 +326,7 @@ class StreakTracker:
         for player in players:
             player_object = list(player.keys())[0]
             if position == "skater":
-                if type(player_object.position) != "G":
+                if player_object.position != "G":
                     position_players.append(player)
             elif position == "forward":
                 if player_object.position == "F":
@@ -287,7 +340,7 @@ class StreakTracker:
             else:
                 print("Error something went wrong here somehow in filtering by player position!")
 
-            return position_players
+        return position_players
 
     def filterCodeMap(self, key, streak_type):
         filtered_code_map = []

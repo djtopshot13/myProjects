@@ -49,3 +49,6 @@ class Constants:
         self.pro_team_abbrev_vals = list(self.pro_team_abbrev.values())
         for i in range(len(self.pro_team_abbrev)):
             self.pro_team_abbrev.update({self.pro_team_abbrev_vals[i]: self.pro_team_abbrev_keys[i]}) # have dict be reversible
+
+        self.code_filter = ["all", "hot", "consistent", "cold", "warm", "cool", "heating_up", "cooling_down", "injured_or_minor_league"]
+        self.position_keys = ["all", "skater", "forward", "defenseman", "goalie"]

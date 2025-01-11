@@ -418,8 +418,8 @@ class MyLeague:
             print(f"{index + 1}. {player.name} ({player.position}): [{player.points} pts] - ({player.team})")
         
             
-    def streakReport(self, team="all", position="all", streak_type="all", min_threshold=float("-inf"), max_threshold=float("inf")):
-        self.streak_tracker.streakReport(team, position, streak_type, min_threshold, max_threshold)
+    def streakReport(self, team="all", position="all", streak_type="all", min_threshold=float("-inf"), max_threshold=float("inf"), pro_team="all"):
+        self.streak_tracker.streakReport(team, position, streak_type, min_threshold, max_threshold, pro_team)
 
 
         # maps key 
