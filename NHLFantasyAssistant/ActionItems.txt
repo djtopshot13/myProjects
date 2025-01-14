@@ -1,0 +1,10 @@
+Action Items:
+
+    Get team_points_against                         X
+    Refactor team_points_for with the new method    X
+    Add any needed vars to TeamObjects              X
+    Set up TeamObjects in League.py                 X
+    Figure out how to use free agency players
+    Define methods in TeamClass to make reporting easier
+    Refactor previous methods into private methods
+    Use previous returns to work with cleaner public methods

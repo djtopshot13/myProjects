@@ -1,0 +1,772 @@
+
+    MyLeague.py
+    
+    #**I should make a new module for matchups and put the functions and data stats inside the class/object to make it easier to read the code
+    # and have the code encapsulated better than what it is currently
+
+    # set up matchup results print method 
+    # prints winning team name, losing team name, and the point margin that was won by
+    # def printWeekMatchupResults(self, weekNum, winning_teams, winning_scores, losing_teams, losing_scores, score_deficits):
+    #     matchups = self.matchups[weekNum] # get the matches of the week using the weekNum parameter
+    #     # print(f"\nWeek {weekNum} Matchup Results: \n") # print header with which week is being represented
+        
+
+    #     for i in range(len(self.teams) // 2): # Iterate over the number of matches per week which should be 4 in this 8 team league
+    #         curr_matchup = matchups[i] # use the week matchups and iterate from 0-3 to get all 4 matchups
+    #         # set if else case to determine winning team based on being home or away since that's how the matchup object is set up
+    #         # if home team wins
+    #         if (curr_matchup.home_score > curr_matchup.away_score):
+    #             # winning team and winning score -> home team name and home team score
+    #             # losing team and losing score -> away team name and away team score
+    #             winning_team = curr_matchup.home_team.team_name
+    #             winning_score = curr_matchup.home_score
+    #             losing_team = curr_matchup.away_team.team_name
+    #             losing_score = curr_matchup.away_score
+                
+
+    #         # else away team wins
+    #         else:
+    #             # winning team and winning score -> away team name and away team score
+    #             # losing team and losing score -> home team name and home team score
+    #             winning_team = curr_matchup.away_team.team_name
+    #             winning_score = curr_matchup.away_score  
+    #             losing_team = curr_matchup.home_team.team_name
+    #             losing_score = curr_matchup.home_score
+
+    #         # set up point margin by getting the difference between winning and losing score rounded to 1 decimal place
+    #         score_deficit = round(winning_score - losing_score, 1)
+
+    #         winning_teams[weekNum-1].append(winning_team)
+    #         winning_scores[weekNum-1].append(winning_score)
+    #         losing_teams[weekNum-1].append(losing_team)
+    #         losing_scores[weekNum-1].append(losing_score)
+    #         score_deficits[weekNum-1].append(score_deficit)
+
+            
+            # print statement with winning team, winning score [win message] losing team and losing score with point margin
+            # print(f"{winning_team}({winning_score} pts) won against {losing_team}({losing_score} pts) by {score_deficit} pts \n")
+
+        # **Use this for possibly creating a win/loss streak report and maximum/minimum score differentials by week
+        # Rewrite the stats function to be used in the season matchup results by using return values from the weekly results to access the winning team and losing team info
+        # self.weeklyMatchupStats(matchup_map)
+        # return matchup_map
+        # return winning_teams, winning_scores, losing_teams, losing_scores, score_deficits 
+        # winning_list, losing_list, score_deficit_list
+
+    # Finding more unique stats from the week to maybe consolidate reporting on the matchups
+    # def weeklyMatchupStats(self, team_record_map, full_matchup_map, winning_scores, losing_scores, score_deficits):
+        # team_record_map["streak"] = {team: "" for team in self.teams}
+
+        # matchup_period = self.curr_matchup_period - 1 # account for current week being played and not finalized
+        
+        # for team in self.teams:
+        #     prev_val = 0
+        #     streak_count = 0  
+
+        #     for index in range(matchup_period - 1, -1, -1):
+        #         curr_val = team_record_map[team][index]
+        #         if prev_val == curr_val:
+        #             streak_count += 1
+
+        #         elif prev_val == 0:
+        #             prev_val = curr_val
+        #             streak_count += 1
+
+        #         else:
+        #             team_record_map['streak'][team] = prev_val + str(streak_count)
+        #             break
+        
+        # print()
+        # print(team_record_map)
+        # highest_winning_scores = [] # overall highest score of each week in list with index of weekNum - 1
+        # lowest_winning_scores = [] # lowest scores yet winning by week with index of weekNum - 1
+        # highest_losing_scores = [] # highest scores yet losing by week with index of weekNum - 1
+        # lowest_losing_scores = [] # overall lowest score of each week in list with index of weekNum - 1
+        # smallest_score_deficits = [] # smallest point deficit of each week in list with index of weekNum - 1
+        # largest_score_deficits = [] # largest point deficit of each week in list with index of weekNum - 1
+        # highest_winning_teams = []
+        # highest_losing_teams = []
+        # lowest_winning_teams = []
+        # lowest_losing_teams = []
+        # highest_deficit_winning_teams = []
+        # highest_deficit_losing_teams = []
+        # lowest_deficit_winning_teams = []
+        # lowest_deficit_losing_teams = []
+
+        # for index in range(1, self.curr_matchup_period):
+        #     matchup_idx = 0
+        #     key_val = 'Week ' + str(index)
+
+            # highest_winning_scores.append(max(winning_scores[index-1]))
+            # matchup_idx = winning_scores[index-1].index(highest_winning_scores[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # highest_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
+
+            # # teams, winners = matchup_map['winning_scores'][index].items()
+            # lowest_winning_scores.append(min(winning_scores[index-1]))
+            # matchup_idx = winning_scores[index-1].index(lowest_winning_scores[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # lowest_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
+
+            # highest_losing_scores.append(max(losing_scores[index-1]))  
+            # matchup_idx = losing_scores[index-1].index(highest_losing_scores[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # highest_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
+
+            # lowest_losing_scores.append(min(losing_scores[index-1]))  
+            # matchup_idx = losing_scores[index-1].index(lowest_losing_scores[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # lowest_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
+
+            # largest_score_deficits.append(max(score_deficits[index-1]))  
+            # matchup_idx = score_deficits[index-1].index(largest_score_deficits[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # highest_deficit_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
+            # highest_deficit_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
+
+            # smallest_score_deficits.append(min(score_deficits[index-1]))  
+            # matchup_idx = score_deficits[index-1].index(smallest_score_deficits[index-1]) + 1
+            # match_val = 'Matchup ' + str(matchup_idx)
+            # lowest_deficit_winning_teams.append(full_matchup_map[key_val][match_val][0]['winning_team'])
+            # lowest_deficit_losing_teams.append(full_matchup_map[key_val][match_val][1]['losing_team'])
+    
+        
+    
+        # figure out how to get this to work later
+        # teams, streaks = matchup_map['streak'].items()
+        
+        # return highest_winning_scores, lowest_winning_scores, highest_losing_scores, lowest_losing_scores, largest_score_deficits, smallest_score_deficits
+                
+
+
+
+   # not sure if this is used 
+    # I think I was trying to format the team record results 
+    # and use this instead to print the standings
+    # Check on this another time 
+
+    # def LeagueRecord(self):
+    #     for team in self.teams.values():
+    #         self.titleFormat(team)
+    #         team.displayTeamRecord()
+    #         print()
+
+
+          # self._all_players = self._get_All_Players()
+        
+    # I don't think I need this method any more since there's already one in the regular League file now
+    # def _get_Rostered_Players(self):
+    #     rostered_players = []
+    #     for team in self.teams.values():
+    #         for player in team.players:
+    #             rostered_players.append(player)
+    #     return rostered_players
+    
+    # I don't know if I need to refactor this and see if I can get the unrostered players since I get free agents in the other League as well.
+    # def _get_Unrostered_Players(self):
+    #     my_team = self.teams["Dillon's Dubs"]
+    #     unrostered_players = _construct_Available_Players(_get_Available_Players())
+    #     return unrostered_players
+
+    ## Streak Method Code
+
+     # first_degree = [player for player in first_degree if isinstance(player, tuple)]
+        # second_degree = [player for player in second_degree if isinstance(player, tuple)]
+        # third_degree = [player for player in third_degree if isinstance(player, tuple)]
+
+        # full_2nd = [
+        #     p2 for (p2, _) in just_2nd
+        #     if any(p2 == p1 for (p1, _) in just_1st)
+        # ]
+
+        # full_3rd = [
+        #     p3 for (p3, _) in just_3rd 
+        #     if any(p3 == p2 for (p2, _) in full_2nd) 
+        # ]
+
+        # full_3rd_full_2nd_consistent_1st = [
+        #     p3 for (p3, _) in just_3rd 
+        #     if any(p3 == p2 for (p2, _) in full_2nd) 
+        #     and any(p3 == p1 for (p1, _) in consistent_1st)
+        # ]
+
+        # games_played_7 = player.last_7_dict.get('GP', 0)
+        # points_7 = player.last_7_dict.get('PTS', 0)
+        # avg_points_7 = round(points_7 / games_played_7, 1) if games_played_7 != 0  else 0
+        # if avg_points_7 > avg_points_total:
+        #     avg_points_increase = avg_points_7 - avg_points_total
+        #     first_degree[index] = (player, avg_points_increase)
+        #     player_report[player][0].append("Full")
+        # elif avg_points_7 == avg_points_total:
+        #     consistent[0].append((first_degree.remove(player), avg_points_total))
+        #     player_report[player][0].append("Consistent")
+        # else:
+        #     cold_streak[0].append((first_degree.remove(player), avg_points_total - avg_points_7))
+        #     player_report[player][0].append("Cold")
+
+        # games_played_15 = player.last_15_dict.get('GP', 0)
+        # points_15 = player.last_15_dict.get('PTS', 0)
+        # avg_points_15 = round(points_15 / games_played_15, 1) if games_played_15 != 0  else 0
+        # if avg_points_15 > avg_points_total:
+        #     avg_points_increase = avg_points_15 - avg_points_total
+        #     second_degree[index] = (player, avg_points_increase)
+        #     player_report[player][1].append("Full")
+        # elif avg_points_15 == avg_points_total:
+        #     consistent[1].append((player, avg_points_total))
+        #     player_report[player][1].append("Consistent")
+        #     # remove_second_degree.append(player)
+        # else:
+        #     cold_streak[1].append((player, avg_points_total - avg_points_15))
+        #     player_report[player][1].append("Cold")
+        #     remove_second_degree.append(player)
+
+
+        # games_played_7 = player.last_7_dict.get('GP', 0)
+        # points_7 = player.last_7_dict.get('PTS', 0)
+        # avg_points_7 = round(points_7 / games_played_7, 1) if games_played_7 != 0  else 0
+        # if avg_points_7 > avg_points_total:
+        #     avg_points_increase = avg_points_7 - avg_points_total
+        #     first_degree[index] = (player, avg_points_increase)
+        #     player_report[player][0].append("Full")
+        # elif avg_points_7 == avg_points_total:
+        #     consistent[0].append((player, avg_points_total))
+        #     player_report[player][0].append("Consistent")
+        #     # remove_first_degree.append(player)
+        # else:
+        #     cold_streak[0].append((player, avg_points_total - avg_points_7))
+        #     player_report[player][0].append("Cold")
+        #     remove_first_degree.append(player)
+
+        # for player in roster:
+            # if player.last_7_dict.get('PTS', 0) != 0:
+                #     first_degree.append(player)
+                #     if player.last_15_dict.get('PTS', 0) != 0:
+                #         second_degree.append(player)
+                #         if player.last_30_dict.get('PTS', 0) != 0:
+                #             third_degree.append(player)
+        
+        # consistent, cold_streak = [[] for _ in range(3)], [[] for _ in range(3)]
+        # remove_first_degree, remove_second_degree, remove_third_degree = [], [], []
+
+        # print("Full 3rd Degree Hot Streak:\n")
+        # self.printStreakPlayers(full_hot_3rd)
+        # print("Full 2nd Degree Hot Streak:\n")
+        # self.printStreakPlayers(full_hot_2nd)
+        # print("Full 1st Degree Hot Streak:\n")
+        # self.printStreakPlayers(full_hot_1st)
+        # print("Players Cooling Dwon:\n")
+        # self.printStreakPlayers(cooling_down)
+        # print("Players Heating Up:\n")
+        # self.printStreakPlayers(heating_up)
+
+        # full_hot_3rd = sorted(full_hot_3rd, key=lambda player: player.values()['avg_points'])
+       
+        # print("Full 2nd Degree Hot Streak:\n")
+        # print(full_hot_2nd)
+        # print()
+        # print("Full 1st Degree Hot Streak:\n")
+        # print(full_hot_1st)
+        # print("\n\n")
+
+        # print("Full 3rd Degree Conistent Streak:\n")
+        # print(full_cons_3rd)
+        # print()
+        # print("Full 2nd Degree Conistent Streak:\n")
+        # print(full_cons_2nd)
+        # print()
+        # print("Full 1st Degree Conistent Streak:\n")
+        # print(full_cons_1st)
+        # print("\n\n")
+        
+        # print("Full 3rd Degree Cold Streak:\n")
+        # print(full_cons_3rd)
+        # print()
+        # print("Full 2nd Degree Cold Streak:\n")
+        # print(full_cons_2nd)
+        # print()
+        # print("Full 1st Degree Cold Streak:\n")
+        # print(full_cons_1st)
+        # print("\n\n")
+
+        # print("Players Trending Hot:\n")
+        # print(heating_up)
+        # print()
+        # print("Players Trending Cold:\n")
+        # print(cooling_down)
+        # print("\n\n")
+
+        # full_hot_3rd, full_hot_2nd, full_hot_1st, full_cons_3rd, full_cons_2nd, full_cons_1st, full_cold_3rd, full_cold_2nd, full_cold_1st =  [], [], [], [], [], [], [], [], []
+        # heating_up, cooling_down = [], []
+        # full_cold_3rd, full_cold_2nd, full_cold_1st, full_empty_2nd, full_empty_1st  = [], [], [], [], [] all empty are full 3rd degree and pointless
+
+    # def hotStreakFullReport(self, team, first_degree, second_degree, third_degree, full_second_degree, full_third_degree, consistent):
+    #     all_players = []
+    #     if team:
+    #         print(f"{team} Hot Streak Report:\n")
+
+    #     print("Full 3rd Degree Hot Streak:\n")
+    #     for player, increase_30 in full_third_degree:
+    #         player_15 = next((p for p, inc in full_second_degree if p == player), None)
+    #         player_7 = next((p for p, inc in first_degree if p == player), None)
+    #         if player_15 and player_7:
+    #             increase_15 = next(inc for p, inc in full_second_degree if p == player)
+    #             increase_7 = next(inc for p, inc in first_degree if p == player)
+    #             all_players.append(player)
+    #             print(f"{player.name} had {increase_30:.2f} points above average over 30 days, {increase_15:.2f} points above average over 15 days, and {increase_7:.2f} points above average over 7 days \n")
+
+    #     # self.hotStreakSingleReport(full_third_degree, all_players)
+        
+    #     print("Partial 3rd Degree Hot Streak:\n")
+    #     self.hotStreakSingleReport(third_degree, all_players)
+
+    #     print("Full Second Degree Hot Streak:\n")
+    #     for player, increase_15 in full_second_degree:
+    #         if player not in all_players:
+    #             player_7 = next((p for p, inc in first_degree if p == player), None)
+    #             if player_7:
+    #                 increase_7 = next(inc for p, inc in first_degree if p == player)
+    #                 all_players.append(player)
+    #                 print(f"{player.name} had {increase_15:.2f} points above average over 15 days, and {increase_7:.2f} points above average over 7 days \n")
+
+    #     # self.hotStreakSingleReport(full_second_degree, all_players)
+
+    #     print("Partial 2nd Degree Hot Streak:\n")
+    #     self.hotStreakSingleReport(second_degree, all_players)
+
+    #     print("Full First Degree Hot Streak:\n")
+    #     for player, increase_7 in first_degree:
+    #         if player not in all_players:
+    #             all_players.append(player)
+    #             print(f"{player.name} had {increase_7:.2f} points above average over 7 days \n")
+
+    #     title = ["1st Level Room Temp Players", "2nd Level Room Temp Players List", "3rd Level Room Temp Players List"]
+    #     for i in range(2, -1, -1):
+    #         print(f"{title[i]}:\n")
+    #         self.hotStreakSingleReport(consistent[i], all_players)
+        
+    # def hotStreakSingleReport(self, streak_list, all_players):
+    #     for index, player in enumerate(streak_list):
+    #         player_obj = player[0]
+    #         avg_points_increase = player[1]
+    #         if player_obj in all_players:
+    #             continue
+    #         all_players.append(player_obj)
+    #         print(f"{index+1}. {player_obj.name} with {avg_points_increase}\n")
+    
+    #     curr_code_streak = full_streak_ordering[code] 
+        #     # self.streakPrintFormat(curr_code_streak)
+        #     for player in curr_code_streak: 
+        #         if code == "000":
+        #             full_hot_3rd.append(player)
+        #         if code[-2:] == "00" and code[-3] != "0":
+        #             full_hot_2nd.append(player)
+        #         if code[-1] == "0" and code[-2] != "0" and code[-3] != "0":
+        #             full_hot_1st.append(player)
+        #         if code == "111":
+        #             full_cons_3rd.append(player)
+        #         if code[-2:] == "11" and code[-3] != "1":
+        #             full_cons_2nd.append(player)
+        #         if code[-1] == "1" and code[-2] != "1" and code[-3] != "1":
+        #             full_cons_1st.append(player)
+        #         if code == "222":
+        #             full_cold_3rd.append(player)
+        #         if code[-2:] == "22" and code[-3] != "2":
+        #             full_cold_2nd.append(player)
+        #         if code[-1] == "2" and code[-2] != "2" and code[-3] != "2":
+        #             full_cold_1st.append(player)
+
+        #         if int(code[2]) == int(code[1]) + 1 and int(code[1]) == int(code[0]) + 1:
+        #             heating_up.append(player)
+
+        #         if int(code[0]) == int(code[1]) + 1 and int(code[1]) == int(code[2]) + 1:
+        #             cooling_down_codes.append(code)
+
+    Undrafted players
+    # print(sorted_undrafted_players)
+        # proj_dict_count = 0
+        # for player in sorted_undrafted_players:
+        #     if player.curr_year_proj.get('PTS', 0) != 0:
+        #         proj_dict_count += 1
+        #     player.displayUndraftedPlayerInfo()
+        # print(self.draft_dict)
+        # print(proj_dict_count)
+
+        # undrafted_players = list(set(undrafted_players) - set(full_draft_list))
+        # best_projected_undrafted = sorted(undrafted_players, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
+        # # for player in best_projected_undrafted:
+        # #     print(player.displayUndraftedPlayerInfo())
+
+        # # for player in all_players: # This doesn't work fully yet
+        # #     # print(type(player))
+        # #     for draftee in full_draft_list:
+        # #         if player.team == "":
+        # #                 is_drafted = False
+        # #         else:
+        # #             continue
+
+        # #     if not is_drafted:
+        # #             print(f"This player is undrafted: {player.name}")
+        # #             undrafted_players.append(player)
+        # #             continue
+        # #     else:
+        # #         print(f"Check failed for player: {player.name}")
+
+        player_code = ""
+            # hot_val = "0"
+            # cons_val = "1"
+            # cold_val = "2"
+            # empty_val = "3"
+
+            # if games_played_30 > 0:
+            #     if avg_points_30 > avg_points_total:
+            #         # player_report[player][0].append("Hot")
+            #         player_code += hot_val
+            #         roster_map[player]["last_30_days"]["streak"] = "Hot"
+            #     elif avg_points_30 == avg_points_total:
+            #         # player_report[player][0].append("Consistent")
+            #         player_code += cons_val
+            #         roster_map[player]["last_30_days"]["streak"] = "Consistent"
+            #     else:
+            #         # player_report[player][0].append("Cold")
+            #         player_code += cold_val
+            #         roster_map[player]["last_30_days"]["streak"] = "Cold"
+            # else: 
+            #     # player_report[player][0].append("_")
+            #     player_code += empty_val
+            #     roster_map[player]["last_30_days"]["streak"] = "Empty"
+
+            # if games_played_15 > 0:
+            #     if avg_points_15 > avg_points_total:
+            #         # player_report[player][1].append("Hot")
+            #         player_code += hot_val
+            #         roster_map[player]["last_15_days"]["streak"] = "Hot"
+            #     elif avg_points_15 == avg_points_total:
+            #         # player_report[player][1].append("Consistent")
+            #         player_code += cons_val
+            #         roster_map[player]["last_15_days"]["streak"] = "Consistent"
+            #     else:
+            #         # player_report[player][1].append("Cold")
+            #         player_code += cold_val
+            #         roster_map[player]["last_15_days"]["streak"] = "Cold"
+            # else:
+            #     # player_report[player][1].append("_")
+            #     player_code += empty_val
+            #     roster_map[player]["last_15_days"]["streak"] = "Empty"
+
+            # if games_played_7 > 0:
+            #     if avg_points_7 > avg_points_total:
+            #         # player_report[player][2].append("Hot")
+            #         player_code += hot_val
+            #         roster_map[player]["last_7_days"]["streak"] = "Hot"
+            #     elif avg_points_7 == avg_points_total:
+            #         # player_report[player][2].append("Consistent")
+            #         roster_map[player]["last_7_days"]["streak"] = "Consistent"
+            #     else:
+            #         # player_report[player][2].append("Cold")
+            #         player_code += cold_val
+            #         roster_map[player]["last_7_days"]["streak"] = "Cold"
+            # else:
+            #     # player_report[player][2].append("_")
+            #     player_code += empty_val
+            #     roster_map[player]["last_7_days"]["streak"] = "Empty"
+            # roster_map[player]["code"] = player_code
+
+            # code_map = {team: []}
+        # player_report = {player: [[] for _ in range(3)] for player in roster}
+        for player in roster:
+            # avg_points_total = player.avg_points
+            # points_7 = player.last_7_dict.get('PTS', 0)
+            # games_played_7 = player.last_7_dict.get('GP', 0)
+            # avg_points_7 = round(points_7 / games_played_7, 1) if games_played_7 != 0 else 0 
+            # avg_difference_7 = round(avg_points_7 - avg_points_total, 1)
+            # points_15 = player.last_15_dict.get('PTS', 0)
+            # games_played_15 = player.last_15_dict.get('GP', 0)
+            # avg_points_15 = round(points_15 / games_played_15, 1) if games_played_15 != 0  else 0
+            # avg_difference_15 = round(avg_points_15 - avg_points_total, 1)
+            # points_30 = player.last_30_dict.get('PTS', 0)
+            # games_played_30 = player.last_30_dict.get('GP', 0)
+            # avg_points_30 = round(points_30 / games_played_30, 1) if games_played_30 != 0  else 0
+            # avg_difference_30 = round(avg_points_30 - avg_points_total, 1)
+
+            # player_data = {
+            #     "last_30_days": {
+            #         "points": points_30,
+            #         "games_played": games_played_30,
+            #         "avg_points": avg_points_30, 
+            #         "avg_difference": avg_difference_30
+            #     }, 
+            #     "last_15_days": {
+            #         "points": points_15,
+            #         "games_played": games_played_15,
+            #         "avg_points": avg_points_15,
+            #         "avg_difference": avg_difference_15
+            #     },
+            #     "last_7_days": {
+            #         "points": points_7,
+            #         "games_played": games_played_7,
+            #         "avg_points": avg_points_7,
+            #         "avg_difference": avg_difference_7
+            #     },
+            #     "avg_points": avg_points_total
+            # }
+            if is_free_agent:
+                roster_map["free_agents"][player] = player_data
+            else:
+                roster_map[player.team][player] = player_data
+
+            player_code, roster_map = self.generatePlayerCodeStreak(player, roster_map)
+
+            if player_code != code_map:
+                code_map.append(player_code)
+
+        code_map.sort(key=lambda code: int(code))
+        full_roster_streak_ordering = {"free_agents": {}}
+        full_roster_streak_ordering = {team: {} for team in self.teams}
+        # for code in code_map:
+        #     for player in roster_map:
+        #         if player[1]["code"] == code:
+                    
+        # return roster_map, code_map
+
+
+        def printStreakPlayers(self, full_streak_list):
+    #     forward_list, defense_list, goalie_list = [], [], []
+    #     for player in full_streak_list:
+    #         player_object = list(player.keys())[0]
+    #         if player_object.position == "F":
+    #             forward_list.append(player)
+    #         elif player_object.position == "D":
+    #             defense_list.append(player)
+    #         else:
+    #             goalie_list.append(player)
+
+    #     forward_list.sort(key=lambda player: list(player.keys())[0].avg_points, reverse=True)
+    #     defense_list.sort(key=lambda player: list(player.keys())[0].avg_points, reverse=True)
+    #     goalie_list.sort(key=lambda player: list(player.keys())[0].avg_points, reverse=True)
+
+    #     forward_size = len(forward_list)
+    #     defense_size = len(defense_list)
+    #     goalie_size = len(goalie_list)
+
+    #         if forward_size != 1:
+    #             print(f"{forward_size} Forwards:\n\n")
+    #         else:
+    #             print(f"{forward_size} Forward:\n\n")
+    #         # print(f"{skater_list}\n")   
+    #         self.streakPrintFormat(forward_list)
+    #         if defense_size != 1:
+    #             print(f"{len(defense_list)} Defensemen:\n\n")
+    #         else:
+    #             print(f"{len(defense_list)} Defenseman:\n\n")
+    #         # print(f"{skater_list}\n")   
+    #         self.streakPrintFormat(defense_list)
+    #         if goalie_size != 1:
+    #             print(f"{len(goalie_list)} Goalies:\n\n")
+    #         else:
+    #             print(f"{len(goalie_list)} Goalie:\n\n")
+    #         # print(f"{goalie_list}\n\n")
+    #         self.streakPrintFormat(goalie_list)
+        
+    # def streakPrintFormat(self, player_list):
+    #     goalie_list, forward_list, defense_list  = [], [], []
+    #     for index, player in enumerate(player_list):
+    #         player_obj = list(player.keys())[0]
+    #         player_dict = player_list[index][player_obj]
+    #         avg_points = player_dict["avg_points"]
+    #         streak_30 = player_dict["last_30_days"]["streak"]
+    #         streak_15 = player_dict["last_15_days"]["streak"]
+    #         streak_7 = player_dict["last_7_days"]["streak"]
+    #         point_diff_30 = player_dict["last_30_days"]["avg_difference"]
+    #         point_diff_15 = player_dict["last_15_days"]["avg_difference"]
+    #         point_diff_7 = player_dict["last_7_days"]["avg_difference"]
+    #         point_sign_30 = "+" if point_diff_30 > 0 else ""
+    #         point_sign_15 = "+" if point_diff_15 > 0 else ""
+    #         point_sign_7 = "+" if point_diff_7 > 0 else ""
+    #         if player_obj.position == "G":
+    #             goalie_list.append(player)
+    #         elif player_obj.position == "F":
+    #             forward_list.append(player)
+    #         else:
+    #             defense_list.append(player)
+            
+    #         print(f"{index + 1}. {player_obj}:\n\n")
+    #         if streak_30 == "Consistent":
+    #             print(f"Last 30 Days: {streak_30} Streak maintaining {avg_points} avg points\n")
+    #         elif streak_30 == "Empty":
+    #             print(f"Last 30 Days: Not enough data to generate any analysis\n")
+    #         else:
+    #             print(f"Last 30 Days: {streak_30} Streak with change of {point_sign_30}{point_diff_30} from {avg_points} avg points\n")
+
+    #         if streak_15 == "Consistent":
+    #             print(f"Last 15 Days: {streak_15} Streak maintaining {avg_points} avg points\n")
+    #         elif streak_15 == "Empty":
+    #             print(f"Last 15 Days: Not enough data to generate any analysis\n")
+    #         else:
+    #             print(f"Last 15 Days: {streak_15} Streak with change of {point_sign_15}{point_diff_15} from {avg_points} avg points\n")
+
+    #         if streak_7 == "Consistent":
+    #             print(f"Last 7 Days: {streak_7} Streak maintaining {avg_points} avg points\n\n")
+    #         elif streak_7 == "Empty":
+    #             print(f"Last 7 Days: Not enough data to generate any analysis\n\n")
+    #         else:
+    #             print(f"Last 7 Days: {streak_7} Streak with change of {point_sign_7}{point_diff_7} from {avg_points} avg points\n\n")
+
+
+       # def fullDepthStreakAnalysis(self, code_map, full_streak_ordering):
+    #     for code in code_map: 
+    #         self.singleStreakAnalysis(code_map, full_streak_ordering, code)
+
+    # def singleStreakAnalysis(self, code_map, full_streak_ordering, code):
+    #     if code not in code_map:
+    #         print(f"Invalid Code \"{code}\": Please try another code\n")
+    #     else:
+    #         streak_list = full_streak_ordering[code]
+    #         code_key = self.codeDecipher(code)
+    #         streak_list_size = len(streak_list)
+    #         if streak_list_size != 1:
+    #             print(f"{streak_list_size} Players with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
+    #         else:
+    #             print(f"{streak_list_size} Player with {code_key[0]} 30 Day Streak | {code_key[1]} 15 Day Streak | {code_key[2]} 7 Day Streak\n\n")
+    #         self.printStreakPlayers(streak_list)
+
+
+    
+    LeagueDraftGrade
+      #     # Calculate VORP (Value of Remaining/Undrafted Players) with the most projected points
+    #     # Compare the difference between each fantasy team's projected point total and the VORP projected points
+    #     # Grade each team accordingly, the larger positive difference, the better the grade
+
+    #     # initialize starter lists with undrafted_players and empty lists by player position
+    #     undrafted_players = self.undrafted_list
+    #     forward_players = []
+    #     defense_players = []
+    #     goalie_players = []
+    #     # set up min and max count by position along with total roster count at draft day
+    #     MAX_D_COUNT = 11
+    #     MIN_D_COUNT= 5
+    #     MAX_G_COUNT = 4
+    #     MIN_G_COUNT = 2
+    #     MAX_F_COUNT = 15
+    #     MIN_F_COUNT = 9
+    #     TOTAL_PLAYER_COUNT = 22
+
+    #     # go through all undrafted players and add players by position, should be in greatest to least order
+    #     for player in undrafted_players:
+    #         if player.position == 'F':
+    #             forward_players.append(player)
+    #         elif player.position == 'D':
+    #             defense_players.append(player)
+    #         elif player.position == 'G':
+    #             goalie_players.append(player)
+
+    #     # set up roster with the top players for the min count of each position
+    #     full_roster = []
+    #     full_roster.extend(forward_players[i] for i in range(MIN_F_COUNT))
+    #     full_roster.extend(defense_players[i] for i in range(MIN_D_COUNT))
+    #     full_roster.extend(goalie_players[i] for i in range(MIN_G_COUNT))
+
+    #     # set count values to min count since those players are added to the VORP team (Value of Remaining Players)
+    #     f_count = MIN_F_COUNT
+    #     d_count = MIN_D_COUNT
+    #     g_count = MIN_G_COUNT
+
+
+        
+    #     # go through all player types for remaining 6 positions on roster
+    #     for player in undrafted_players:
+    #         # finish when all position counts are equal to the total count
+    #         if f_count + d_count + g_count == TOTAL_PLAYER_COUNT:
+    #             break
+    #         # if the player has already been added skip over the loop logic that iteration
+    #         if player in full_roster:
+    #             continue
+    #         # this should happen when there are still available spots and the player is not already in full_roster
+    #         else:
+    #             # check what position the next highest scoring player is and that the position count doesn't exceed the max position count
+    #             # If the player and count pass, then increase position count by 1 and add the player to the list
+    #             if player in forward_players and f_count < MAX_F_COUNT:
+    #                 f_count += 1
+    #                 full_roster.append(player)
+    #             elif player in defense_players and d_count < MAX_D_COUNT:
+    #                 d_count += 1
+    #                 full_roster.append(player)
+    #             elif player in goalie_players and g_count < MAX_G_COUNT:
+    #                 g_count += 1 
+    #                 full_roster.append(player)
+                
+    #     # print statement that shows how many players of each position were added
+    #     # should be one unique VORP team to get max score unless players of same position have duplicate projected points   
+    #     print("VORP Roster after League Draft:\n")
+    #     print(f"Forwards: {f_count}\t Defensemen: {d_count}\t Goalies: {g_count}")
+    #     # set print statement up to print the position in the player roster with projected points for the current year, name, and position
+    #     # I might be able to sort it too if I wanted 
+    #     sorted_full_roster = sorted(full_roster, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
+    #     for index, player in enumerate(sorted_full_roster, 1):
+    #         # print(player.curr_year_proj)
+    #         print(f"{index}. {player.displayUndraftedPlayerInfo()}")
+    #     print()
+
+        
+        
+    #     avg_proj_points_dict = {team: 0 for team in self.teams}
+    #     avg_proj_points_dict['VORP'] = 0
+    #     for team in self.teams:
+    #         roster_count = 22
+    #         team_sum = 0
+    #         for i in range(roster_count):
+    #             player = self.draft_dict[team][i]
+    #             projected_points = player.curr_year_proj.get('PTS', 0)
+    #             if projected_points == 0:
+    #                 # print(f"There is a player [{player.name}] with 0 projected points")
+    #                 roster_count -= 1
+    #             team_sum += projected_points
+    #         avg_proj_points = round(team_sum / roster_count, 1)
+    #         avg_proj_points_dict[team] = avg_proj_points
+
+    #     roster_count = 22
+    #     vorp_sum = 0
+    #     for i in range(roster_count):
+    #         player = sorted_full_roster[i]
+    #         projected_points = player.curr_year_proj.get('PTS', 0)
+    #         if projected_points == 0:
+    #             roster_count -= 1
+    #         vorp_sum += projected_points
+    #         avg_proj_points = round(vorp_sum / roster_count, 1)
+    #         avg_proj_points_dict['VORP'] = avg_proj_points
+
+    #     power_rankings = []
+    #     draft_rankings = []
+    #     power_rankings = list(avg_proj_points_dict.values())
+    #     power_rankings.sort(reverse=True)
+    #     for i in range(len(power_rankings)):
+    #         for key in avg_proj_points_dict.keys():
+    #             val = power_rankings[i]
+    #             if avg_proj_points_dict[key] == val:
+    #                 draft_rankings.append({key: val})
+    #     print("League Draft Grade Results:")
+    #     print("=======================================================")
+    #     for index, ranking in enumerate(draft_rankings):
+    #         team = list(ranking.keys())[0]
+    #         proj_points = list(ranking.values())[0]
+    #         if index == len(self.teams):
+    #             vorp_team = team
+    #             vorp_proj_points = proj_points
+    #             break
+    #         print(f"{index + 1}. {team} with {proj_points} average projected points")
+    #         print("=======================================================")
+
+    #     print()
+    #     print(f"{vorp_team} roster had {vorp_proj_points} average projected points")
+
+    Team.py
+
+    # print("Testing Player Variables")
+            # print(player.acquisitionType) # returns ADD, DRAFT, or TRADE
+            # print(player.eligibleSlots) # returns [[Forward, Defense, Goalie,], [actual position of Forward], ['Util'] if F or D, ['Bench'], and [IR]
+            # print(player.injured) # returns True if IR or OUT, not if DTD
+            # print(player.injuryStatus) # returns ACTIVE if healthy, then returns DAY_TO_DAY, INJURY_RESERVE, SUSPENDED, or OUT
+            # print(player.lineupSlot) # returns value from eligibleSlots of where player is currently located
+            # print(player.playerId)
+            # print(player.proTeam)
+            # print(player.stats) # nested dictionaries that could be split. Inner Dictionaries: 'Total 2024' (prevYear), 'Total 2025' (currYear), 
+            # 'Last 7 2025' stats from previous 7 games, 'Last 15 2025' stats from previous 15 games, 'Projected 2024' (prevYearProj), 'Projected 2025' (currYearProj)
