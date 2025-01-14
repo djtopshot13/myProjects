@@ -27,10 +27,11 @@ def main():
     # league_object.leagueDraftPowerRankings()
     # print()
     # league_object.leagueCurrPowerRankings()
+    # print()
     
     league_object.streakReport(team="free_agents", min_threshold=1.4)
     print()
-    league_object.streakReport(team="Dillon's Dubs", pro_team=["CAR", "BUF", "BOS", "MIN"], max_threshold=2.3)
+    league_object.streakReport(team="Dillon's Dubs")
     print()
     # league_object.streakReport(team="Shortcake Miniture Schnauzers", streak_type=["cool", "injured_or_minor_league"], min_threshold=1.4)
     
