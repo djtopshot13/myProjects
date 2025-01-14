@@ -33,7 +33,6 @@ def main():
     print()
     league_object.streakReport(team="Dillon's Dubs")
     print()
-    # league_object.streakReport(team="Shortcake Miniture Schnauzers", streak_type=["cool", "injured_or_minor_league"], min_threshold=1.4)
     
     
 main()
