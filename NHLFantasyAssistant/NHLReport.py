@@ -26,8 +26,8 @@ def main():
     # print()
     # league_object.leagueDraftPowerRankings()
     # print()
-    league_object.leagueCurrPowerRankings()
-    print()
+    # league_object.leagueCurrPowerRankings()
+    # print()
     
     league_object.streakReport(team="free_agents", min_threshold=1.4)
     print()
