@@ -142,14 +142,14 @@ class StreakTracker:
                 elif element in self.teams_keys:
                     team_keys.append(self.teams_dict[element])
                 else:
-                    print("Invalid team element entered in function call\n\n")
+                    print(f"Invalid team element entered in function call: {element}\n\n")
                     return
         elif team == "free_agents":
             team_keys.append(team) 
         elif team in self.teams_keys:
             team_keys.append(self.teams_dict[team])
         else:
-            print("Invalid team entered in function call\n\n")
+            print(f"Invalid team entered in function call: {team}\n\n")
             return
     
         return team_keys
@@ -160,14 +160,14 @@ class StreakTracker:
                 if streak in self.constants.code_filter:
                     code_map.update(self.filterCodeMap(key, streak))
                 else:
-                    print("Invalid streak type element entered in function call\n\n")
+                    print(f"Invalid streak type element entered in function call: {streak}\n\n")
                     return
             code_map = sorted(code_map, key=lambda code: int(code))
         elif streak_type in self.constants.code_filter:
             code_map.update(self.filterCodeMap(key, streak_type))
             code_map = sorted(code_map, key=lambda code: int(code))
         else: 
-            print("Invalid streak type entered in function call\n\n")
+            print(f"Invalid streak type entered in function call: {streak_type}\n\n")
             return
         
         return code_map
@@ -179,7 +179,7 @@ class StreakTracker:
                     filtered_players = self.playerPositionFilter(players, element)
                     self.streakRosterReport(filtered_players, code_key, min_threshold, max_threshold, pro_team_keys)
                 else: 
-                    print("Invalid position element entered in function call\n\n")
+                    print(f"Invalid position element entered in function call: {element}\n\n")
 
         elif position in self.constants.position_keys:
             filtered_players = self.playerPositionFilter(players, position)
@@ -189,7 +189,7 @@ class StreakTracker:
             #     print("Maybe check on playerPositionFilter method??\n")
             self.streakRosterReport(filtered_players, code_key, min_threshold, max_threshold, pro_team_keys)
         else:
-            print("Invalid position entered in function call\n\n")
+            print(f"Invalid position entered in function call: {position}\n\n")
 
     def proTeamFilter(self, pro_team):
         pro_team_keys = []
@@ -198,12 +198,12 @@ class StreakTracker:
                 if element in self.constants.pro_team_abbrev:
                     pro_team_keys.append(element)
                 else:
-                    print("Invalid pro team element entered in function call\n\n")
+                    print(f"Invalid pro team element entered in function call: {element}\n\n")
                     return
         elif pro_team in self.constants.pro_team_abbrev:
             pro_team_keys.append(pro_team) 
         else:
-            print("Invalid pro team entered in function call\n\n")
+            print(f"Invalid pro team entered in function call: {pro_team}\n\n")
             return
     
         return pro_team_keys
@@ -238,10 +238,10 @@ class StreakTracker:
                         if streak in self.constants.code_filter:
                             print(f"{streak} Streak Report\n\n")
                         else:
-                            print("Invalid streak type element entered in function call\n\n")
+                            print(f"Invalid streak type element entered in function call: {streak}\n\n")
                             return
                 else: 
-                    print("Invalid streak type entered in function call\n\n")
+                    print(f"Invalid streak type entered in function call: {streak_type}\n\n")
                     return
             else:
                 print("Full Streak Report\n\n")

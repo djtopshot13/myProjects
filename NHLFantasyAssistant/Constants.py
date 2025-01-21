@@ -41,7 +41,7 @@ class Constants:
             "Utah Hockey Club": "UTAH",
             "Vancouver Canucks": "VAN", 
             "Vegas Golden Knights": "VGK", 
-            "Washington Capitals": "WAS", 
+            "Washington Capitals": "WSH", 
             "Winnipeg Jets": "WPG",
             "Unknown Team": "???"
         }
