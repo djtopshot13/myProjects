@@ -1,3 +1,6 @@
+# **Design Documentation**
+Pasted most of this over from the previously existing Fantasy Ideas.txt file. Hoping to move forward with more software dev techniques.
+
 Organizational Structure:
     LeagueObject():
         TeamObjects():
@@ -9,7 +12,7 @@ Organizational Structure:
 
 League Function Ideas:
 
-DisplaySorted[Stat]Teams(boolean dec_order, String stat_name):
+DisplaySorted\[Stat\]Teams(boolean dec_order, String stat_name):
     Parameters:
         [boolean dec_order or !dec_order] -> (default = dec_order, ie highest at top, lowest at bottom)
         [String stat_name] -> (grab stat from Team object directory instance variable)
