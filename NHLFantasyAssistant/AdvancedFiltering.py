@@ -10,11 +10,11 @@ class AdvancedStats:
         self.lines_df = self.dataFrameGenerator("lines.csv")
         self.skaters_df = self.dataFrameGenerator("skaters.csv")
         self.goalies_df = self.dataFrameGenerator("goalies.csv")
-        self.best_teams_goals_for = self.statsPerGameConverter(self.teams_df, "xGoalsFor") 
+        self.best_teams_goals_for = self.teams_df.sort_values("xGoalsFor", ascending=False)
         self.worst_teams_goals_for = reversed(self.best_teams_goals_for)
         self.most_ice_time_lines = self.lines_df.sort_values('iceTimeRank', ascending=False)
         self.worst_ice_time_lines = reversed(self.most_ice_time_lines)
-        self.best_teams_goals_percentage = self.statsPerGameConverter(self.teams_df, "xGoalsPercentage")
+        self.best_teams_goals_percentage = self.teams_df.sort_values("xGoalsPercentage", ascending=False)
         self.worst_teams_goals_percentage = reversed(self.best_teams_goals_percentage)
         self.main()
 
@@ -50,18 +50,19 @@ class AdvancedStats:
         self.topIceTimeForwardLines()
         self.topIceTimeDefenseLines()
 
+        self.bestTeamAllGoalsForPercentage()
         self.bestTeam5on4GoalsForPercentage()
         self.bestTeam5on5GoalsForPercentage()
         self.bestTeam4on5GoalsForPercentage()
         self.bestTeamOtherGoalsForPercentage()
-        self.bestTeamAllGoalsForPercentage()
         
-
+        
+        self.bestTeamAllGoalsForPerGame()
         self.bestTeam5on4GoalsForPerGame()
         self.bestTeam5on5GoalsForPerGame()
         self.bestTeam4on5GoalsForPerGame()
         self.bestTeamOtherGoalsForPerGame()
-        self.bestTeamAllGoalsForPerGame()
+        
 
 
     def topIceTimeForwardLines(self):
@@ -84,65 +85,69 @@ class AdvancedStats:
                 continue
 
     def bestTeam5on5GoalsForPercentage(self):
-        self.bestTeamGoalsForPercentage("5on5", 10)
+        self.bestTeamsOrdering("5on5", 10, "xGoalsPercentage")
 
     def bestTeam5on4GoalsForPercentage(self):
-        self.bestTeamGoalsForPercentage("5on4", 10)
+        self.bestTeamsOrdering("5on4", 10, "xGoalsPercentage")
 
     def bestTeam4on5GoalsForPercentage(self):
-        self.bestTeamGoalsForPercentage("4on5", 10)
+        self.bestTeamsOrdering("4on5", 10, "xGoalsPercentage")
 
     def bestTeamOtherGoalsForPercentage(self):
-        self.bestTeamGoalsForPercentage("other", 10)
+        self.bestTeamsOrdering("other", 10, "xGoalsPercentage")
 
     def bestTeamAllGoalsForPercentage(self):
-        self.bestTeamGoalsForPercentage("all", 10)
+        self.bestTeamsOrdering("all", 10, "xGoalsPercentage")
 
-    def bestTeamGoalsForPercentage(self, situation, team_count):
-        # if situation != "other" and situation != "all":
-        #     title = situation[0] + " " + situation[1:3].title() + " " + situation[3]
-        # else:
-        title = situation[0].upper() + situation[1:]
-        print(f"Top {team_count} Scoring Teams in {title} Situations\n\n")
-        count = 0
-        for index, row in self.best_teams_goals_percentage.iterrows():
-            if row["situation"] == situation:
-                if count == team_count:
-                    print()
-                    break
-                print(f"{count+1}. {row["name"]} {row["xGoalsPercentage"]}%\n")
-                count += 1
-            else:
-                continue
+    # def bestTeamGoalsForPercentage(self, situation, team_count):
+    #     # if situation != "other" and situation != "all":
+    #     #     title = situation[0] + " " + situation[1:3].title() + " " + situation[3]
+    #     # else:
+    #     title = situation[0].upper() + situation[1:]
+    #     print(f"Top {team_count} Scoring Teams in {title} Situations\n\n")
+    #     count = 0
+    #     for index, row in self.best_teams_goals_percentage.iterrows():
+    #         if row["situation"] == situation:
+    #             if count == team_count:
+    #                 print()
+    #                 break
+    #             print(f"{count+1}. {row["name"]} {row["xGoalsPercentage"]}%\n")
+    #             count += 1
+    #         else:
+                # continue
 
     def bestTeam5on5GoalsForPerGame(self):
-        self.bestTeamGoalsForPerGame("5on5", 10)
+        self.bestTeamsOrdering("5on5", 10, "xGoalsFor")
 
     def bestTeam5on4GoalsForPerGame(self):
-        self.bestTeamGoalsForPerGame("5on4", 10)
+        self.bestTeamsOrdering("5on4", 10, "xGoalsFor")
 
     def bestTeam4on5GoalsForPerGame(self):
-        self.bestTeamGoalsForPerGame("4on5", 10)
+        self.bestTeamsOrdering("4on5", 10, "xGoalsFor")
 
     def bestTeamOtherGoalsForPerGame(self):
-        self.bestTeamGoalsForPerGame("other", 10)
+        self.bestTeamsOrdering("other", 10, "xGoalsFor")
 
     def bestTeamAllGoalsForPerGame(self):
-        self.bestTeamGoalsForPerGame("all", 10)
+        self.bestTeamsOrdering("all", 10, "xGoalsFor")
 
-    def bestTeamGoalsForPerGame(self, situation, team_count):
+    def bestTeamsOrdering(self, situation, team_count, stat_name):
+        if stat_name == "xGoalsFor":
+            data_frame = self.best_teams_goals_for
+        elif stat_name == "xGoalsPercentage":
+            data_frame = self.best_teams_goals_percentage
         # if situation != "other" and situation != "all":
         #     title = situation[0] + " " + situation[1:3].title() + " " + situation[3]
         # else:
         title = situation[0].upper() + situation[1:]
         print(f"Top {team_count} Scoring Teams in {title} Situations\n\n")
         count = 0
-        for index, row in self.best_teams_goals_for.iterrows():
+        for index, row in data_frame.iterrows():
             if row["situation"] == situation:
                 if count == team_count:
                     print()
                     break
-                print(f"{count+1}. {row["name"]} {row["xGoalsFor/Game"]} xGoalsFor/Game\n")
+                print(f"{count+1}. {row["name"]} {row[stat_name]} {stat_name}\n")
                 count += 1
             else:
                 continue
