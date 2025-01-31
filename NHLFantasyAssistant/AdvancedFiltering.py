@@ -16,6 +16,7 @@ class AdvancedStats:
         self.worst_ice_time_lines = reversed(self.most_ice_time_lines)
         self.best_teams_goals_percentage = self.teams_df.sort_values("xGoalsPercentage", ascending=False)
         self.worst_teams_goals_percentage = reversed(self.best_teams_goals_percentage)
+        self.writeToCSV()
         self.main()
 
 
@@ -23,7 +24,11 @@ class AdvancedStats:
         # lines_csv_url = "https://moneypuck.com/moneypuck/playerData/seasonSummary/2024/regular/lines.csv"
         # skaters_csv_url = "https://moneypuck.com/moneypuck/playerData/seasonSummary/2024/regular/skaters.csv"
         # goalies_csv_url = "https://moneypuck.com/moneypuck/playerData/seasonSummary/2024/regular/goalies.csv"
-        
+    def writeToCSV(self):
+        self.teams_df.to_csv("CSV/nhl_teams_data.csv")    
+        self.lines_df.to_csv("CSV/nhl_lines_data.csv") 
+        self.skaters_df.to_csv("CSV/nhl_skaters_data.csv") 
+        self.goalies_df.to_csv("CSV/nhl_goalies_data.csv") 
 
     def dataFrameGenerator(self, suffix):
         full_url = self.url_base + suffix
