@@ -1,3 +1,7 @@
+- [**NHLFantasyAssistant Software Documentation**](#nhlfantasyassistant-software-documentation)
+  - [**Purpose and Objectives**](#purpose-and-objectives)
+  - [**Navigating the Repo**](#navigating-the-repo)
+>
 # **NHLFantasyAssistant Software Documentation**
 ## **Purpose and Objectives**
 - My main objective is to try and create a program that optimizes user performance within ESPN Fantasy NHL. 
