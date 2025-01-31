@@ -1,7 +1,7 @@
 from espn_api.hockey import League as ESPNLeague
-from Team import Team
-from Skater import Skater
-from Goalie import Goalie
+from Main_Objects.Team import Team
+from Main_Objects.Skater import Skater
+from Main_Objects.Goalie import Goalie
 
 my_league_id = 1705592891
 curr_year = 2025 

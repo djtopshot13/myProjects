@@ -1,6 +1,6 @@
 class Matchup:
     def __init__(self, curr_matchup_period, matchups, teams): # constructor method for Mathcup object to better reorganize more in depth statistics than espn
-        self.curr_matchup_period = curr_matchup_period # pass values from myLeague in to get the proper data to run the methods in Mathcup class
+        self.curr_matchup_period = curr_matchup_period # pass values from League in to get the proper data to run the methods in Mathcup class
         self.matchups = matchups
         self.teams = teams
         self.team_names = list(teams.keys())

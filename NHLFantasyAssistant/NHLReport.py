@@ -1,5 +1,6 @@
-from MyLeague import MyLeague
-league_object = MyLeague.createLeague()
+from Main_Objects import League
+from Utils import DataScrub
+league_object = League.createLeague()
 
 def main():
     # league_object.printSeasonMatchupResults()

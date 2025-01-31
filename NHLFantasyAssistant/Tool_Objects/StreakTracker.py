@@ -1,4 +1,4 @@
-from Constants import Constants
+from Utils import Constants
 
 class StreakTracker:
     # set up for streaktracker object with initialization being defined

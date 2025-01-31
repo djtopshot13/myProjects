@@ -1,11 +1,11 @@
-import League
-import Skater
-import Goalie
-import Matchup
-import RosterGrade
-import StreakTracker
+from Utils import ESPNLeague
+import Skater as Skater
+import Goalie as Goalie
+from Tool_Objects import Matchup
+from Tool_Objects import RosterGrade
+from Tool_Objects import StreakTracker
 
-class MyLeague:
+class League:
     def __init__(self, teams, matchups, draft_dict, rostered_players, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):
         self.teams = teams
         self.matchups = matchups
@@ -447,22 +447,22 @@ class MyLeague:
 
     def createLeague():
         # Initialize all necessary variables to be passed into League constructor
-        _season_points = League._get_Season_Points()
+        _season_points = ESPNLeague._get_Season_Points()
         _points_for = _season_points[0]
         _points_against = _season_points[1]
         _points_diff = _season_points[2]
-        _free_agents = League._get_Free_Agents()
-        _roster_players = League._construct_Players(League._get_Rostered_Players(), "R")
-        _draft_dict = League._get_Drafted_Players(_roster_players, _free_agents)
-        _box_scores = League._get_Box_Scores()
-        _recent_activity = League._get_Recent_Activity()
-        _player_map = League._get_Player_Map()
-        _league_standings = League._get_League_Standings()
-        _curr_matchup_period = League._get_Curr_Matchup_Period()
-        _league_settings = League._get_League_Settings()
-        _team_objects = League._initialize_Team_Objects(_points_for, _points_against, _points_diff, _draft_dict)
+        _free_agents = ESPNLeague._get_Free_Agents()
+        _roster_players = ESPNLeague._construct_Players(ESPNLeague._get_Rostered_Players(), "R")
+        _draft_dict = ESPNLeague._get_Drafted_Players(_roster_players, _free_agents)
+        _box_scores = ESPNLeague._get_Box_Scores()
+        _recent_activity = ESPNLeague._get_Recent_Activity()
+        _player_map = ESPNLeague._get_Player_Map()
+        _league_standings = ESPNLeague._get_League_Standings()
+        _curr_matchup_period = ESPNLeague._get_Curr_Matchup_Period()
+        _league_settings = ESPNLeague._get_League_Settings()
+        _team_objects = ESPNLeague._initialize_Team_Objects(_points_for, _points_against, _points_diff, _draft_dict)
 
-        new_league = MyLeague(_team_objects, _box_scores, _draft_dict, _roster_players, _free_agents, 
+        new_league = League(_team_objects, _box_scores, _draft_dict, _roster_players, _free_agents, 
                             _recent_activity, _player_map, _league_standings, _curr_matchup_period, _league_settings)
         
         return new_league

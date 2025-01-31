@@ -1,4 +1,4 @@
-from Constants import Constants
+from Utils import Constants
 
 class Player: 
     # ['acquisitionType', 'eligibleSlots', 'injured', 'injuryStatus', 'lineupSlot', 'name', 'playerId', 'position', 'proTeam', 'stats'] variables and methods currently connected to players

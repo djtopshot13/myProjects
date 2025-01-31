@@ -35,8 +35,8 @@ onIce_xGoalsPercentage,On Ice xGoals For / (On Ice xGoals For + On Ice xGoals Ag
 offIce_xGoalsPercentage,Off Ice xGoals For / (Off Ice xGoals For + Off Ice xGoals Against)
 onIce_corsiPercentage,On Ice Shot Attempts For / (On Ice Shot Attempts For + On Ice Shot Attempts Against)
 offIce_corsiPercentage,Off Ice Shot Attempts For / (Off Ice Shot Attempts For + Off Ice Shot Attempts Against)
-onIce_fenwickPercentage,On Ice Unblocked Shot Attempts For / (On Ice Unlbocked Shot Attempts For + On Ice Unbloked Shot Attempts Against)
-offIce_fenwickPercentage,Off Ice Unblocked Shot Attempts For / (Off Ice Unlbocked Shot Attempts For + Off Ice Unbloked Shot Attempts Against)
+onIce_fenwickPercentage,On Ice Unblocked Shot Attempts For / (On Ice Unblocked Shot Attempts For + On Ice Unbloked Shot Attempts Against)
+offIce_fenwickPercentage,Off Ice Unblocked Shot Attempts For / (Off Ice Unblocked Shot Attempts For + Off Ice Unbloked Shot Attempts Against)
 iceTimeRank,Rank of the player's ice time in a given game. Forwards and Defensemen are ranked seperately. 1 means the player got more icetime in the game than any other forward/D.
 I_F_xOnGoal,"Expected number of unblocked shot attempts that are expected to be a shot on goal (not miss the net) given the context (distance, situation, etc) they were taken from. This assumes the player has average shooting talent."
 I_F_xGoals,Expected Goals. See 'General Concepts' tab for more info.

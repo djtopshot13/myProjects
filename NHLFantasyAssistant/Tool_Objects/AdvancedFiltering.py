@@ -145,7 +145,7 @@ class AdvancedStats:
         #     title = situation[0] + " " + situation[1:3].title() + " " + situation[3]
         # else:
         title = situation[0].upper() + situation[1:]
-        print(f"Top {team_count} Scoring Teams in {title} Situations\n\n")
+        print(f"Top {team_count} Teams {stat_name} in {title} Situations\n\n")
         count = 0
         for index, row in data_frame.iterrows():
             if row["situation"] == situation:
