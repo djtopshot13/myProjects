@@ -1,4 +1,4 @@
-from Main_Objects import League
+from MainObjects import League
 from Utils import DataScrub
 league_object = League.createLeague()
 
