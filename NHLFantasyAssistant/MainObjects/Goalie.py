@@ -1,4 +1,4 @@
-from Player import Player
+from .Player import Player
 
 class Goalie(Player):
     def __init__(self, name, team, pro_team, position, points, 

@@ -1,9 +1,9 @@
 from Utils import ESPNLeague
-import Skater as Skater
-import Goalie as Goalie
-from Tool_Objects import Matchup
-from Tool_Objects import RosterGrade
-from Tool_Objects import StreakTracker
+from .Skater import Skater
+from .Goalie import Goalie
+from ToolObjects import Matchup
+from ToolObjects import RosterGrade
+from ToolObjects import StreakTracker
 
 class League:
     def __init__(self, teams, matchups, draft_dict, rostered_players, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):

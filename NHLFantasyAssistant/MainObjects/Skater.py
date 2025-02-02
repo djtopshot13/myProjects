@@ -1,5 +1,4 @@
-from Player import Player
-
+from .Player import Player
 class Skater(Player):
     def __init__(self, name, team, pro_team, position, points, 
                 games_played, health_status, roster_availability, 

@@ -147,7 +147,7 @@ def playerFantasyPointCalculator(player):
             if header in player.stats:
                 
                 points = goals_against = saves = wins = shutouts = overtime_losses = goals = assists = shots = hits = blocked_shots = pp_points = sh_points = 0
-                if player.eligibleSlots[0][0] == 'G':
+                if player.position[0] == 'G':
                     if player.stats[header].get('total', {}).keys():
                         if '30' in player.stats[header]['total'].keys():
                             player.stats[header]['total']['GP'] = player.stats[header]['total']['30']

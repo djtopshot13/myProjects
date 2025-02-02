@@ -1,5 +1,4 @@
-from Utils import Constants
-
+from Utils.Constants import Constants
 class Player: 
     # ['acquisitionType', 'eligibleSlots', 'injured', 'injuryStatus', 'lineupSlot', 'name', 'playerId', 'position', 'proTeam', 'stats'] variables and methods currently connected to players
     def __init__(self, name, team, pro_team, position, points, games_played,

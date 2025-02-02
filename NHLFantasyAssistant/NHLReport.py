@@ -1,4 +1,4 @@
-from MainObjects import League
+from MainObjects.League import League
 from Utils import DataScrub
 league_object = League.createLeague()
 
@@ -13,8 +13,8 @@ def main():
     # print()
     # league_object.LeagueDraftResults()
     # print()
-    # league_object.printAllBestTeamStat()
-    # print()
+    league_object.printAllBestTeamStat()
+    print()
     # league_object.printTeamRosters()  
     # print()
     # league_object.printTeamByPoints()
@@ -29,7 +29,7 @@ def main():
     # print()
     # league_object.leagueCurrPowerRankings()
     # print()
-    league_object.streakReport(team="free_agents", pro_team=["VAN", "PHI", "LA", "SEA", "DET", "NYI", "CGY"], streak_type="warm", min_threshold=1.4)
+    league_object.streakReport(team="free_agents", streak_type="warm", min_threshold=1.4)
     print()
     league_object.streakReport(team="Dillon's Dubs")
     print()
