@@ -27,12 +27,12 @@ def main():
     # print()
     # league_object.leagueDraftPowerRankings()
     # print()
-    # league_object.leagueCurrPowerRankings()
+    league_object.leagueCurrPowerRankings()
+    print()
+    # league_object.streakReport(team="free_agents", pro_team=["MON", "OTT", "UTA", "COL", "TBL", "DAL"], min_threshold=1.4)
     # print()
-    league_object.streakReport(team="free_agents", streak_type="warm", min_threshold=1.4)
-    print()
-    league_object.streakReport(team="Dillon's Dubs")
-    print()
+    # league_object.streakReport(team="Dillon's Dubs")
+    # print()
     
     
 main()

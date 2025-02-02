@@ -271,6 +271,7 @@ def _get_Drafted_Players(rostered_players, free_agents):
         #     if player not in drafted_players:
         #         undrafted_players.append(player)
         draft_roster["Dillon's Dubs"].pop(10) # get rid of duplicate Sebastian Aho skater object
+        print(draft_roster)
         return draft_roster
 
 def _get_Rostered_Players():

@@ -1,5 +1,6 @@
 import pandas as pd
 import requests
+from Utils.DataScrub import DataScrub
 from io import StringIO
 
 class AdvancedStats:
@@ -16,6 +17,7 @@ class AdvancedStats:
         self.worst_ice_time_lines = reversed(self.most_ice_time_lines)
         self.best_teams_goals_percentage = self.teams_df.sort_values("xGoalsPercentage", ascending=False)
         self.worst_teams_goals_percentage = reversed(self.best_teams_goals_percentage)
+        DataScrub.clean_data(self.lines_df)
         self.writeToCSV()
         self.main()
 
