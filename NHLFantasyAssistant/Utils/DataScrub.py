@@ -1,6 +1,4 @@
 import re
-
-
 class DataScrub:
     def clean_data(self, df):
         if 'name' in df.columns:

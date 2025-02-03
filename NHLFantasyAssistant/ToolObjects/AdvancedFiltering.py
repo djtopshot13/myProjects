@@ -1,4 +1,6 @@
 import pandas as pd
+import sys
+sys.path.append("..")
 import requests
 from Utils.DataScrub import DataScrub
 from io import StringIO
@@ -21,11 +23,6 @@ class AdvancedStats:
         self.writeToCSV()
         self.main()
 
-
-        # teams_csv_url = "https://moneypuck.com/moneypuck/playerData/seasonSummary/2024/regular/teams.csv"
-        # lines_csv_url = "https://moneypuck.com/moneypuck/playerData/seasonSummary/2024/regular/lines.csv"
-        # skaters_csv_url = "https://moneypuck.com/moneypuck/playerData/seasonSummary/2024/regular/skaters.csv"
-        # goalies_csv_url = "https://moneypuck.com/moneypuck/playerData/seasonSummary/2024/regular/goalies.csv"
     def writeToCSV(self):
         self.teams_df.to_csv("CSV/nhl_teams_data.csv")    
         self.lines_df.to_csv("CSV/nhl_lines_data.csv") 
