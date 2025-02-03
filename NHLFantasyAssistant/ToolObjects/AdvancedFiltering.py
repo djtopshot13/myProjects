@@ -1,7 +1,9 @@
-import pandas as pd
+import os
 import sys
-sys.path.append("..")
+import time
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import requests
+import pandas as pd
 from Utils.DataScrub import DataScrub
 from io import StringIO
 
@@ -13,21 +15,44 @@ class AdvancedStats:
         self.lines_df = self.dataFrameGenerator("lines.csv")
         self.skaters_df = self.dataFrameGenerator("skaters.csv")
         self.goalies_df = self.dataFrameGenerator("goalies.csv")
+        self.lines_df = DataScrub.clean_data(self.lines_df)
         self.best_teams_goals_for = self.teams_df.sort_values("xGoalsFor", ascending=False)
         self.worst_teams_goals_for = reversed(self.best_teams_goals_for)
         self.most_ice_time_lines = self.lines_df.sort_values('iceTimeRank', ascending=False)
         self.worst_ice_time_lines = reversed(self.most_ice_time_lines)
         self.best_teams_goals_percentage = self.teams_df.sort_values("xGoalsPercentage", ascending=False)
         self.worst_teams_goals_percentage = reversed(self.best_teams_goals_percentage)
-        DataScrub.clean_data(self.lines_df)
         self.writeToCSV()
         self.main()
 
+    def _daily_write(self, filepath):
+        if not os.path.exists(filepath):
+            return True
+        mod_time = os.path.getmtime(filepath)
+        mod_date = time.localtime(mod_time)
+        curr_time = time.localtime()
+
+        return (mod_date.tm_year, mod_date.tm_mon, mod_date.tm_mday) != \
+            (curr_time.tm_year, curr_time.tm_mon, curr_time.tm_mday)
+
     def writeToCSV(self):
-        self.teams_df.to_csv("CSV/nhl_teams_data.csv")    
-        self.lines_df.to_csv("CSV/nhl_lines_data.csv") 
-        self.skaters_df.to_csv("CSV/nhl_skaters_data.csv") 
-        self.goalies_df.to_csv("CSV/nhl_goalies_data.csv") 
+        """Write CSVs only if they don't exist or weren't modified today"""
+        csv_dir = "CSV"
+        os.makedirs(csv_dir, exist_ok=True)
+        files = [
+            ("nhl_teams_data.csv", self.teams_df),
+            ("nhl_lines_data.csv", self.lines_df), 
+            ("nhl_skaters_data.csv", self.skaters_df),
+            ("nhl_goalies_data.csv", self.goalies_df)
+            ]
+        for filename, df in files:
+            filepath = os.path.join(csv_dir, filename)
+            if self._daily_write(filepath):
+                df.to_csv(filepath, index=False)
+                print(f"Modified {filename}")
+            else:
+                print(f"Skipped {filename} (already modified today)")
+            
 
     def dataFrameGenerator(self, suffix):
         full_url = self.url_base + suffix
