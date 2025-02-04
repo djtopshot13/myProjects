@@ -16,14 +16,14 @@ class AdvancedStats:
         self.skaters_df = self.dataFrameGenerator("skaters.csv")
         self.goalies_df = self.dataFrameGenerator("goalies.csv")
         self.lines_df = DataScrub.clean_data(self.lines_df)
-        self.best_teams_goals_for = self.teams_df.sort_values("goalsFor", ascending=False)
-        self.worst_teams_goals_for = reversed(self.best_teams_goals_for)
-        self.best_teams_exp_goals_for = self.teams_df.sort_values("xGoalsFor", ascending=False)
-        self.worst_teams_exp_goals_for = reversed(self.best_teams_exp_goals_for)
-        self.most_ice_time_lines = self.lines_df.sort_values('iceTimeRank', ascending=False)
+        # self.best_teams_goals_for = self.teams_df.sort_values("goalsFor", ascending=False)
+        # self.worst_teams_goals_for = reversed(self.best_teams_goals_for)
+        # self.best_teams_exp_goals_for = self.teams_df.sort_values("xGoalsFor", ascending=False)
+        # self.worst_teams_exp_goals_for = reversed(self.best_teams_exp_goals_for)
+        # self.most_ice_time_lines = self.lines_df.sort_values('iceTimeRank', ascending=False)
         self.worst_ice_time_lines = reversed(self.most_ice_time_lines)
-        self.best_teams_exp_goals_percentage = self.teams_df.sort_values("xGoalsPercentage", ascending=False)
-        self.worst_teams_exp_goals_percentage = reversed(self.best_teams_exp_goals_percentage)
+        # self.best_teams_exp_goals_percentage = self.teams_df.sort_values("xGoalsPercentage", ascending=False)
+        # self.worst_teams_exp_goals_percentage = reversed(self.best_teams_exp_goals_percentage)
         self.writeToCSV()
         self.main()
 
@@ -187,8 +187,8 @@ class AdvancedStats:
         self.bestTeamsOrdering("other", 10, "goalsFor")
 
 
-    def bestTeamsOrdering(self, situation, team_count, stat_name):
-        data_frame = self.teams_df.sort_values(stat_name, ascending=False)
+    def bestTeamsOrdering(self, situation, team_count, stat_name, isWorst=False):
+        data_frame = self.teams_df.sort_values(stat_name, ascending=isWorst)
         title = situation[0].upper() + situation[1:]
         print(f"Top {team_count} Teams {stat_name} in {title} Situations\n\n")
         count = 0
