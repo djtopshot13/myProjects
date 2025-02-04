@@ -3,8 +3,8 @@ from Utils import DataScrub
 league_object = League.createLeague()
 
 def main():
-    # league_object.printSeasonMatchupResults()
-    # print()
+    league_object.printSeasonMatchupResults()
+    print()
     # league_object.LeagueStandings() 
     # print()
     # league_object.DivisionStandings(1)
@@ -27,12 +27,12 @@ def main():
     # print()
     # league_object.leagueDraftPowerRankings()
     # print()
-    league_object.leagueCurrPowerRankings()
+    # league_object.leagueCurrPowerRankings()
+    # print()
+    league_object.streakReport(team="free_agents", min_threshold=1.4)
+    # print()
+    league_object.streakReport(team="Dillon's Dubs")
     print()
-    # league_object.streakReport(team="free_agents", pro_team=["MON", "OTT", "UTA", "COL", "TBL", "DAL"], min_threshold=1.4)
-    # print()
-    # league_object.streakReport(team="Dillon's Dubs")
-    # print()
     
     
 main()
