@@ -101,13 +101,13 @@ class AdvancedStats:
 
 
     def topIceTimeForwardLines(self):
-        self.topIceTimeLines("line", 25)
+        self.topIceTimeLines("line", 'iceTimeRank')
 
     def topIceTimeDefenseLines(self):
-        self.topIceTimeLines("pairing", 25)
+        self.topIceTimeLines("pairing", 'iceTimeRank')
 
-    def topIceTimeLines(self, position, line_count):
-        print(f"Top {line_count} {"Forwards" if position == "line" else "Defensemen"} with Most Ice Time\n\n")
+    def topIceTimeLines(self, position, line_stat, line_count=25, isWorst=False):
+        print(f"{"Bottom" if isWorst else "Top"} {line_count} {"Forwards" if position == "line" else "Defensemen"} with {'Worst' if isWorst else 'Best'} {line_stat} \n\n")
         count = 0
         rank = 0
         last_stat = float('inf')
@@ -116,28 +116,28 @@ class AdvancedStats:
                 if count == line_count:
                     print()
                     break
-                if row['iceTimeRank'] != last_stat:
+                if row[line_stat] != last_stat:
                     rank = count + 1
-                print(f"{rank}. {row['team']} {row['name']} {row['iceTimeRank']} iceTimeRank \n")
-                last_stat = row['iceTimeRank']
+                print(f"{rank}. {row['team']} {row['name']} {row[line_stat]} {line_stat} \n")
+                last_stat = row[line_stat]
                 count += 1
             else: 
                 continue
 
     def bestTeam5on5ExpGoalsForPercentage(self):
-        self.bestTeamsOrdering("5on5", 10, "xGoalsPercentage")
+        self.bestTeamsOrdering("5on5", "xGoalsPercentage")
 
     def bestTeam5on4ExpGoalsForPercentage(self):
-        self.bestTeamsOrdering("5on4", 10, "xGoalsPercentage")
+        self.bestTeamsOrdering("5on4", "xGoalsPercentage")
 
     def bestTeam4on5ExpGoalsForPercentage(self):
-        self.bestTeamsOrdering("4on5", 10, "xGoalsPercentage")
+        self.bestTeamsOrdering("4on5", "xGoalsPercentage")
 
     def bestTeamOtherExpGoalsForPercentage(self):
-        self.bestTeamsOrdering("other", 10, "xGoalsPercentage")
+        self.bestTeamsOrdering("other", "xGoalsPercentage")
 
     def bestTeamAllExpGoalsForPercentage(self):
-        self.bestTeamsOrdering("all", 10, "xGoalsPercentage")
+        self.bestTeamsOrdering("all", "xGoalsPercentage")
 
     # def bestTeamGoalsForPercentage(self, situation, team_count):
     #     # if situation != "other" and situation != "all":
@@ -157,40 +157,40 @@ class AdvancedStats:
                 # continue
 
     def bestTeam5on5ExpGoalsFor(self):
-        self.bestTeamsOrdering("5on5", 10, "xGoalsFor")
+        self.bestTeamsOrdering("5on5", "xGoalsFor")
 
     def bestTeam5on4ExpGoalsFor(self):
-        self.bestTeamsOrdering("5on4", 10, "xGoalsFor")
+        self.bestTeamsOrdering("5on4", "xGoalsFor")
 
     def bestTeam4on5ExpGoalsFor(self):
-        self.bestTeamsOrdering("4on5", 10, "xGoalsFor")
+        self.bestTeamsOrdering("4on5", "xGoalsFor")
 
     def bestTeamOtherExpGoalsFor(self):
-        self.bestTeamsOrdering("other", 10, "xGoalsFor")
+        self.bestTeamsOrdering("other", "xGoalsFor")
 
     def bestTeamAllExpGoalsFor(self):
-        self.bestTeamsOrdering("all", 10, "xGoalsFor")
+        self.bestTeamsOrdering("all", "xGoalsFor")
 
     def mostGoalsFor(self):
-        self.bestTeamsOrdering("all", 10, "goalsFor")
+        self.bestTeamsOrdering("all", "goalsFor")
 
     def most5on4GoalsFor(self):
-        self.bestTeamsOrdering("5on4", 10, "goalsFor")
+        self.bestTeamsOrdering("5on4", "goalsFor")
 
     def most5on5GoalsFor(self):
-        self.bestTeamsOrdering("5on5", 10, "goalsFor")
+        self.bestTeamsOrdering("5on5", "goalsFor")
 
     def most4on5GoalsFor(self):
-        self.bestTeamsOrdering("4on5", 10, "goalsFor")
+        self.bestTeamsOrdering("4on5", "goalsFor")
 
     def mostOtherGoalsFor(self):
-        self.bestTeamsOrdering("other", 10, "goalsFor")
+        self.bestTeamsOrdering("other", "goalsFor")
 
 
-    def bestTeamsOrdering(self, situation, team_count, stat_name, isWorst=False):
-        data_frame = self.teams_df.sort_values(stat_name, ascending=isWorst)
+    def bestTeamsOrdering(self, situation, team_stat, team_count=10, isWorst=False):
+        data_frame = self.teams_df.sort_values(team_stat, ascending=isWorst)
         title = situation[0].upper() + situation[1:]
-        print(f"Top {team_count} Teams {stat_name} in {title} Situations\n\n")
+        print(f"{"Bottom" if isWorst else "Top"} {team_count} Teams {team_stat} in {title} Situations\n\n")
         count = 0
         rank = 0
         last_stat = float('inf')
@@ -199,10 +199,10 @@ class AdvancedStats:
                 if count == team_count:
                     print()
                     break
-                if row[stat_name] != last_stat:
+                if row[team_stat] != last_stat:
                     rank = count + 1
-                print(f"{rank}. {row["name"]} {row[stat_name]} {stat_name}\n")
-                last_stat = row[stat_name]
+                print(f"{rank}. {row["name"]} {row[team_stat]} {team_stat}\n")
+                last_stat = row[team_stat]
                 count += 1
             else:
                 continue
