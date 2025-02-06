@@ -845,31 +845,6 @@
                         "birthCountry": "CZE"
                     },
                     {
-                        "id": 8483505,
-                        "headshot": "https://assets.nhle.com/mugs/nhl/20242025/BOS/8483505.png",
-                        "firstName": {
-                            "default": "Matthew"
-                        },
-                        "lastName": {
-                            "default": "Poitras"
-                        },
-                        "sweaterNumber": 51,
-                        "positionCode": "C",
-                        "shootsCatches": "R",
-                        "heightInInches": 71,
-                        "weightInPounds": 180,
-                        "heightInCentimeters": 180,
-                        "weightInKilograms": 82,
-                        "birthDate": "2004-03-10",
-                        "birthCity": {
-                            "default": "Whitby"
-                        },
-                        "birthCountry": "CAN",
-                        "birthStateProvince": {
-                            "default": "ON"
-                        }
-                    },
-                    {
                         "id": 8480789,
                         "headshot": "https://assets.nhle.com/mugs/nhl/20242025/BOS/8480789.png",
                         "firstName": {
@@ -918,31 +893,6 @@
                     }
                 ],
                 "defensemen": [
-                    {
-                        "id": 8480828,
-                        "headshot": "https://assets.nhle.com/mugs/nhl/20242025/BOS/8480828.png",
-                        "firstName": {
-                            "default": "Michael"
-                        },
-                        "lastName": {
-                            "default": "Callahan"
-                        },
-                        "sweaterNumber": 79,
-                        "positionCode": "D",
-                        "shootsCatches": "L",
-                        "heightInInches": 74,
-                        "weightInPounds": 199,
-                        "heightInCentimeters": 188,
-                        "weightInKilograms": 90,
-                        "birthDate": "1999-09-23",
-                        "birthCity": {
-                            "default": "Franklin"
-                        },
-                        "birthCountry": "USA",
-                        "birthStateProvince": {
-                            "default": "MA"
-                        }
-                    },
                     {
                         "id": 8478443,
                         "headshot": "https://assets.nhle.com/mugs/nhl/20242025/BOS/8478443.png",

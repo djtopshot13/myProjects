@@ -14,10 +14,21 @@ class ESPN:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
             }
         self.nhl_teams, self.nhl_clubhouse_links, self.nhl_roster_links, self.nhl_stats_links, self.nhl_schedules_links = self.load_teams()
-        self.diff_team_rosters()
-        self.diff_team_standings()
+        # self.get_nhl_teams()
+        self.get_nhl_team_rosters()
+        self.get_nhl_team_standings()
         # self.get_nhl_team_rosters()
         # self.get_nhl_team_standings()
+
+    def get_nhl_teams(self):
+        api_endpoint = self.base_url + "en/team"
+        response = requests.get(api_endpoint, headers=self.headers)
+        if response.status_code == 200:
+            data = response.json
+            with open("ESPNData/nhl_teams.json", "w") as f:
+                json.dump(data, f, indent=4)
+
+
 
     def load_teams(self):
         url = "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/teams"
@@ -109,7 +120,7 @@ class ESPN:
         # # Add a delay of 5 seconds between requests
         # time.sleep(5)
 
-        return roster_data
+        # return roster_data
     
     # def get_nhl_player_stats(self, player_link):
     #     response = requests.get(player_link, headers=self.headers, allow_redirects=True)
@@ -287,7 +298,7 @@ class ESPN:
         with open("ESPNData/nhl_team_standings.json", "w") as f:
             json.dump(standings_data, f, indent=4)
         
-    def diff_team_rosters(self):
+    def get_nhl_team_rosters(self):
         data = {"nhlRosters": []}
         for name, abbrev in self.constant_obj.pro_team_abbrev.items():
             api_endpoint = self.base_url + f"roster/{abbrev}/current"
