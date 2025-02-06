@@ -1,23 +1,32 @@
 import requests
 import json
 from bs4 import BeautifulSoup
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from Utils.Constants import Constants
 
 class ESPN:
     def __init__(self):
+        self.constant_obj = Constants()
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
             }
         self.nhl_teams, self.nhl_clubhouse_links, self.nhl_roster_links, self.nhl_stats_links, self.nhl_schedules_links = self.load_teams()
         self.get_nhl_team_rosters()
-        self.get_nhl_team_standings()
+        self.diff_team_standings()
+        # self.get_nhl_team_standings()
 
     def load_teams(self):
         url = "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/teams"
         response = requests.get(url)
         if response.status_code == 200:
             data = response.json()
+            for team_data in data["sports"][0]["leagues"][0]["teams"]:
+                if team_data["team"]["name"] in self.constant_obj.intl_teams:
+                    data["sports"][0]["leagues"][0]["teams"].remove(team_data)
 
-            with open("nhl_teams.json", "w") as f:
+            with open("ESPNData/nhl_teams.json", "w") as f:
                 json.dump(data, f, indent=4)
 
             teams = data['sports'][0]["leagues"][0]["teams"]
@@ -26,7 +35,7 @@ class ESPN:
         else:
             print(f"Error: Unable to fetch data. Status code: {response.status_code}")
 
-        with open("nhl_teams.json", "r") as f:
+        with open("ESPNData/nhl_teams.json", "r") as f:
             saved_data = json.load(f)
 
         teams = saved_data["sports"][0]["leagues"][0]["teams"]
@@ -125,6 +134,7 @@ class ESPN:
                 team_name = roster_url.split('/')[-1].replace('-', ' ').title()
                 if team_name == "St Louis Blues":
                     team_name = "St. Louis Blues"
+
                 all_rosters[team_name]["roster"] = []
                 
                 # Extract roster data using BeautifulSoup
@@ -150,7 +160,7 @@ class ESPN:
                 continue
 
         # Save all rosters to a single JSON file
-        with open("nhl_team_rosters.json", "w") as f:
+        with open("ESPNData/nhl_team_rosters.json", "w") as f:
             json.dump(all_rosters, f, indent=4)
 
         print("All rosters saved to nhl_team_rosters.json")
@@ -176,7 +186,7 @@ class ESPN:
             pac_conf, pac_name, pac_div = self.get_nhl_division_standings(standings_soup, "Western Conference", div_id=3)
             all_standings.update({pac_conf: {pac_name: pac_div}})
 
-            with open("nhl_team_standings.json", "w") as f:
+            with open("ESPNData/nhl_team_standings.json", "w") as f:
                 json.dump(all_standings, f, indent=4)
 
             print("All standings saved to nhl_team_standings.json")
@@ -242,6 +252,38 @@ class ESPN:
 
 
         return conf_abbrev, div_name, team_info
+
+    def diff_team_standings(self):
+        api_endpoint = "https://api-web.nhle.com/v1/standings/now"
+        response = requests.get(api_endpoint, headers=self.headers)
+        if response.status_code == 200:
+            data = response.json()
+            self.populate_team_standings(data)
+
+        
+    def populate_team_standings(self, standings_data):
+        min_ga_pct = ("", float('inf'))
+        
+        for standing in standings_data["standings"]:
+            del standing["l10Ties"], standing["roadTies"], standing['homeTies'], standing['ties']
+
+            standing["OtLosses"] = standing["otLosses"]
+            standing['goalsAgainst'] = standing['goalAgainst']
+            standing['goalsFor'] = standing['goalFor']
+            del standing["otLosses"], standing['goalAgainst'], standing['goalFor']
+            standing["OtWins"] = standing["regulationPlusOtWins"] - standing["regulationWins"]
+            standing["OtWinPctg"] = standing["OtWins"] / (standing["OtWins"] + standing["OtLosses"])
+            standing["shootoutWinPctg"] = standing["shootoutWins"] / (standing["shootoutWins"] + standing["shootoutLosses"]) if standing["shootoutWins"] != 0 and standing["shootoutLosses"] != 0 else 0
+            standing["roadPointPctg"] = (standing["roadWins"] * 2 + standing["roadOtLosses"]) / (standing['roadGamesPlayed'] * 2)
+            standing["homePointPctg"] = (standing["homeWins"] * 2 + standing["homeOtLosses"]) / (standing['homeGamesPlayed'] * 2)
+            standing['goalsAgainstPctg'] = standing['goalsAgainst'] / standing['gamesPlayed']
+
+            if standing["goalsAgainstPctg"] < min_ga_pct[1]:
+                min_ga_pct = (standing["teamName"]["default"], standing["goalsAgainstPctg"])
+        print(min_ga_pct)
+
+        with open("ESPNData/nhl_team_standings.json", "w") as f:
+            json.dump(standings_data, f, indent=4)
         
 
 ESPN_data = ESPN()

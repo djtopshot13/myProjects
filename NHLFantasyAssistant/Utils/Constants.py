@@ -1,5 +1,11 @@
 class Constants:
     def __init__(self):
+        self.intl_teams = [
+            "Canada",
+            "USA",
+            "Finland",
+            "Sweden"
+        ]
         self.team_abbrev = {
             "Luuky Pooky": "LUUK",
             "Dallin's Daring Team": "DDT",

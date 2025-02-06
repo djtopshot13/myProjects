@@ -1,5 +1,5 @@
 from MainObjects.League import League
-from Utils import DataScrub
+# from Utils import DataScrub
 league_object = League.createLeague()
 
 def main():

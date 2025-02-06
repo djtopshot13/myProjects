@@ -19,7 +19,7 @@
                 "id": "3114774",
                 "number": "13",
                 "position": "C",
-                "age": "28",
+                "age": "29",
                 "height": "5' 11\"",
                 "weight": "185 lbs",
                 "shot": "L",
@@ -58,26 +58,13 @@
                 "id": "4874718",
                 "number": "23",
                 "position": "C",
-                "age": "21",
+                "age": "22",
                 "height": "6' 1\"",
                 "weight": "219 lbs",
                 "shot": "L",
                 "birthplace": "Carp, CAN",
                 "birthdate": "01/30/03",
                 "href": "https://www.espn.com/nhl/player/_/id/4874718"
-            },
-            {
-                "name": "Nikita Nesterenko",
-                "id": "4755696",
-                "number": "62",
-                "position": "C",
-                "age": "23",
-                "height": "6' 2\"",
-                "weight": "183 lbs",
-                "shot": "L",
-                "birthplace": "Brooklyn, NY",
-                "birthdate": "09/10/01",
-                "href": "https://www.espn.com/nhl/player/_/id/4755696"
             },
             {
                 "name": "Ryan Strome",
@@ -110,7 +97,7 @@
                 "id": "5080145",
                 "number": "61",
                 "position": "LW",
-                "age": "20",
+                "age": "21",
                 "height": "6' 2\"",
                 "weight": "201 lbs",
                 "shot": "L",
@@ -149,26 +136,13 @@
                 "id": "3067868",
                 "number": "26",
                 "position": "LW",
-                "age": "30",
+                "age": "31",
                 "height": "6' 0\"",
                 "weight": "191 lbs",
                 "shot": "L",
                 "birthplace": "Fergus, CAN",
                 "birthdate": "02/02/94",
                 "href": "https://www.espn.com/nhl/player/_/id/3067868"
-            },
-            {
-                "name": "Sam Colangelo",
-                "id": "4697441",
-                "number": "64",
-                "position": "RW",
-                "age": "23",
-                "height": "6' 2\"",
-                "weight": "211 lbs",
-                "shot": "R",
-                "birthplace": "Stoneham, MA",
-                "birthdate": "12/26/01",
-                "href": "https://www.espn.com/nhl/player/_/id/4697441"
             },
             {
                 "name": "Brett Leason",
@@ -409,19 +383,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4587985"
             },
             {
-                "name": "Vinni Lettieri",
-                "id": "3095892",
-                "number": "95",
-                "position": "C",
-                "age": "29",
-                "height": "5' 10\"",
-                "weight": "184 lbs",
-                "shot": "R",
-                "birthplace": "Excelsior, MN",
-                "birthdate": "02/06/95",
-                "href": "https://www.espn.com/nhl/player/_/id/3095892"
-            },
-            {
                 "name": "Elias Lindholm",
                 "id": "3041994",
                 "number": "28",
@@ -504,7 +465,7 @@
                 "id": "4063605",
                 "number": "55",
                 "position": "RW",
-                "age": "26",
+                "age": "27",
                 "height": "6' 6\"",
                 "weight": "227 lbs",
                 "shot": "R",
@@ -517,7 +478,7 @@
                 "id": "4874738",
                 "number": "23",
                 "position": "RW",
-                "age": "21",
+                "age": "22",
                 "height": "5' 10\"",
                 "weight": "172 lbs",
                 "shot": "R",
@@ -582,7 +543,7 @@
                 "id": "2968818",
                 "number": "27",
                 "position": "D",
-                "age": "30",
+                "age": "31",
                 "height": "6' 4\"",
                 "weight": "224 lbs",
                 "shot": "L",
@@ -729,7 +690,7 @@
                 "id": "4565238",
                 "number": "19",
                 "position": "C",
-                "age": "23",
+                "age": "24",
                 "height": "6' 0\"",
                 "weight": "187 lbs",
                 "shot": "L",
@@ -833,7 +794,7 @@
                 "id": "4063240",
                 "number": "29",
                 "position": "LW",
-                "age": "26",
+                "age": "27",
                 "height": "6' 3\"",
                 "weight": "200 lbs",
                 "shot": "L",
@@ -853,19 +814,6 @@
                 "birthplace": "Newport Beach, CA",
                 "birthdate": "01/16/92",
                 "href": "https://www.espn.com/nhl/player/_/id/2593315"
-            },
-            {
-                "name": "Nicolas Aube-Kubel",
-                "id": "3115014",
-                "number": "96",
-                "position": "RW",
-                "age": "28",
-                "height": "6' 0\"",
-                "weight": "207 lbs",
-                "shot": "R",
-                "birthplace": "Slave Lake, CAN",
-                "birthdate": "05/10/96",
-                "href": "https://www.espn.com/nhl/player/_/id/3115014"
             },
             {
                 "name": "JJ Peterka",
@@ -892,6 +840,19 @@
                 "birthplace": "Ottawa, CAN",
                 "birthdate": "09/19/01",
                 "href": "https://www.espn.com/nhl/player/_/id/4697389"
+            },
+            {
+                "name": "Isak Rosen",
+                "id": "4874731",
+                "number": "63",
+                "position": "RW",
+                "age": "21",
+                "height": "5' 11\"",
+                "weight": "156 lbs",
+                "shot": "L",
+                "birthplace": "Stockholm, Sweden",
+                "birthdate": "03/15/03",
+                "href": "https://www.espn.com/nhl/player/_/id/4874731"
             },
             {
                 "name": "Lukas Rousek",
@@ -1037,19 +998,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4378656"
             },
             {
-                "name": "Devon Levi",
-                "id": "4894487",
-                "number": "27",
-                "position": "G",
-                "age": "23",
-                "height": "6' 0\"",
-                "weight": "192 lbs",
-                "shot": "L",
-                "birthplace": "Montreal, CAN",
-                "birthdate": "12/27/01",
-                "href": "https://www.espn.com/nhl/player/_/id/4894487"
-            },
-            {
                 "name": "Ukko-Pekka Luukkonen",
                 "id": "4233889",
                 "number": "1",
@@ -1074,6 +1022,19 @@
                 "birthplace": "Morweena, CAN",
                 "birthdate": "03/15/88",
                 "href": "https://www.espn.com/nhl/player/_/id/3870"
+            },
+            {
+                "name": "Felix Sandstrom",
+                "id": "4587820",
+                "number": "32",
+                "position": "G",
+                "age": "28",
+                "height": "6' 2\"",
+                "weight": "211 lbs",
+                "shot": "L",
+                "birthplace": "Gavle, Sweden",
+                "birthdate": "01/12/97",
+                "href": "https://www.espn.com/nhl/player/_/id/4587820"
             }
         ]
     },
@@ -1093,6 +1054,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3797"
             },
             {
+                "name": "Clark Bishop",
+                "id": "3149716",
+                "number": "61",
+                "position": "C",
+                "age": "28",
+                "height": "6' 1\"",
+                "weight": "199 lbs",
+                "shot": "L",
+                "birthplace": "St. John's, CAN",
+                "birthdate": "03/29/96",
+                "href": "https://www.espn.com/nhl/player/_/id/3149716"
+            },
+            {
                 "name": "Blake Coleman",
                 "id": "2563026",
                 "number": "20",
@@ -1104,6 +1078,19 @@
                 "birthplace": "Plano, TX",
                 "birthdate": "11/28/91",
                 "href": "https://www.espn.com/nhl/player/_/id/2563026"
+            },
+            {
+                "name": "Morgan Frost",
+                "id": "4233685",
+                "number": "48",
+                "position": "C",
+                "age": "25",
+                "height": "6' 0\"",
+                "weight": "193 lbs",
+                "shot": "L",
+                "birthplace": "Aurora, CAN",
+                "birthdate": "05/14/99",
+                "href": "https://www.espn.com/nhl/player/_/id/4233685"
             },
             {
                 "name": "Jonathan Huberdeau",
@@ -1130,32 +1117,6 @@
                 "birthplace": "London, CAN",
                 "birthdate": "10/06/90",
                 "href": "https://www.espn.com/nhl/player/_/id/5349"
-            },
-            {
-                "name": "Rory Kerins",
-                "id": "4697718",
-                "number": "86",
-                "position": "C",
-                "age": "22",
-                "height": "5' 10\"",
-                "weight": "174 lbs",
-                "shot": "L",
-                "birthplace": "Caledon, CAN",
-                "birthdate": "04/12/02",
-                "href": "https://www.espn.com/nhl/player/_/id/4697718"
-            },
-            {
-                "name": "Jakob Pelletier",
-                "id": "4565247",
-                "number": "22",
-                "position": "C",
-                "age": "23",
-                "height": "5' 9\"",
-                "weight": "170 lbs",
-                "shot": "L",
-                "birthplace": "Quebec City, CAN",
-                "birthdate": "03/07/01",
-                "href": "https://www.espn.com/nhl/player/_/id/4565247"
             },
             {
                 "name": "Martin Pospisil",
@@ -1210,6 +1171,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4697407"
             },
             {
+                "name": "Joel Farabee",
+                "id": "4352750",
+                "number": "86",
+                "position": "LW",
+                "age": "24",
+                "height": "6' 0\"",
+                "weight": "186 lbs",
+                "shot": "L",
+                "birthplace": "Syracuse, NY",
+                "birthdate": "02/25/00",
+                "href": "https://www.espn.com/nhl/player/_/id/4352750"
+            },
+            {
                 "name": "Dryden Hunt",
                 "id": "4063377",
                 "number": "15",
@@ -1221,19 +1195,6 @@
                 "birthplace": "Cranbrook, CAN",
                 "birthdate": "11/24/95",
                 "href": "https://www.espn.com/nhl/player/_/id/4063377"
-            },
-            {
-                "name": "Andrei Kuzmenko",
-                "id": "5077308",
-                "number": "96",
-                "position": "LW",
-                "age": "28",
-                "height": "5' 11\"",
-                "weight": "194 lbs",
-                "shot": "R",
-                "birthplace": "Yakutsk, Russia",
-                "birthdate": "02/04/96",
-                "href": "https://www.espn.com/nhl/player/_/id/5077308"
             },
             {
                 "name": "Ryan Lomberg",
@@ -1262,17 +1223,17 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4874730"
             },
             {
-                "name": "Walker Duehr",
-                "id": "4319940",
-                "number": "71",
+                "name": "Adam Klapka",
+                "id": "5073306",
+                "number": "43",
                 "position": "RW",
-                "age": "27",
-                "height": "6' 2\"",
-                "weight": "210 lbs",
+                "age": "24",
+                "height": "6' 7\"",
+                "weight": "245 lbs",
                 "shot": "R",
-                "birthplace": "Sioux Falls, SD",
-                "birthdate": "11/23/97",
-                "href": "https://www.espn.com/nhl/player/_/id/4319940"
+                "birthplace": "Prague, Czechia",
+                "birthdate": "09/14/00",
+                "href": "https://www.espn.com/nhl/player/_/id/5073306"
             },
             {
                 "name": "Anthony Mantha",
@@ -1379,6 +1340,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4392769"
             },
             {
+                "name": "Ilya Solovyov",
+                "id": "4697784",
+                "number": "98",
+                "position": "D",
+                "age": "24",
+                "height": "6' 3\"",
+                "weight": "208 lbs",
+                "shot": "L",
+                "birthplace": "Mogilev, Belarus",
+                "birthdate": "07/20/00",
+                "href": "https://www.espn.com/nhl/player/_/id/4697784"
+            },
+            {
                 "name": "MacKenzie Weegar",
                 "id": "3042269",
                 "number": "52",
@@ -1426,7 +1400,7 @@
                 "height": "6' 0\"",
                 "weight": "156 lbs",
                 "shot": "L",
-                "birthplace": "Tustin, CA",
+                "birthplace": "Gilroy, CA",
                 "birthdate": "04/16/01",
                 "href": "https://www.espn.com/nhl/player/_/id/4587952"
             }
@@ -1448,24 +1422,11 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3904173"
             },
             {
-                "name": "Jack Drury",
-                "id": "4378671",
-                "number": "18",
-                "position": "C",
-                "age": "24",
-                "height": "5' 11\"",
-                "weight": "174 lbs",
-                "shot": "R",
-                "birthplace": "New York, NY",
-                "birthdate": "02/03/00",
-                "href": "https://www.espn.com/nhl/player/_/id/4378671"
-            },
-            {
                 "name": "Seth Jarvis",
                 "id": "4697396",
                 "number": "24",
                 "position": "C",
-                "age": "22",
+                "age": "23",
                 "height": "5' 10\"",
                 "weight": "175 lbs",
                 "shot": "R",
@@ -1500,24 +1461,11 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4352692"
             },
             {
-                "name": "Martin Necas",
-                "id": "4233586",
-                "number": "88",
-                "position": "C",
-                "age": "26",
-                "height": "6' 2\"",
-                "weight": "189 lbs",
-                "shot": "R",
-                "birthplace": "Nove Mesto na Morave, Czechia",
-                "birthdate": "01/15/99",
-                "href": "https://www.espn.com/nhl/player/_/id/4233586"
-            },
-            {
                 "name": "Jack Roslovic",
                 "id": "3904098",
-                "number": "96",
+                "number": "98",
                 "position": "C",
-                "age": "27",
+                "age": "28",
                 "height": "6' 1\"",
                 "weight": "198 lbs",
                 "shot": "R",
@@ -1550,6 +1498,19 @@
                 "birthplace": "La Salle, CAN",
                 "birthdate": "12/20/94",
                 "href": "https://www.espn.com/nhl/player/_/id/3042054"
+            },
+            {
+                "name": "Taylor Hall",
+                "id": "5428",
+                "number": "71",
+                "position": "LW",
+                "age": "33",
+                "height": "6' 1\"",
+                "weight": "210 lbs",
+                "shot": "L",
+                "birthplace": "Calgary, CAN",
+                "birthdate": "11/14/91",
+                "href": "https://www.espn.com/nhl/player/_/id/5428"
             },
             {
                 "name": "Juha Jaaska",
@@ -1617,6 +1578,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/2590847"
             },
             {
+                "name": "Mikko Rantanen",
+                "id": "3899938",
+                "number": "96",
+                "position": "RW",
+                "age": "28",
+                "height": "6' 4\"",
+                "weight": "215 lbs",
+                "shot": "L",
+                "birthplace": "Nousiainen, Finland",
+                "birthdate": "10/29/96",
+                "href": "https://www.espn.com/nhl/player/_/id/3899938"
+            },
+            {
                 "name": "Andrei Svechnikov",
                 "id": "4352683",
                 "number": "37",
@@ -1669,6 +1643,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3025662"
             },
             {
+                "name": "Scott Morrow",
+                "id": "4874882",
+                "number": "56",
+                "position": "D",
+                "age": "23",
+                "height": "6' 2\"",
+                "weight": "192 lbs",
+                "shot": "R",
+                "birthplace": "Darien, CT",
+                "birthdate": "01/01/02",
+                "href": "https://www.espn.com/nhl/player/_/id/4874882"
+            },
+            {
                 "name": "Dmitry Orlov",
                 "id": "5646",
                 "number": "7",
@@ -1693,19 +1680,6 @@
                 "birthplace": "Denver, CO",
                 "birthdate": "05/01/94",
                 "href": "https://www.espn.com/nhl/player/_/id/3069836"
-            },
-            {
-                "name": "Ty Smith",
-                "id": "4352757",
-                "number": "42",
-                "position": "D",
-                "age": "24",
-                "height": "5' 11\"",
-                "weight": "175 lbs",
-                "shot": "L",
-                "birthplace": "Lloydminster, CAN",
-                "birthdate": "03/24/00",
-                "href": "https://www.espn.com/nhl/player/_/id/4352757"
             },
             {
                 "name": "Sean Walker",
@@ -1881,19 +1855,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3535"
             },
             {
-                "name": "Taylor Hall",
-                "id": "5428",
-                "number": "71",
-                "position": "LW",
-                "age": "33",
-                "height": "6' 1\"",
-                "weight": "210 lbs",
-                "shot": "L",
-                "birthplace": "Calgary, CAN",
-                "birthdate": "11/14/91",
-                "href": "https://www.espn.com/nhl/player/_/id/5428"
-            },
-            {
                 "name": "Pat Maroon",
                 "id": "3853",
                 "number": "77",
@@ -1998,6 +1959,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4697681"
             },
             {
+                "name": "Ethan Del Mastro",
+                "id": "4894726",
+                "number": "38",
+                "position": "D",
+                "age": "22",
+                "height": "6' 4\"",
+                "weight": "210 lbs",
+                "shot": "L",
+                "birthplace": "--",
+                "birthdate": "01/15/03",
+                "href": "https://www.espn.com/nhl/player/_/id/4894726"
+            },
+            {
                 "name": "Seth Jones",
                 "id": "3041992",
                 "number": "4",
@@ -2009,19 +1983,6 @@
                 "birthplace": "Arlington, TX",
                 "birthdate": "10/03/94",
                 "href": "https://www.espn.com/nhl/player/_/id/3041992"
-            },
-            {
-                "name": "Wyatt Kaiser",
-                "id": "4697717",
-                "number": "44",
-                "position": "D",
-                "age": "22",
-                "height": "6' 0\"",
-                "weight": "173 lbs",
-                "shot": "L",
-                "birthplace": "Andover, MN",
-                "birthdate": "07/31/02",
-                "href": "https://www.espn.com/nhl/player/_/id/4697717"
             },
             {
                 "name": "Dmitry Kuzmin",
@@ -2158,6 +2119,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/5242077"
             },
             {
+                "name": "Jack Drury",
+                "id": "4378671",
+                "number": "18",
+                "position": "C",
+                "age": "25",
+                "height": "5' 11\"",
+                "weight": "174 lbs",
+                "shot": "R",
+                "birthplace": "New York, NY",
+                "birthdate": "02/03/00",
+                "href": "https://www.espn.com/nhl/player/_/id/4378671"
+            },
+            {
                 "name": "Parker Kelly",
                 "id": "4392309",
                 "number": "17",
@@ -2188,7 +2162,7 @@
                 "id": "3020618",
                 "number": "21",
                 "position": "C",
-                "age": "34",
+                "age": "35",
                 "height": "6' 0\"",
                 "weight": "196 lbs",
                 "shot": "R",
@@ -2210,11 +2184,24 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4233575"
             },
             {
+                "name": "Martin Necas",
+                "id": "4233586",
+                "number": "88",
+                "position": "C",
+                "age": "26",
+                "height": "6' 2\"",
+                "weight": "189 lbs",
+                "shot": "R",
+                "birthplace": "Nove Mesto na Morave, Czechia",
+                "birthdate": "01/15/99",
+                "href": "https://www.espn.com/nhl/player/_/id/4233586"
+            },
+            {
                 "name": "Juuso Parssinen",
                 "id": "4867883",
                 "number": "16",
                 "position": "C",
-                "age": "23",
+                "age": "24",
                 "height": "6' 3\"",
                 "weight": "212 lbs",
                 "shot": "L",
@@ -2286,19 +2273,6 @@
                 "birthplace": "Pembroke, CAN",
                 "birthdate": "08/05/98",
                 "href": "https://www.espn.com/nhl/player/_/id/4588182"
-            },
-            {
-                "name": "Jere Innala",
-                "id": "5229169",
-                "number": "22",
-                "position": "LW",
-                "age": "26",
-                "height": "5' 9\"",
-                "weight": "183 lbs",
-                "shot": "L",
-                "birthplace": "Heinola, Finland",
-                "birthdate": "03/17/98",
-                "href": "https://www.espn.com/nhl/player/_/id/5229169"
             },
             {
                 "name": "Joel Kiviranta",
@@ -2390,19 +2364,6 @@
                 "birthplace": "Stockholm, Sweden",
                 "birthdate": "11/10/02",
                 "href": "https://www.espn.com/nhl/player/_/id/4874745"
-            },
-            {
-                "name": "Mikko Rantanen",
-                "id": "3899938",
-                "number": "96",
-                "position": "RW",
-                "age": "28",
-                "height": "6' 4\"",
-                "weight": "215 lbs",
-                "shot": "L",
-                "birthplace": "Nousiainen, Finland",
-                "birthdate": "10/29/96",
-                "href": "https://www.espn.com/nhl/player/_/id/3899938"
             },
             {
                 "name": "Givani Smith",
@@ -2574,6 +2535,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4588204"
             },
             {
+                "name": "Trent Miner",
+                "id": "4587836",
+                "number": "50",
+                "position": "G",
+                "age": "24",
+                "height": "6' 1\"",
+                "weight": "185 lbs",
+                "shot": "L",
+                "birthplace": "Souris, CAN",
+                "birthdate": "02/05/01",
+                "href": "https://www.espn.com/nhl/player/_/id/4587836"
+            },
+            {
                 "name": "Scott Wedgewood",
                 "id": "5622",
                 "number": "41",
@@ -2660,7 +2634,7 @@
                 "id": "2564154",
                 "number": "7",
                 "position": "C",
-                "age": "31",
+                "age": "32",
                 "height": "6' 2\"",
                 "weight": "215 lbs",
                 "shot": "L",
@@ -2673,7 +2647,7 @@
                 "id": "5216859",
                 "number": "28",
                 "position": "C",
-                "age": "18",
+                "age": "19",
                 "height": "6' 3\"",
                 "weight": "213 lbs",
                 "shot": "L",
@@ -2764,7 +2738,7 @@
                 "id": "4697404",
                 "number": "59",
                 "position": "RW",
-                "age": "23",
+                "age": "24",
                 "height": "6' 1\"",
                 "weight": "201 lbs",
                 "shot": "L",
@@ -3024,6 +2998,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/5161"
             },
             {
+                "name": "Mikael Granlund",
+                "id": "5831",
+                "number": "64",
+                "position": "C",
+                "age": "32",
+                "height": "5' 10\"",
+                "weight": "185 lbs",
+                "shot": "L",
+                "birthplace": "Oulu, Finland",
+                "birthdate": "02/26/92",
+                "href": "https://www.espn.com/nhl/player/_/id/5831"
+            },
+            {
                 "name": "Roope Hintz",
                 "id": "3904183",
                 "number": "24",
@@ -3035,19 +3022,6 @@
                 "birthplace": "Tampere, Finland",
                 "birthdate": "11/17/96",
                 "href": "https://www.espn.com/nhl/player/_/id/3904183"
-            },
-            {
-                "name": "Justin Hryckowian",
-                "id": "5229176",
-                "number": "49",
-                "position": "C",
-                "age": "23",
-                "height": "5' 10\"",
-                "weight": "194 lbs",
-                "shot": "L",
-                "birthplace": "Laval, CAN",
-                "birthdate": "02/23/01",
-                "href": "https://www.espn.com/nhl/player/_/id/5229176"
             },
             {
                 "name": "Wyatt Johnston",
@@ -3067,7 +3041,7 @@
                 "id": "5430",
                 "number": "91",
                 "position": "C",
-                "age": "32",
+                "age": "33",
                 "height": "6' 2\"",
                 "weight": "201 lbs",
                 "shot": "R",
@@ -3093,7 +3067,7 @@
                 "id": "4024998",
                 "number": "18",
                 "position": "C",
-                "age": "26",
+                "age": "27",
                 "height": "6' 0\"",
                 "weight": "189 lbs",
                 "shot": "L",
@@ -3141,19 +3115,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4233875"
             },
             {
-                "name": "Matej Blumel",
-                "id": "5075578",
-                "number": "25",
-                "position": "RW",
-                "age": "24",
-                "height": "6' 0\"",
-                "weight": "200 lbs",
-                "shot": "L",
-                "birthplace": "Tabor, Czechia",
-                "birthdate": "05/31/00",
-                "href": "https://www.espn.com/nhl/player/_/id/5075578"
-            },
-            {
                 "name": "Evgenii Dadonov",
                 "id": "4969",
                 "number": "63",
@@ -3165,6 +3126,32 @@
                 "birthplace": "Chelyabinsk, Russia",
                 "birthdate": "03/12/89",
                 "href": "https://www.espn.com/nhl/player/_/id/4969"
+            },
+            {
+                "name": "Lian Bichsel",
+                "id": "5080162",
+                "number": "6",
+                "position": "D",
+                "age": "20",
+                "height": "6' 6\"",
+                "weight": "225 lbs",
+                "shot": "L",
+                "birthplace": "Olten, Switzerland",
+                "birthdate": "05/18/04",
+                "href": "https://www.espn.com/nhl/player/_/id/5080162"
+            },
+            {
+                "name": "Cody Ceci",
+                "id": "2976843",
+                "number": "4",
+                "position": "D",
+                "age": "31",
+                "height": "6' 3\"",
+                "weight": "210 lbs",
+                "shot": "R",
+                "birthplace": "Ottawa, CAN",
+                "birthdate": "12/21/93",
+                "href": "https://www.espn.com/nhl/player/_/id/2976843"
             },
             {
                 "name": "Matt Dumba",
@@ -3392,6 +3379,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4697385"
             },
             {
+                "name": "Elmer Soderblom",
+                "id": "5075840",
+                "number": "85",
+                "position": "LW",
+                "age": "23",
+                "height": "6' 8\"",
+                "weight": "246 lbs",
+                "shot": "L",
+                "birthplace": "Gothenburg, Sweden",
+                "birthdate": "07/05/01",
+                "href": "https://www.espn.com/nhl/player/_/id/5075840"
+            },
+            {
                 "name": "Jonatan Berggren",
                 "id": "4378660",
                 "number": "48",
@@ -3444,6 +3444,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3735"
             },
             {
+                "name": "Dominik Shine",
+                "id": "4272081",
+                "number": "50",
+                "position": "RW",
+                "age": "31",
+                "height": "5' 11\"",
+                "weight": "180 lbs",
+                "shot": "R",
+                "birthplace": "Pinckney, MI",
+                "birthdate": "04/18/93",
+                "href": "https://www.espn.com/nhl/player/_/id/4272081"
+            },
+            {
                 "name": "Vladimir Tarasenko",
                 "id": "5837",
                 "number": "11",
@@ -3474,7 +3487,7 @@
                 "id": "4874720",
                 "number": "77",
                 "position": "D",
-                "age": "21",
+                "age": "22",
                 "height": "6' 4\"",
                 "weight": "198 lbs",
                 "shot": "L",
@@ -3500,7 +3513,7 @@
                 "id": "5763",
                 "number": "3",
                 "position": "D",
-                "age": "32",
+                "age": "33",
                 "height": "6' 4\"",
                 "weight": "194 lbs",
                 "shot": "R",
@@ -3559,19 +3572,6 @@
                 "birthplace": "Zell, Germany",
                 "birthdate": "04/06/01",
                 "href": "https://www.espn.com/nhl/player/_/id/4565227"
-            },
-            {
-                "name": "Ville Husso",
-                "id": "3151137",
-                "number": "35",
-                "position": "G",
-                "age": "29",
-                "height": "6' 3\"",
-                "weight": "205 lbs",
-                "shot": "L",
-                "birthplace": "Helsinki, Finland",
-                "birthdate": "02/06/95",
-                "href": "https://www.espn.com/nhl/player/_/id/3151137"
             },
             {
                 "name": "Alex Lyon",
@@ -3680,19 +3680,6 @@
                 "birthplace": "Canmore, CAN",
                 "birthdate": "08/31/98",
                 "href": "https://www.espn.com/nhl/player/_/id/5103537"
-            },
-            {
-                "name": "Derek Ryan",
-                "id": "3902133",
-                "number": "10",
-                "position": "C",
-                "age": "38",
-                "height": "5' 10\"",
-                "weight": "185 lbs",
-                "shot": "R",
-                "birthplace": "Spokane, WA",
-                "birthdate": "12/29/86",
-                "href": "https://www.espn.com/nhl/player/_/id/3902133"
             },
             {
                 "name": "Jeff Skinner",
@@ -3825,19 +3812,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4352722"
             },
             {
-                "name": "Joshua Brown",
-                "id": "3042228",
-                "number": "44",
-                "position": "D",
-                "age": "30",
-                "height": "6' 5\"",
-                "weight": "220 lbs",
-                "shot": "R",
-                "birthplace": "London, CAN",
-                "birthdate": "01/21/94",
-                "href": "https://www.espn.com/nhl/player/_/id/3042228"
-            },
-            {
                 "name": "Mattias Ekholm",
                 "id": "2558631",
                 "number": "14",
@@ -3866,7 +3840,7 @@
             {
                 "name": "John Klingberg",
                 "id": "2590751",
-                "number": "",
+                "number": "36",
                 "position": "D",
                 "age": "32",
                 "height": "6' 2\"",
@@ -3894,7 +3868,7 @@
                 "id": "3041997",
                 "number": "25",
                 "position": "D",
-                "age": "29",
+                "age": "30",
                 "height": "6' 4\"",
                 "weight": "215 lbs",
                 "shot": "L",
@@ -4167,32 +4141,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/5142461"
             },
             {
-                "name": "Tobias Bjornfot",
-                "id": "4565243",
-                "number": "2",
-                "position": "D",
-                "age": "23",
-                "height": "6' 1\"",
-                "weight": "200 lbs",
-                "shot": "L",
-                "birthplace": "Upplands Vasby, Sweden",
-                "birthdate": "04/06/01",
-                "href": "https://www.espn.com/nhl/player/_/id/4565243"
-            },
-            {
-                "name": "Adam Boqvist",
-                "id": "4352706",
-                "number": "34",
-                "position": "D",
-                "age": "24",
-                "height": "6' 0\"",
-                "weight": "189 lbs",
-                "shot": "R",
-                "birthplace": "Falun, Sweden",
-                "birthdate": "08/15/00",
-                "href": "https://www.espn.com/nhl/player/_/id/4352706"
-            },
-            {
                 "name": "Aaron Ekblad",
                 "id": "3114717",
                 "number": "5",
@@ -4299,19 +4247,6 @@
                 "birthplace": "Victoriaville, CAN",
                 "birthdate": "02/24/93",
                 "href": "https://www.espn.com/nhl/player/_/id/2562602"
-            },
-            {
-                "name": "Samuel Helenius",
-                "id": "4874923",
-                "number": "79",
-                "position": "C",
-                "age": "22",
-                "height": "6' 6\"",
-                "weight": "201 lbs",
-                "shot": "L",
-                "birthplace": "Jarvenpaa, Finland",
-                "birthdate": "11/26/02",
-                "href": "https://www.espn.com/nhl/player/_/id/4874923"
             },
             {
                 "name": "Anze Kopitar",
@@ -4526,7 +4461,7 @@
                 "id": "3114997",
                 "number": "5",
                 "position": "D",
-                "age": "28",
+                "age": "29",
                 "height": "6' 4\"",
                 "weight": "200 lbs",
                 "shot": "L",
@@ -4647,7 +4582,7 @@
                 "id": "3904091",
                 "number": "14",
                 "position": "C",
-                "age": "27",
+                "age": "28",
                 "height": "6' 3\"",
                 "weight": "210 lbs",
                 "shot": "L",
@@ -4669,17 +4604,17 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3149649"
             },
             {
-                "name": "Brendan Gaunce",
-                "id": "2976854",
-                "number": "21",
+                "name": "Vinnie Hinostroza",
+                "id": "3069613",
+                "number": "18",
                 "position": "C",
                 "age": "30",
-                "height": "6' 2\"",
-                "weight": "207 lbs",
-                "shot": "L",
-                "birthplace": "Sudbury, CAN",
-                "birthdate": "03/25/94",
-                "href": "https://www.espn.com/nhl/player/_/id/2976854"
+                "height": "5' 9\"",
+                "weight": "173 lbs",
+                "shot": "R",
+                "birthplace": "Chicago, IL",
+                "birthdate": "04/03/94",
+                "href": "https://www.espn.com/nhl/player/_/id/3069613"
             },
             {
                 "name": "Marat Khusnutdinov",
@@ -4803,7 +4738,7 @@
                 "id": "5080163",
                 "number": "28",
                 "position": "LW",
-                "age": "20",
+                "age": "21",
                 "height": "6' 0\"",
                 "weight": "202 lbs",
                 "shot": "L",
@@ -4946,7 +4881,7 @@
                 "id": "3059403",
                 "number": "4",
                 "position": "D",
-                "age": "32",
+                "age": "33",
                 "height": "6' 3\"",
                 "weight": "201 lbs",
                 "shot": "L",
@@ -4979,19 +4914,6 @@
                 "birthplace": "Edmonton, CAN",
                 "birthdate": "11/29/89",
                 "href": "https://www.espn.com/nhl/player/_/id/5079"
-            },
-            {
-                "name": "Dylan Ferguson",
-                "id": "4271213",
-                "number": "34",
-                "position": "G",
-                "age": "26",
-                "height": "6' 1\"",
-                "weight": "189 lbs",
-                "shot": "L",
-                "birthplace": "Nanaimo, CAN",
-                "birthdate": "09/20/98",
-                "href": "https://www.espn.com/nhl/player/_/id/4271213"
             },
             {
                 "name": "Marc-Andre Fleury",
@@ -5037,11 +4959,24 @@
     "Montreal Canadiens": {
         "roster": [
             {
+                "name": "Owen Beck",
+                "id": "5080202",
+                "number": "62",
+                "position": "C",
+                "age": "21",
+                "height": "5' 11\"",
+                "weight": "187 lbs",
+                "shot": "R",
+                "birthplace": "Port Hope, CAN",
+                "birthdate": "02/03/04",
+                "href": "https://www.espn.com/nhl/player/_/id/5080202"
+            },
+            {
                 "name": "Kirby Dach",
                 "id": "4565224",
                 "number": "77",
                 "position": "C",
-                "age": "23",
+                "age": "24",
                 "height": "6' 4\"",
                 "weight": "217 lbs",
                 "shot": "R",
@@ -5054,7 +4989,7 @@
                 "id": "3115035",
                 "number": "28",
                 "position": "C",
-                "age": "28",
+                "age": "29",
                 "height": "6' 1\"",
                 "weight": "192 lbs",
                 "shot": "L",
@@ -5080,7 +5015,7 @@
                 "id": "4565237",
                 "number": "15",
                 "position": "C",
-                "age": "23",
+                "age": "24",
                 "height": "5' 11\"",
                 "weight": "199 lbs",
                 "shot": "L",
@@ -5284,6 +5219,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4233874"
             },
             {
+                "name": "Logan Mailloux",
+                "id": "4874748",
+                "number": "24",
+                "position": "D",
+                "age": "21",
+                "height": "6' 3\"",
+                "weight": "212 lbs",
+                "shot": "R",
+                "birthplace": "Belle River, CAN",
+                "birthdate": "04/15/03",
+                "href": "https://www.espn.com/nhl/player/_/id/4874748"
+            },
+            {
                 "name": "Mike Matheson",
                 "id": "2976851",
                 "number": "8",
@@ -5340,7 +5288,7 @@
                 "id": "4893969",
                 "number": "72",
                 "position": "D",
-                "age": "23",
+                "age": "24",
                 "height": "6' 4\"",
                 "weight": "240 lbs",
                 "shot": "L",
@@ -5391,19 +5339,6 @@
     },
     "Nashville Predators": {
         "roster": [
-            {
-                "name": "Vinnie Hinostroza",
-                "id": "3069613",
-                "number": "12",
-                "position": "C",
-                "age": "30",
-                "height": "5' 9\"",
-                "weight": "173 lbs",
-                "shot": "R",
-                "birthplace": "Chicago, IL",
-                "birthdate": "04/03/94",
-                "href": "https://www.espn.com/nhl/player/_/id/3069613"
-            },
             {
                 "name": "Michael McCarron",
                 "id": "3042048",
@@ -5496,19 +5431,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4874736"
             },
             {
-                "name": "Kieffer Bellows",
-                "id": "4024971",
-                "number": "26",
-                "position": "LW",
-                "age": "26",
-                "height": "6' 0\"",
-                "weight": "195 lbs",
-                "shot": "L",
-                "birthplace": "Edina, MN",
-                "birthdate": "06/10/98",
-                "href": "https://www.espn.com/nhl/player/_/id/4024971"
-            },
-            {
                 "name": "Filip Forsberg",
                 "id": "2968772",
                 "number": "9",
@@ -5591,7 +5513,7 @@
                 "id": "5172993",
                 "number": "93",
                 "position": "RW",
-                "age": "20",
+                "age": "21",
                 "height": "5' 10\"",
                 "weight": "181 lbs",
                 "shot": "R",
@@ -5665,6 +5587,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4419649"
             },
             {
+                "name": "Kevin Gravel",
+                "id": "3025602",
+                "number": "5",
+                "position": "D",
+                "age": "32",
+                "height": "6' 4\"",
+                "weight": "205 lbs",
+                "shot": "L",
+                "birthplace": "Kingsford, MI",
+                "birthdate": "03/06/92",
+                "href": "https://www.espn.com/nhl/player/_/id/3025602"
+            },
+            {
                 "name": "Roman Josi",
                 "id": "5436",
                 "number": "59",
@@ -5695,7 +5630,7 @@
                 "id": "5149206",
                 "number": "50",
                 "position": "D",
-                "age": "19",
+                "age": "20",
                 "height": "5' 11\"",
                 "weight": "190 lbs",
                 "shot": "L",
@@ -5728,19 +5663,6 @@
                 "birthplace": "Lakeville, MN",
                 "birthdate": "03/26/94",
                 "href": "https://www.espn.com/nhl/player/_/id/2976856"
-            },
-            {
-                "name": "Spencer Stastney",
-                "id": "4393406",
-                "number": "24",
-                "position": "D",
-                "age": "25",
-                "height": "6' 0\"",
-                "weight": "184 lbs",
-                "shot": "L",
-                "birthplace": "Woodridge, IL",
-                "birthdate": "01/04/00",
-                "href": "https://www.espn.com/nhl/player/_/id/4393406"
             },
             {
                 "name": "Adam Wilsby",
@@ -5842,7 +5764,7 @@
                 "id": "3042023",
                 "number": "42",
                 "position": "C",
-                "age": "29",
+                "age": "30",
                 "height": "6' 0\"",
                 "weight": "203 lbs",
                 "shot": "R",
@@ -5875,19 +5797,6 @@
                 "birthplace": "Stockholm, Sweden",
                 "birthdate": "07/30/98",
                 "href": "https://www.espn.com/nhl/player/_/id/4268771"
-            },
-            {
-                "name": "Brian Halonen",
-                "id": "4997092",
-                "number": "48",
-                "position": "LW",
-                "age": "26",
-                "height": "6' 0\"",
-                "weight": "207 lbs",
-                "shot": "R",
-                "birthplace": "Delano, MN",
-                "birthdate": "01/11/99",
-                "href": "https://www.espn.com/nhl/player/_/id/4997092"
             },
             {
                 "name": "Erik Haula",
@@ -6098,19 +6007,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/5103595"
             },
             {
-                "name": "Colton White",
-                "id": "3941125",
-                "number": "45",
-                "position": "D",
-                "age": "27",
-                "height": "6' 1\"",
-                "weight": "187 lbs",
-                "shot": "L",
-                "birthplace": "London, CAN",
-                "birthdate": "05/03/97",
-                "href": "https://www.espn.com/nhl/player/_/id/3941125"
-            },
-            {
                 "name": "Jake Allen",
                 "id": "5111",
                 "number": "34",
@@ -6124,11 +6020,24 @@
                 "href": "https://www.espn.com/nhl/player/_/id/5111"
             },
             {
+                "name": "Nicolas Daws",
+                "id": "4697683",
+                "number": "50",
+                "position": "G",
+                "age": "24",
+                "height": "6' 4\"",
+                "weight": "205 lbs",
+                "shot": "L",
+                "birthplace": "Munich, Germany",
+                "birthdate": "12/22/00",
+                "href": "https://www.espn.com/nhl/player/_/id/4697683"
+            },
+            {
                 "name": "Jacob Markstrom",
                 "id": "5452",
                 "number": "25",
                 "position": "G",
-                "age": "34",
+                "age": "35",
                 "height": "6' 6\"",
                 "weight": "206 lbs",
                 "shot": "L",
@@ -6236,7 +6145,7 @@
                 "id": "5517",
                 "number": "21",
                 "position": "C",
-                "age": "33",
+                "age": "34",
                 "height": "5' 11\"",
                 "weight": "196 lbs",
                 "shot": "R",
@@ -6336,6 +6245,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/5212753"
             },
             {
+                "name": "Adam Boqvist",
+                "id": "4352706",
+                "number": "34",
+                "position": "D",
+                "age": "24",
+                "height": "6' 0\"",
+                "weight": "189 lbs",
+                "shot": "R",
+                "birthplace": "Falun, Sweden",
+                "birthdate": "08/15/00",
+                "href": "https://www.espn.com/nhl/player/_/id/4352706"
+            },
+            {
                 "name": "Dennis Cholowski",
                 "id": "4024972",
                 "number": "25",
@@ -6349,6 +6271,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4024972"
             },
             {
+                "name": "Tony DeAngelo",
+                "id": "3114769",
+                "number": "4",
+                "position": "D",
+                "age": "29",
+                "height": "5' 11\"",
+                "weight": "180 lbs",
+                "shot": "R",
+                "birthplace": "Sewell, NJ",
+                "birthdate": "10/24/95",
+                "href": "https://www.espn.com/nhl/player/_/id/3114769"
+            },
+            {
                 "name": "Noah Dobson",
                 "id": "4352732",
                 "number": "8",
@@ -6360,19 +6295,6 @@
                 "birthplace": "Summerside, CAN",
                 "birthdate": "01/07/00",
                 "href": "https://www.espn.com/nhl/player/_/id/4352732"
-            },
-            {
-                "name": "Isaiah George",
-                "id": "5171570",
-                "number": "36",
-                "position": "D",
-                "age": "20",
-                "height": "6' 0\"",
-                "weight": "196 lbs",
-                "shot": "L",
-                "birthplace": "Oakville, CAN",
-                "birthdate": "02/15/04",
-                "href": "https://www.espn.com/nhl/player/_/id/5171570"
             },
             {
                 "name": "Grant Hutton",
@@ -6412,6 +6334,19 @@
                 "birthplace": "Toronto, CAN",
                 "birthdate": "08/16/94",
                 "href": "https://www.espn.com/nhl/player/_/id/3069621"
+            },
+            {
+                "name": "Scott Perunovich",
+                "id": "4320665",
+                "number": "48",
+                "position": "D",
+                "age": "26",
+                "height": "5' 10\"",
+                "weight": "175 lbs",
+                "shot": "R",
+                "birthplace": "Hibbing, MN",
+                "birthdate": "08/18/98",
+                "href": "https://www.espn.com/nhl/player/_/id/4320665"
             },
             {
                 "name": "Ryan Pulock",
@@ -6466,6 +6401,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3042084"
             },
             {
+                "name": "Jakub Skarek",
+                "id": "4588693",
+                "number": "1",
+                "position": "G",
+                "age": "25",
+                "height": "6' 3\"",
+                "weight": "202 lbs",
+                "shot": "L",
+                "birthplace": "Jihlava, Czechoslovakia",
+                "birthdate": "11/10/99",
+                "href": "https://www.espn.com/nhl/player/_/id/4588693"
+            },
+            {
                 "name": "Ilya Sorokin",
                 "id": "3151981",
                 "number": "30",
@@ -6513,26 +6461,13 @@
                 "id": "5474",
                 "number": "39",
                 "position": "C",
-                "age": "32",
+                "age": "33",
                 "height": "6' 0\"",
                 "weight": "200 lbs",
                 "shot": "R",
                 "birthplace": "Markham, CAN",
                 "birthdate": "02/04/92",
                 "href": "https://www.espn.com/nhl/player/_/id/5474"
-            },
-            {
-                "name": "Filip Chytil",
-                "id": "4233643",
-                "number": "72",
-                "position": "C",
-                "age": "25",
-                "height": "6' 2\"",
-                "weight": "208 lbs",
-                "shot": "L",
-                "birthplace": "Kromerlz, Czechia",
-                "birthdate": "09/05/99",
-                "href": "https://www.espn.com/nhl/player/_/id/4233643"
             },
             {
                 "name": "Adam Edstrom",
@@ -6559,6 +6494,19 @@
                 "birthplace": "Gatineau, CAN",
                 "birthdate": "02/06/00",
                 "href": "https://www.espn.com/nhl/player/_/id/4378685"
+            },
+            {
+                "name": "J.T. Miller",
+                "id": "2590852",
+                "number": "9",
+                "position": "C",
+                "age": "31",
+                "height": "6' 1\"",
+                "weight": "218 lbs",
+                "shot": "L",
+                "birthplace": "East Palestine, OH",
+                "birthdate": "03/14/93",
+                "href": "https://www.espn.com/nhl/player/_/id/2590852"
             },
             {
                 "name": "Matt Rempe",
@@ -6617,7 +6565,7 @@
                 "id": "4697468",
                 "number": "50",
                 "position": "LW",
-                "age": "22",
+                "age": "23",
                 "height": "6' 3\"",
                 "weight": "210 lbs",
                 "shot": "L",
@@ -6691,6 +6639,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3069397"
             },
             {
+                "name": "Lucas Edmonds",
+                "id": "5082695",
+                "number": "54",
+                "position": "RW",
+                "age": "24",
+                "height": "5' 11\"",
+                "weight": "185 lbs",
+                "shot": "R",
+                "birthplace": "North Bay, CAN",
+                "birthdate": "01/27/01",
+                "href": "https://www.espn.com/nhl/player/_/id/5082695"
+            },
+            {
                 "name": "Arthur Kaliyev",
                 "id": "4565256",
                 "number": "34",
@@ -6728,6 +6689,19 @@
                 "birthplace": "Moorhead, MN",
                 "birthdate": "12/19/96",
                 "href": "https://www.espn.com/nhl/player/_/id/3941946"
+            },
+            {
+                "name": "Erik Brannstrom",
+                "id": "4233606",
+                "number": "26",
+                "position": "D",
+                "age": "25",
+                "height": "5' 10\"",
+                "weight": "185 lbs",
+                "shot": "L",
+                "birthplace": "Eksjo, Sweden",
+                "birthdate": "09/02/99",
+                "href": "https://www.espn.com/nhl/player/_/id/4233606"
             },
             {
                 "name": "Adam Fox",
@@ -6786,7 +6760,7 @@
                 "id": "4352770",
                 "number": "79",
                 "position": "D",
-                "age": "24",
+                "age": "25",
                 "height": "6' 5\"",
                 "weight": "210 lbs",
                 "shot": "L",
@@ -6838,7 +6812,7 @@
                 "id": "3634",
                 "number": "32",
                 "position": "G",
-                "age": "38",
+                "age": "39",
                 "height": "6' 1\"",
                 "weight": "215 lbs",
                 "shot": "L",
@@ -6998,7 +6972,7 @@
                 "id": "4894702",
                 "number": "51",
                 "position": "LW",
-                "age": "24",
+                "age": "25",
                 "height": "6' 1\"",
                 "weight": "207 lbs",
                 "shot": "L",
@@ -7089,7 +7063,7 @@
                 "id": "3900219",
                 "number": "72",
                 "position": "D",
-                "age": "27",
+                "age": "28",
                 "height": "6' 1\"",
                 "weight": "203 lbs",
                 "shot": "L",
@@ -7176,19 +7150,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4697386"
             },
             {
-                "name": "Donovan Sebrango",
-                "id": "4697791",
-                "number": "37",
-                "position": "D",
-                "age": "23",
-                "height": "6' 2\"",
-                "weight": "221 lbs",
-                "shot": "L",
-                "birthplace": "Ottawa, CAN",
-                "birthdate": "01/12/02",
-                "href": "https://www.espn.com/nhl/player/_/id/4697791"
-            },
-            {
                 "name": "Artem Zub",
                 "id": "4712021",
                 "number": "2",
@@ -7215,19 +7176,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3036851"
             },
             {
-                "name": "Leevi Merilainen",
-                "id": "4894703",
-                "number": "1",
-                "position": "G",
-                "age": "22",
-                "height": "6' 2\"",
-                "weight": "158 lbs",
-                "shot": "L",
-                "birthplace": "Oulu, Finland",
-                "birthdate": "08/13/02",
-                "href": "https://www.espn.com/nhl/player/_/id/4894703"
-            },
-            {
                 "name": "Linus Ullmark",
                 "id": "3069285",
                 "number": "35",
@@ -7245,6 +7193,19 @@
     "Philadelphia Flyers": {
         "roster": [
             {
+                "name": "Rodrigo Abols",
+                "id": "4064976",
+                "number": "18",
+                "position": "C",
+                "age": "29",
+                "height": "6' 4\"",
+                "weight": "187 lbs",
+                "shot": "L",
+                "birthplace": "Riga, Latvia",
+                "birthdate": "01/05/96",
+                "href": "https://www.espn.com/nhl/player/_/id/4064976"
+            },
+            {
                 "name": "Sean Couturier",
                 "id": "2562601",
                 "number": "14",
@@ -7258,19 +7219,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/2562601"
             },
             {
-                "name": "Morgan Frost",
-                "id": "4233685",
-                "number": "48",
-                "position": "C",
-                "age": "25",
-                "height": "6' 0\"",
-                "weight": "193 lbs",
-                "shot": "L",
-                "birthplace": "Aurora, CAN",
-                "birthdate": "05/14/99",
-                "href": "https://www.espn.com/nhl/player/_/id/4233685"
-            },
-            {
                 "name": "Rhett Gardner",
                 "id": "3988761",
                 "number": "49",
@@ -7282,6 +7230,19 @@
                 "birthplace": "Moose Jaw, CAN",
                 "birthdate": "02/28/96",
                 "href": "https://www.espn.com/nhl/player/_/id/3988761"
+            },
+            {
+                "name": "Jacob Gaucher",
+                "id": "5104158",
+                "number": "78",
+                "position": "C",
+                "age": "23",
+                "height": "6' 3\"",
+                "weight": "185 lbs",
+                "shot": "R",
+                "birthplace": "Longueuil, CAN",
+                "birthdate": "03/09/01",
+                "href": "https://www.espn.com/nhl/player/_/id/5104158"
             },
             {
                 "name": "Scott Laughton",
@@ -7310,11 +7271,24 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4233668"
             },
             {
+                "name": "Anthony Richard",
+                "id": "3942058",
+                "number": "90",
+                "position": "C",
+                "age": "28",
+                "height": "5' 10\"",
+                "weight": "163 lbs",
+                "shot": "L",
+                "birthplace": "Trois-Rivieres, CAN",
+                "birthdate": "12/20/96",
+                "href": "https://www.espn.com/nhl/player/_/id/3942058"
+            },
+            {
                 "name": "Noah Cates",
                 "id": "4419682",
                 "number": "27",
                 "position": "LW",
-                "age": "25",
+                "age": "26",
                 "height": "6' 2\"",
                 "weight": "194 lbs",
                 "shot": "L",
@@ -7336,17 +7310,30 @@
                 "href": "https://www.espn.com/nhl/player/_/id/5193"
             },
             {
-                "name": "Joel Farabee",
-                "id": "4352750",
-                "number": "86",
+                "name": "Andrei Kuzmenko",
+                "id": "5077308",
+                "number": "96",
                 "position": "LW",
-                "age": "24",
-                "height": "6' 0\"",
-                "weight": "186 lbs",
+                "age": "29",
+                "height": "5' 11\"",
+                "weight": "194 lbs",
+                "shot": "R",
+                "birthplace": "Yakutsk, Russia",
+                "birthdate": "02/04/96",
+                "href": "https://www.espn.com/nhl/player/_/id/5077308"
+            },
+            {
+                "name": "Jakob Pelletier",
+                "id": "4565247",
+                "number": "22",
+                "position": "LW",
+                "age": "23",
+                "height": "5' 9\"",
+                "weight": "170 lbs",
                 "shot": "L",
-                "birthplace": "Syracuse, NY",
-                "birthdate": "02/25/00",
-                "href": "https://www.espn.com/nhl/player/_/id/4352750"
+                "birthplace": "Quebec City, CAN",
+                "birthdate": "03/07/01",
+                "href": "https://www.espn.com/nhl/player/_/id/4565247"
             },
             {
                 "name": "Bobby Brink",
@@ -7414,19 +7401,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3900169"
             },
             {
-                "name": "Olle Lycksell",
-                "id": "4587805",
-                "number": "15",
-                "position": "RW",
-                "age": "25",
-                "height": "5' 10\"",
-                "weight": "163 lbs",
-                "shot": "L",
-                "birthplace": "Oskarshamn, Sweden",
-                "birthdate": "08/24/99",
-                "href": "https://www.espn.com/nhl/player/_/id/4587805"
-            },
-            {
                 "name": "Matvei Michkov",
                 "id": "5149170",
                 "number": "39",
@@ -7451,6 +7425,19 @@
                 "birthplace": "Peterborough, CAN",
                 "birthdate": "02/16/99",
                 "href": "https://www.espn.com/nhl/player/_/id/4392072"
+            },
+            {
+                "name": "Emil Andrae",
+                "id": "4697457",
+                "number": "36",
+                "position": "D",
+                "age": "22",
+                "height": "5' 8\"",
+                "weight": "181 lbs",
+                "shot": "L",
+                "birthplace": "Vasteras, Sweden",
+                "birthdate": "02/23/02",
+                "href": "https://www.espn.com/nhl/player/_/id/4697457"
             },
             {
                 "name": "Jamie Drysdale",
@@ -7717,6 +7704,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3149603"
             },
             {
+                "name": "Danton Heinen",
+                "id": "3151741",
+                "number": "43",
+                "position": "LW",
+                "age": "29",
+                "height": "6' 2\"",
+                "weight": "195 lbs",
+                "shot": "L",
+                "birthplace": "Langley, CAN",
+                "birthdate": "07/05/95",
+                "href": "https://www.espn.com/nhl/player/_/id/3151741"
+            },
+            {
                 "name": "Tanner Howe",
                 "id": "5229134",
                 "number": "74",
@@ -7728,6 +7728,19 @@
                 "birthplace": "Prince Albert, CAN",
                 "birthdate": "11/28/05",
                 "href": "https://www.espn.com/nhl/player/_/id/5229134"
+            },
+            {
+                "name": "Bokondji Imama",
+                "id": "3939856",
+                "number": "14",
+                "position": "LW",
+                "age": "28",
+                "height": "6' 1\"",
+                "weight": "214 lbs",
+                "shot": "L",
+                "birthplace": "Montreal, CAN",
+                "birthdate": "08/03/96",
+                "href": "https://www.espn.com/nhl/player/_/id/3939856"
             },
             {
                 "name": "Matt Nieto",
@@ -7743,19 +7756,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/2563076"
             },
             {
-                "name": "Drew O'Connor",
-                "id": "4712146",
-                "number": "10",
-                "position": "LW",
-                "age": "26",
-                "height": "6' 3\"",
-                "weight": "200 lbs",
-                "shot": "L",
-                "birthplace": "Chatham, NJ",
-                "birthdate": "06/09/98",
-                "href": "https://www.espn.com/nhl/player/_/id/4712146"
-            },
-            {
                 "name": "Kevin Hayes",
                 "id": "5767",
                 "number": "13",
@@ -7767,19 +7767,6 @@
                 "birthplace": "Dorchester, MA",
                 "birthdate": "05/08/92",
                 "href": "https://www.espn.com/nhl/player/_/id/5767"
-            },
-            {
-                "name": "Jesse Puljujarvi",
-                "id": "4024839",
-                "number": "18",
-                "position": "RW",
-                "age": "26",
-                "height": "6' 4\"",
-                "weight": "201 lbs",
-                "shot": "R",
-                "birthplace": "Alvkarleby, Sweden",
-                "birthdate": "05/07/98",
-                "href": "https://www.espn.com/nhl/player/_/id/4024839"
             },
             {
                 "name": "Valtteri Puustinen",
@@ -7832,6 +7819,19 @@
                 "birthplace": "Boulder, CO",
                 "birthdate": "05/08/98",
                 "href": "https://www.espn.com/nhl/player/_/id/4272071"
+            },
+            {
+                "name": "Vincent Desharnais",
+                "id": "4392260",
+                "number": "7",
+                "position": "D",
+                "age": "28",
+                "height": "6' 7\"",
+                "weight": "226 lbs",
+                "shot": "R",
+                "birthplace": "Laval, CAN",
+                "birthdate": "05/29/96",
+                "href": "https://www.espn.com/nhl/player/_/id/4392260"
             },
             {
                 "name": "Ryan Graves",
@@ -7897,32 +7897,6 @@
                 "birthplace": "Montreal, CAN",
                 "birthdate": "04/24/87",
                 "href": "https://www.espn.com/nhl/player/_/id/3539"
-            },
-            {
-                "name": "Marcus Pettersson",
-                "id": "3114995",
-                "number": "28",
-                "position": "D",
-                "age": "28",
-                "height": "6' 3\"",
-                "weight": "177 lbs",
-                "shot": "L",
-                "birthplace": "Skelleftea, Sweden",
-                "birthdate": "05/08/96",
-                "href": "https://www.espn.com/nhl/player/_/id/3114995"
-            },
-            {
-                "name": "Owen Pickering",
-                "id": "5080169",
-                "number": "38",
-                "position": "D",
-                "age": "20",
-                "height": "6' 4\"",
-                "weight": "180 lbs",
-                "shot": "L",
-                "birthplace": "St. Andrews, CAN",
-                "birthdate": "01/27/04",
-                "href": "https://www.espn.com/nhl/player/_/id/5080169"
             },
             {
                 "name": "Ryan Shea",
@@ -8033,19 +8007,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3069411"
             },
             {
-                "name": "Mikael Granlund",
-                "id": "5831",
-                "number": "64",
-                "position": "C",
-                "age": "32",
-                "height": "5' 10\"",
-                "weight": "185 lbs",
-                "shot": "L",
-                "birthplace": "Oulu, Finland",
-                "birthdate": "02/26/92",
-                "href": "https://www.espn.com/nhl/player/_/id/5831"
-            },
-            {
                 "name": "Klim Kostin",
                 "id": "4233738",
                 "number": "10",
@@ -8137,6 +8098,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3042017"
             },
             {
+                "name": "Colin White",
+                "id": "3900259",
+                "number": "16",
+                "position": "C",
+                "age": "28",
+                "height": "5' 11\"",
+                "weight": "191 lbs",
+                "shot": "R",
+                "birthplace": "Boston, MA",
+                "birthdate": "01/30/97",
+                "href": "https://www.espn.com/nhl/player/_/id/3900259"
+            },
+            {
                 "name": "Igor Chernyshov",
                 "id": "5216907",
                 "number": "24",
@@ -8189,6 +8163,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/5142131"
             },
             {
+                "name": "Walker Duehr",
+                "id": "4319940",
+                "number": "55",
+                "position": "RW",
+                "age": "27",
+                "height": "6' 2\"",
+                "weight": "210 lbs",
+                "shot": "R",
+                "birthplace": "Sioux Falls, SD",
+                "birthdate": "11/23/97",
+                "href": "https://www.espn.com/nhl/player/_/id/4319940"
+            },
+            {
                 "name": "Collin Graf",
                 "id": "5136607",
                 "number": "51",
@@ -8226,19 +8213,6 @@
                 "birthplace": "Raleigh, NC",
                 "birthdate": "10/17/99",
                 "href": "https://www.espn.com/nhl/player/_/id/4588147"
-            },
-            {
-                "name": "Cody Ceci",
-                "id": "2976843",
-                "number": "4",
-                "position": "D",
-                "age": "31",
-                "height": "6' 3\"",
-                "weight": "210 lbs",
-                "shot": "R",
-                "birthplace": "Ottawa, CAN",
-                "birthdate": "12/21/93",
-                "href": "https://www.espn.com/nhl/player/_/id/2976843"
             },
             {
                 "name": "Mario Ferraro",
@@ -8345,19 +8319,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3151136"
             },
             {
-                "name": "Yaroslav Askarov",
-                "id": "4697394",
-                "number": "30",
-                "position": "G",
-                "age": "22",
-                "height": "6' 3\"",
-                "weight": "176 lbs",
-                "shot": "R",
-                "birthplace": "Omsk, Russia",
-                "birthdate": "06/16/02",
-                "href": "https://www.espn.com/nhl/player/_/id/4697394"
-            },
-            {
                 "name": "Alexandar Georgiev",
                 "id": "4239677",
                 "number": "40",
@@ -8444,7 +8405,7 @@
                 "id": "3904171",
                 "number": "67",
                 "position": "C",
-                "age": "27",
+                "age": "28",
                 "height": "5' 11\"",
                 "weight": "190 lbs",
                 "shot": "R",
@@ -8700,19 +8661,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/2562625"
             },
             {
-                "name": "Gustav Olofsson",
-                "id": "3042031",
-                "number": "23",
-                "position": "D",
-                "age": "30",
-                "height": "6' 2\"",
-                "weight": "199 lbs",
-                "shot": "L",
-                "birthplace": "Boras, Sweden",
-                "birthdate": "12/01/94",
-                "href": "https://www.espn.com/nhl/player/_/id/3042031"
-            },
-            {
                 "name": "Caden Price",
                 "id": "5188611",
                 "number": "48",
@@ -8737,19 +8685,6 @@
                 "birthplace": "Boston, MA",
                 "birthdate": "08/19/96",
                 "href": "https://www.espn.com/nhl/player/_/id/3942073"
-            },
-            {
-                "name": "Philipp Grubauer",
-                "id": "5657",
-                "number": "31",
-                "position": "G",
-                "age": "33",
-                "height": "6' 1\"",
-                "weight": "188 lbs",
-                "shot": "L",
-                "birthplace": "Rosenheim, Germany",
-                "birthdate": "11/25/91",
-                "href": "https://www.espn.com/nhl/player/_/id/5657"
             },
             {
                 "name": "Michael Matyas",
@@ -8912,6 +8847,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4697397"
             },
             {
+                "name": "Mackenzie MacEachern",
+                "id": "3069342",
+                "number": "28",
+                "position": "LW",
+                "age": "30",
+                "height": "6' 2\"",
+                "weight": "193 lbs",
+                "shot": "L",
+                "birthplace": "Bloomfield Hills, MI",
+                "birthdate": "03/09/94",
+                "href": "https://www.espn.com/nhl/player/_/id/3069342"
+            },
+            {
                 "name": "Jake Neighbours",
                 "id": "4697409",
                 "number": "63",
@@ -8923,19 +8871,6 @@
                 "birthplace": "Airdrie, CAN",
                 "birthdate": "03/29/02",
                 "href": "https://www.espn.com/nhl/player/_/id/4697409"
-            },
-            {
-                "name": "Brandon Saad",
-                "id": "2563065",
-                "number": "20",
-                "position": "LW",
-                "age": "32",
-                "height": "6' 1\"",
-                "weight": "215 lbs",
-                "shot": "L",
-                "birthplace": "Pittsburgh, PA",
-                "birthdate": "10/27/92",
-                "href": "https://www.espn.com/nhl/player/_/id/2563065"
             },
             {
                 "name": "Nathan Walker",
@@ -8968,7 +8903,7 @@
                 "id": "5104213",
                 "number": "",
                 "position": "RW",
-                "age": "21",
+                "age": "22",
                 "height": "6' 0\"",
                 "weight": "190 lbs",
                 "shot": "L",
@@ -9029,19 +8964,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/5495"
             },
             {
-                "name": "Matthew Kessel",
-                "id": "4697719",
-                "number": "51",
-                "position": "D",
-                "age": "24",
-                "height": "6' 2\"",
-                "weight": "205 lbs",
-                "shot": "R",
-                "birthplace": "Phoenix, AZ",
-                "birthdate": "06/23/00",
-                "href": "https://www.espn.com/nhl/player/_/id/4697719"
-            },
-            {
                 "name": "Nick Leddy",
                 "id": "5447",
                 "number": "4",
@@ -9068,19 +8990,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3069341"
             },
             {
-                "name": "Scott Perunovich",
-                "id": "4320665",
-                "number": "48",
-                "position": "D",
-                "age": "26",
-                "height": "5' 10\"",
-                "weight": "175 lbs",
-                "shot": "R",
-                "birthplace": "Hibbing, MN",
-                "birthdate": "08/18/98",
-                "href": "https://www.espn.com/nhl/player/_/id/4320665"
-            },
-            {
                 "name": "Corey Schueneman",
                 "id": "4196930",
                 "number": "64",
@@ -9098,7 +9007,7 @@
                 "id": "3047",
                 "number": "22",
                 "position": "D",
-                "age": "39",
+                "age": "40",
                 "height": "6' 1\"",
                 "weight": "201 lbs",
                 "shot": "L",
@@ -9176,19 +9085,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4270247"
             },
             {
-                "name": "Conor Geekie",
-                "id": "5080155",
-                "number": "14",
-                "position": "C",
-                "age": "20",
-                "height": "6' 4\"",
-                "weight": "190 lbs",
-                "shot": "L",
-                "birthplace": "Strathclair, CAN",
-                "birthdate": "05/04/04",
-                "href": "https://www.espn.com/nhl/player/_/id/5080155"
-            },
-            {
                 "name": "Zemgus Girgensons",
                 "id": "2968829",
                 "number": "28",
@@ -9215,6 +9111,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/2335062"
             },
             {
+                "name": "Gage Goncalves",
+                "id": "4697470",
+                "number": "93",
+                "position": "C",
+                "age": "24",
+                "height": "6' 0\"",
+                "weight": "165 lbs",
+                "shot": "L",
+                "birthplace": "Mission, CAN",
+                "birthdate": "01/16/01",
+                "href": "https://www.espn.com/nhl/player/_/id/4697470"
+            },
+            {
                 "name": "Jake Guentzel",
                 "id": "3042083",
                 "number": "59",
@@ -9226,6 +9135,19 @@
                 "birthplace": "Omaha, NE",
                 "birthdate": "10/06/94",
                 "href": "https://www.espn.com/nhl/player/_/id/3042083"
+            },
+            {
+                "name": "Ryder Korczak",
+                "id": "5070310",
+                "number": "83",
+                "position": "C",
+                "age": "22",
+                "height": "5' 11\"",
+                "weight": "172 lbs",
+                "shot": "R",
+                "birthplace": "Yorkton, CAN",
+                "birthdate": "09/23/02",
+                "href": "https://www.espn.com/nhl/player/_/id/5070310"
             },
             {
                 "name": "Brayden Point",
@@ -9284,7 +9206,7 @@
                 "id": "4419646",
                 "number": "41",
                 "position": "RW",
-                "age": "26",
+                "age": "27",
                 "height": "6' 1\"",
                 "weight": "192 lbs",
                 "shot": "R",
@@ -9319,19 +9241,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3904178"
             },
             {
-                "name": "Maxwell Crozier",
-                "id": "5104716",
-                "number": "65",
-                "position": "D",
-                "age": "24",
-                "height": "6' 1\"",
-                "weight": "197 lbs",
-                "shot": "R",
-                "birthplace": "Calgary, CAN",
-                "birthdate": "04/19/00",
-                "href": "https://www.espn.com/nhl/player/_/id/5104716"
-            },
-            {
                 "name": "Victor Hedman",
                 "id": "5157",
                 "number": "77",
@@ -9349,7 +9258,7 @@
                 "id": "5146599",
                 "number": "78",
                 "position": "D",
-                "age": "23",
+                "age": "24",
                 "height": "6' 2\"",
                 "weight": "202 lbs",
                 "shot": "L",
@@ -9410,6 +9319,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3149843"
             },
             {
+                "name": "Brandon Halverson",
+                "id": "3115036",
+                "number": "75",
+                "position": "G",
+                "age": "28",
+                "height": "6' 4\"",
+                "weight": "176 lbs",
+                "shot": "L",
+                "birthplace": "Traverse City, MI",
+                "birthdate": "03/29/96",
+                "href": "https://www.espn.com/nhl/player/_/id/3115036"
+            },
+            {
                 "name": "Jonas Johansson",
                 "id": "3115546",
                 "number": "31",
@@ -9421,6 +9343,19 @@
                 "birthplace": "Gavle, Sweden",
                 "birthdate": "09/19/95",
                 "href": "https://www.espn.com/nhl/player/_/id/3115546"
+            },
+            {
+                "name": "Kyle Konin",
+                "id": "4909207",
+                "number": "30",
+                "position": "G",
+                "age": "27",
+                "height": "6' 0\"",
+                "weight": "185 lbs",
+                "shot": "L",
+                "birthplace": "West Kingston, RI",
+                "birthdate": "01/09/98",
+                "href": "https://www.espn.com/nhl/player/_/id/4909207"
             },
             {
                 "name": "Andrei Vasilevskiy",
@@ -9531,19 +9466,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/5048894"
             },
             {
-                "name": "Fraser Minten",
-                "id": "5080207",
-                "number": "39",
-                "position": "C",
-                "age": "20",
-                "height": "6' 2\"",
-                "weight": "195 lbs",
-                "shot": "L",
-                "birthplace": "Vancouver, CAN",
-                "birthdate": "07/05/04",
-                "href": "https://www.espn.com/nhl/player/_/id/5080207"
-            },
-            {
                 "name": "John Tavares",
                 "id": "5160",
                 "number": "91",
@@ -9652,7 +9574,7 @@
                 "id": "3683",
                 "number": "75",
                 "position": "RW",
-                "age": "37",
+                "age": "38",
                 "height": "6' 2\"",
                 "weight": "225 lbs",
                 "shot": "R",
@@ -9713,11 +9635,24 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3020803"
             },
             {
+                "name": "Dakota Mermis",
+                "id": "3069273",
+                "number": "36",
+                "position": "D",
+                "age": "31",
+                "height": "6' 0\"",
+                "weight": "195 lbs",
+                "shot": "L",
+                "birthplace": "Alton, IL",
+                "birthdate": "01/05/94",
+                "href": "https://www.espn.com/nhl/player/_/id/3069273"
+            },
+            {
                 "name": "Philippe Myers",
                 "id": "3941140",
                 "number": "51",
                 "position": "D",
-                "age": "27",
+                "age": "28",
                 "height": "6' 5\"",
                 "weight": "219 lbs",
                 "shot": "R",
@@ -9791,24 +9726,24 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4781709"
             },
             {
-                "name": "Dennis Hildeby",
-                "id": "5174160",
-                "number": "35",
+                "name": "Matt Murray",
+                "id": "3067862",
+                "number": "30",
                 "position": "G",
-                "age": "23",
-                "height": "6' 7\"",
-                "weight": "222 lbs",
-                "shot": "R",
-                "birthplace": "Jarfalla, Sweden",
-                "birthdate": "08/19/01",
-                "href": "https://www.espn.com/nhl/player/_/id/5174160"
+                "age": "30",
+                "height": "6' 4\"",
+                "weight": "178 lbs",
+                "shot": "L",
+                "birthplace": "Thunder Bay, CAN",
+                "birthdate": "05/25/94",
+                "href": "https://www.espn.com/nhl/player/_/id/3067862"
             },
             {
                 "name": "Anthony Stolarz",
                 "id": "3067313",
                 "number": "41",
                 "position": "G",
-                "age": "30",
+                "age": "31",
                 "height": "6' 6\"",
                 "weight": "243 lbs",
                 "shot": "L",
@@ -9981,7 +9916,7 @@
                 "id": "4874870",
                 "number": "91",
                 "position": "RW",
-                "age": "22",
+                "age": "23",
                 "height": "6' 1\"",
                 "weight": "183 lbs",
                 "shot": "R",
@@ -10120,19 +10055,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3941974"
             },
             {
-                "name": "Dakota Mermis",
-                "id": "3069273",
-                "number": "3",
-                "position": "D",
-                "age": "31",
-                "height": "6' 0\"",
-                "weight": "195 lbs",
-                "shot": "L",
-                "birthplace": "Alton, IL",
-                "birthdate": "01/05/94",
-                "href": "https://www.espn.com/nhl/player/_/id/3069273"
-            },
-            {
                 "name": "Mikhail Sergachev",
                 "id": "4024868",
                 "number": "98",
@@ -10202,6 +10124,19 @@
     "Vancouver Canucks": {
         "roster": [
             {
+                "name": "Nils Aman",
+                "id": "4697579",
+                "number": "88",
+                "position": "C",
+                "age": "24",
+                "height": "6' 2\"",
+                "weight": "179 lbs",
+                "shot": "L",
+                "birthplace": "Avesta, Sweden",
+                "birthdate": "02/07/00",
+                "href": "https://www.espn.com/nhl/player/_/id/4697579"
+            },
+            {
                 "name": "Teddy Blueger",
                 "id": "3024916",
                 "number": "53",
@@ -10213,6 +10148,19 @@
                 "birthplace": "Riga, Latvia",
                 "birthdate": "08/15/94",
                 "href": "https://www.espn.com/nhl/player/_/id/3024916"
+            },
+            {
+                "name": "Filip Chytil",
+                "id": "4233643",
+                "number": "72",
+                "position": "C",
+                "age": "25",
+                "height": "6' 2\"",
+                "weight": "208 lbs",
+                "shot": "L",
+                "birthplace": "Kromerlz, Czechia",
+                "birthdate": "09/05/99",
+                "href": "https://www.espn.com/nhl/player/_/id/4233643"
             },
             {
                 "name": "Dakota Joshua",
@@ -10228,32 +10176,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/4588638"
             },
             {
-                "name": "Linus Karlsson",
-                "id": "4587713",
-                "number": "94",
-                "position": "C",
-                "age": "25",
-                "height": "6' 1\"",
-                "weight": "178 lbs",
-                "shot": "R",
-                "birthplace": "Eksjo, Sweden",
-                "birthdate": "11/16/99",
-                "href": "https://www.espn.com/nhl/player/_/id/4587713"
-            },
-            {
-                "name": "J.T. Miller",
-                "id": "2590852",
-                "number": "9",
-                "position": "C",
-                "age": "31",
-                "height": "6' 1\"",
-                "weight": "218 lbs",
-                "shot": "L",
-                "birthplace": "East Palestine, OH",
-                "birthdate": "03/14/93",
-                "href": "https://www.espn.com/nhl/player/_/id/2590852"
-            },
-            {
                 "name": "Elias Pettersson",
                 "id": "4233566",
                 "number": "40",
@@ -10265,19 +10187,6 @@
                 "birthplace": "Sundsvall, Sweden",
                 "birthdate": "11/12/98",
                 "href": "https://www.espn.com/nhl/player/_/id/4233566"
-            },
-            {
-                "name": "Max Sasson",
-                "id": "4996099",
-                "number": "63",
-                "position": "C",
-                "age": "24",
-                "height": "6' 1\"",
-                "weight": "185 lbs",
-                "shot": "L",
-                "birthplace": "Birmingham, MI",
-                "birthdate": "09/05/00",
-                "href": "https://www.espn.com/nhl/player/_/id/4996099"
             },
             {
                 "name": "Pius Suter",
@@ -10306,32 +10215,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3900240"
             },
             {
-                "name": "Phillip Di Giuseppe",
-                "id": "3069834",
-                "number": "34",
-                "position": "LW",
-                "age": "31",
-                "height": "6' 0\"",
-                "weight": "193 lbs",
-                "shot": "L",
-                "birthplace": "Toronto, CAN",
-                "birthdate": "10/09/93",
-                "href": "https://www.espn.com/nhl/player/_/id/3069834"
-            },
-            {
-                "name": "Danton Heinen",
-                "id": "3151741",
-                "number": "20",
-                "position": "LW",
-                "age": "29",
-                "height": "6' 2\"",
-                "weight": "195 lbs",
-                "shot": "L",
-                "birthplace": "Langley, CAN",
-                "birthdate": "07/05/95",
-                "href": "https://www.espn.com/nhl/player/_/id/3151741"
-            },
-            {
                 "name": "Nils Hoglander",
                 "id": "4565263",
                 "number": "21",
@@ -10343,6 +10226,19 @@
                 "birthplace": "Lulea, Sweden",
                 "birthdate": "12/20/00",
                 "href": "https://www.espn.com/nhl/player/_/id/4565263"
+            },
+            {
+                "name": "Drew O'Connor",
+                "id": "4712146",
+                "number": "18",
+                "position": "LW",
+                "age": "26",
+                "height": "6' 3\"",
+                "weight": "200 lbs",
+                "shot": "L",
+                "birthplace": "Chatham, NJ",
+                "birthdate": "06/09/98",
+                "href": "https://www.espn.com/nhl/player/_/id/4712146"
             },
             {
                 "name": "Kiefer Sherwood",
@@ -10384,45 +10280,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3939718"
             },
             {
-                "name": "Jonathan Lekkerimaki",
-                "id": "5080159",
-                "number": "23",
-                "position": "RW",
-                "age": "20",
-                "height": "5' 10\"",
-                "weight": "171 lbs",
-                "shot": "R",
-                "birthplace": "Huddinge, Sweden",
-                "birthdate": "07/24/04",
-                "href": "https://www.espn.com/nhl/player/_/id/5080159"
-            },
-            {
-                "name": "Guillaume Brisebois",
-                "id": "3942866",
-                "number": "55",
-                "position": "D",
-                "age": "27",
-                "height": "6' 2\"",
-                "weight": "175 lbs",
-                "shot": "L",
-                "birthplace": "Longueuil, CAN",
-                "birthdate": "07/21/97",
-                "href": "https://www.espn.com/nhl/player/_/id/3942866"
-            },
-            {
-                "name": "Vincent Desharnais",
-                "id": "4392260",
-                "number": "73",
-                "position": "D",
-                "age": "28",
-                "height": "6' 7\"",
-                "weight": "226 lbs",
-                "shot": "R",
-                "birthplace": "Laval, CAN",
-                "birthdate": "05/29/96",
-                "href": "https://www.espn.com/nhl/player/_/id/4392260"
-            },
-            {
                 "name": "Derek Forbort",
                 "id": "5829",
                 "number": "27",
@@ -10434,19 +10291,6 @@
                 "birthplace": "Duluth, MN",
                 "birthdate": "03/04/92",
                 "href": "https://www.espn.com/nhl/player/_/id/5829"
-            },
-            {
-                "name": "Mark Friedman",
-                "id": "3151325",
-                "number": "51",
-                "position": "D",
-                "age": "29",
-                "height": "6' 0\"",
-                "weight": "185 lbs",
-                "shot": "R",
-                "birthplace": "Toronto, CAN",
-                "birthdate": "12/25/95",
-                "href": "https://www.espn.com/nhl/player/_/id/3151325"
             },
             {
                 "name": "Filip Hronek",
@@ -10488,6 +10332,19 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3900504"
             },
             {
+                "name": "Victor Mancini",
+                "id": "5188334",
+                "number": "90",
+                "position": "D",
+                "age": "22",
+                "height": "6' 3\"",
+                "weight": "215 lbs",
+                "shot": "R",
+                "birthplace": "Hancock, MI",
+                "birthdate": "05/26/02",
+                "href": "https://www.espn.com/nhl/player/_/id/5188334"
+            },
+            {
                 "name": "Cole McWard",
                 "id": "5136696",
                 "number": "48",
@@ -10505,13 +10362,39 @@
                 "id": "5052",
                 "number": "57",
                 "position": "D",
-                "age": "34",
+                "age": "35",
                 "height": "6' 8\"",
                 "weight": "229 lbs",
                 "shot": "R",
                 "birthplace": "Houston, TX",
                 "birthdate": "02/01/90",
                 "href": "https://www.espn.com/nhl/player/_/id/5052"
+            },
+            {
+                "name": "Elias N. Pettersson",
+                "id": "5238086",
+                "number": "25",
+                "position": "D",
+                "age": "20",
+                "height": "6' 2\"",
+                "weight": "185 lbs",
+                "shot": "L",
+                "birthplace": "Vasteras, Sweden",
+                "birthdate": "02/16/04",
+                "href": "https://www.espn.com/nhl/player/_/id/5238086"
+            },
+            {
+                "name": "Marcus Pettersson",
+                "id": "3114995",
+                "number": "29",
+                "position": "D",
+                "age": "28",
+                "height": "6' 3\"",
+                "weight": "177 lbs",
+                "shot": "L",
+                "birthplace": "Skelleftea, Sweden",
+                "birthdate": "05/08/96",
+                "href": "https://www.espn.com/nhl/player/_/id/3114995"
             },
             {
                 "name": "Carson Soucy",
@@ -10635,11 +10518,24 @@
                 "href": "https://www.espn.com/nhl/player/_/id/2563057"
             },
             {
+                "name": "Raphael Lavoie",
+                "id": "4565261",
+                "number": "36",
+                "position": "C",
+                "age": "24",
+                "height": "6' 4\"",
+                "weight": "196 lbs",
+                "shot": "R",
+                "birthplace": "Chambly, CAN",
+                "birthdate": "09/25/00",
+                "href": "https://www.espn.com/nhl/player/_/id/4565261"
+            },
+            {
                 "name": "Nicolas Roy",
                 "id": "3943996",
                 "number": "10",
                 "position": "C",
-                "age": "27",
+                "age": "28",
                 "height": "6' 4\"",
                 "weight": "201 lbs",
                 "shot": "R",
@@ -10665,7 +10561,7 @@
                 "id": "4587953",
                 "number": "11",
                 "position": "LW",
-                "age": "28",
+                "age": "29",
                 "height": "6' 1\"",
                 "weight": "198 lbs",
                 "shot": "L",
@@ -10687,11 +10583,24 @@
                 "href": "https://www.espn.com/nhl/player/_/id/2976860"
             },
             {
+                "name": "Brandon Saad",
+                "id": "2563065",
+                "number": "20",
+                "position": "LW",
+                "age": "32",
+                "height": "6' 1\"",
+                "weight": "215 lbs",
+                "shot": "L",
+                "birthplace": "Pittsburgh, PA",
+                "birthdate": "10/27/92",
+                "href": "https://www.espn.com/nhl/player/_/id/2563065"
+            },
+            {
                 "name": "Alexander Holtz",
                 "id": "4697388",
                 "number": "26",
                 "position": "RW",
-                "age": "22",
+                "age": "23",
                 "height": "6' 0\"",
                 "weight": "198 lbs",
                 "shot": "R",
@@ -10795,7 +10704,7 @@
                 "id": "3652964",
                 "number": "15",
                 "position": "D",
-                "age": "27",
+                "age": "28",
                 "height": "6' 3\"",
                 "weight": "206 lbs",
                 "shot": "L",
@@ -10821,7 +10730,7 @@
                 "id": "4565264",
                 "number": "6",
                 "position": "D",
-                "age": "23",
+                "age": "24",
                 "height": "6' 3\"",
                 "weight": "203 lbs",
                 "shot": "R",
@@ -10834,7 +10743,7 @@
                 "id": "5202",
                 "number": "3",
                 "position": "D",
-                "age": "33",
+                "age": "34",
                 "height": "6' 4\"",
                 "weight": "215 lbs",
                 "shot": "L",
@@ -10968,7 +10877,7 @@
                 "id": "4996093",
                 "number": "53",
                 "position": "C",
-                "age": "26",
+                "age": "27",
                 "height": "5' 11\"",
                 "weight": "185 lbs",
                 "shot": "R",
@@ -11250,19 +11159,6 @@
                 "href": "https://www.espn.com/nhl/player/_/id/3095975"
             },
             {
-                "name": "Hunter Shepard",
-                "id": "4197165",
-                "number": "31",
-                "position": "G",
-                "age": "29",
-                "height": "6' 0\"",
-                "weight": "210 lbs",
-                "shot": "R",
-                "birthplace": "Cohasset, MN",
-                "birthdate": "11/07/95",
-                "href": "https://www.espn.com/nhl/player/_/id/4197165"
-            },
-            {
                 "name": "Logan Thompson",
                 "id": "4272888",
                 "number": "48",
@@ -11304,6 +11200,19 @@
                 "birthplace": "Halifax, CAN",
                 "birthdate": "12/02/98",
                 "href": "https://www.espn.com/nhl/player/_/id/4316970"
+            },
+            {
+                "name": "Parker Ford",
+                "id": "5173114",
+                "number": "73",
+                "position": "C",
+                "age": "24",
+                "height": "5' 9\"",
+                "weight": "181 lbs",
+                "shot": "R",
+                "birthplace": "Wakefield, RI",
+                "birthdate": "07/20/00",
+                "href": "https://www.espn.com/nhl/player/_/id/5173114"
             },
             {
                 "name": "David Gustafsson",
@@ -11395,19 +11304,6 @@
                 "birthplace": "Kitchener, CAN",
                 "birthdate": "03/15/93",
                 "href": "https://www.espn.com/nhl/player/_/id/2562632"
-            },
-            {
-                "name": "Dominic Toninato",
-                "id": "3942809",
-                "number": "21",
-                "position": "C",
-                "age": "30",
-                "height": "6' 2\"",
-                "weight": "201 lbs",
-                "shot": "L",
-                "birthplace": "Duluth, MN",
-                "birthdate": "03/09/94",
-                "href": "https://www.espn.com/nhl/player/_/id/3942809"
             },
             {
                 "name": "Gabriel Vilardi",
@@ -11609,7 +11505,7 @@
                 "id": "4233878",
                 "number": "54",
                 "position": "D",
-                "age": "25",
+                "age": "26",
                 "height": "6' 4\"",
                 "weight": "216 lbs",
                 "shot": "L",
