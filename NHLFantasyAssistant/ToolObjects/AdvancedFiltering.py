@@ -21,7 +21,7 @@ class AdvancedStats:
         # self.best_teams_exp_goals_for = self.teams_df.sort_values("xGoalsFor", ascending=False)
         # self.worst_teams_exp_goals_for = reversed(self.best_teams_exp_goals_for)
         # self.most_ice_time_lines = self.lines_df.sort_values('iceTimeRank', ascending=False)
-        self.worst_ice_time_lines = reversed(self.most_ice_time_lines)
+        # self.worst_ice_time_lines = reversed(self.most_ice_time_lines)
         # self.best_teams_exp_goals_percentage = self.teams_df.sort_values("xGoalsPercentage", ascending=False)
         # self.worst_teams_exp_goals_percentage = reversed(self.best_teams_exp_goals_percentage)
         self.writeToCSV()
@@ -111,7 +111,8 @@ class AdvancedStats:
         count = 0
         rank = 0
         last_stat = float('inf')
-        for index, row in self.most_ice_time_lines.iterrows():
+        most_ice_time = self.lines_df.sort_values("iceTimeRank", ascending=False)
+        for _, row in most_ice_time.iterrows():
             if row['position'] == position:
                 if count == line_count:
                     print()
