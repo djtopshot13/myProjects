@@ -167,7 +167,8 @@ def playerFantasyPointCalculator(player):
         return points_dict
 
 def _get_Season_Points():
-    _points_against = _points_for = _points_diff = {team.team_name: 0 for team in my_nhl_league.teams}
+    _points_against, _points_for, _points_diff = {team.team_name: 0 for team in my_nhl_league.teams}, \
+        {team.team_name: 0 for team in my_nhl_league.teams}, {team.team_name: 0 for team in my_nhl_league.teams}
     for i in range(1, my_nhl_league.currentMatchupPeriod + 1):
         curr_matchups = my_nhl_league.box_scores(i)
 
