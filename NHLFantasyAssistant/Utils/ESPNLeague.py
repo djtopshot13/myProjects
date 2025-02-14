@@ -137,7 +137,8 @@ def playerFantasyPointCalculator(player):
         for header in headings:
             if header in player.stats:
                 
-                points = goals_against = saves = wins = shutouts = overtime_losses = goals = assists = shots = hits = blocked_shots = pp_points = sh_points = 0
+                points = goals_against = saves = wins = shutouts = overtime_losses = goals = assists = shots \
+                = hits = blocked_shots = pp_points = sh_points = 0
                 if player.position[0] == 'G':
                     if player.stats[header].get('total', {}).keys():
                         if '30' in player.stats[header]['total'].keys():
@@ -157,7 +158,8 @@ def playerFantasyPointCalculator(player):
                     pp_points = round(player.stats[header].get('total', {}).get('PPP', 0) / 2, 1)
                     sh_points = round(player.stats[header].get('total', {}).get('SHP', 0) / 2, 1)
                 
-                points = goals_against + saves + shutouts + wins + overtime_losses + goals + assists + shots + hits + blocked_shots + pp_points + sh_points
+                points = goals_against + saves + shutouts + wins + overtime_losses + \
+                goals + assists + shots + hits + blocked_shots + pp_points + sh_points
                 points_dict[header] = round(points, 1)
             else:
                 continue
@@ -165,10 +167,7 @@ def playerFantasyPointCalculator(player):
         return points_dict
 
 def _get_Season_Points():
-    _points_against = {team.team_name: 0 for team in my_nhl_league.teams}
-    _points_for = {team.team_name: 0 for team in my_nhl_league.teams}
-    _points_diff = {team.team_name: 0 for team in my_nhl_league.teams}
-
+    _points_against = _points_for = _points_diff = {team.team_name: 0 for team in my_nhl_league.teams}
     for i in range(1, my_nhl_league.currentMatchupPeriod + 1):
         curr_matchups = my_nhl_league.box_scores(i)
 
