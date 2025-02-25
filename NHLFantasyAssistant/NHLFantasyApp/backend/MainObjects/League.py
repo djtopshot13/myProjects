@@ -349,7 +349,51 @@ class League:
             team_stats.append(key)  
         for stat in team_stats:
             self.BestTeamStatSort(stat)
+    def pointPositionReport(self):
+        goalie_points_dict = self.goaliePointReport()
+        skater_points_dict = self.skaterPointReport()
+        for team in self.teams.values():
+            goalie_points = goalie_points_dict[team]
+            skater_points = skater_points_dict[team]
+            goalie_pt_pct = round(goalie_points / team.points_for * 100, 1)
+            skater_pt_pct = round(skater_points / team.points_for * 100, 1)
+            if (skater_pt_pct + goalie_pt_pct != 100):
+                print(f"Error with {team} positional point percent report")
+            else: 
+                print(f"{team}: Percent of points by Goalie[{goalie_pt_pct}], Percent of points by Skaters[{skater_pt_pct}]")
+    def goaliePointReport(self):
+        
+        goalie_point_dict = {}
+        for team in self.teams.values():
+            goalie_points = 0
+            goalie_points += team.stats_dict["W"] * 4
+            goalie_points += team.stats_dict["SO"] * 3
+            goalie_points += team.stats_dict["OTL"]
+            goalie_points += round(team.stats_dict['SV'] / 5, 1)
+            goalie_points -= team.stats_dict['GA'] * 2
+            goalie_points = round(goalie_points, 1)
 
+            print(f"{team.name}: {goalie_points} points from goalies")
+            goalie_point_dict[team] = goalie_points
+        return goalie_point_dict
+    
+    def skaterPointReport(self):
+        
+        skater_point_dict = {}
+        for team in self.teams.values():
+            skater_points = 0
+            skater_points += team.stats_dict["G"] * 2
+            skater_points += team.stats_dict["A"]
+            skater_points += round(team.stats_dict["BLK"] / 2, 1)
+            skater_points += round(team.stats_dict['PPP'] / 2, 1)
+            skater_points += round(team.stats_dict['SHP'] / 2, 1)
+            skater_points += round(team.stats_dict["SOG"] / 10, 1)
+            skater_points += round(team.stats_dict['HIT'] / 10, 1)
+            skater_points = round(skater_points, 1)
+
+            print(f"{team.name}: {skater_points} points from skaters")
+            skater_point_dict[team] = skater_points
+        return skater_point_dict
     def printTeamRosters(self):
         for team in self.teams.values():
             self.titleFormat(team)
