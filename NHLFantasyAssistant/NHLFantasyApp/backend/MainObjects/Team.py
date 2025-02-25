@@ -47,8 +47,13 @@ class Team:
     def getStatName(self, stat):
         reversedCheck = True
         stat_value = self.stats_dict[stat]
-
-        stat_alias = self.stats_keys_dict[stat]
+        stat_key_dict = {'BLK': "Blocked Shots", 'W': "Goalie Wins", 'L': "Goalie Losses", 'SA': "Shot Attempts",
+                         'GA': "Goals Against", 'SV': "Saves", 'PPP': "Power Play Points", 
+                         'SO': "Shutouts", 'SHP': "Short-Handed Points", 'OTL': "Goalie Overtime Losses",
+                         'G': "Goals", 'A': "Assists", '+/-': "+/-", 'G&A': "Goals and Assists", 'PPG': "Power Play Goals", 
+                         'PPA':  "Power Play Assists", 'SHG': "Short-Handed Goals", 'SHA': "Short-Handed Assists",
+                         'FOW': "Faceoffs Won", 'SOG': "Shots on Goal", 'HIT': "Hits"}
+        stat_alias = stat_key_dict[stat]
         end_of_phrase = stat_alias if stat_value != 1 else stat_alias[:-1]
 
         

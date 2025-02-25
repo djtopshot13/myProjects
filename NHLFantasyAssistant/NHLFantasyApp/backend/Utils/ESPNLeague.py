@@ -168,8 +168,12 @@ def playerFantasyPointCalculator(player):
 
 def _get_Season_Points():
     _points_against, _points_for, _points_diff = {team.team_name: 0 for team in my_nhl_league.teams}, \
+<<<<<<< HEAD:NHLFantasyAssistant/NHLFantasyApp/backend/Utils/ESPNLeague.py
     {team.team_name: 0 for team in my_nhl_league.teams}, {team.team_name: 0 for team in my_nhl_league.teams}
 
+=======
+        {team.team_name: 0 for team in my_nhl_league.teams}, {team.team_name: 0 for team in my_nhl_league.teams}
+>>>>>>> 6bbd635df998e6702eed1f97f368a94143aaa50f:NHLFantasyAssistant/Utils/ESPNLeague.py
     for i in range(1, my_nhl_league.currentMatchupPeriod + 1):
         curr_matchups = my_nhl_league.box_scores(i)
 
