@@ -345,7 +345,7 @@ class League:
         team_stats = ["points_for", "points_against", "points_diff", "matchup_wins", "matchup_losses"]
         for team in self.teams.values():
             teams.append(team)
-        for key in teams[0].stats_dict.keys():
+        for key in teams[0].stats_keys_dict.keys():
             team_stats.append(key)  
         for stat in team_stats:
             self.BestTeamStatSort(stat)

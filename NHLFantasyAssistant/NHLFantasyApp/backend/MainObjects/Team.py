@@ -11,6 +11,11 @@ class Team:
         self.matchup_losses = matchup_losses
         self.draft_list = draft_list
         self.stats_dict = stats_dict
+        self.stats_keys_dict = {'W': "Goalie Wins", 'SO': "Shutouts", 'OTL': "Goalie Overtime Losses", 'SV': "Saves",
+                         'L': "Goalie Losses", 'GA': "Goals Against", 'G&A': "Goals and Assists", 'G': "Goals", 'A': "Assists", 
+                         'PPP': "Power Play Points", 'PPG': "Power Play Goals", 'PPA':  "Power Play Assists", 'SHP': "Short-Handed Points", 
+                         'SHG': "Short-Handed Goals", 'SHA': "Short-Handed Assists", 'BLK': "Blocked Shots",'HIT': "Hits", 
+                         'SOG': "Shots on Goal", 'SA': "Shot Attempts", '+/-': "+/-", 'FOW': "Faceoffs Won"}
 
     def __repr__(self):
         return f"Team({self.name})"
@@ -42,12 +47,8 @@ class Team:
     def getStatName(self, stat):
         reversedCheck = True
         stat_value = self.stats_dict[stat]
-        stat_key_dict = {'W': "Goalie Wins", 'SO': "Shutouts", 'OTL': "Goalie Overtime Losses", 'SV': "Saves",
-                         'L': "Goalie Losses", 'GA': "Goals Against", 'G&A': "Goals and Assists", 
-                         'G': "Goals", 'A': "Assists", 'PPP': "Power Play Points", 'PPG': "Power Play Goals", 
-                         'PPA':  "Power Play Assists", 'SHG': "Short-Handed Goals", 'SHA': "Short-Handed Assists", 'BLK': "Blocked Shots",
-                         'HIT': "Hits", 'SOG': "Shots on Goal", 'SA': "Shot Attempts", '+/-': "+/-", 'FOW': "Faceoffs Won",  }
-        stat_alias = stat_key_dict[stat]
+
+        stat_alias = self.stats_keys_dict[stat]
         end_of_phrase = stat_alias if stat_value != 1 else stat_alias[:-1]
 
         
@@ -68,9 +69,6 @@ class Team:
         elif stat == 'SOG': 
             end_of_phrase = stat_alias if stat_value != 1 else "Shot on Goal"
         
-        
-            
-    
         return stat_alias, reversedCheck, end_of_phrase
 
 
