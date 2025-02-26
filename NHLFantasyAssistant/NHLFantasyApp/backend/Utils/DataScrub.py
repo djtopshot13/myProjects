@@ -12,5 +12,6 @@ class DataScrub:
         cleaned_name = re.sub(r'Aston/Reese', 'Aston-Reese', cleaned_name)
         cleaned_name = re.sub(r'Sttzle', 'Stutzle', cleaned_name)
         cleaned_name = re.sub(r'Lafrenire', 'Lafreniere', cleaned_name)
+        cleaned_name = re.sub(r'Mtt', 'Maatta', cleaned_name)
 
         return cleaned_name
