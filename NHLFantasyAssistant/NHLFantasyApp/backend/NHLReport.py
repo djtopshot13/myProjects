@@ -29,7 +29,7 @@ def main():
     # print()
     # league_object.leagueCurrPowerRankings()
     # print()
-    # league_object.streakReport(team="free_agents", pro_team=["LAK", "WPG", "VGK", "TOR", "NYR", "NJD", "DAL", "MIN", "NSH", "PIT"], min_threshold=1.4)
+    # league_object.streakReport(team="free_agents", pro_team=["CHI", "WSH", "ANA", "LAK", "NYR", "VAN", "VGK", "BUF", "DAL", "NYI", "PHI", "SJS", "SEA", "TBL", "WPG"], min_threshold=1.4)
     # print()
     # league_object.streakReport(team="Dillon's Dubs")
     # print()
