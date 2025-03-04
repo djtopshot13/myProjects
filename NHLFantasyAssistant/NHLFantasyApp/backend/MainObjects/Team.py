@@ -16,10 +16,13 @@ class Team:
                          'PPP': "Power Play Points", 'PPG': "Power Play Goals", 'PPA':  "Power Play Assists", 'SHP': "Short-Handed Points", 
                          'SHG': "Short-Handed Goals", 'SHA': "Short-Handed Assists", 'BLK': "Blocked Shots",'HIT': "Hits", 
                          'SOG': "Shots on Goal", 'SA': "Shot Attempts", '+/-': "+/-", 'FOW': "Faceoffs Won"}
-
+    
     def __repr__(self):
         return f"Team({self.name})"
-
+    def updateRoster(self, players):
+        self.players = players
+        for player in players:
+            player.team = self.name
     def displayTeamRecord(self, record_map):
         return f"{self.name} [{self.matchup_wins}, {self.matchup_losses}]({record_map['streak'][self.name][self.matchup_wins + self.matchup_losses - 1]})"
     

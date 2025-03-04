@@ -39,9 +39,12 @@ class League:
     def _get_All_Players(self):
         all_players = []
         all_players = self.free_agents.copy()
-        for players in self._rostered_players.values(): # double check that this only returns player objects and no other object typ
-            for player in players: # nested list by team value possibly to iterate over
+        team_roster_names = self._rostered_players.keys()
+        for team in team_roster_names:
+            for player in self._rostered_players[team]:
+                player.team = team
                 all_players.append(player)
+
         return all_players # Should return a list that includes players from the free_agents list anad from rostered_players
 
     def _get_Undrafted_Players(self):
@@ -429,6 +432,7 @@ class League:
     # Team lists with full rosters are being passed in somehow as well and are being removed with this code 
     # Maybe try to refactor, so team list objects aren't included in the rostered_players variable
     def printPlayersByAvgPoints(self):
+        
         # players_to_remove = []
         # for player_key, player in self._rostered_players.items():
         #     if type(player) != Skater or type(player) != Goalie:
@@ -436,8 +440,12 @@ class League:
 
         # for player_key in players_to_remove:
         #     del self._rostered_players[player_key]
-        
-        sorted_rostered_players = sorted(self._rostered_players.values(), key=lambda player: player.avg_points, reverse=True)
+        league_rostered_players = []
+        for team_roster in self._rostered_players.values():
+            for player in team_roster:
+                league_rostered_players.append(player)
+
+        sorted_rostered_players = sorted(league_rostered_players, key=lambda player: player.avg_points, reverse=True)
 
         for index, player in enumerate(sorted_rostered_players):
             print(f"{index + 1}. {player.name} ({player.position}): [{player.avg_points} avg pts] - ({player.team})")
@@ -454,8 +462,13 @@ class League:
 
         # for player_key in players_to_remove:
         #     del self._rostered_players[player_key]
+        league_rostered_players = []
+        
+        for team_roster in self._rostered_players.values():
+            for player in team_roster:
+                league_rostered_players.append(player) 
 
-        sorted_rostered_players = sorted(self._rostered_players.values(), key=lambda player: player.points, reverse=True)
+        sorted_rostered_players = sorted(league_rostered_players, key=lambda player: player.points, reverse=True)
 
         for index, player in enumerate(sorted_rostered_players):
             # print(dir(player))
