@@ -429,14 +429,14 @@ class League:
     # Team lists with full rosters are being passed in somehow as well and are being removed with this code 
     # Maybe try to refactor, so team list objects aren't included in the rostered_players variable
     def printPlayersByAvgPoints(self):
-        players_to_remove = []
-        for player_key, player in self._rostered_players.items():
-            if type(player) != Skater or type(player) != Goalie:
-                players_to_remove.append(player_key)
+        # players_to_remove = []
+        # for player_key, player in self._rostered_players.items():
+        #     if type(player) != Skater or type(player) != Goalie:
+        #         players_to_remove.append(player_key)
 
-        for player_key in players_to_remove:
-            del self._rostered_players[player_key]
-
+        # for player_key in players_to_remove:
+        #     del self._rostered_players[player_key]
+        
         sorted_rostered_players = sorted(self._rostered_players.values(), key=lambda player: player.avg_points, reverse=True)
 
         for index, player in enumerate(sorted_rostered_players):
@@ -446,14 +446,14 @@ class League:
     # Team lists with full rosters are being passed in somehow as well and are being removed with this code 
     # Maybe try to refactor, so team list objects aren't included in the rostered_players variable
     def printPlayersByPoints(self):
-        players_to_remove = []
+        # players_to_remove = []
         
-        for player_key, player in self._rostered_players.items():
-            if type(player) != Skater or type(player) != Goalie:
-                players_to_remove.append(player_key)
+        # for player_key, player in self._rostered_players.items():
+        #     if type(player) != Skater or type(player) != Goalie:
+        #         players_to_remove.append(player_key)
 
-        for player_key in players_to_remove:
-            del self._rostered_players[player_key]
+        # for player_key in players_to_remove:
+        #     del self._rostered_players[player_key]
 
         sorted_rostered_players = sorted(self._rostered_players.values(), key=lambda player: player.points, reverse=True)
 

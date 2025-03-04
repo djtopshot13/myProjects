@@ -77,46 +77,36 @@ class Team:
         return stat_alias, reversedCheck, end_of_phrase
 
 
-                
-    def displayRoster(self):
-        count = 0
-        for player in self.players:
-                count = count + 1
-                player_info = player.displayPlayerInfo()
-                print(f"{count}. {player_info}")
-
-
-    def displayAvgPointsSortedRoster(self):
-        sorted_players = sorted(self.players, key=lambda player: player.avg_points, reverse=True)
-        count = 0
-        for player in sorted_players:
-            count = count + 1
-            player_info = player.displayPlayerAveragePoints()
-            print(f"{count}. {player_info}")
+                 
+    def displayRoster(self): # prints roster from earliest added player to latest added player
+        for index, player in enumerate(self.players):
+            player_info = player.displayPlayerInfo()
+            print(f"{index+1}. {player_info}")
 
     def displayPointsSortedRoster(self):
         sorted_players = sorted(self.players, key=lambda player: player.points, reverse=True)
-        count = 0
-        for player in sorted_players:
-            count = count + 1
+        for index, player in enumerate(sorted_players):
             player_info = player.displayPlayerInfo()
-            print(f"{count}. {player_info}")
+            print(f"{index+1}. {player_info}")
+
+    def displayAvgPointsSortedRoster(self): 
+        sorted_players = sorted(self.players, key=lambda player: player.avg_points, reverse=True)
+        for index, player in enumerate(sorted_players):
+            player_info = player.displayPlayerAveragePoints()
+            print(f"{index+1}. {player_info}")
+
 
     def displayDraftRoster(self):
         # sorted_players = sorted(self.draft_list, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
-        count = 0
         sorted_draft_list = sorted(self.draft_list, key=lambda player: player.curr_year_proj.get('PTS', 0), reverse=True)
-        for player in sorted_draft_list:
-            count = count + 1
+        for index, player in enumerate(sorted_draft_list):
             player_info = player.displayDraftPlayerInfo()
-            
-
             is_on_roster = any(player.name == rostered_player.name
                                for rostered_player in self.players)
             if is_on_roster:
-                print(f"{count}. {player_info}")
+                print(f"{index+1}. {player_info}")
             else:
-                print(f"{count}. {player_info} --- No Longer on Roster")
+                print(f"{index+1}. {player_info} --- No Longer on Roster")
 
     def getPositionCount(self):
         dCount = 0
@@ -136,37 +126,37 @@ class Team:
         self.PositionAvgPoints(dCount, fCount, gCount)
         return dCount, fCount, gCount
     
-    def playerFantasyPointCalculator(self, player):
-        headings = ['Projected 2024', 'Total 2024', 'Total 2025', 'Projected 2025', 'Last 7 2025', 'Last 15 2025', 'Last 30 2025']
-        points_dict = {}
-        for header in headings:
-            if header in player.stats:
-                points = goals_against = saves = wins = shutouts = overtime_losses = goals = assists = shots = hits = blocked_shots = pp_points = sh_points = 0
-                if player.position == 'G':
-                    goals_against = player.stats[header].get('total', {}).get('GA', 0) * -2
-                    saves = round(player.stats[header].get('total', {}).get('SV', 0) / 5, 1)
-                    shutouts = player.stats[header].get('total', {}).get('SO', 0) * 3
-                    wins = player.stats[header].get('total', {}).get('W', 0) * 4
-                    overtime_losses = player.stats[header].get('total', {}).get('OTL', 0)
-                else: 
-                    goals = player.stats[header].get('total', {}).get('G', 0) * 2
-                    assists = player.stats[header].get('total', {}).get('A', 0)
-                    shots = round(player.stats[header].get('total', {}).get('SOG', 0) / 10, 1)
-                    hits = round(player.stats[header].get('total', {}).get('HIT', 0) / 10, 1)
-                    blocked_shots = round(player.stats[header].get('total', 0).get('BLK', 0) / 2, 1)
-                    pp_points = round(player.stats[header].get('total', {}).get('PPP', 0) / 2, 1)
-                    sh_points = round(player.stats[header].get('total', {}).get('SHP', 0) / 2, 1)
+    # def playerFantasyPointCalculator(self, player):
+    #     headings = ['Projected 2024', 'Total 2024', 'Total 2025', 'Projected 2025', 'Last 7 2025', 'Last 15 2025', 'Last 30 2025']
+    #     points_dict = {}
+    #     for header in headings:
+    #         if header in player.stats:
+    #             points = goals_against = saves = wins = shutouts = overtime_losses = goals = assists = shots = hits = blocked_shots = pp_points = sh_points = 0
+    #             if player.position == 'G':
+    #                 goals_against = player.stats[header].get('total', {}).get('GA', 0) * -2
+    #                 saves = round(player.stats[header].get('total', {}).get('SV', 0) / 5, 1)
+    #                 shutouts = player.stats[header].get('total', {}).get('SO', 0) * 3
+    #                 wins = player.stats[header].get('total', {}).get('W', 0) * 4
+    #                 overtime_losses = player.stats[header].get('total', {}).get('OTL', 0)
+    #             else: 
+    #                 goals = player.stats[header].get('total', {}).get('G', 0) * 2
+    #                 assists = player.stats[header].get('total', {}).get('A', 0)
+    #                 shots = round(player.stats[header].get('total', {}).get('SOG', 0) / 10, 1)
+    #                 hits = round(player.stats[header].get('total', {}).get('HIT', 0) / 10, 1)
+    #                 blocked_shots = round(player.stats[header].get('total', 0).get('BLK', 0) / 2, 1)
+    #                 pp_points = round(player.stats[header].get('total', {}).get('PPP', 0) / 2, 1)
+    #                 sh_points = round(player.stats[header].get('total', {}).get('SHP', 0) / 2, 1)
                 
-                points = goals_against + saves + shutouts + wins + overtime_losses + goals + assists + shots + hits + blocked_shots + pp_points + sh_points
-                points_dict[header] = round(points, 1)
-            else:
-                continue
+    #             points = goals_against + saves + shutouts + wins + overtime_losses + goals + assists + shots + hits + blocked_shots + pp_points + sh_points
+    #             points_dict[header] = round(points, 1)
+    #         else:
+    #             continue
             
-        return points_dict
+    #     return points_dict
 
-    # def playerFantasyPoints(self, player):
-    #     points = player.points
-    #     return points
+    def playerFantasyPoints(self, player):
+        points = player.points
+        return points
             
     def PositionAvgPoints(self, dCount, fCount, gCount):
         fPoints = 0
