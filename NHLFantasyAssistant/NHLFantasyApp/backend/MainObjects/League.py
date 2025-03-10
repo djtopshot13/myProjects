@@ -500,7 +500,11 @@ class League:
 
         # first_degree is full already, full second degree is just the intersection of second and first, and then full third is intersection of third and 
 
-    # 
+    """
+    Define a method that can project matchup score by using player's avg points 
+    multiplied by the number of games played in the matchup period by their pro team
+    for the 7 day window. Display each team from highest projected score to lowest projected score
+    """
 
     def createLeague():
         # Initialize all necessary variables to be passed into League constructor
