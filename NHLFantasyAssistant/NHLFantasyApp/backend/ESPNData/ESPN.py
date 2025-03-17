@@ -16,6 +16,8 @@ class ESPN:
         # self.get_nhl_teams()
         self.get_nhl_team_rosters()
         self.get_nhl_team_standings()
+        self.get_nhl_rem_schedule()
+        self.get_nhl_schedule()
         # self.get_nhl_team_rosters()
         # self.get_nhl_team_standings()
 
@@ -306,5 +308,24 @@ class ESPN:
                 data['nhlRosters'].append({name: response.json()})
                 with open("ESPNData/nhl_team_rosters.json", "w") as f:
                     json.dump(data, f, indent=4)
+
+    def get_nhl_rem_schedule(self):
+        data = {"nhlSchedules": []}
+        for name, abbrev in self.constant_obj.pro_team_abbrev.items():
+            api_endpoint = self.base_url + f"club-schedule-season/{abbrev}/now"
+            response = requests.get(api_endpoint, headers=self.headers)
+            if response.status_code == 200:
+                data['nhlSchedules'].append({name: response.json()})
+                with open("ESPNData/nhl_team_schedules.json", "w") as f:
+                    json.dump(data, f, indent=4)
+                    
+    def get_nhl_schedule(self):
+        data = {"nhlSchedules": {}}
+        api_endpoint = self.base_url + "schedule/now"
+        response = requests.get(api_endpoint, headers=self.headers)
+        if response.status_code == 200:
+            data['nhlSchedules'] = response.json()
+            with open("ESPNData/nhl_full_team_schedules.json", "w") as f:
+                json.dump(data, f, indent=4)
 
 ESPN_data = ESPN()
