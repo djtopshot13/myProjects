@@ -28,8 +28,8 @@ class Matchup:
 
         
         
-        for i in range(1, self.curr_matchup_period):
-            key_val = 'Week ' + str(i)
+        for i in range(self.curr_matchup_period if self.curr_matchup_period < 22 else 21):
+            key_val = 'Week ' + str(i+1)
             full_matchup_map[key_val] = {}
 
             winning_teams, winning_scores, losing_teams, losing_scores, score_deficits = self.weekMatchupInitializer(i, winning_teams, winning_scores, losing_teams, losing_scores, score_deficits)
@@ -38,16 +38,16 @@ class Matchup:
                 match_val = 'Matchup ' + str(j+1)
                 full_matchup_map[key_val][match_val] = {}
 
-                winning_teams_map = {'winning_team': winning_teams[i-1][j]}
-                losing_teams_map = {'losing_team': losing_teams[i-1][j]}
-                winning_scores_map = {'winning_score': winning_scores[i-1][j]}
-                losing_scores_map = {'losing_score': losing_scores[i-1][j]}
-                score_deficits_map = {'score_deficit': score_deficits[i-1][j]}
+                winning_teams_map = {'winning_team': winning_teams[i][j]}
+                losing_teams_map = {'losing_team': losing_teams[i][j]}
+                winning_scores_map = {'winning_score': winning_scores[i][j]}
+                losing_scores_map = {'losing_score': losing_scores[i][j]}
+                score_deficits_map = {'score_deficit': score_deficits[i][j]}
                 
                 
 
-                team_record_map[winning_teams[i-1][j]].append('W')
-                team_record_map[losing_teams[i-1][j]].append('L')
+                team_record_map[winning_teams[i][j]].append('W')
+                team_record_map[losing_teams[i][j]].append('L')
 
                 full_matchup_map[key_val][match_val] = winning_teams_map, losing_teams_map, winning_scores_map, losing_scores_map, score_deficits_map
         
@@ -195,11 +195,11 @@ class Matchup:
             # set up point margin by getting the difference between winning and losing score rounded to 1 decimal place
             score_deficit = round(winning_score - losing_score, 1)
 
-            winning_teams[weekNum-1].append(winning_team)
-            winning_scores[weekNum-1].append(winning_score)
-            losing_teams[weekNum-1].append(losing_team)
-            losing_scores[weekNum-1].append(losing_score)
-            score_deficits[weekNum-1].append(score_deficit)
+            winning_teams[weekNum].append(winning_team)
+            winning_scores[weekNum].append(winning_score)
+            losing_teams[weekNum].append(losing_team)
+            losing_scores[weekNum].append(losing_score)
+            score_deficits[weekNum].append(score_deficit)
 
         return winning_teams, winning_scores, losing_teams, losing_scores, score_deficits
     
