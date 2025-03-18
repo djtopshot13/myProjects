@@ -508,7 +508,6 @@ class League:
     for the 7 day window. Display each team from highest projected score to lowest projected score
     """
 
-<<<<<<< HEAD
     def getGamesPlayedByTeam(self, days=7):
         gameCount = {}
         end_day = self.constants.curr_day + days - 1
@@ -555,8 +554,6 @@ class League:
             for key, val in sortedGameCount.items():
                 print(f"{key}: {val} games played over the next {days} days")
                     
-=======
->>>>>>> parent of d8f4fa0 (I got the data for the teams games played from the API, so I should be able to utilize that for further analysis)
     def createLeague():
         # Initialize all necessary variables to be passed into League constructor
         _season_points = ESPNLeague._get_Season_Points()

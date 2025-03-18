@@ -316,7 +316,7 @@ class ESPN:
             response = requests.get(api_endpoint, headers=self.headers)
             if response.status_code == 200:
                 data['nhlSchedules'].append({name: response.json()})
-                with open("ESPNData/nhl_team_schedules.json", "w") as f:
+                with open("ESPNData/nhl_full_team_schedules.json", "w") as f:
                     json.dump(data, f, indent=4)
                     
     def get_nhl_schedule(self):
@@ -325,7 +325,7 @@ class ESPN:
         response = requests.get(api_endpoint, headers=self.headers)
         if response.status_code == 200:
             data['nhlSchedules'] = response.json()
-            with open("ESPNData/nhl_full_team_schedules.json", "w") as f:
+            with open("ESPNData/nhl_week_team_schedules.json", "w") as f:
                 json.dump(data, f, indent=4)
 
 ESPN_data = ESPN()
