@@ -7,7 +7,7 @@ class Player:
         const_obj = Constants()
         self.name = name
         self.team = team
-        self.pro_team = pro_team if pro_team != "Montréal Canadiens" else "Montreal Canadiens"
+        self.pro_team = pro_team
         self.pro_team_abbrev = const_obj.pro_team_abbrev[self.pro_team]
         self.position = position
         self.points = points

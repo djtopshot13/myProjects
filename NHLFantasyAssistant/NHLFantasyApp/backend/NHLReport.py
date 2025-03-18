@@ -3,8 +3,8 @@ from MainObjects.League import League
 league_object = League.createLeague()
 
 def main():
-    league_object.printSeasonMatchupResults()
-    print()
+    # league_object.printSeasonMatchupResults()
+    # print()
     # league_object.LeagueStandings() 
     # print()
     # league_object.DivisionStandings(1)
@@ -37,6 +37,8 @@ def main():
     # print()
     # league_object.pointPositionReport()
     # print()
+    league_object.getGamesPlayedByTeam()
+    print()
     
     
     

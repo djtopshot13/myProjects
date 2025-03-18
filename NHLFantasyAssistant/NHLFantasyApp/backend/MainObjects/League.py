@@ -4,6 +4,7 @@ from .Goalie import Goalie
 from ToolObjects import Matchup
 from ToolObjects import RosterGrade
 from ToolObjects import StreakTracker
+from Utils import Constants
 
 class League:
     def __init__(self, teams, matchups, draft_dict, rostered_players, free_agents, recent_activity, player_map, standings, curr_matchup_period, settings):
@@ -23,6 +24,7 @@ class League:
         self.roster_grader = self._make_Roster_Grader()
         self.streak_tracker = self._make_Streak_Tracker()
         self.team_record_map = self.matchup.team_record_map
+        self.constants = Constants()
     
     def _make_Roster_Grader(self):
         sorted_free_agents = sorted(self.free_agents, key=lambda player: player.curr_year_total.get('PTS', 0), reverse=True)
@@ -507,8 +509,51 @@ class League:
     """
 
     def getGamesPlayedByTeam(self, days=7):
-        for team in c
+        gameCount = {}
+        end_day = self.constants.curr_day + days - 1
+        end_month = self.constants.curr_month
+        end_year = self.constants.curr_year
+        max_month_days = self.constants.monthToNumOfDays[self.constants.numToMonth[self.constants.curr_month]]
 
+        for team in self.constants.pro_team_abbrev_keys:
+            gameCount[team] = 0
+            with open("ESPNData/nhl_full_team_schedules.json", "r") as f:
+                data = f
+            for game in data[team]["games"]:
+                [year, month, day] = game["gameDate"].split("-")
+                if end_day <= max_month_days:
+                    if int(year) == self.constants.curr_year:  
+                        if int(month) == self.constants.curr_month:
+                            if self.constants.curr_day <= int(day) <= max_month_days:
+                                gameCount[team] += 1
+                            else: 
+                                continue
+                        else:
+                            continue
+                    else: 
+                        continue
+                else:
+                    end_day -= max_month_days
+                    if end_month < 12:
+                        end_month += 1
+                    else: 
+                        end_month = 1
+                        end_year += 1
+                    if int(year) == end_year:
+                        if int(month) == end_month:
+                            if int(day) <= end_day:
+                                gameCount[team] += 1
+                            else: 
+                                continue
+                        else: 
+                            continue   
+                    else: 
+                        continue
+
+            sortedGameCount = dict(sorted(gameCount.items(), key = lambda item: item[1], reverse=True))
+            for key, val in sortedGameCount.items():
+                print(f"{key}: {val} games played over the next {days} days")
+                    
     def createLeague():
         # Initialize all necessary variables to be passed into League constructor
         _season_points = ESPNLeague._get_Season_Points()

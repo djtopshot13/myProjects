@@ -2,15 +2,22 @@ from espn_api.hockey import League as ESPNLeague
 from MainObjects.Team import Team
 from MainObjects.Skater import Skater
 from MainObjects.Goalie import Goalie
+# import browser_cookie3
+
+# # Extract cookies from the browser
+# cookies = browser_cookie3.chrome(domain_name='https://fantasy.espn.com')
+
+# # Find the required tokens
+# swid = next((c.value for c in cookies if c.name == 'SWID'), None)
+# espn_s2 = next((c.value for c in cookies if c.name == 'ESPN_S2'), None)
 
 my_league_id = 1705592891
 curr_year = 2025 
-SWID = "73AF0A56-8B05-4B4C-8291-A431308556FD"
-espn_s2_cookie = "AEAVePfqAj5sDj5KBoDdTQ7y7U5IcQaWswzMsomuzV%2B7u46Q29tOY56LRtFJucWWRyOD5FDujuOHqSG1LLa7NFXOJpW3jop3hgfmFglevS90tpTgw8tNRQLzznnrevnaIc5FZ8xE6b71AeemRUYSMnU1nT85QOi28kPbUd%2FN1WV45DPhzlbMb0YnUyXGba5HNLt17B7qiJWTIA0OlsPU50RsJ0meAG0YtMyP%2BUUvdg6GoddBkRS7tmy52bZ7kijTQW5eyARkXXTTfI5ymUCrbCDCgd%2BsIcolYdmjEbpIjg7KmA%3D%3D"
-
+swid = "73AF0A56-8B05-4B4C-8291-A431308556FD"
+espn_s2 = "AEBfgkNeiRckA9Y1cvclvdFgd3SnwvaZoAuDAcZ%2Bhppua%2BIX5H4q1Iww6WNYlOUxutb75sSrLvQenTnPTyIySl%2FUiS%2BREmbfppo2DycYwz2nGp9cE%2B3E%2B%2F4m%2BOJPvQcxcB5N%2BfVU%2B8EBkGWYnuPH12lrIpX3P3QLMm9RAmqHW2CW1NmbKoRXj5qbRHKHnJFkr8T4jphTkRki2ujkUQMUMPhFuONLQUjUu2NvvOqxjhTfSD2QADVnIQt00S0rIuvaR5QkOnErHDBhw%2Bm27o5bmnNoXH%2BIxHAzdpXhXKFOqqsn4g%3D%3D"
 # Order of full stats 'Total 2024', 'Total 2025', 'Last 7 2025', 'Last 30 2025', 'Last 15 2025', 'Projected 2025', 'Projected 2024'
 
-my_nhl_league = ESPNLeague(league_id=my_league_id, year=curr_year, espn_s2=espn_s2_cookie, swid=SWID, fetch_league=True)
+my_nhl_league = ESPNLeague(league_id=my_league_id, year=curr_year, espn_s2=espn_s2, swid=swid, fetch_league=True)
 def _construct_Players(players_list, player_type):
     new_players = []
       
@@ -170,7 +177,7 @@ def _get_Season_Points():
     _points_against, _points_for, _points_diff = {team.team_name: 0 for team in my_nhl_league.teams}, \
     {team.team_name: 0 for team in my_nhl_league.teams}, {team.team_name: 0 for team in my_nhl_league.teams}
 
-    for i in range(1, my_nhl_league.currentMatchupPeriod + 1):
+    for i in range(1, my_nhl_league.currentMatchupPeriod):
         curr_matchups = my_nhl_league.box_scores(i)
 
         for matchup in curr_matchups:
