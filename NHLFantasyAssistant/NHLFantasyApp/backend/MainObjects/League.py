@@ -506,9 +506,6 @@ class League:
     for the 7 day window. Display each team from highest projected score to lowest projected score
     """
 
-    def getGamesPlayedByTeam(self, days=7):
-        for team in c
-
     def createLeague():
         # Initialize all necessary variables to be passed into League constructor
         _season_points = ESPNLeague._get_Season_Points()
