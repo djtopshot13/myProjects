@@ -31,7 +31,7 @@ class Constants:
             "Florida Panthers": "FLA",
             "Los Angeles Kings": "LAK",
             "Minnesota Wild": "MIN",
-            "Montreal Canadiens": "MON",
+            "Montr\u00e9al Canadiens": "MTL",
             "Nashville Predators": "NSH",
             "New Jersey Devils": "NJD",
             "New York Islanders": "NYI",
