@@ -1,15 +1,15 @@
 import React from "react";
+import { type Color } from "@/../../lib/types";
 
-type ButtonProps = {
-  style: React.CSSProperties;
-  borderRadius: Record<string, number>;
-  children: string;
-}
 
-export default function Button({style, children}: ButtonProps) {
+
+export default function Button() {
+  React.useEffect(() => {
+    fetch('httpssfasfsjfdsaf').then
+    ((response) => response.json())
+    .then((data: unknown) => console.log(data))
+  }, []);
   return (
-    <button style={style}>
-      {children}
-    </button>
+    <button>Click Me!</button>
   );
 }

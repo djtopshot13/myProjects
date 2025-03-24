@@ -31,14 +31,14 @@ def main():
     # print()
     # league_object.leagueCurrPowerRankings()
     # print()
-    # league_object.streakReport(team="free_agents", pro_team=["LAK", "TOR", "BUF"], min_threshold=1.4)
-    # print()
-    # league_object.streakReport(team="Dillon's Dubs")    
-    # print()
+    league_object.streakReport(team="free_agents", pro_team=["BUF", "DAL", "DET", "LAK", "MIN", "MTL", "NJD", "NYI", "OTT", "TOR", "UTA", "VAN"], position="forward", min_threshold=1.4)
+    print()
+    league_object.streakReport(team="Dillon's Dubs")    
+    print()
     # league_object.pointPositionReport()
     # print()
-    league_object.getGamesPlayedByTeam()
-    print()
+    # league_object.getGamesPlayedByTeam()
+    # print()
     
     
     

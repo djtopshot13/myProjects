@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Button from './components/button';
+
 
 function App() {
   return (
@@ -20,7 +20,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <Button style={{backgroundColor:'blue', fontSize:20, color:'white'}} children='Click Me'></Button>
     </div>
   );
 }
