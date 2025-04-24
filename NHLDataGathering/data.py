@@ -41,8 +41,19 @@ import pandas as pd
 #     game_df.to_csv(f"PBP/202402{game_id}.csv", index=False)
 #     print(f"Game 202402{game_id} data saved.")
 
-def download_csv_files(BASE_URL, DOWNLOAD_DIR):
+"""
+Games 
+October: 0001-0167 
+November: 0168-0388
+December: 0389-601
+January: 602-825
+February: 826-947
+March: 948-1181
+April: 1182-1312
+"""
 
+
+def download_csv_files(BASE_URL, DOWNLOAD_DIR):
     import os
     from bs4 import BeautifulSoup  # For parsing HTML
 
@@ -97,3 +108,39 @@ def download_csv_files(BASE_URL, DOWNLOAD_DIR):
         
         except requests.exceptions.RequestException as e:
             print(f"Failed to download {link}: {e}")
+
+def json_files_to_csv(BASE_URL, DOWNLOAD_DIR):
+    import os
+    import json
+
+    # Configuration
+    HEADERS = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        "Accept": "application/json"  # Prioritize JSON responses
+    }
+
+    # Ensure download directory exists
+    os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+
+    # Step 1: Get page content
+    response = requests.get(BASE_URL, headers=HEADERS)
+    if response.status_code != 200:
+        print(f"Failed to retrieve the page, status code: {response.status_code}")
+        exit()
+
+    # Step 2: Parse JSON data
+    try:
+        json_data = response.json()
+    except json.JSONDecodeError:
+        print("Failed to decode JSON data.")
+        exit()
+
+    # Step 3: Save JSON data to file
+    filename = os.path.join(DOWNLOAD_DIR, "data.json")
+    with open(filename, "w") as f:
+        json.dump(json_data, f, indent=4)
+
+    print(f"Downloaded JSON data to {filename}")
+
+    season = "20242025"
+    BASE_URL =f"https://www.moneypuck.com/moneypuck/OldSeasonScheduleJson/SeasonSchedule-{season}.json"
