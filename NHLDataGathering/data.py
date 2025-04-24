@@ -44,8 +44,8 @@ import pandas as pd
 """
 Games 
 October: 0001-0167 
-November: 0168-0388
-December: 0389-601
+November: 0168-0387
+December: 0388-601
 January: 602-825
 February: 826-947
 March: 948-1181
@@ -112,6 +112,7 @@ def download_csv_files(BASE_URL, DOWNLOAD_DIR):
 def json_files_to_csv(BASE_URL, DOWNLOAD_DIR):
     import os
     import json
+    import datetime
 
     # Configuration
     HEADERS = {
@@ -136,11 +137,21 @@ def json_files_to_csv(BASE_URL, DOWNLOAD_DIR):
         exit()
 
     # Step 3: Save JSON data to file
-    filename = os.path.join(DOWNLOAD_DIR, "data.json")
-    with open(filename, "w") as f:
-        json.dump(json_data, f, indent=4)
+    # filename = os.path.join(DOWNLOAD_DIR, "data.json")
+    # with open(filename, "w") as f:
+    #     json.dump(json_data, f, indent=4)
 
-    print(f"Downloaded JSON data to {filename}")
+    # print(f"Downloaded JSON data to {filename}")
 
-    season = "20242025"
-    BASE_URL =f"https://www.moneypuck.com/moneypuck/OldSeasonScheduleJson/SeasonSchedule-{season}.json"
+    schedule_df = pd.json_normalize(json_data)
+    schedule_df = schedule_df.sort_values(by=["id"])
+    schedule_df.rename(columns={"h": "homeAbbrev", "a": "awayAbbrev"}, inplace=True)
+    schedule_df['est'] = pd.to_datetime(
+    schedule_df['est'],
+    format='%Y%m%d %H:%M:%S').dt.strftime('%Y %B %d %H:%M:%S')
+    schedule_df.to_csv(os.path.join(DOWNLOAD_DIR, f"{season}.csv"), index=False)
+
+season = "20242025"
+BASE_URL =f"https://www.moneypuck.com/moneypuck/OldSeasonScheduleJson/SeasonSchedule-{season}.json"
+DOWNLOAD_DIR = "NHLSeasonSchedule"
+json_files_to_csv(BASE_URL, DOWNLOAD_DIR)
