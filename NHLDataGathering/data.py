@@ -41,59 +41,59 @@ import pandas as pd
 #     game_df.to_csv(f"PBP/202402{game_id}.csv", index=False)
 #     print(f"Game 202402{game_id} data saved.")
 
-import os
-from bs4 import BeautifulSoup  # For parsing HTML
+def download_csv_files(BASE_URL, DOWNLOAD_DIR):
 
-# Configuration
-BASE_URL = "https://moneypuck.com/moneypuck/gameData/20242025"
-DOWNLOAD_DIR = "C:/Users/DJtop/Downloads/PersonalProjects/myProjects/NHLDataGathering/PBP"
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-    "Accept": "text/csv"  # Prioritize CSV responses
-}
+    import os
+    from bs4 import BeautifulSoup  # For parsing HTML
 
-# Ensure download directory exists
-os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+    # Configuration
+    HEADERS = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        "Accept": "text/csv"  # Prioritize CSV responses
+    }
 
-# Step 1: Get page content
-response = requests.get(BASE_URL, headers=HEADERS)
-if response.status_code != 200:
-    print(f"Failed to retrieve the page, status code: {response.status_code}")
-    exit()
-soup = BeautifulSoup(response.text, "html.parser")
-if soup is None:
-    print("Failed to retrieve the page content.")
-    exit()
+    # Ensure download directory exists
+    os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+
+    # Step 1: Get page content
+    response = requests.get(BASE_URL, headers=HEADERS)
+    if response.status_code != 200:
+        print(f"Failed to retrieve the page, status code: {response.status_code}")
+        exit()
+    soup = BeautifulSoup(response.text, "html.parser")
+    if soup is None:
+        print("Failed to retrieve the page content.")
+        exit()
 
 
-# Step 2: Find CSV links
-csv_links = []
-for link in soup.find_all("a"):
-    href = link.get("href")
-    if href and ("download" in href.lower() or href.endswith(".csv")):
-        csv_links.append(href)
+    # Step 2: Find CSV links
+    csv_links = []
+    for link in soup.find_all("a"):
+        href = link.get("href")
+        if href and ("download" in href.lower() or href.endswith(".csv")):
+            csv_links.append(href)
 
-# Step 3: Download files
-for link in csv_links:
-    # Handle relative URLs
-    if not link.startswith("http"):
-        link = f"{BASE_URL}/{link.lstrip('/')}"
-    
-    try:
-        response = requests.get(link, headers=HEADERS)
-        response.raise_for_status()  # Check for HTTP errors
+    # Step 3: Download files
+    for link in csv_links:
+        # Handle relative URLs
+        if not link.startswith("http"):
+            link = f"{BASE_URL}/{link.lstrip('/')}"
         
-        # Generate filename from URL
-        filename = os.path.join(
-            DOWNLOAD_DIR,
-            os.path.basename(link).split("?")[0]  # Remove URL parameters
-        )
+        try:
+            response = requests.get(link, headers=HEADERS)
+            response.raise_for_status()  # Check for HTTP errors
+            
+            # Generate filename from URL
+            filename = os.path.join(
+                DOWNLOAD_DIR,
+                os.path.basename(link).split("?")[0]  # Remove URL parameters
+            )
+            
+            # Save file
+            with open(filename, "wb") as f:
+                f.write(response.content)
+            
+            print(f"Downloaded: {filename}")
         
-        # Save file
-        with open(filename, "wb") as f:
-            f.write(response.content)
-        
-        print(f"Downloaded: {filename}")
-    
-    except requests.exceptions.RequestException as e:
-        print(f"Failed to download {link}: {e}")
+        except requests.exceptions.RequestException as e:
+            print(f"Failed to download {link}: {e}")
