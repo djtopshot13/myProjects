@@ -146,12 +146,11 @@ def json_files_to_csv(BASE_URL, DOWNLOAD_DIR):
     schedule_df = pd.json_normalize(json_data)
     schedule_df = schedule_df.sort_values(by=["id"])
     schedule_df.rename(columns={"h": "homeAbbrev", "a": "awayAbbrev"}, inplace=True)
-    schedule_df['est'] = pd.to_datetime(
-    schedule_df['est'],
-    format='%Y%m%d %H:%M:%S').dt.strftime('%Y %B %d %H:%M:%S')
+    schedule_df['est'] = pd.to_datetime(schedule_df['est'], format='%Y%m%d').dt.strftime('%Y %B %d')
+    schedule_df = schedule_df[["id", "homeAbbrev", "awayAbbrev", "est"]]
     schedule_df.to_csv(os.path.join(DOWNLOAD_DIR, f"{season}.csv"), index=False)
 
-season = "20242025"
-BASE_URL =f"https://www.moneypuck.com/moneypuck/OldSeasonScheduleJson/SeasonSchedule-{season}.json"
+season = "20072008"
+BASE_URL =f"https://www.moneypuck.com/moneypuck/OldSeasonScheduleJson/{season}PL02.json"
 DOWNLOAD_DIR = "NHLSeasonSchedule"
 json_files_to_csv(BASE_URL, DOWNLOAD_DIR)
