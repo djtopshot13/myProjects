@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1656039988859920386,WaltRuff,2023-05-09 04:54 PM,2023-05-09 05:28 PM,8475883,Frederik Andersen,1656064420139655175,drosennhl,2023-05-09 06:31 PM,2023-05-09 06:38 PM,8477970,Vitek Vanecek
+1656064420139655175,drosennhl,2023-05-09 06:31 PM,2023-05-09 06:38 PM,8475883,Frederik Andersen,1656064889968816130,SaraCivian,2023-05-09 06:33 PM,2023-05-09 06:38 PM,8477970,Vitek Vanecek
+1656064889968816130,SaraCivian,2023-05-09 06:33 PM,2023-05-09 06:38 PM,8475883,Frederik Andersen,1656065366722748416,RotoWireNHL,2023-05-09 06:35 PM,2023-05-09 06:38 PM,8477970,Vitek Vanecek

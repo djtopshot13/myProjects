@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1586072498684428288,penguins,2022-10-28 03:08 PM,2022-10-28 03:28 PM,8477465,Tristan Jarry,1.5857217573356872e+18,CanucksArmy,2022-10-27 03:55 PM,2022-10-27 03:58 PM,8477967.0,Thatcher Demko
+1586071591993348096,TaylorHaasePGH,2022-10-28 03:05 PM,2022-10-28 03:28 PM,8477465,Tristan Jarry,1.5861398700154102e+18,Canucks,2022-10-28 07:36 PM,2022-10-28 07:38 PM,8477484.0,Spencer Martin
+1586070252840181760,TaylorHaasePGH,2022-10-28 02:59 PM,2022-10-28 03:28 PM,8477465,Tristan Jarry,,,,,,

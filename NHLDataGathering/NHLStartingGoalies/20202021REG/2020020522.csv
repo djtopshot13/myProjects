@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1375238327125778433,NBCSEdgeHK,2021-03-25 08:09 PM,2021-03-25 08:13 PM,8476883,Andrei Vasilevskiy,1375106585085771776,MDeFranks,2021-03-25 11:25 AM,2021-03-25 11:28 AM,8479979,Jake Oettinger
+1375236588716879876,RotoWireNHL,2021-03-25 08:02 PM,2021-03-25 08:13 PM,8476883,Andrei Vasilevskiy,1375106580711141381,BruceLeVinePuck,2021-03-25 11:25 AM,2021-03-25 11:28 AM,8479979,Jake Oettinger
+1375237565918351361,FantasyAlarmNHL,2021-03-25 08:06 PM,2021-03-25 08:13 PM,8476883,Andrei Vasilevskiy,1375112137543200769,BruceLeVinePuck,2021-03-25 11:47 AM,2021-03-25 11:59 AM,8479979,Jake Oettinger

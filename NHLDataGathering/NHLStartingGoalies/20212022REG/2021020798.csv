@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1488628946656800771,markhmasters,2022-02-01 04:42 PM,2022-02-01 04:58 PM,8475789,Jack Campbell,1.4886557567149834e+18,mikemorrealeNHL,2022-02-01 06:29 PM,2022-02-01 06:38 PM,8476903.0,Jon Gillies
+1488629127783530498,mikemorrealeNHL,2022-02-01 04:43 PM,2022-02-01 04:58 PM,8475789,Jack Campbell,1.4886557567317606e+18,amandacstein,2022-02-01 06:29 PM,2022-02-01 06:38 PM,8476903.0,Jon Gillies
+1488630494237319169,NBCSEdgeHK,2022-02-01 04:49 PM,2022-02-01 04:58 PM,8475789,Jack Campbell,1.4886599387633213e+18,FantasyAlarmNHL,2022-02-01 06:46 PM,2022-02-01 06:50 PM,8476903.0,Jon Gillies
+1488630240398266369,FantasyAlarmNHL,2022-02-01 04:48 PM,2022-02-01 04:58 PM,8475789,Jack Campbell,,,,,,

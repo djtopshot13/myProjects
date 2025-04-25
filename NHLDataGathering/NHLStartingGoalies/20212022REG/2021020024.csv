@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1449477381186592771,RotoWireNHL,2021-10-16 04:48 PM,2021-10-16 04:58 PM,8470860,Jaroslav Halak,1.44938729513259e+18,m_bultman,2021-10-16 10:50 AM,2021-10-16 10:58 AM,8471306.0,Thomas Greiss
+1449478764505837570,FantasyAlarmNHL,2021-10-16 04:54 PM,2021-10-16 04:58 PM,8470860,Jaroslav Halak,1.4495047032100413e+18,ThomasDrance,2021-10-16 06:37 PM,2021-10-16 06:38 PM,8471306.0,Thomas Greiss
+1449504703210041345,ThomasDrance,2021-10-16 06:37 PM,2021-10-16 06:38 PM,8470860,Jaroslav Halak,1.449504841185833e+18,BatchHockey,2021-10-16 06:37 PM,2021-10-16 06:38 PM,8471306.0,Thomas Greiss
+1449504841185832960,BatchHockey,2021-10-16 06:37 PM,2021-10-16 06:38 PM,8470860,Jaroslav Halak,,,,,,

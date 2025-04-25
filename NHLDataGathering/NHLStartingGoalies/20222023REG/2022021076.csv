@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1636027524919558147,LLysowski,2023-03-15 11:32 AM,2023-03-15 11:50 AM,8480045,Ukko-Pekka Luukkonen,1636106886033338369,TomGulittiNHL,2023-03-15 04:47 PM,2023-03-15 04:58 PM,8479292,Charlie Lindgren
+1636075621481689092,BuffaloSabres,2023-03-15 02:43 PM,2023-03-15 02:50 PM,8480045,Ukko-Pekka Luukkonen,1636111070820552708,RotoWireNHL,2023-03-15 05:04 PM,2023-03-15 05:28 PM,8479292,Charlie Lindgren
+1636121776567513089,RotoWireNHL,2023-03-15 05:46 PM,2023-03-15 05:58 PM,8480045,Ukko-Pekka Luukkonen,1636125121479061504,Capitals,2023-03-15 06:00 PM,2023-03-15 06:05 PM,8479292,Charlie Lindgren

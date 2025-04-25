@@ -1,0 +1,3 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.6383531984183747e+18,GoldenKnights,2023-03-21 09:33 PM,2023-03-21 09:38 PM,8471734.0,Jonathan Quick,1638238056770863105,ThomasDrance,2023-03-21 01:56 PM,2023-03-21 01:59 PM,8477967,Thatcher Demko
+,,,,,,1638238046821957632,BatchHockey,2023-03-21 01:56 PM,2023-03-21 01:59 PM,8477967,Thatcher Demko

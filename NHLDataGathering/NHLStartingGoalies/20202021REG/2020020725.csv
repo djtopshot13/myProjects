@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1384998950256750593,OnTheForecheck,2021-04-21 06:34 PM,2021-04-21 06:38 PM,8477424,Juuse Saros,1384904613019758594,CarterBaum,2021-04-21 12:19 PM,2021-04-21 12:28 PM,8476876,Malcolm Subban
+1385001031910580226,NBCSEdgeHK,2021-04-21 06:42 PM,2021-04-21 06:43 PM,8477424,Juuse Saros,1384915891637325827,GoaliePost,2021-04-21 01:04 PM,2021-04-21 01:05 PM,8476876,Malcolm Subban
+1385000399166492686,FantasyAlarmNHL,2021-04-21 06:40 PM,2021-04-21 06:43 PM,8477424,Juuse Saros,1384998950256750593,OnTheForecheck,2021-04-21 06:34 PM,2021-04-21 06:38 PM,8476876,Malcolm Subban

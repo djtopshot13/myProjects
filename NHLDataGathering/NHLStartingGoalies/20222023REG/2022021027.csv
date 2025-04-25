@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.6338676320920084e+18,stefen_rosner,2023-03-09 11:29 AM,2023-03-09 11:38 AM,8478009.0,Ilya Sorokin,1633870800351526912,penguins,2023-03-09 11:42 AM,2023-03-09 11:43 AM,8477465,Tristan Jarry
+,,,,,,1633870244996603904,PensInsideScoop,2023-03-09 11:39 AM,2023-03-09 11:43 AM,8477465,Tristan Jarry
+,,,,,,1633885358562656267,TribSports,2023-03-09 12:40 PM,2023-03-09 12:43 PM,8477465,Tristan Jarry

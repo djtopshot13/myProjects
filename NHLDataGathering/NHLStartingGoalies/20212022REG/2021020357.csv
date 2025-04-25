@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.4664274610092974e+18,Senators,2021-12-02 10:22 AM,2021-12-02 10:28 AM,8476341.0,Anton Forsberg,1466458403622899713,NBCSEdgeHK,2021-12-02 12:25 PM,2021-12-02 12:28 PM,8477293,Antti Raanta
+1.4665577270990397e+18,CanesOnFSCR,2021-12-02 06:59 PM,2021-12-02 07:05 PM,8476341.0,Anton Forsberg,1466458648717180940,FantasyAlarmNHL,2021-12-02 12:26 PM,2021-12-02 12:28 PM,8477293,Antti Raanta
+,,,,,,1466557727099039751,CanesOnFSCR,2021-12-02 06:59 PM,2021-12-02 07:05 PM,8477293,Antti Raanta

@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1381283756397355011,BuffaloSabres,2021-04-11 12:31 PM,2021-04-11 12:38 PM,8476999,Linus Ullmark,1.3805676442569974e+18,charlieo_conn,2021-04-09 01:05 PM,2021-04-11 12:43 PM,8479394.0,Carter Hart
+1381285429173837826,NBCSEdgeHK,2021-04-11 12:38 PM,2021-04-11 12:38 PM,8476999,Linus Ullmark,1.3813020368603382e+18,NBCSEdgeHK,2021-04-11 01:44 PM,2021-04-11 01:50 PM,8479394.0,Carter Hart
+1381285921744650240,FantasyAlarmNHL,2021-04-11 12:40 PM,2021-04-11 12:43 PM,8476999,Linus Ullmark,,,,,,

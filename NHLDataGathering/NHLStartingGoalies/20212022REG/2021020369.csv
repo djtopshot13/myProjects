@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.4671761276847473e+18,NBCSEdgeHK,2021-12-04 11:57 AM,2021-12-04 11:58 AM,8478009.0,Ilya Sorokin,1467158109068087308,m_bultman,2021-12-04 10:45 AM,2021-12-04 10:59 AM,8477968,Alex Nedeljkovic
+1.4671753671946895e+18,FantasyAlarmNHL,2021-12-04 11:54 AM,2021-12-04 11:58 AM,8478009.0,Ilya Sorokin,1467158265461153798,daniellabruce_,2021-12-04 10:46 AM,2021-12-04 10:59 AM,8477968,Alex Nedeljkovic
+,,,,,,1467275084305948677,AnsarKhanMLive,2021-12-04 06:30 PM,2021-12-04 06:38 PM,8477968,Alex Nedeljkovic

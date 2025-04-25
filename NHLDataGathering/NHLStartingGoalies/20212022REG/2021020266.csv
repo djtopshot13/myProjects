@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.4621040076866396e+18,BComptonNHL,2021-11-20 12:02 PM,2021-11-20 12:05 PM,8474593.0,Jacob Markstrom,1462203437697974275,BComptonNHL,2021-11-20 06:37 PM,2021-11-20 06:38 PM,8473575,Semyon Varlamov
+1.4621101981353452e+18,CofRedCentral,2021-11-20 12:26 PM,2021-11-20 12:28 PM,8474593.0,Jacob Markstrom,1462203231329832965,JoePantorno,2021-11-20 06:36 PM,2021-11-20 06:38 PM,8473575,Semyon Varlamov
+1.4622058173823263e+18,Fan960Steinberg,2021-11-20 06:46 PM,2021-11-20 06:50 PM,8474593.0,Jacob Markstrom,1462205817382326273,Fan960Steinberg,2021-11-20 06:46 PM,2021-11-20 06:50 PM,8473575,Semyon Varlamov
+,,,,,,1462207636619812865,FantasyAlarmNHL,2021-11-20 06:54 PM,2021-11-20 06:59 PM,8473575,Semyon Varlamov

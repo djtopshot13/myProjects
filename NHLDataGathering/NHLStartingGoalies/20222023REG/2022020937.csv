@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.629511371615359e+18,StapeAthletic,2023-02-25 10:59 AM,2023-02-25 11:05 AM,8478048.0,Igor Shesterkin,1629509433322614784,TomGulittiNHL,2023-02-25 10:51 AM,2023-02-25 10:59 AM,8475311,Darcy Kuemper
+1.62953330428937e+18,ColinSNewsday,2023-02-25 12:26 PM,2023-02-25 12:28 PM,8478048.0,Igor Shesterkin,1629510077454376962,SWhyno,2023-02-25 10:54 AM,2023-02-25 10:59 AM,8475311,Darcy Kuemper
+,,,,,,1629511424329302016,RotoWireNHL,2023-02-25 10:59 AM,2023-02-25 11:05 AM,8475311,Darcy Kuemper

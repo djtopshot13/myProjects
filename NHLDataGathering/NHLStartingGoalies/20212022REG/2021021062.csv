@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1508835982497488898,vzmercogliano,2022-03-29 11:58 AM,2022-03-29 12:05 PM,8478048,Igor Shesterkin,1508827881295814662,penguins,2022-03-29 11:26 AM,2022-03-29 11:28 AM,8477465,Tristan Jarry
+1508840419806748682,NBCSEdgeHK,2022-03-29 12:16 PM,2022-03-29 12:38 PM,8478048,Igor Shesterkin,1508827388209213443,ATTSportsNetPIT,2022-03-29 11:24 AM,2022-03-29 11:28 AM,8477465,Tristan Jarry
+1508934421629517828,ColinSNewsday,2022-03-29 06:29 PM,2022-03-29 06:38 PM,8478048,Igor Shesterkin,1508837083561013252,TribSports,2022-03-29 12:02 PM,2022-03-29 12:05 PM,8477465,Tristan Jarry

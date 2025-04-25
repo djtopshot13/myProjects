@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1629549761832312833,penguins,2023-02-25 01:31 PM,2023-02-25 01:38 PM,8477465,Tristan Jarry,1629560143552606215,jthom1,2023-02-25 02:13 PM,2023-02-25 02:13 PM,8476412,Jordan Binnington
+1629550274007257089,CF_DepthCharts,2023-02-25 01:33 PM,2023-02-25 01:38 PM,8477465,Tristan Jarry,1629572789093933057,jprutherford,2023-02-25 03:03 PM,2023-02-25 03:28 PM,8476412,Jordan Binnington
+1629572742587596801,lkorac10,2023-02-25 03:03 PM,2023-02-25 03:28 PM,8477465,Tristan Jarry,1629572742587596801,lkorac10,2023-02-25 03:03 PM,2023-02-25 03:28 PM,8476412,Jordan Binnington

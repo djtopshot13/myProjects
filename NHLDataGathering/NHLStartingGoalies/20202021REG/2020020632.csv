@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1380196579362111493,MikeHeika,2021-04-08 12:31 PM,2021-04-08 12:38 PM,8471418,Anton Khudobin,1380181375559606272,ByScottPowers,2021-04-08 11:30 AM,2021-04-08 11:59 AM,8480947,Kevin Lankinen
+1380196270082560005,BruceLeVinePuck,2021-04-08 12:30 PM,2021-04-08 12:38 PM,8471418,Anton Khudobin,1380198785788346371,MarkLazerus,2021-04-08 12:40 PM,2021-04-08 12:43 PM,8480947,Kevin Lankinen
+1380205806348537858,FantasyAlarmNHL,2021-04-08 01:08 PM,2021-04-08 01:13 PM,8471418,Anton Khudobin,1380198892638179330,CRoumeliotis,2021-04-08 12:40 PM,2021-04-08 12:43 PM,8480947,Kevin Lankinen

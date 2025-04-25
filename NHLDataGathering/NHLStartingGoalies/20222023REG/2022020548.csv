@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.6077826755736207e+18,MarkLazerus,2022-12-27 11:57 AM,2022-12-27 11:58 AM,8475852.0,Petr Mrazek,1607790214616944648,freeplays,2022-12-27 12:27 PM,2022-12-27 12:28 PM,8481611,Pyotr Kochetkov
+1.6077826357066547e+18,BenPopeCST,2022-12-27 11:57 AM,2022-12-27 11:58 AM,8475852.0,Petr Mrazek,1607882134512975872,RotoWireNHL,2022-12-27 06:32 PM,2022-12-27 06:38 PM,8477293,Antti Raanta
+,,,,,,1607932229136654341,CanesOnFSCR,2022-12-27 09:51 PM,2022-12-27 09:59 PM,8477293,Antti Raanta

@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1392561739040911362,NBCSEdgeHK,2021-05-12 03:26 PM,2021-05-12 03:28 PM,8469608,Mike Smith,1.3925650131187425e+18,NBCSEdgeHK,2021-05-12 03:39 PM,2021-05-12 03:58 PM,8480051.0,Cayden Primeau
+1392562227362816002,FantasyAlarmNHL,2021-05-12 03:28 PM,2021-05-12 03:58 PM,8469608,Mike Smith,1.3925642363002102e+18,FantasyAlarmNHL,2021-05-12 03:36 PM,2021-05-12 03:58 PM,8480051.0,Cayden Primeau
+1392577797147828227,EricEngels,2021-05-12 04:29 PM,2021-05-12 04:58 PM,8469608,Mike Smith,,,,,,

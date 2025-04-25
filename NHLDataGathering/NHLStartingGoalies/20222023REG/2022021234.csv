@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.6432815118719263e+18,giana_jade,2023-04-04 11:56 AM,2023-04-04 12:05 PM,8481035.0,Samuel Ersson,1643280895502155776,jprutherford,2023-04-04 11:54 AM,2023-04-04 11:58 AM,8476412,Jordan Binnington
+1.64335144627064e+18,LineStarNHL,2023-04-04 04:34 PM,2023-04-04 04:58 PM,8481035.0,Samuel Ersson,1643281027555643392,lkorac10,2023-04-04 11:55 AM,2023-04-04 11:58 AM,8476412,Jordan Binnington
+1.643395303989543e+18,lkorac10,2023-04-04 07:29 PM,2023-04-04 07:38 PM,8481035.0,Samuel Ersson,1643395233059598336,jprutherford,2023-04-04 07:28 PM,2023-04-04 07:38 PM,8476412,Jordan Binnington
+,,,,,,1643395303989542914,lkorac10,2023-04-04 07:29 PM,2023-04-04 07:38 PM,8476412,Jordan Binnington

@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1454824636231811074,CraigSMorgan,2021-10-31 10:56 AM,2021-10-31 10:58 AM,8478872,Karel Vejmelka,1454822825836093449,ice_chip,2021-10-31 10:49 AM,2021-10-31 10:58 AM,8475883,Frederik Andersen
+1454827263560601604,NBCSEdgeHK,2021-10-31 11:07 AM,2021-10-31 11:28 AM,8478872,Karel Vejmelka,1454828892489846786,NBCSEdgeHK,2021-10-31 11:13 AM,2021-10-31 11:28 AM,8475883,Frederik Andersen
+1454827002209443840,FantasyAlarmNHL,2021-10-31 11:06 AM,2021-10-31 11:28 AM,8478872,Karel Vejmelka,1454828514419556353,FantasyAlarmNHL,2021-10-31 11:12 AM,2021-10-31 11:28 AM,8475883,Frederik Andersen

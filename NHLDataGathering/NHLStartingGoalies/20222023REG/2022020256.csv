@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.5925856261171077e+18,CurtisPashelka,2022-11-15 01:29 PM,2022-11-15 01:38 PM,8473503.0,James Reimer,1592590906246717440,JesseGranger_,2022-11-15 01:50 PM,2022-11-15 01:58 PM,8480313,Logan Thompson
+1.5927113097740288e+18,Sheng_Peng,2022-11-15 09:49 PM,2022-11-15 09:50 PM,8473503.0,James Reimer,1592590881671872512,SinBinVegas,2022-11-15 01:50 PM,2022-11-15 01:58 PM,8480313,Logan Thompson
+,,,,,,1592605018812649473,GoaliePost,2022-11-15 02:46 PM,2022-11-15 02:50 PM,8480313,Logan Thompson
+,,,,,,1592706253897146368,JesseGranger_,2022-11-15 09:28 PM,2022-11-15 09:38 PM,8480313,Logan Thompson

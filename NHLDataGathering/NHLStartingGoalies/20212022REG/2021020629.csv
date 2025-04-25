@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1480245317555654658,lkorac10,2022-01-09 01:29 PM,2022-01-09 01:38 PM,8474651,Braden Holtby,1480245224001650691,jprutherford,2022-01-09 01:28 PM,2022-01-09 01:38 PM,8476412,Jordan Binnington
+1480247001069596674,FantasyAlarmNHL,2022-01-09 01:36 PM,2022-01-09 01:38 PM,8474651,Braden Holtby,1480246001675894784,NBCSEdgeHK,2022-01-09 01:32 PM,2022-01-09 01:38 PM,8476412,Jordan Binnington
+1480247763732361218,NBCSEdgeHK,2022-01-09 01:39 PM,2022-01-09 01:43 PM,8474651,Braden Holtby,1480245317555654658,lkorac10,2022-01-09 01:29 PM,2022-01-09 01:38 PM,8476412,Jordan Binnington

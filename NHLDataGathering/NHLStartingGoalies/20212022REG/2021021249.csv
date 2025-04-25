@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1517870288674824192,NBCSEdgeHK,2022-04-23 10:17 AM,2022-04-23 10:28 AM,8478009,Ilya Sorokin,1.517866895973634e+18,NBCSEdgeHK,2022-04-23 10:04 AM,2022-04-23 10:28 AM,8474682.0,Dustin Tokarski
+1517896699439636483,NYIslanders,2022-04-23 12:02 PM,2022-04-23 12:05 PM,8478009,Ilya Sorokin,1.517895931022254e+18,BrianWGR,2022-04-23 11:59 AM,2022-04-23 12:05 PM,8474682.0,Dustin Tokarski
+1517895931022254086,BrianWGR,2022-04-23 11:59 AM,2022-04-23 12:05 PM,8478009,Ilya Sorokin,,,,,,

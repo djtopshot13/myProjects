@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.4885938405167022e+18,LLysowski,2022-02-01 02:23 PM,2022-02-01 02:28 PM,8467950.0,Craig Anderson,1488700533988683780,LLysowski,2022-02-01 09:27 PM,2022-02-01 09:28 PM,8475215,Robin Lehner
+1.4887005339886838e+18,LLysowski,2022-02-01 09:27 PM,2022-02-01 09:28 PM,8467950.0,Craig Anderson,1488701989735174146,VinceSapienza,2022-02-01 09:33 PM,2022-02-01 09:38 PM,8475215,Robin Lehner
+,,,,,,1488705738662977536,FantasyAlarmNHL,2022-02-01 09:48 PM,2022-02-01 09:50 PM,8475215,Robin Lehner

@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1460714757674045442,EdmontonOilers,2021-11-16 04:01 PM,2021-11-16 04:28 PM,8475156,Mikko Koskinen,1.4606456899150193e+18,ScottBilleck,2021-11-16 11:27 AM,2021-11-16 11:28 AM,8476945.0,Connor Hellebuyck
+1460744342138728449,RotoWireNHL,2021-11-16 05:59 PM,2021-11-16 06:05 PM,8475156,Mikko Koskinen,1.4606481686479708e+18,GoaliePost,2021-11-16 11:37 AM,2021-11-16 11:38 AM,8476945.0,Connor Hellebuyck
+1460755856912527370,FantasySP,2021-11-16 06:45 PM,2021-11-16 06:50 PM,8475156,Mikko Koskinen,,,,,,

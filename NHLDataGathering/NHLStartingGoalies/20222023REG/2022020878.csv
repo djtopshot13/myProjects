@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1626621415351894017,BenPopeCST,2023-02-17 11:35 AM,2023-02-17 11:43 AM,8475852,Petr Mrazek,1.6262535607604388e+18,TSN1200,2023-02-16 11:13 AM,2023-02-16 11:58 AM,8481544.0,Mads Sogaard
+1626633506813083648,CF_DepthCharts,2023-02-17 12:23 PM,2023-02-17 12:28 PM,8475852,Petr Mrazek,1.6262557087474033e+18,RotoWireNHL,2023-02-16 11:22 AM,2023-02-16 11:58 AM,8481544.0,Mads Sogaard
+1626636399905472531,RotoWireNHL,2023-02-17 12:35 PM,2023-02-17 12:38 PM,8475852,Petr Mrazek,,,,,,

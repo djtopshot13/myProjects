@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.6368238211046072e+18,RotoWireNHL,2023-03-17 04:16 PM,2023-03-17 04:59 PM,8478470.0,Sam Montembeault,1637103315610730496,Chris_Krenn,2023-03-18 10:47 AM,2023-03-18 10:59 AM,8470880,Brian Elliott
+,,,,,,1637205214435368960,LineStarNHL,2023-03-18 05:31 PM,2023-03-18 05:59 PM,8470880,Brian Elliott
+,,,,,,1637221906372853760,EddieInTheYard,2023-03-18 06:38 PM,2023-03-18 06:38 PM,8470880,Brian Elliott

@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.5965858176983368e+18,RotoWireNHL,2022-11-26 02:24 PM,2022-11-26 02:28 PM,8477484.0,Spencer Martin,1596575711879663616,JesseGranger_,2022-11-26 01:44 PM,2022-11-26 01:50 PM,8480313,Logan Thompson
+1.5966289013166858e+18,CanuckClay,2022-11-26 05:16 PM,2022-11-26 05:28 PM,8477484.0,Spencer Martin,1596578448432300032,RotoWireNHL,2022-11-26 01:55 PM,2022-11-26 01:58 PM,8480313,Logan Thompson
+,,,,,,1596603334168924165,LineStarNHL,2022-11-26 03:34 PM,2022-11-26 03:58 PM,8480313,Logan Thompson
+,,,,,,1596693152332918785,SinBinVegas,2022-11-26 09:31 PM,2022-11-26 09:38 PM,8480313,Logan Thompson

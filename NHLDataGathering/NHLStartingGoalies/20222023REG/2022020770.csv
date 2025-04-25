@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1618320586014588930,Benton_Mike,2023-01-25 01:51 PM,2023-01-25 01:58 PM,8477484,Spencer Martin,1618321128874971137,Curtis_Crabtree,2023-01-25 01:53 PM,2023-01-25 01:58 PM,8474889,Martin Jones
+1618436316001370116,BatchHockey,2023-01-25 09:31 PM,2023-01-25 09:38 PM,8477484,Spencer Martin,1618323779502891038,RotoWireNHL,2023-01-25 02:03 PM,2023-01-25 02:05 PM,8474889,Martin Jones
+1618450264180105217,LineStarNHL,2023-01-25 10:26 PM,2023-01-25 10:28 PM,8477484,Spencer Martin,1618324602832183296,CF_DepthCharts,2023-01-25 02:07 PM,2023-01-25 02:13 PM,8474889,Martin Jones

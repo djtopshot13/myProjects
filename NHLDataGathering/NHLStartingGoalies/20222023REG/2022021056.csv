@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.63497051930402e+18,RotoWireNHL,2023-03-12 01:32 PM,2023-03-12 01:38 PM,8480238.0,Jiri Patera,1635041820106276864,RotoWireNHL,2023-03-12 06:15 PM,2023-03-12 06:28 PM,8476412,Jordan Binnington
+1.635045309893206e+18,lkorac10,2023-03-12 06:29 PM,2023-03-12 06:38 PM,8480238.0,Jiri Patera,1635045187255930880,jprutherford,2023-03-12 06:28 PM,2023-03-12 06:38 PM,8476412,Jordan Binnington
+,,,,,,1635045230448869377,jthom1,2023-03-12 06:28 PM,2023-03-12 06:38 PM,8476412,Jordan Binnington
+,,,,,,1635045309893206016,lkorac10,2023-03-12 06:29 PM,2023-03-12 06:38 PM,8476412,Jordan Binnington

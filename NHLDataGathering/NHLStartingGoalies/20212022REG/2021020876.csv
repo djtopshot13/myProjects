@@ -1,0 +1,6 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1499868929044402176,penguins,2022-03-04 05:06 PM,2022-03-04 05:28 PM,8479193,Casey DeSmith,1.499865264736936e+18,abbylabar_,2022-03-04 04:51 PM,2022-03-04 04:58 PM,8477293.0,Antti Raanta
+1499868440236077056,PensInsideScoop,2022-03-04 05:04 PM,2022-03-04 05:28 PM,8479193,Casey DeSmith,1.499897141518553e+18,CanesOnFSCR,2022-03-04 06:58 PM,2022-03-04 07:05 PM,8477293.0,Antti Raanta
+1499868359957127170,MikeDeFabo,2022-03-04 05:04 PM,2022-03-04 05:28 PM,8479193,Casey DeSmith,,,,,,
+1499881237732892672,RichieWalsh,2022-03-04 05:55 PM,2022-03-04 05:58 PM,8479193,Casey DeSmith,,,,,,
+1499897141518553097,CanesOnFSCR,2022-03-04 06:58 PM,2022-03-04 07:05 PM,8479193,Casey DeSmith,,,,,,

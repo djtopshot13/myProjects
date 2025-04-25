@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.6426172506695762e+18,charlieo_conn,2023-04-02 03:57 PM,2023-04-02 04:58 PM,8481035.0,Samuel Ersson,1642615748253175808,penguins,2023-04-02 03:51 PM,2023-04-02 03:58 PM,8479193,Casey DeSmith
+,,,,,,1642615611673985027,MolinariPGH,2023-04-02 03:50 PM,2023-04-02 03:58 PM,8479193,Casey DeSmith
+,,,,,,1642616616021008385,RotoWireNHL,2023-04-02 03:54 PM,2023-04-02 03:58 PM,8479193,Casey DeSmith
+,,,,,,1642628267143249923,KDPomp,2023-04-02 04:41 PM,2023-04-02 04:58 PM,8479193,Casey DeSmith

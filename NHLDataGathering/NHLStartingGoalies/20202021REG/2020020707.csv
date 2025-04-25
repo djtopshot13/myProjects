@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1384165532945948673,NBCSEdgeHK,2021-04-19 11:22 AM,2021-04-19 11:29 AM,8478007,Elvis Merzlikins,1.3841524431858196e+18,NBCSEdgeHK,2021-04-19 10:30 AM,2021-04-19 11:00 AM,8475683.0,Sergei Bobrovsky
+1384164894493220877,FantasyAlarmNHL,2021-04-19 11:20 AM,2021-04-19 11:29 AM,8478007,Elvis Merzlikins,1.3841523128520827e+18,FantasyAlarmNHL,2021-04-19 10:30 AM,2021-04-19 11:00 AM,8475683.0,Sergei Bobrovsky
+1384168302629384194,RotoWireNHL,2021-04-19 11:33 AM,2021-04-19 11:39 AM,8478007,Elvis Merzlikins,,,,,,

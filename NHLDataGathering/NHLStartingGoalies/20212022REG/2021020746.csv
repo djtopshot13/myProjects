@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.4861267176264622e+18,BComptonNHL,2022-01-25 06:59 PM,2022-01-25 07:05 PM,8474889.0,Martin Jones,1486126717626462211,BComptonNHL,2022-01-25 06:59 PM,2022-01-25 07:05 PM,8478009,Ilya Sorokin
+1.4861307715092644e+18,FantasyAlarmNHL,2022-01-25 07:16 PM,2022-01-25 07:28 PM,8474889.0,Martin Jones,1486131285860913152,NBCSEdgeHK,2022-01-25 07:18 PM,2022-01-25 07:28 PM,8478009,Ilya Sorokin
+,,,,,,1486131276180594693,FantasyAlarmNHL,2022-01-25 07:18 PM,2022-01-25 07:28 PM,8478009,Ilya Sorokin

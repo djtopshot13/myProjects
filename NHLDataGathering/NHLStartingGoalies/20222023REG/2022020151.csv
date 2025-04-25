@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.5874859264601047e+18,ArponBasu,2022-11-01 12:45 PM,2022-11-01 12:50 PM,8474596.0,Jake Allen,1587464236468510720,DaneMizutani,2022-11-01 11:19 AM,2022-11-01 11:28 AM,8470594,Marc-Andre Fleury
+1.5874862801574666e+18,jessi_pierce,2022-11-01 12:46 PM,2022-11-01 12:50 PM,8474596.0,Jake Allen,1587463190564184072,GoaliePost,2022-11-01 11:14 AM,2022-11-01 11:28 AM,8470594,Marc-Andre Fleury
+,,,,,,1587645463951339521,walsha,2022-11-01 11:19 PM,2022-11-01 11:28 PM,8470594,Marc-Andre Fleury

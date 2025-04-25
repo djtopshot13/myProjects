@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1483243227960516610,brooksbratten,2022-01-17 08:01 PM,2022-01-17 08:05 PM,8477424,Juuse Saros,1483120844817764356,jprutherford,2022-01-17 11:55 AM,2022-01-17 11:59 AM,8478024,Ville Husso
+1483245271853142017,NBCSEdgeHK,2022-01-17 08:10 PM,2022-01-17 08:13 PM,8477424,Juuse Saros,1483121745955635206,jthom1,2022-01-17 11:59 AM,2022-01-17 12:05 PM,8478024,Ville Husso
+1483244254780608517,FantasyAlarmNHL,2022-01-17 08:06 PM,2022-01-17 08:13 PM,8477424,Juuse Saros,1483180836178567172,FantasyAlarmNHL,2022-01-17 03:54 PM,2022-01-17 03:59 PM,8478024,Ville Husso

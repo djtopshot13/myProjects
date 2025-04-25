@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1379118461360562180,Peter_Baugh,2021-04-05 01:07 PM,2021-04-05 01:38 PM,8475831,Philipp Grubauer,1379095128749469699,RadioFalness,2021-04-05 11:34 AM,2021-04-05 11:59 AM,8475660,Cam Talbot
+1379139531748745221,NBCSEdgeHK,2021-04-05 02:31 PM,2021-04-05 02:38 PM,8475831,Philipp Grubauer,1379094822640701441,jessi_pierce,2021-04-05 11:33 AM,2021-04-05 11:59 AM,8475660,Cam Talbot
+1379139277498552327,FantasyAlarmNHL,2021-04-05 02:30 PM,2021-04-05 02:38 PM,8475831,Philipp Grubauer,1379101530943598592,FantasyAlarmNHL,2021-04-05 12:00 PM,2021-04-05 12:05 PM,8475660,Cam Talbot

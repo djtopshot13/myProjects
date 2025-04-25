@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1659618823975124997,RotoWire,2023-05-19 01:55 PM,2023-05-19 01:58 PM,8475683,Sergei Bobrovsky,1660065740970508288,MarkLazerus,2023-05-20 07:31 PM,2023-05-20 07:38 PM,8477293,Antti Raanta
+1659618824814043136,RotoWireNHL,2023-05-19 01:55 PM,2023-05-19 01:58 PM,8475683,Sergei Bobrovsky,1660065784251527170,TomGulittiNHL,2023-05-20 07:31 PM,2023-05-20 07:38 PM,8477293,Antti Raanta
+1660065755751170048,ice_chip,2023-05-20 07:31 PM,2023-05-20 07:38 PM,8475683,Sergei Bobrovsky,1660066171134042114,BR_OpenIce,2023-05-20 07:33 PM,2023-05-20 07:38 PM,8477293,Antti Raanta

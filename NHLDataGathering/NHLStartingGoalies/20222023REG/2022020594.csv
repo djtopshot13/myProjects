@@ -1,0 +1,3 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1609708644102459394,NYIslanders,2023-01-01 07:30 PM,2023-01-01 07:38 PM,8478009,Ilya Sorokin,1609708347552583681,AGrossNewsday,2023-01-01 07:29 PM,2023-01-01 07:38 PM,8474889,Martin Jones
+1609708347552583681,AGrossNewsday,2023-01-01 07:29 PM,2023-01-01 07:38 PM,8478009,Ilya Sorokin,1609710901648580608,RotoWireNHL,2023-01-01 07:39 PM,2023-01-01 07:43 PM,8474889,Martin Jones

@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.62304320470562e+18,RussoHockey,2023-02-07 02:37 PM,2023-02-07 02:58 PM,8479406.0,Filip Gustavsson,1623358832125542400,BruceLeVinePuck,2023-02-08 11:31 AM,2023-02-08 11:38 AM,8479979,Jake Oettinger
+1.6230443177355305e+18,RotoWireNHL,2023-02-07 02:41 PM,2023-02-07 02:58 PM,8479406.0,Filip Gustavsson,1623360632866148361,CF_DepthCharts,2023-02-08 11:38 AM,2023-02-08 11:43 AM,8479979,Jake Oettinger
+1.6230517287224689e+18,CF_DepthCharts,2023-02-07 03:11 PM,2023-02-07 03:58 PM,8479406.0,Filip Gustavsson,1623362090680389655,BruceLeVinePuck,2023-02-08 11:44 AM,2023-02-08 11:50 AM,8479979,Jake Oettinger
+,,,,,,1623425788665122822,LineStarNHL,2023-02-08 03:57 PM,2023-02-08 03:58 PM,8479979,Jake Oettinger

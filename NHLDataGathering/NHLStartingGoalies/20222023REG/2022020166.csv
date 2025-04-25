@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1588212349969829891,GoaliePost,2022-11-03 12:51 PM,2022-11-03 12:58 PM,8478009,Ilya Sorokin,1588312271431892994,jprutherford,2022-11-03 07:28 PM,2022-11-03 07:38 PM,8476412,Jordan Binnington
+1588312339937480709,AGrossNewsday,2022-11-03 07:29 PM,2022-11-03 07:38 PM,8478009,Ilya Sorokin,1588312339937480709,AGrossNewsday,2022-11-03 07:29 PM,2022-11-03 07:38 PM,8476412,Jordan Binnington
+1588312314989740035,lkorac10,2022-11-03 07:28 PM,2022-11-03 07:38 PM,8478009,Ilya Sorokin,1588312314989740035,lkorac10,2022-11-03 07:28 PM,2022-11-03 07:38 PM,8476412,Jordan Binnington

@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.60534493711292e+18,EddieInTheYard,2022-12-20 06:30 PM,2022-12-20 06:38 PM,8476883.0,Andrei Vasilevskiy,1605226056851808261,lukefoxjukebox,2022-12-20 10:38 AM,2022-12-20 10:58 AM,8476899,Matt Murray
+1.6053457367778796e+18,RotoWireNHL,2022-12-20 06:33 PM,2022-12-20 06:38 PM,8476883.0,Andrei Vasilevskiy,1605230512712335360,mikeystephens81,2022-12-20 10:55 AM,2022-12-20 10:58 AM,8476899,Matt Murray
+,,,,,,1605227523809447938,GoaliePost,2022-12-20 10:44 AM,2022-12-20 10:58 AM,8476899,Matt Murray

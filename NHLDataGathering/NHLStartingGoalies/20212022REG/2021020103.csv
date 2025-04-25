@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.4538513532776284e+18,Fan960Steinberg,2021-10-28 06:29 PM,2021-10-28 06:38 PM,8474593.0,Jacob Markstrom,1453739301829808128,SethRorabaugh,2021-10-28 11:03 AM,2021-10-28 11:05 AM,8479193,Casey DeSmith
+1.4538517166762435e+18,CofRedCentral,2021-10-28 06:30 PM,2021-10-28 06:38 PM,8474593.0,Jacob Markstrom,1453744422735208449,penguins,2021-10-28 11:24 AM,2021-10-28 11:28 AM,8479193,Casey DeSmith
+,,,,,,1453744211447087104,ATTSportsNetPIT,2021-10-28 11:23 AM,2021-10-28 11:28 AM,8479193,Casey DeSmith
+,,,,,,1453744824536948738,MolinariPGH,2021-10-28 11:25 AM,2021-10-28 11:28 AM,8479193,Casey DeSmith

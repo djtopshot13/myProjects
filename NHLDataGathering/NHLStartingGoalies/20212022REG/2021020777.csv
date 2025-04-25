@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1489006693921009665,BComptonNHL,2022-02-02 05:43 PM,2022-02-02 05:58 PM,8475831,Philipp Grubauer,1488990292942508040,KKurzNHL,2022-02-02 04:38 PM,2022-02-02 04:58 PM,8473575,Semyon Varlamov
+1489010753520783361,FantasyAlarmNHL,2022-02-02 06:00 PM,2022-02-02 06:05 PM,8475831,Philipp Grubauer,1488991623719661581,FantasyAlarmNHL,2022-02-02 04:44 PM,2022-02-02 04:58 PM,8473575,Semyon Varlamov
+1489018238377906178,BComptonNHL,2022-02-02 06:29 PM,2022-02-02 06:38 PM,8475831,Philipp Grubauer,1489018238377906178,BComptonNHL,2022-02-02 06:29 PM,2022-02-02 06:38 PM,8473575,Semyon Varlamov

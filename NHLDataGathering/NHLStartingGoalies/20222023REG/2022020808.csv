@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1622635181721911306,EddieInTheYard,2023-02-06 11:35 AM,2023-02-06 11:38 AM,8476883,Andrei Vasilevskiy,1.6226204400982098e+18,CF_DepthCharts,2023-02-06 10:37 AM,2023-02-06 10:58 AM,8475683.0,Sergei Bobrovsky
+1622638367874641920,EddieInTheYard,2023-02-06 11:48 AM,2023-02-06 11:50 AM,8476883,Andrei Vasilevskiy,1.6226262151304315e+18,RotoWireNHL,2023-02-06 11:00 AM,2023-02-06 11:05 AM,8475683.0,Sergei Bobrovsky
+1622641170764496898,CF_DepthCharts,2023-02-06 11:59 AM,2023-02-06 12:05 PM,8476883,Andrei Vasilevskiy,,,,,,

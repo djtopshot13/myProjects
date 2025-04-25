@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1628076517178634241,dalter,2023-02-21 11:57 AM,2023-02-21 11:58 AM,8478492,Ilya Samsonov,1.6280584756693647e+18,CF_DepthCharts,2023-02-21 10:46 AM,2023-02-21 10:58 AM,8480045.0,Ukko-Pekka Luukkonen
+1628079622482014229,CF_DepthCharts,2023-02-21 12:10 PM,2023-02-21 12:13 PM,8478492,Ilya Samsonov,1.6280852399259443e+18,markhmasters,2023-02-21 12:32 PM,2023-02-21 12:38 PM,8480045.0,Ukko-Pekka Luukkonen
+1628085239925944345,markhmasters,2023-02-21 12:32 PM,2023-02-21 12:38 PM,8478492,Ilya Samsonov,,,,,,

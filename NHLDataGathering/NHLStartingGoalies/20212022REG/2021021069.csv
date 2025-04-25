@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1509285096209014784,NBCSEdgeHK,2022-03-30 05:43 PM,2022-03-30 05:58 PM,8480382,Alexandar Georgiev,1.5093067257567683e+18,AnsarKhanMLive,2022-03-30 07:08 PM,2022-03-30 07:13 PM,8477968.0,Alex Nedeljkovic
+1509306725756768257,AnsarKhanMLive,2022-03-30 07:08 PM,2022-03-30 07:13 PM,8480382,Alexandar Georgiev,1.5093074954701455e+18,NBCSEdgeHK,2022-03-30 07:12 PM,2022-03-30 07:13 PM,8477968.0,Alex Nedeljkovic
+1509306763681705992,ColinSNewsday,2022-03-30 07:09 PM,2022-03-30 07:13 PM,8480382,Alexandar Georgiev,,,,,,

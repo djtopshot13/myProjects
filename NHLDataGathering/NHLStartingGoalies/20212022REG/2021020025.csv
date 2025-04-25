@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.4494880828022907e+18,NYIslanders,2021-10-16 05:31 PM,2021-10-16 05:58 PM,8478009.0,Ilya Sorokin,1449031081005617153,DavidDwork,2021-10-15 11:15 AM,2021-10-15 11:58 AM,8475683,Sergei Bobrovsky
+1.4494887427801784e+18,RotoWireNHL,2021-10-16 05:33 PM,2021-10-16 05:58 PM,8478009.0,Ilya Sorokin,1449046930286276610,NBCSEdgeHK,2021-10-15 12:18 PM,2021-10-15 12:58 PM,8475683,Sergei Bobrovsky
+,,,,,,1449046414219259913,FantasyAlarmNHL,2021-10-15 12:16 PM,2021-10-15 12:58 PM,8475683,Sergei Bobrovsky

@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1484579232873435137,BruceLeVinePuck,2022-01-21 12:30 PM,2022-01-21 12:38 PM,8474651,Braden Holtby,1.4846833693758792e+18,NBCSEdgeHK,2022-01-21 07:24 PM,2022-01-21 07:28 PM,8477968.0,Alex Nedeljkovic
+1484613777656012800,FantasyAlarmNHL,2022-01-21 02:48 PM,2022-01-21 02:50 PM,8474651,Braden Holtby,1.4846837348593705e+18,FantasyAlarmNHL,2022-01-21 07:26 PM,2022-01-21 07:28 PM,8477968.0,Alex Nedeljkovic
+1484614536975900678,NBCSEdgeHK,2022-01-21 02:51 PM,2022-01-21 02:59 PM,8474651,Braden Holtby,,,,,,

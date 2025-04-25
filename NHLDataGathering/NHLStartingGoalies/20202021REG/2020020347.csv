@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.3875633391198413e+18,OwenNewkirk,2021-04-28 08:24 PM,2021-04-29 09:28 AM,8479979.0,Jake Oettinger,1387898254138888192,NBCSEdgeHK,2021-04-29 06:35 PM,2021-04-29 06:38 PM,8476883,Andrei Vasilevskiy
+1.3877972169627812e+18,BruceLeVinePuck,2021-04-29 11:53 AM,2021-04-29 11:59 AM,8479979.0,Jake Oettinger,1387896789924208642,BBurnsNHL,2021-04-29 06:29 PM,2021-04-29 06:38 PM,8476883,Andrei Vasilevskiy
+,,,,,,1387898496783630338,FantasyAlarmNHL,2021-04-29 06:36 PM,2021-04-29 06:38 PM,8476883,Andrei Vasilevskiy

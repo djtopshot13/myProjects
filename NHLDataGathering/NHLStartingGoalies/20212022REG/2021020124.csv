@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1454505808595599365,DNBsports,2021-10-30 01:49 PM,2021-10-30 01:50 PM,8475156,Mikko Koskinen,1.4545127947206164e+18,BatchHockey,2021-10-30 02:17 PM,2021-10-30 02:28 PM,8477967.0,Thatcher Demko
+1454559540704251904,EdmontonOilers,2021-10-30 05:23 PM,2021-10-30 05:28 PM,8475156,Mikko Koskinen,,,,,,
+1454619635559673858,NewWaveOil,2021-10-30 09:22 PM,2021-10-30 09:28 PM,8475156,Mikko Koskinen,,,,,,

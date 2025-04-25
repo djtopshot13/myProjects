@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1476334536724209669,amandacstein,2021-12-29 06:29 PM,2021-12-29 06:38 PM,8478406,Mackenzie Blackwood,1476227675362574341,BillHoppeNHL,2021-12-29 11:24 AM,2021-12-29 11:28 AM,8480045,Ukko-Pekka Luukkonen
+1476335989127729155,NBCSEdgeHK,2021-12-29 06:35 PM,2021-12-29 06:38 PM,8478406,Mackenzie Blackwood,1476234945391575042,NBCSEdgeHK,2021-12-29 11:53 AM,2021-12-29 11:59 AM,8480045,Ukko-Pekka Luukkonen
+1476335732348399622,FantasyAlarmNHL,2021-12-29 06:34 PM,2021-12-29 06:38 PM,8478406,Mackenzie Blackwood,1476234063711244292,FantasyAlarmNHL,2021-12-29 11:50 AM,2021-12-29 11:59 AM,8480045,Ukko-Pekka Luukkonen

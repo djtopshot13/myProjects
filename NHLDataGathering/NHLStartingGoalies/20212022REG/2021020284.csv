@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1462844900668592135,Dejan_Kovacevic,2021-11-22 01:06 PM,2021-11-22 01:13 PM,8477465,Tristan Jarry,1.46282521573854e+18,NBCSEdgeHK,2021-11-22 11:48 AM,2021-11-22 11:50 AM,8476945.0,Connor Hellebuyck
+1462852555394985987,penguins,2021-11-22 01:36 PM,2021-11-22 01:38 PM,8477465,Tristan Jarry,1.4628257082549043e+18,FantasyAlarmNHL,2021-11-22 11:50 AM,2021-11-22 11:50 AM,8476945.0,Connor Hellebuyck
+1462858924487491591,FantasyAlarmNHL,2021-11-22 02:02 PM,2021-11-22 02:05 PM,8477465,Tristan Jarry,,,,,,

@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1654159255409131531,JamesonCoop,2023-05-04 12:21 PM,2023-05-04 01:43 PM,8475683,Sergei Bobrovsky,1654133486498852865,mikeystephens81,2023-05-04 10:38 AM,2023-05-04 10:58 AM,8478492,Ilya Samsonov
+1654252352356876290,koshtorontosun,2023-05-04 06:31 PM,2023-05-04 06:38 PM,8475683,Sergei Bobrovsky,1654135806775156738,RotoWireNHL,2023-05-04 10:48 AM,2023-05-04 10:58 AM,8478492,Ilya Samsonov
+1654252360015773697,JamesonCoop,2023-05-04 06:31 PM,2023-05-04 06:38 PM,8475683,Sergei Bobrovsky,1654252352356876290,koshtorontosun,2023-05-04 06:31 PM,2023-05-04 06:38 PM,8478492,Ilya Samsonov

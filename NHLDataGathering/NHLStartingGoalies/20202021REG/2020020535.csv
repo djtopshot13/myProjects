@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1376272316703727617,ElliottTeaford,2021-03-28 04:37 PM,2021-03-28 04:59 PM,8476434,John Gibson,1.3762606869305836e+18,NBCSEdgeHK,2021-03-28 03:51 PM,2021-03-28 03:59 PM,8476412.0,Jordan Binnington
+1376272642836033542,NBCSEdgeHK,2021-03-28 04:39 PM,2021-03-28 04:59 PM,8476932,Anthony Stolarz,1.3762603098921329e+18,FantasyAlarmNHL,2021-03-28 03:50 PM,2021-03-28 03:59 PM,8476412.0,Jordan Binnington
+1376272385108811776,FantasyAlarmNHL,2021-03-28 04:38 PM,2021-03-28 04:59 PM,8476932,Anthony Stolarz,,,,,,

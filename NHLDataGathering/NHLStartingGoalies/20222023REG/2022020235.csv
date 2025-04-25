@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.591512307724882e+18,jthom1,2022-11-12 02:24 PM,2022-11-12 02:28 PM,8476412.0,Jordan Binnington,1591505242251997184,JesseGranger_,2022-11-12 01:56 PM,2022-11-12 01:59 PM,8478499,Adin Hill
+1.5916191428675584e+18,jprutherford,2022-11-12 09:29 PM,2022-11-12 09:38 PM,8476412.0,Jordan Binnington,1591505383843311617,SinBinVegas,2022-11-12 01:57 PM,2022-11-12 01:59 PM,8478499,Adin Hill
+,,,,,,1591619702664888321,JesseGranger_,2022-11-12 09:31 PM,2022-11-12 09:38 PM,8478499,Adin Hill

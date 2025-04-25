@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.380703588998021e+18,NBCSEdgeHK,2021-04-09 10:06 PM,2021-04-09 10:28 PM,8477361.0,Calvin Petersen,1380570311821680645,CurtisPashelka,2021-04-09 01:16 PM,2021-04-09 01:28 PM,8474889,Martin Jones
+1.3807035864689213e+18,FantasyAlarmNHL,2021-04-09 10:06 PM,2021-04-09 10:28 PM,8477361.0,Calvin Petersen,1380612489423986688,NBCSEdgeHK,2021-04-09 04:04 PM,2021-04-09 04:28 PM,8474889,Martin Jones
+,,,,,,1380612483212316676,FantasyAlarmNHL,2021-04-09 04:04 PM,2021-04-09 04:28 PM,8474889,Martin Jones

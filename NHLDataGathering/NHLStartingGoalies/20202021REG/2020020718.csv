@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1384529049213620224,ice_chip,2021-04-20 11:27 AM,2021-04-20 11:28 AM,8477968,Alex Nedeljkovic,1384635516763660290,EddieInTheYard,2021-04-20 06:30 PM,2021-04-20 06:38 PM,8476883,Andrei Vasilevskiy
+1384576237742350339,NBCSEdgeHK,2021-04-20 02:34 PM,2021-04-20 02:38 PM,8477968,Alex Nedeljkovic,1384635391081394176,BBurnsNHL,2021-04-20 06:29 PM,2021-04-20 06:38 PM,8476883,Andrei Vasilevskiy
+1384575598706806786,FantasyAlarmNHL,2021-04-20 02:32 PM,2021-04-20 02:38 PM,8477968,Alex Nedeljkovic,1384638013490204675,FantasyAlarmNHL,2021-04-20 06:40 PM,2021-04-20 06:43 PM,8476883,Andrei Vasilevskiy

@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1485345175467708416,jthom1,2022-01-23 03:14 PM,2022-01-23 03:28 PM,8478024,Ville Husso,1.4853259355533763e+18,BatchHockey,2022-01-23 01:57 PM,2022-01-23 01:58 PM,8477484.0,Spencer Martin
+1485369252567736329,FantasyAlarmNHL,2022-01-23 04:50 PM,2022-01-23 04:58 PM,8478024,Ville Husso,1.4853262225865277e+18,JayJanower,2022-01-23 01:59 PM,2022-01-23 02:05 PM,8477484.0,Spencer Martin
+1485422884877185026,jthom1,2022-01-23 08:23 PM,2022-01-23 08:28 PM,8478024,Ville Husso,,,,,,

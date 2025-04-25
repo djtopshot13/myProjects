@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1378044075660611584,Sheng_Peng,2021-04-02 01:58 PM,2021-04-02 02:05 PM,8474889,Martin Jones,1.3781591971293716e+18,NBCSEdgeHK,2021-04-02 09:35 PM,2021-04-02 09:38 PM,8477361.0,Calvin Petersen
+1378065330086416385,NBCSEdgeHK,2021-04-02 03:22 PM,2021-04-02 03:28 PM,8474889,Martin Jones,1.3781593210753638e+18,FantasyAlarmNHL,2021-04-02 09:36 PM,2021-04-02 09:38 PM,8477361.0,Calvin Petersen
+1378064695509270537,FantasyAlarmNHL,2021-04-02 03:20 PM,2021-04-02 03:28 PM,8474889,Martin Jones,,,,,,

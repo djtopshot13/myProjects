@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1619469378818539520,CraigSMorgan,2023-01-28 05:56 PM,2023-01-28 05:58 PM,8478971,Connor Ingram,1.619429382409388e+18,CF_DepthCharts,2023-01-28 03:17 PM,2023-01-28 03:28 PM,8476434.0,John Gibson
+1619469872861257728,CF_DepthCharts,2023-01-28 05:58 PM,2023-01-28 06:05 PM,8478971,Connor Ingram,1.6195307423249244e+18,icemancometh,2023-01-28 09:59 PM,2023-01-28 10:05 PM,8476434.0,John Gibson
+1619530742324924416,icemancometh,2023-01-28 09:59 PM,2023-01-28 10:05 PM,8478971,Connor Ingram,,,,,,

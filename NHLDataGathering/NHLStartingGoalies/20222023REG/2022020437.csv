@@ -1,0 +1,3 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.601720903444095e+18,PensJG,2022-12-10 06:29 PM,2022-12-10 06:38 PM,8480045.0,Ukko-Pekka Luukkonen,1601701237111808000,penguins,2022-12-10 05:11 PM,2022-12-10 05:28 PM,8479193,Casey DeSmith
+,,,,,,1601701511645790210,ATTSportsNetPIT,2022-12-10 05:12 PM,2022-12-10 05:28 PM,8479193,Casey DeSmith

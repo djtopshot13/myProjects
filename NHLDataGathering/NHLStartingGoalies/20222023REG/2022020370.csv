@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.5984742378406175e+18,JamieUmbach,2022-12-01 07:28 PM,2022-12-01 07:38 PM,8475789.0,Jack Campbell,1598351758593777666,RussoHockey,2022-12-01 11:22 AM,2022-12-01 11:28 AM,8470594,Marc-Andre Fleury
+1.598477029711782e+18,RotoWireNHL,2022-12-01 07:39 PM,2022-12-01 07:43 PM,8475789.0,Jack Campbell,1598355207628390402,RotoWireNHL,2022-12-01 11:35 AM,2022-12-01 11:38 AM,8470594,Marc-Andre Fleury
+,,,,,,1598474318962360321,DaneMizutani,2022-12-01 07:29 PM,2022-12-01 07:38 PM,8470594,Marc-Andre Fleury

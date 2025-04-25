@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1476230135741251584,patersonjeff,2021-12-29 11:34 AM,2021-12-29 11:38 AM,8477967,Thatcher Demko,1476387658632814592,icemancometh,2021-12-29 10:00 PM,2021-12-29 10:05 PM,8476434,John Gibson
+1476387658632814592,icemancometh,2021-12-29 10:00 PM,2021-12-29 10:05 PM,8477967,Thatcher Demko,1476388576866799618,FantasyAlarmNHL,2021-12-29 10:04 PM,2021-12-29 10:05 PM,8476434,John Gibson
+1476389081282187267,FantasyAlarmNHL,2021-12-29 10:06 PM,2021-12-29 10:28 PM,8477967,Thatcher Demko,1476389842132996102,NBCSEdgeHK,2021-12-29 10:09 PM,2021-12-29 10:28 PM,8476434,John Gibson

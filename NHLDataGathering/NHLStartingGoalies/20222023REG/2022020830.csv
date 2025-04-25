@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.6241124051471647e+18,CraigSMorgan,2023-02-10 01:25 PM,2023-02-10 01:38 PM,8478971.0,Connor Ingram,1624084098519126017,CF_DepthCharts,2023-02-10 11:33 AM,2023-02-10 11:38 AM,8483530,Jaxson Stauber
+1.624117124343169e+18,RotoWireNHL,2023-02-10 01:44 PM,2023-02-10 01:50 PM,8478971.0,Connor Ingram,1624212507601563650,BenPopeCST,2023-02-10 08:03 PM,2023-02-10 08:05 PM,8483530,Jaxson Stauber
+,,,,,,1624214369344143361,RotoWireNHL,2023-02-10 08:10 PM,2023-02-10 08:13 PM,8483530,Jaxson Stauber
+,,,,,,1624258916958732288,BenPopeCST,2023-02-10 11:07 PM,2023-02-10 11:28 PM,8483530,Jaxson Stauber

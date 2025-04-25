@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1463543383637610506,vzmercogliano,2021-11-24 11:21 AM,2021-11-24 11:28 AM,8478048,Igor Shesterkin,1463658596915372037,drosennhl,2021-11-24 06:59 PM,2021-11-24 07:05 PM,8473575,Semyon Varlamov
+1463549474354118657,FantasyAlarmNHL,2021-11-24 11:46 AM,2021-11-24 11:50 AM,8478048,Igor Shesterkin,1463659809346048003,nickhirshon,2021-11-24 07:04 PM,2021-11-24 07:05 PM,8473575,Semyon Varlamov
+1463658612308512769,ColinSNewsday,2021-11-24 06:59 PM,2021-11-24 07:05 PM,8478048,Igor Shesterkin,1463660208652173314,FantasyAlarmNHL,2021-11-24 07:06 PM,2021-11-24 07:13 PM,8473575,Semyon Varlamov

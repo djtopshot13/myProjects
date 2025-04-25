@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.6154045696384369e+18,JacketsInsider,2023-01-17 12:43 PM,2023-01-17 12:50 PM,8480193.0,Daniil Tarasov,1615409792495005696,emma_lingan,2023-01-17 01:04 PM,2023-01-17 01:13 PM,8480947,Kevin Lankinen
+,,,,,,1615413288195563520,GoaliePost,2023-01-17 01:18 PM,2023-01-17 01:28 PM,8480947,Kevin Lankinen
+,,,,,,1615553307392544768,OnTheForecheck,2023-01-17 10:34 PM,2023-01-17 10:38 PM,8480947,Kevin Lankinen

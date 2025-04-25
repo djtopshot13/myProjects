@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.3787348676518543e+18,NBCSEdgeHK,2021-04-04 11:43 AM,2021-04-04 12:05 PM,8471306.0,Thomas Greiss,1378734866498342916,NBCSEdgeHK,2021-04-04 11:43 AM,2021-04-04 12:05 PM,8476444,Christopher Gibson
+1.3787356167294484e+18,FantasyAlarmNHL,2021-04-04 11:46 AM,2021-04-04 12:05 PM,8471306.0,Thomas Greiss,1378731798906220551,BBurnsNHL,2021-04-04 11:30 AM,2021-04-04 12:05 PM,8476444,Christopher Gibson
+,,,,,,1378732513716232195,RotoWireNHL,2021-04-04 11:33 AM,2021-04-04 12:05 PM,8476444,Christopher Gibson
+,,,,,,1378755698536906756,BellyUpFantasy,2021-04-04 01:05 PM,2021-04-04 01:13 PM,8476444,Christopher Gibson

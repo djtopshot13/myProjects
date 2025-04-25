@@ -1,0 +1,3 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1455708222434594821,ElliottTeaford,2021-11-02 09:27 PM,2021-11-02 09:28 PM,8473541,Jonathan Bernier,1455708222434594821,ElliottTeaford,2021-11-02 09:27 PM,2021-11-02 09:28 PM,8476434,John Gibson
+1455710323902722051,FantasyAlarmNHL,2021-11-02 09:36 PM,2021-11-02 09:38 PM,8473541,Jonathan Bernier,1455711330326007813,FantasyAlarmNHL,2021-11-02 09:40 PM,2021-11-02 09:43 PM,8476434,John Gibson

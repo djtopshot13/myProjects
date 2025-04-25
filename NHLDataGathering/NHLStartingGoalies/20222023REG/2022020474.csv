@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1603510888471863308,penguins,2022-12-15 05:02 PM,2022-12-15 05:28 PM,8477465,Tristan Jarry,1.6034119964304343e+18,GeorgeRichards,2022-12-15 10:29 AM,2022-12-15 10:59 AM,8475683.0,Sergei Bobrovsky
+1603511555789824014,MolinariPGH,2022-12-15 05:05 PM,2022-12-15 05:28 PM,8477465,Tristan Jarry,,,,,,
+1603513659912757263,RotoWireNHL,2022-12-15 05:13 PM,2022-12-15 05:28 PM,8477465,Tristan Jarry,,,,,,

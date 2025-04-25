@@ -1,0 +1,3 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1598365569329135616,RotoWireNHL,2022-12-01 12:17 PM,2022-12-01 12:28 PM,8480382,Alexandar Georgiev,1598459705344815109,MatthewFairburn,2022-12-01 06:31 PM,2022-12-01 06:38 PM,8480045,Ukko-Pekka Luukkonen
+1598459705344815109,MatthewFairburn,2022-12-01 06:31 PM,2022-12-01 06:38 PM,8480382,Alexandar Georgiev,1598460372176052224,RotoWireNHL,2022-12-01 06:33 PM,2022-12-01 06:38 PM,8480045,Ukko-Pekka Luukkonen

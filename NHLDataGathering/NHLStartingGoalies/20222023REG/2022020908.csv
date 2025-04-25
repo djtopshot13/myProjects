@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.6281747294158848e+18,AnaheimDucks,2023-02-21 06:28 PM,2023-02-21 06:38 PM,8480843.0,Lukas Dostal,1628055945224851458,Chris_Krenn,2023-02-21 10:35 AM,2023-02-21 10:58 AM,8476883,Andrei Vasilevskiy
+,,,,,,1628092564069810176,GoaliePost,2023-02-21 01:01 PM,2023-02-21 01:05 PM,8476883,Andrei Vasilevskiy
+,,,,,,1628175338848256000,EddieInTheYard,2023-02-21 06:30 PM,2023-02-21 06:38 PM,8476883,Andrei Vasilevskiy

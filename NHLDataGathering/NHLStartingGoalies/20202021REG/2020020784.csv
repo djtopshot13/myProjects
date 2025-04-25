@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.387897792585216e+18,NYIslanders,2021-04-29 06:33 PM,2021-04-29 06:38 PM,8473575.0,Semyon Varlamov,1387780570378350592,JonLaneNHL,2021-04-29 10:47 AM,2021-04-29 10:59 AM,8478048,Igor Shesterkin
+1.3878989968663552e+18,FantasyAlarmNHL,2021-04-29 06:38 PM,2021-04-29 06:38 PM,8473575.0,Semyon Varlamov,1387794304937209860,AdamRotter,2021-04-29 11:42 AM,2021-04-29 11:43 AM,8478048,Igor Shesterkin
+,,,,,,1387794385958486020,CordUpTime,2021-04-29 11:42 AM,2021-04-29 11:43 AM,8478048,Igor Shesterkin
+,,,,,,1387898996866355205,FantasyAlarmNHL,2021-04-29 06:38 PM,2021-04-29 06:38 PM,8478048,Igor Shesterkin

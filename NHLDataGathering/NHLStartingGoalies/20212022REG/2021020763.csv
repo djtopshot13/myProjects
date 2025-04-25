@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1486757829612654601,ColinSNewsday,2022-01-27 12:47 PM,2022-01-27 01:28 PM,8480382,Alexandar Georgiev,1486728607422504967,JacketsInsider,2022-01-27 10:51 AM,2022-01-27 11:05 AM,8476914,Joonas Korpisalo
+1486791127760056324,FantasyAlarmNHL,2022-01-27 03:00 PM,2022-01-27 03:28 PM,8480382,Alexandar Georgiev,1486728262935932931,markscheig,2022-01-27 10:50 AM,2022-01-27 11:05 AM,8476914,Joonas Korpisalo
+1486844043082571779,ColinSNewsday,2022-01-27 06:30 PM,2022-01-27 06:38 PM,8480382,Alexandar Georgiev,1486749348763480073,FantasyAlarmNHL,2022-01-27 12:14 PM,2022-01-27 12:28 PM,8476914,Joonas Korpisalo

@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.3897104463036662e+18,NBCSEdgeHK,2021-05-04 06:36 PM,2021-05-04 06:38 PM,8478009.0,Ilya Sorokin,1389575097468477441,BuffaloSabres,2021-05-04 09:38 AM,2021-05-04 09:59 AM,8475920,Michael Houser
+1.3897094296464466e+18,FantasyAlarmNHL,2021-05-04 06:32 PM,2021-05-04 06:38 PM,8478009.0,Ilya Sorokin,1389649155090522112,Country104,2021-05-04 02:32 PM,2021-05-04 02:38 PM,8475920,Michael Houser
+,,,,,,1389756682436288516,NHL_Watcher,2021-05-04 09:39 PM,2021-05-04 09:43 PM,8475920,Michael Houser

@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1486164680066404355,brooksbratten,2022-01-25 09:30 PM,2022-01-25 09:38 PM,8477424,Juuse Saros,1.4860708844020244e+18,NBCSEdgeHK,2022-01-25 03:18 PM,2022-01-25 03:28 PM,8475831.0,Philipp Grubauer
+1486168524414337031,NBCSEdgeHK,2022-01-25 09:46 PM,2022-01-25 09:50 PM,8477424,Juuse Saros,1.4860698683949507e+18,FantasyAlarmNHL,2022-01-25 03:14 PM,2022-01-25 03:28 PM,8475831.0,Philipp Grubauer
+1486169021993164804,FantasyAlarmNHL,2022-01-25 09:48 PM,2022-01-25 09:50 PM,8477424,Juuse Saros,,,,,,

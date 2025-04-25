@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1596240715234803715,penguins,2022-11-25 03:33 PM,2022-11-25 03:59 PM,8477465,Tristan Jarry,1.5962391837059564e+18,charlieo_conn,2022-11-25 03:27 PM,2022-11-25 03:28 PM,8479394.0,Carter Hart
+1596240396958724096,PensInsideScoop,2022-11-25 03:32 PM,2022-11-25 03:59 PM,8477465,Tristan Jarry,1.596244064814256e+18,PensJG,2022-11-25 03:46 PM,2022-11-25 03:59 PM,8479394.0,Carter Hart
+1596241417982324737,PensJG,2022-11-25 03:36 PM,2022-11-25 03:59 PM,8477465,Tristan Jarry,,,,,,
+1596239795457757184,TaylorHaasePGH,2022-11-25 03:29 PM,2022-11-25 03:59 PM,8477465,Tristan Jarry,,,,,,

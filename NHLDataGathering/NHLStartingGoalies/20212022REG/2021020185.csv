@@ -1,0 +1,3 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1458124128880316424,corylav,2021-11-09 12:27 PM,2021-11-09 12:38 PM,8475883,Frederik Andersen,1458215138683768838,RawCharge,2021-11-09 06:29 PM,2021-11-09 06:38 PM,8476883,Andrei Vasilevskiy
+1458222788561539074,CanesOnFSCR,2021-11-09 06:59 PM,2021-11-09 07:05 PM,8475883,Frederik Andersen,1458222788561539074,CanesOnFSCR,2021-11-09 06:59 PM,2021-11-09 07:05 PM,8476883,Andrei Vasilevskiy

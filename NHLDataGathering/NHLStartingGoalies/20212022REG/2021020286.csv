@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.4628782138692362e+18,abbylabar_,2021-11-22 03:18 PM,2021-11-22 03:28 PM,8477293.0,Antti Raanta,1462508444578025472,CurtisPashelka,2021-11-21 02:49 PM,2021-11-21 02:58 PM,8473503,James Reimer
+1.462986023462396e+18,CanesOnFSCR,2021-11-22 10:27 PM,2021-11-22 10:28 PM,8477293.0,Antti Raanta,1462508251677794305,Sheng_Peng,2021-11-21 02:48 PM,2021-11-21 02:58 PM,8473503,James Reimer
+,,,,,,1462509360307916804,RotoWireNHL,2021-11-21 02:52 PM,2021-11-21 02:58 PM,8473503,James Reimer

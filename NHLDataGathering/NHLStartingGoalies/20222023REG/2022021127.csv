@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1637866290927788052,koshtorontosun,2023-03-20 01:18 PM,2023-03-20 01:59 PM,8478492,Ilya Samsonov,1638183552947765248,stefen_rosner,2023-03-21 10:19 AM,2023-03-21 10:28 AM,8478009,Ilya Sorokin
+1638314363445452802,AGrossNewsday,2023-03-21 06:59 PM,2023-03-21 07:05 PM,8478492,Ilya Samsonov,1638196275421106181,RotoWireNHL,2023-03-21 11:10 AM,2023-03-21 11:28 AM,8478009,Ilya Sorokin
+1638314513060462592,dalter,2023-03-21 06:59 PM,2023-03-21 07:05 PM,8478492,Ilya Samsonov,1638314363445452802,AGrossNewsday,2023-03-21 06:59 PM,2023-03-21 07:05 PM,8478009,Ilya Sorokin

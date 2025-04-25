@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.466869360035713e+18,NBCSEdgeHK,2021-12-03 03:38 PM,2021-12-03 03:58 PM,8479973.0,Stuart Skinner,1466843226468335617,ryan_s_clark,2021-12-03 01:54 PM,2021-12-03 01:58 PM,8475831,Philipp Grubauer
+1.4668693555898163e+18,FantasyAlarmNHL,2021-12-03 03:38 PM,2021-12-03 03:58 PM,8479973.0,Stuart Skinner,1466843330935803904,Marisa_Ingemi,2021-12-03 01:54 PM,2021-12-03 01:58 PM,8475831,Philipp Grubauer
+1.4668767893226578e+18,RotoWireNHL,2021-12-03 04:07 PM,2021-12-03 04:28 PM,8479973.0,Stuart Skinner,1466843668921282560,The32Krew,2021-12-03 01:55 PM,2021-12-03 01:58 PM,8475831,Philipp Grubauer
+,,,,,,1466843424242368516,EmeraldCityHky,2021-12-03 01:54 PM,2021-12-03 01:58 PM,8475831,Philipp Grubauer

@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.3758552401892516e+18,JamesonCoop,2021-03-27 01:00 PM,2021-03-27 01:13 PM,8475683.0,Sergei Bobrovsky,1375830848767979525,MikeHeika,2021-03-27 11:23 AM,2021-03-27 11:28 AM,8471418,Anton Khudobin
+1.3758880472885535e+18,BellyUpFantasy,2021-03-27 03:10 PM,2021-03-27 03:28 PM,8475683.0,Sergei Bobrovsky,1375829673679192066,MDeFranks,2021-03-27 11:18 AM,2021-03-27 11:28 AM,8471418,Anton Khudobin
+,,,,,,1375829662245523460,BruceLeVinePuck,2021-03-27 11:18 AM,2021-03-27 11:28 AM,8471418,Anton Khudobin
+,,,,,,1375846364643463169,RotoWireNHL,2021-03-27 12:25 PM,2021-03-27 12:28 PM,8471418,Anton Khudobin

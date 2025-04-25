@@ -1,0 +1,5 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.3726787135616492e+18,NBCSEdgeHK,2021-03-18 06:38 PM,2021-03-18 06:38 PM,8477424.0,Juuse Saros,1372555407626022918,JamesonCoop,2021-03-18 10:28 AM,2021-03-18 10:28 AM,8475683,Sergei Bobrovsky
+1.3726782017727693e+18,FantasyAlarmNHL,2021-03-18 06:36 PM,2021-03-18 06:38 PM,8477424.0,Juuse Saros,1372555340227743747,DavidDwork,2021-03-18 10:27 AM,2021-03-18 10:28 AM,8475683,Sergei Bobrovsky
+,,,,,,1372602705139671045,FantasyAlarmNHL,2021-03-18 01:36 PM,2021-03-18 01:38 PM,8475683,Sergei Bobrovsky
+,,,,,,1372603593740578818,NBCSEdgeHK,2021-03-18 01:39 PM,2021-03-18 01:43 PM,8475683,Sergei Bobrovsky

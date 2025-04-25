@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.501691998600069e+18,Hebrew__Hammers,2022-03-09 05:50 PM,2022-03-09 05:58 PM,8478492.0,Ilya Samsonov,1501616690626392068,NBCSEdgeHK,2022-03-09 12:51 PM,2022-03-09 12:58 PM,8475156,Mikko Koskinen
+1.5016945809655276e+18,NBCSEdgeHK,2022-03-09 06:01 PM,2022-03-09 06:05 PM,8478492.0,Ilya Samsonov,1501648570117758978,NewWaveOil,2022-03-09 02:58 PM,2022-03-09 03:28 PM,8475156,Mikko Koskinen
+,,,,,,1501659573941272578,EdmontonOilers,2022-03-09 03:41 PM,2022-03-09 03:58 PM,8475156,Mikko Koskinen

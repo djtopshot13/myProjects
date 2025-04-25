@@ -1,0 +1,4 @@
+a_tweet_id,a_handle,a_created_at,a_found_at,a_goalie_id,a_goalie_name,h_tweet_id,h_handle,h_created_at,h_found_at,h_goalie_id,h_goalie_name
+1.6129548001567252e+18,BatchHockey,2023-01-10 06:29 PM,2023-01-10 06:38 PM,8477484.0,Spencer Martin,1612847385650020354,SethRorabaugh,2023-01-10 11:22 AM,2023-01-10 11:28 AM,8479193,Casey DeSmith
+,,,,,,1612848727139418114,GoaliePost,2023-01-10 11:27 AM,2023-01-10 11:28 AM,8479193,Casey DeSmith
+,,,,,,1612849448857501696,RotoWireNHL,2023-01-10 11:30 AM,2023-01-10 11:38 AM,8479193,Casey DeSmith
