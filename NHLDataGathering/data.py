@@ -81,7 +81,7 @@ def download_csv_files(BASE_URL, DOWNLOAD_DIR):
     csv_links = []
     for link in soup.find_all("a"):
         href = link.get("href")
-        if href and (href.startswith("202402") and href.endswith(".csv")):
+        if href and (href.startswith("2023") and not href.startswith("202303") and not href.startswith("202302")  and href.endswith(".csv")):
             csv_links.append(href)
 
     # Step 3: Download files
@@ -153,41 +153,42 @@ def json_files_to_csv(BASE_URL, DOWNLOAD_DIR):
 # BASE_URL =f"https://www.moneypuck.com/moneypuck/OldSeasonScheduleJson/SeasonSchedule-{season}.json"
 # DOWNLOAD_DIR = "NHLSeasonSchedule"
 # json_files_to_csv(BASE_URL, DOWNLOAD_DIR)
+directory = "20232024MISC"
 
-# download_csv_files(f"https://moneypuck.com/moneypuck/tweets/starting_goalies/", "NHLStartingGoalies")
+download_csv_files(f"https://moneypuck.com/moneypuck/tweets/starting_goalies/", directory)
 
 def merge_goalie_csv_files(game_id):
     import os
     import pandas as pd
     try:
-        away_df = pd.read_csv(f"NHLStartingGoalies/{game_id}A.csv")
+        away_df = pd.read_csv(f"{directory}/{game_id}A.csv")
         away_df.drop(columns=["author_id", "text"], inplace=True)
         away_df = away_df.rename(columns={"tweet_id": "a_tweet_id", "handle": "a_handle", "created_at": "a_created_at", "found_at": "a_found_at", "goalie_id": "a_goalie_id", "goalie_name": "a_goalie_name"})    
-        home_df = pd.read_csv(f"NHLStartingGoalies/{game_id}H.csv")
+        home_df = pd.read_csv(f"{directory}/{game_id}H.csv")
         home_df.drop(columns=["author_id", "text"], inplace=True)
         home_df = home_df.rename(columns={"tweet_id": "h_tweet_id", "handle": "h_handle", "created_at": "h_created_at", "found_at": "h_found_at", "goalie_id": "h_goalie_id", "goalie_name": "h_goalie_name"})
 
 
         # Concatenate all DataFrames into one
-        merged_df = pd.concat([away_df, home_df], axis=1)
+        merged_df = away_df.join(home_df, how='inner')
 
         # Save the merged DataFrame to a new CSV file
-        merged_df.to_csv(os.path.join("NHLStartingGoalies", f"{game_id}.csv"), index=False)
+        merged_df.to_csv(os.path.join(directory, f"{game_id}.csv"), index=False)
 
     except Exception as e:
         print(f"Error processing game {game_id}: {e}")
 
-# for i in range(24, 1313):
-#     game_id = f"202402{i:04}"
-#     merge_goalie_csv_files(game_id)
-#     print(f"Game 202402{game_id} data saved.")
+for i in range(190000, 200008):
+    game_id = f"2023{i:06}"
+    merge_goalie_csv_files(game_id)
+    print(f"Game {game_id} data saved.")
 
 def delete_partial_csv_files():
     import os
     import pandas as pd
 
     # Directory containing the CSV files
-    directory = "NHLStartingGoalies"
+    
 
     for file in os.listdir(directory):
         if file.endswith("A.csv") or file.endswith("H.csv"):
