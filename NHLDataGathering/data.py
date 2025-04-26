@@ -155,7 +155,7 @@ def json_files_to_csv(BASE_URL, DOWNLOAD_DIR):
 # json_files_to_csv(BASE_URL, DOWNLOAD_DIR)
 directory = "20232024MISC"
 
-download_csv_files(f"https://moneypuck.com/moneypuck/tweets/starting_goalies/", directory)
+# download_csv_files(f"https://moneypuck.com/moneypuck/tweets/starting_goalies/", directory)
 
 def merge_goalie_csv_files(game_id):
     import os
@@ -178,10 +178,10 @@ def merge_goalie_csv_files(game_id):
     except Exception as e:
         print(f"Error processing game {game_id}: {e}")
 
-for i in range(190000, 200008):
-    game_id = f"2023{i:06}"
-    merge_goalie_csv_files(game_id)
-    print(f"Game {game_id} data saved.")
+# for i in range(190000, 200008):
+#     game_id = f"2023{i:06}"
+#     merge_goalie_csv_files(game_id)
+#     print(f"Game {game_id} data saved.")
 
 def delete_partial_csv_files():
     import os
@@ -198,4 +198,5 @@ def delete_partial_csv_files():
                 os.remove(os.path.join(directory, file))
                 print(f"Deleted partial file: {file}")
 
-delete_partial_csv_files()
+# delete_partial_csv_files()
+
