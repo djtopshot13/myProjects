@@ -53,61 +53,121 @@ April: 1182-1312
 """
 
 
-def download_csv_files(BASE_URL, DOWNLOAD_DIR):
+# def download_csv_files(BASE_URL, DOWNLOAD_DIR):
+#     import os
+#     from bs4 import BeautifulSoup  # For parsing HTML
+
+#     # Configuration
+#     HEADERS = {
+#         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+#         "Accept": "text/csv"  # Prioritize CSV responses
+#     }
+
+#     # Ensure download directory exists
+#     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+
+#     # Step 1: Get page content
+#     response = requests.get(BASE_URL, headers=HEADERS)
+#     if response.status_code != 200:
+#         print(f"Failed to retrieve the page, status code: {response.status_code}")
+#         exit()
+#     soup = BeautifulSoup(response.text, "html.parser")
+#     if soup is None:
+#         print("Failed to retrieve the page content.")
+#         exit()
+
+
+#     # Step 2: Find CSV links
+#     csv_links = []
+#     for link in soup.find_all("a"):
+#         href = link.get("href")
+#         if href and href.startswith("202403") and href.endswith(".csv"):
+#             csv_links.append(href)
+
+#     # Step 3: Download files
+#     for link in csv_links:
+#         # Handle relative URLs
+#         if not link.startswith("http"):
+#             link = f"{BASE_URL}/{link.lstrip('/')}"
+        
+#         try:
+#             response = requests.get(link, headers=HEADERS)
+#             response.raise_for_status()  # Check for HTTP errors
+            
+#             # Generate filename from URL
+#             filename = os.path.join(
+#                 DOWNLOAD_DIR,
+#                 os.path.basename(link).split("?")[0]  # Remove URL parameters
+#             )
+            
+#             # Save file
+#             with open(filename, "wb") as f:
+#                 f.write(response.content)
+            
+#             print(f"Downloaded: {filename}")
+        
+#         except requests.exceptions.RequestException as e:
+#             print(f"Failed to download {link}: {e}")
+
+def download_new_csv_files(BASE_URL, DOWNLOAD_DIR):
     import os
-    from bs4 import BeautifulSoup  # For parsing HTML
+    import requests
+    from bs4 import BeautifulSoup
+
+    playoff_dict = {
+        "011": "/TORvsOTT",
+        "012": "/FLAvsTBL",
+        "013": "/WSHvsMTL",
+        "014": "/CARvsNJD",
+        "015": "/WPGvsSTL",
+        "016": "/DALvsCOL",
+        "017": "/VGKvsMIN",
+        "018": "/LAKvsEDM"
+    }
 
     # Configuration
     HEADERS = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-        "Accept": "text/csv"  # Prioritize CSV responses
+        "Accept": "text/csv"
     }
 
-    # Ensure download directory exists
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
-    # Step 1: Get page content
+    # Get page content
     response = requests.get(BASE_URL, headers=HEADERS)
     if response.status_code != 200:
-        print(f"Failed to retrieve the page, status code: {response.status_code}")
-        exit()
+        print(f"Failed to retrieve page: {response.status_code}")
+        return
     soup = BeautifulSoup(response.text, "html.parser")
-    if soup is None:
-        print("Failed to retrieve the page content.")
-        exit()
 
+    # Find CSV links
+    csv_links = [
+        link.get("href") for link in soup.find_all("a")
+        if link.get("href", "").startswith("202403") and link.get("href", "").endswith(".csv")
+    ]
 
-    # Step 2: Find CSV links
-    csv_links = []
-    for link in soup.find_all("a"):
-        href = link.get("href")
-        if href and (href.startswith("2023") and not href.startswith("202303") and not href.startswith("202302")  and href.endswith(".csv")):
-            csv_links.append(href)
-
-    # Step 3: Download files
+    # Download files with existence check
     for link in csv_links:
-        # Handle relative URLs
-        if not link.startswith("http"):
-            link = f"{BASE_URL}/{link.lstrip('/')}"
-        
+        full_url = f"{BASE_URL}/{link.lstrip('/')}" if not link.startswith("http") else link
+        # DOWNLOAD_DIR += playoff_dict.get(link[6:9], "")
+        filename = os.path.join(DOWNLOAD_DIR, os.path.basename(link).split("?")[0])
+        # DOWNLOAD_DIR = DOWNLOAD_DIR[:-9]  # Reset DOWNLOAD_DIR for next iteration
+
+        if os.path.exists(filename):  # Existence check [1][2][4]
+            print(f"Skipping existing file: {filename}")
+            continue
+
         try:
-            response = requests.get(link, headers=HEADERS)
-            response.raise_for_status()  # Check for HTTP errors
+            response = requests.get(full_url, headers=HEADERS)
+            response.raise_for_status()
             
-            # Generate filename from URL
-            filename = os.path.join(
-                DOWNLOAD_DIR,
-                os.path.basename(link).split("?")[0]  # Remove URL parameters
-            )
-            
-            # Save file
             with open(filename, "wb") as f:
                 f.write(response.content)
-            
             print(f"Downloaded: {filename}")
-        
+            
         except requests.exceptions.RequestException as e:
-            print(f"Failed to download {link}: {e}")
+            print(f"Download failed: {full_url} - {e}")
+
 
 def json_files_to_csv(BASE_URL, DOWNLOAD_DIR):
     import os
@@ -151,11 +211,11 @@ def json_files_to_csv(BASE_URL, DOWNLOAD_DIR):
 
 # season = "20242025"
 # BASE_URL =f"https://www.moneypuck.com/moneypuck/OldSeasonScheduleJson/SeasonSchedule-{season}.json"
-# DOWNLOAD_DIR = "NHLSeasonSchedule"
+dir = "20242025GameDataPBP/Playoffs"
+download_new_csv_files(f"https://moneypuck.com/moneypuck/gameData/20242025/", dir)
 # json_files_to_csv(BASE_URL, DOWNLOAD_DIR)
-directory = "20232024MISC"
 
-# download_csv_files(f"https://moneypuck.com/moneypuck/tweets/starting_goalies/", directory)
+
 
 def merge_goalie_csv_files(game_id):
     import os
