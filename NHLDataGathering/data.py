@@ -109,7 +109,66 @@ April: 1182-1312
 #         except requests.exceptions.RequestException as e:
 #             print(f"Failed to download {link}: {e}")
 
-def download_new_csv_files(BASE_URL, DOWNLOAD_DIR):
+def download_new_playoff_csv_files(BASE_URL, DOWNLOAD_DIR):
+    import os
+    import requests
+    from bs4 import BeautifulSoup
+
+    playoff_dict = {
+        "011": "/TORvsOTT",
+        "012": "/FLAvsTBL",
+        "013": "/WSHvsMTL",
+        "014": "/CARvsNJD",
+        "015": "/WPGvsSTL",
+        "016": "/DALvsCOL",
+        "017": "/VGKvsMIN",
+        "018": "/LAKvsEDM"
+    }
+
+    # Configuration
+    HEADERS = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        "Accept": "text/csv"
+    }
+
+    os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+
+    # Get page content
+    response = requests.get(BASE_URL, headers=HEADERS)
+    if response.status_code != 200:
+        print(f"Failed to retrieve page: {response.status_code}")
+        return
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    # Find CSV links
+    csv_links = [
+        link.get("href") for link in soup.find_all("a")
+        if link.get("href", "").startswith("202403") and link.get("href", "").endswith(".csv")
+    ]
+
+    # Download files with existence check
+    for link in csv_links:
+        full_url = f"{BASE_URL}/{link.lstrip('/')}" if not link.startswith("http") else link
+        # DOWNLOAD_DIR += playoff_dict.get(link[6:9], "")
+        filename = os.path.join(DOWNLOAD_DIR, os.path.basename(link).split("?")[0])
+        # DOWNLOAD_DIR = DOWNLOAD_DIR[:-9]  # Reset DOWNLOAD_DIR for next iteration
+
+        if os.path.exists(filename):  # Existence check [1][2][4]
+            print(f"Skipping existing file: {filename}")
+            continue
+
+        try:
+            response = requests.get(full_url, headers=HEADERS)
+            response.raise_for_status()
+            
+            with open(filename, "wb") as f:
+                f.write(response.content)
+            print(f"Downloaded: {filename}")
+            
+        except requests.exceptions.RequestException as e:
+            print(f"Download failed: {full_url} - {e}")
+
+def download_new_playoff_csv_files(BASE_URL, DOWNLOAD_DIR):
     import os
     import requests
     from bs4 import BeautifulSoup
@@ -212,7 +271,7 @@ def json_files_to_csv(BASE_URL, DOWNLOAD_DIR):
 # season = "20242025"
 # BASE_URL =f"https://www.moneypuck.com/moneypuck/OldSeasonScheduleJson/SeasonSchedule-{season}.json"
 dir = "20242025GameDataPBP/Playoffs"
-download_new_csv_files(f"https://moneypuck.com/moneypuck/gameData/20242025/", dir)
+download_new_playoff_csv_files(f"https://moneypuck.com/moneypuck/gameData/20242025/", dir)
 # json_files_to_csv(BASE_URL, DOWNLOAD_DIR)
 
 
