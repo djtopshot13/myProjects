@@ -70,86 +70,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/183c31f7-2eed-15c0-7fa1-a568d20bf3ad/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/183c31f7-2eed-15c0-7fa1-a568d20bf3ad/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/183c31f7-2eed-15c0-7fa1-a568d20bf3ad/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/183c31f7-2eed-15c0-7fa1-a568d20bf3ad/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/183c31f7-2eed-15c0-7fa1-a568d20bf3ad/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/183c31f7-2eed-15c0-7fa1-a568d20bf3ad/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/183c31f7-2eed-15c0-7fa1-a568d20bf3ad/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/183c31f7-2eed-15c0-7fa1-a568d20bf3ad/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -279,86 +199,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/585503ab-1462-2afe-7a70-aafea4f6b1b6/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/585503ab-1462-2afe-7a70-aafea4f6b1b6/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/585503ab-1462-2afe-7a70-aafea4f6b1b6/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/585503ab-1462-2afe-7a70-aafea4f6b1b6/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/585503ab-1462-2afe-7a70-aafea4f6b1b6/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/585503ab-1462-2afe-7a70-aafea4f6b1b6/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/585503ab-1462-2afe-7a70-aafea4f6b1b6/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/585503ab-1462-2afe-7a70-aafea4f6b1b6/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -494,86 +334,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/06b99a18-3096-3b1f-d339-adab9ac51614/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/06b99a18-3096-3b1f-d339-adab9ac51614/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/06b99a18-3096-3b1f-d339-adab9ac51614/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/06b99a18-3096-3b1f-d339-adab9ac51614/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/06b99a18-3096-3b1f-d339-adab9ac51614/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/06b99a18-3096-3b1f-d339-adab9ac51614/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/06b99a18-3096-3b1f-d339-adab9ac51614/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/06b99a18-3096-3b1f-d339-adab9ac51614/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -703,86 +463,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/1b1346bb-9cad-dd44-4de5-91724595e92b/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/1b1346bb-9cad-dd44-4de5-91724595e92b/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/1b1346bb-9cad-dd44-4de5-91724595e92b/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/1b1346bb-9cad-dd44-4de5-91724595e92b/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/1b1346bb-9cad-dd44-4de5-91724595e92b/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/1b1346bb-9cad-dd44-4de5-91724595e92b/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/1b1346bb-9cad-dd44-4de5-91724595e92b/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/1b1346bb-9cad-dd44-4de5-91724595e92b/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -918,86 +598,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b7b7b58e-e579-b39d-fb2d-70213dd93502/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b7b7b58e-e579-b39d-fb2d-70213dd93502/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b7b7b58e-e579-b39d-fb2d-70213dd93502/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b7b7b58e-e579-b39d-fb2d-70213dd93502/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b7b7b58e-e579-b39d-fb2d-70213dd93502/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b7b7b58e-e579-b39d-fb2d-70213dd93502/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b7b7b58e-e579-b39d-fb2d-70213dd93502/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b7b7b58e-e579-b39d-fb2d-70213dd93502/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -1127,86 +727,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/e1595aca-83a9-f0b3-5621-0ef78e76d097/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/e1595aca-83a9-f0b3-5621-0ef78e76d097/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/e1595aca-83a9-f0b3-5621-0ef78e76d097/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/e1595aca-83a9-f0b3-5621-0ef78e76d097/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/e1595aca-83a9-f0b3-5621-0ef78e76d097/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/e1595aca-83a9-f0b3-5621-0ef78e76d097/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/e1595aca-83a9-f0b3-5621-0ef78e76d097/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/e1595aca-83a9-f0b3-5621-0ef78e76d097/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -1342,86 +862,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/65489e39-7ab7-70da-94bc-adcc6f0aa1c6/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/65489e39-7ab7-70da-94bc-adcc6f0aa1c6/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/65489e39-7ab7-70da-94bc-adcc6f0aa1c6/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/65489e39-7ab7-70da-94bc-adcc6f0aa1c6/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/65489e39-7ab7-70da-94bc-adcc6f0aa1c6/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/65489e39-7ab7-70da-94bc-adcc6f0aa1c6/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/65489e39-7ab7-70da-94bc-adcc6f0aa1c6/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/65489e39-7ab7-70da-94bc-adcc6f0aa1c6/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -1551,86 +991,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/724d5dd5-197c-6f1d-29ca-a0b4f25eb1b6/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/724d5dd5-197c-6f1d-29ca-a0b4f25eb1b6/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/724d5dd5-197c-6f1d-29ca-a0b4f25eb1b6/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/724d5dd5-197c-6f1d-29ca-a0b4f25eb1b6/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/724d5dd5-197c-6f1d-29ca-a0b4f25eb1b6/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/724d5dd5-197c-6f1d-29ca-a0b4f25eb1b6/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/724d5dd5-197c-6f1d-29ca-a0b4f25eb1b6/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/724d5dd5-197c-6f1d-29ca-a0b4f25eb1b6/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -1766,86 +1126,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/165c24ec-4c6b-36f2-b276-3169cf6ab8f7/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/165c24ec-4c6b-36f2-b276-3169cf6ab8f7/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/165c24ec-4c6b-36f2-b276-3169cf6ab8f7/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/165c24ec-4c6b-36f2-b276-3169cf6ab8f7/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/165c24ec-4c6b-36f2-b276-3169cf6ab8f7/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/165c24ec-4c6b-36f2-b276-3169cf6ab8f7/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/165c24ec-4c6b-36f2-b276-3169cf6ab8f7/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/165c24ec-4c6b-36f2-b276-3169cf6ab8f7/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -1975,86 +1255,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/285ae6e1-8408-88cf-50ad-1a1e7be66658/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/285ae6e1-8408-88cf-50ad-1a1e7be66658/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/285ae6e1-8408-88cf-50ad-1a1e7be66658/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/285ae6e1-8408-88cf-50ad-1a1e7be66658/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/285ae6e1-8408-88cf-50ad-1a1e7be66658/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/285ae6e1-8408-88cf-50ad-1a1e7be66658/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/285ae6e1-8408-88cf-50ad-1a1e7be66658/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/285ae6e1-8408-88cf-50ad-1a1e7be66658/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -2190,86 +1390,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/c78600f3-cea1-f6e0-11cf-dfeefe1897ff/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/c78600f3-cea1-f6e0-11cf-dfeefe1897ff/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/c78600f3-cea1-f6e0-11cf-dfeefe1897ff/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/c78600f3-cea1-f6e0-11cf-dfeefe1897ff/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/c78600f3-cea1-f6e0-11cf-dfeefe1897ff/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/c78600f3-cea1-f6e0-11cf-dfeefe1897ff/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/c78600f3-cea1-f6e0-11cf-dfeefe1897ff/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/c78600f3-cea1-f6e0-11cf-dfeefe1897ff/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -2399,86 +1519,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/195561c3-b7d9-935e-0623-8f0a00357080/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/195561c3-b7d9-935e-0623-8f0a00357080/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/195561c3-b7d9-935e-0623-8f0a00357080/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/195561c3-b7d9-935e-0623-8f0a00357080/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/195561c3-b7d9-935e-0623-8f0a00357080/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/195561c3-b7d9-935e-0623-8f0a00357080/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/195561c3-b7d9-935e-0623-8f0a00357080/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/195561c3-b7d9-935e-0623-8f0a00357080/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -2614,86 +1654,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/47ce4014-1c1f-c67f-bfe6-ec95d5f57a87/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/47ce4014-1c1f-c67f-bfe6-ec95d5f57a87/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/47ce4014-1c1f-c67f-bfe6-ec95d5f57a87/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/47ce4014-1c1f-c67f-bfe6-ec95d5f57a87/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/47ce4014-1c1f-c67f-bfe6-ec95d5f57a87/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/47ce4014-1c1f-c67f-bfe6-ec95d5f57a87/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/47ce4014-1c1f-c67f-bfe6-ec95d5f57a87/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/47ce4014-1c1f-c67f-bfe6-ec95d5f57a87/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -2823,86 +1783,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b024c635-e192-6545-f8c1-b5da0df5ff6c/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b024c635-e192-6545-f8c1-b5da0df5ff6c/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b024c635-e192-6545-f8c1-b5da0df5ff6c/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b024c635-e192-6545-f8c1-b5da0df5ff6c/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b024c635-e192-6545-f8c1-b5da0df5ff6c/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b024c635-e192-6545-f8c1-b5da0df5ff6c/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b024c635-e192-6545-f8c1-b5da0df5ff6c/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/b024c635-e192-6545-f8c1-b5da0df5ff6c/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -3038,86 +1918,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4110452f-e35d-14fe-8fbb-cdb21e269149/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4110452f-e35d-14fe-8fbb-cdb21e269149/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4110452f-e35d-14fe-8fbb-cdb21e269149/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4110452f-e35d-14fe-8fbb-cdb21e269149/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4110452f-e35d-14fe-8fbb-cdb21e269149/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4110452f-e35d-14fe-8fbb-cdb21e269149/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4110452f-e35d-14fe-8fbb-cdb21e269149/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4110452f-e35d-14fe-8fbb-cdb21e269149/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -3247,86 +2047,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/d9088081-d43d-e521-3c19-d9b4fc1bc3ba/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/d9088081-d43d-e521-3c19-d9b4fc1bc3ba/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/d9088081-d43d-e521-3c19-d9b4fc1bc3ba/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/d9088081-d43d-e521-3c19-d9b4fc1bc3ba/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/d9088081-d43d-e521-3c19-d9b4fc1bc3ba/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/d9088081-d43d-e521-3c19-d9b4fc1bc3ba/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/d9088081-d43d-e521-3c19-d9b4fc1bc3ba/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/d9088081-d43d-e521-3c19-d9b4fc1bc3ba/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -3462,86 +2182,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/beb0cb35-4d9f-a5e8-9e7b-d5ca97e51d93/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/beb0cb35-4d9f-a5e8-9e7b-d5ca97e51d93/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/beb0cb35-4d9f-a5e8-9e7b-d5ca97e51d93/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/beb0cb35-4d9f-a5e8-9e7b-d5ca97e51d93/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/beb0cb35-4d9f-a5e8-9e7b-d5ca97e51d93/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/beb0cb35-4d9f-a5e8-9e7b-d5ca97e51d93/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/beb0cb35-4d9f-a5e8-9e7b-d5ca97e51d93/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/beb0cb35-4d9f-a5e8-9e7b-d5ca97e51d93/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -3671,86 +2311,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dab46111-bd72-868c-eff2-340e3cfc4d62/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dab46111-bd72-868c-eff2-340e3cfc4d62/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dab46111-bd72-868c-eff2-340e3cfc4d62/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dab46111-bd72-868c-eff2-340e3cfc4d62/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dab46111-bd72-868c-eff2-340e3cfc4d62/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dab46111-bd72-868c-eff2-340e3cfc4d62/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dab46111-bd72-868c-eff2-340e3cfc4d62/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dab46111-bd72-868c-eff2-340e3cfc4d62/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -3886,86 +2446,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4e807ac9-f3b7-8e3b-8549-441c1e604c17/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4e807ac9-f3b7-8e3b-8549-441c1e604c17/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4e807ac9-f3b7-8e3b-8549-441c1e604c17/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4e807ac9-f3b7-8e3b-8549-441c1e604c17/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4e807ac9-f3b7-8e3b-8549-441c1e604c17/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4e807ac9-f3b7-8e3b-8549-441c1e604c17/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4e807ac9-f3b7-8e3b-8549-441c1e604c17/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/4e807ac9-f3b7-8e3b-8549-441c1e604c17/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -4095,86 +2575,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3edd2776-99a9-c0bb-6a73-863b428e25ef/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3edd2776-99a9-c0bb-6a73-863b428e25ef/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3edd2776-99a9-c0bb-6a73-863b428e25ef/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3edd2776-99a9-c0bb-6a73-863b428e25ef/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3edd2776-99a9-c0bb-6a73-863b428e25ef/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3edd2776-99a9-c0bb-6a73-863b428e25ef/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3edd2776-99a9-c0bb-6a73-863b428e25ef/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3edd2776-99a9-c0bb-6a73-863b428e25ef/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -4310,86 +2710,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/68aba012-4e93-9371-6861-1bb9a63cfb11/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/68aba012-4e93-9371-6861-1bb9a63cfb11/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/68aba012-4e93-9371-6861-1bb9a63cfb11/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/68aba012-4e93-9371-6861-1bb9a63cfb11/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/68aba012-4e93-9371-6861-1bb9a63cfb11/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/68aba012-4e93-9371-6861-1bb9a63cfb11/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/68aba012-4e93-9371-6861-1bb9a63cfb11/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/68aba012-4e93-9371-6861-1bb9a63cfb11/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -4519,86 +2839,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/472f7324-d0ab-e645-bce6-a3cd3dcb110d/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/472f7324-d0ab-e645-bce6-a3cd3dcb110d/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/472f7324-d0ab-e645-bce6-a3cd3dcb110d/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/472f7324-d0ab-e645-bce6-a3cd3dcb110d/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/472f7324-d0ab-e645-bce6-a3cd3dcb110d/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/472f7324-d0ab-e645-bce6-a3cd3dcb110d/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/472f7324-d0ab-e645-bce6-a3cd3dcb110d/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/472f7324-d0ab-e645-bce6-a3cd3dcb110d/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -4734,86 +2974,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/8c0b5061-09c3-2e5c-529b-274a22d1b6bb/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/8c0b5061-09c3-2e5c-529b-274a22d1b6bb/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/8c0b5061-09c3-2e5c-529b-274a22d1b6bb/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/8c0b5061-09c3-2e5c-529b-274a22d1b6bb/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/8c0b5061-09c3-2e5c-529b-274a22d1b6bb/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/8c0b5061-09c3-2e5c-529b-274a22d1b6bb/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/8c0b5061-09c3-2e5c-529b-274a22d1b6bb/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/8c0b5061-09c3-2e5c-529b-274a22d1b6bb/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -4943,86 +3103,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/ca912ee8-d2a3-3e84-831e-1a0ca38e7c3f/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/ca912ee8-d2a3-3e84-831e-1a0ca38e7c3f/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/ca912ee8-d2a3-3e84-831e-1a0ca38e7c3f/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/ca912ee8-d2a3-3e84-831e-1a0ca38e7c3f/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/ca912ee8-d2a3-3e84-831e-1a0ca38e7c3f/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/ca912ee8-d2a3-3e84-831e-1a0ca38e7c3f/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/ca912ee8-d2a3-3e84-831e-1a0ca38e7c3f/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/ca912ee8-d2a3-3e84-831e-1a0ca38e7c3f/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -5158,86 +3238,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/9d2d39d0-ed26-32e1-dcdf-d48e2cef3c90/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/9d2d39d0-ed26-32e1-dcdf-d48e2cef3c90/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/9d2d39d0-ed26-32e1-dcdf-d48e2cef3c90/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/9d2d39d0-ed26-32e1-dcdf-d48e2cef3c90/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/9d2d39d0-ed26-32e1-dcdf-d48e2cef3c90/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/9d2d39d0-ed26-32e1-dcdf-d48e2cef3c90/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/9d2d39d0-ed26-32e1-dcdf-d48e2cef3c90/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/9d2d39d0-ed26-32e1-dcdf-d48e2cef3c90/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -5367,86 +3367,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/49fa608f-040f-21c1-ebfb-99e8feb8b774/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/49fa608f-040f-21c1-ebfb-99e8feb8b774/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/49fa608f-040f-21c1-ebfb-99e8feb8b774/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/49fa608f-040f-21c1-ebfb-99e8feb8b774/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/49fa608f-040f-21c1-ebfb-99e8feb8b774/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/49fa608f-040f-21c1-ebfb-99e8feb8b774/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/49fa608f-040f-21c1-ebfb-99e8feb8b774/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/49fa608f-040f-21c1-ebfb-99e8feb8b774/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -5582,86 +3502,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/5aa11fc5-b122-f21a-1ddb-a63c5b3dddee/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/5aa11fc5-b122-f21a-1ddb-a63c5b3dddee/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/5aa11fc5-b122-f21a-1ddb-a63c5b3dddee/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/5aa11fc5-b122-f21a-1ddb-a63c5b3dddee/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/5aa11fc5-b122-f21a-1ddb-a63c5b3dddee/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/5aa11fc5-b122-f21a-1ddb-a63c5b3dddee/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/5aa11fc5-b122-f21a-1ddb-a63c5b3dddee/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/5aa11fc5-b122-f21a-1ddb-a63c5b3dddee/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -5742,20 +3582,20 @@
                             "team": {
                                 "id": "129764",
                                 "uid": "s:70~l:90~t:129764",
-                                "slug": "utah-hockey-club",
-                                "abbreviation": "UTAH",
-                                "displayName": "Utah Hockey Club",
-                                "shortDisplayName": "Utah HC",
-                                "name": "Hockey Club",
+                                "slug": "utah-mammoth",
+                                "abbreviation": "UTA",
+                                "displayName": "Utah Mammoth",
+                                "shortDisplayName": "Mammoth",
+                                "name": "Mammoth",
                                 "nickname": "Utah",
                                 "location": "Utah",
-                                "color": "231F20",
-                                "alternateColor": "7ab2e0",
+                                "color": "000000",
+                                "alternateColor": "78b3e0",
                                 "isActive": true,
                                 "isAllStar": false,
                                 "logos": [
                                     {
-                                        "href": "https://a.espncdn.com/i/teamlogos/nhl/500/utah.png",
+                                        "href": "https://a.espncdn.com/i/teamlogos/nhl/500/uta.png",
                                         "alt": "",
                                         "rel": [
                                             "full",
@@ -5765,7 +3605,7 @@
                                         "height": 500
                                     },
                                     {
-                                        "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/utah.png",
+                                        "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/uta.png",
                                         "alt": "",
                                         "rel": [
                                             "full",
@@ -5775,7 +3615,7 @@
                                         "height": 500
                                     },
                                     {
-                                        "href": "https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/utah.png",
+                                        "href": "https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/uta.png",
                                         "alt": "",
                                         "rel": [
                                             "full",
@@ -5785,92 +3625,12 @@
                                         "height": 500
                                     },
                                     {
-                                        "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/scoreboard/utah.png",
+                                        "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/scoreboard/uta.png",
                                         "alt": "",
                                         "rel": [
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/f7e8115e-e00b-315d-8018-d2b38e4f420a/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/f7e8115e-e00b-315d-8018-d2b38e4f420a/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/f7e8115e-e00b-315d-8018-d2b38e4f420a/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/f7e8115e-e00b-315d-8018-d2b38e4f420a/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/f7e8115e-e00b-315d-8018-d2b38e4f420a/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/f7e8115e-e00b-315d-8018-d2b38e4f420a/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/f7e8115e-e00b-315d-8018-d2b38e4f420a/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/f7e8115e-e00b-315d-8018-d2b38e4f420a/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -5884,7 +3644,7 @@
                                             "desktop",
                                             "team"
                                         ],
-                                        "href": "https://www.espn.com/nhl/team/_/name/utah/utah-hockey-club",
+                                        "href": "https://www.espn.com/nhl/team/_/name/uta/utah-mammoth",
                                         "text": "Clubhouse",
                                         "shortText": "Clubhouse",
                                         "isExternal": false,
@@ -5898,7 +3658,7 @@
                                             "desktop",
                                             "team"
                                         ],
-                                        "href": "https://www.espn.com/nhl/team/roster/_/name/utah/utah-hockey-club",
+                                        "href": "https://www.espn.com/nhl/team/roster/_/name/uta/utah-mammoth",
                                         "text": "Roster",
                                         "shortText": "Roster",
                                         "isExternal": false,
@@ -5912,7 +3672,7 @@
                                             "desktop",
                                             "team"
                                         ],
-                                        "href": "https://www.espn.com/nhl/team/stats/_/name/utah/utah-hockey-club",
+                                        "href": "https://www.espn.com/nhl/team/stats/_/name/uta/utah-mammoth",
                                         "text": "Statistics",
                                         "shortText": "Statistics",
                                         "isExternal": false,
@@ -5926,7 +3686,7 @@
                                             "desktop",
                                             "team"
                                         ],
-                                        "href": "https://www.espn.com/nhl/team/schedule/_/name/utah",
+                                        "href": "https://www.espn.com/nhl/team/schedule/_/name/uta",
                                         "text": "Schedule",
                                         "shortText": "Schedule",
                                         "isExternal": false,
@@ -6003,86 +3763,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/64856285-41c1-61e8-4b7f-72a347c8c018/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/64856285-41c1-61e8-4b7f-72a347c8c018/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/64856285-41c1-61e8-4b7f-72a347c8c018/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/64856285-41c1-61e8-4b7f-72a347c8c018/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/64856285-41c1-61e8-4b7f-72a347c8c018/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/64856285-41c1-61e8-4b7f-72a347c8c018/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/64856285-41c1-61e8-4b7f-72a347c8c018/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/64856285-41c1-61e8-4b7f-72a347c8c018/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
@@ -6218,86 +3898,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dd8e7d92-918d-4ec1-4e50-c328fc09467a/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dd8e7d92-918d-4ec1-4e50-c328fc09467a/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dd8e7d92-918d-4ec1-4e50-c328fc09467a/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dd8e7d92-918d-4ec1-4e50-c328fc09467a/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dd8e7d92-918d-4ec1-4e50-c328fc09467a/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dd8e7d92-918d-4ec1-4e50-c328fc09467a/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dd8e7d92-918d-4ec1-4e50-c328fc09467a/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/dd8e7d92-918d-4ec1-4e50-c328fc09467a/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -6430,86 +4030,6 @@
                                         ],
                                         "width": 500,
                                         "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/cbe677ee-361e-91b4-5cae-6c4c30044743/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/cbe677ee-361e-91b4-5cae-6c4c30044743/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/cbe677ee-361e-91b4-5cae-6c4c30044743/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/cbe677ee-361e-91b4-5cae-6c4c30044743/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/cbe677ee-361e-91b4-5cae-6c4c30044743/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/cbe677ee-361e-91b4-5cae-6c4c30044743/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/cbe677ee-361e-91b4-5cae-6c4c30044743/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/cbe677ee-361e-91b4-5cae-6c4c30044743/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
                                     }
                                 ],
                                 "links": [
@@ -6639,86 +4159,6 @@
                                             "full",
                                             "scoreboard",
                                             "dark"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3fb0986b-350c-b309-1dca-29e401834691/logos/primary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3fb0986b-350c-b309-1dca-29e401834691/logos/primary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3fb0986b-350c-b309-1dca-29e401834691/logos/primary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3fb0986b-350c-b309-1dca-29e401834691/logos/primary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "primary_logo_on_secondary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3fb0986b-350c-b309-1dca-29e401834691/logos/secondary_logo_on_white_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_white_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3fb0986b-350c-b309-1dca-29e401834691/logos/secondary_logo_on_black_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_black_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3fb0986b-350c-b309-1dca-29e401834691/logos/secondary_logo_on_primary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_primary_color"
-                                        ],
-                                        "width": 500,
-                                        "height": 500
-                                    },
-                                    {
-                                        "href": "https://a.espncdn.com/guid/3fb0986b-350c-b309-1dca-29e401834691/logos/secondary_logo_on_secondary_color.png",
-                                        "alt": "",
-                                        "rel": [
-                                            "full",
-                                            "secondary_logo_on_secondary_color"
                                         ],
                                         "width": 500,
                                         "height": 500
